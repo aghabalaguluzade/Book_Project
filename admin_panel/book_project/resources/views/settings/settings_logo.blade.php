@@ -8,23 +8,22 @@
         <div class="row d-flex justify-content-center">
           <!-- left column -->
           <div class="col-md-10">
-            <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title">Logo Nizamlamaları</h3>
               </div>
               @include('settings.errors')
-              <form action="{{ route('seoUpdate') }}" method="POST">
+              <form action="{{ route('logoUpdate') }}" method="POST" enctype="multipart/form-data">
                   @csrf
                 <div class="card-body">
                   <table class="table table-reponsive-sm">
                     <tr>
-                      <td></td>
-                      <td colspan="2">
+                      <td><img src="{{ asset($data->logo) }}" style="width: 100px; height: auto;"></td>
+                      <td>
                         <div class="form-group">
                           <div class="input-group">
                             <div class="custom-file">
-                              <input type="file" class="custom-file-input" id="exampleInputFile" />
+                              <input type="file" class="custom-file-input" id="exampleInputFile" name="logo" />
                               <label class="custom-file-label" for="exampleInputFile">Şəkil Seç</label>
                             </div>
                           </div>
@@ -32,12 +31,12 @@
                       </td>
                     </tr>
                     <tr>
-                      <td></td>
+                      <td><img src="{{ asset($data->favicon) }}" style="width:50px; height: auto"></td>
                       <td colspan="2">
                         <div class="form-group">
                           <div class="input-group">
                             <div class="custom-file">
-                              <input type="file" class="custom-file-input" id="exampleInputFile" />
+                              <input type="file" class="custom-file-input" id="exampleInputFile" name="favicon" />
                               <label class="custom-file-label" for="exampleInputFile">İcon Seç</label>
                             </div>
                           </div>
@@ -53,8 +52,7 @@
 
           </div>
         </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
 
 

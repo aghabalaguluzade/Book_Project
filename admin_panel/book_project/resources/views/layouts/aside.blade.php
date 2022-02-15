@@ -32,11 +32,15 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <li class="nav-item">
-            <a href="{{ route('index') }}" class="nav-link @if(Request::segment(1) == "index") active @endif" href="{{ route('index') }}">
-              <i class="fas fa-home"></i>
-              <p>Əsas Səhifə</p>
-            </a>
+          <li class="nav-item menu-open">
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('index') }}" class="nav-link @if(Request::segment(1) == "") active @endif" href="{{ route('index') }}">
+                  <i class="fas fa-home "></i>
+                  <p>Əsas Səhifə</p>
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item menu-open">
             <a href="" class="nav-link active">
@@ -54,7 +58,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('logoIndex') }}" class="nav-link @if(Request::segment(3) == "logo") active @endif" href="{{ route('logoIndex') }}">
+                <a href="{{ route('logoIndex') }}" class="nav-link @if(Request::segment(2) == "logo") active @endif" href="{{ route('logoIndex') }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Logo Nizamlamaları</p>
                 </a>
@@ -75,7 +79,5 @@
           </li>
         </ul>
       </nav>
-      <!-- /.sidebar-menu -->
     </div>
-    <!-- /.sidebar -->
   </aside>
