@@ -64,13 +64,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index.html" class="nav-link">
+                <a href="{{ route('contactIndex') }}" class="nav-link @if(Request::segment(2) == "contact") active @endif" href="{{ route('contactIndex') }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Əlaqə Nizamlamaları</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index.html" class="nav-link">
+                <a href="{{ route('socialIndex') }}" class="nav-link @if(Request::segment(2) == "social") active @endif" href="{{ route('socialIndex') }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Sosial Şəbəkələr Nizamlamaları</p>
                 </a>
