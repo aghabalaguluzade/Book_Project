@@ -19,6 +19,14 @@
                     <label for="social_instagram">İnstagram</label>
                     <input type="url" class="form-control" id="social_instagram" name="social_instagram" required="required" value="{{ $data->social_instagram }}" />
                   </div>
+                  <div class="form-group">
+                    <label for="social_facebook">Facebook</label>
+                    <input type="url" class="form-control" id="social_facebook" name="social_facebook" required="required" value="{{ $data->social_facebook }}" />
+                  </div>
+                  <div class="form-group">
+                    <label for="social_twitter">Twitter</label>
+                    <input type="url" class="form-control" id="social_twitter" name="social_twitter" required="required" value="{{ $data->social_twitter }}" />
+                  </div>
                 </div>
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Təsdiq Et</button>

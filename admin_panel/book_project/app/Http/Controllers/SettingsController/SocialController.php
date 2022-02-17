@@ -21,11 +21,15 @@ class SocialController extends Controller
     public function Update(Request $request) {
 
         $validated = $request->validate([
-            'social_instagram' => 'required|url|max:255'
+            'social_instagram' => 'required|url|max:255',
+            'social_facebook' => 'required|url|max:255',
+            'social_twitter' => 'required|url|max:255'
         ]);
 
         $data = Settings::find(1);
         $data->social_instagram = $request->social_instagram;
+        $data->social_facebook = $request->social_facebook;
+        $data->social_twitter = $request->social_twitter;
 
         return redirect()->back()->with($data->save() ? "success" : "error", true);
     }
