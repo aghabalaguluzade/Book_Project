@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\generalController\generalController;
+use App\Http\Controllers\PartnersController\addPartnerController;
+use App\Http\Controllers\PartnersController\listPartnerController;
 use App\Http\Controllers\SettingsController\ContactController;
 use App\Http\Controllers\SettingsController\LogoController;
 use App\Http\Controllers\SettingsController\SeoController;
@@ -22,3 +24,7 @@ Route::post('/settings/contact',[ContactController::class, "Update"])->name("con
 
 Route::get('settings/social',[SocialController::class, "index"])->name("socialIndex");
 Route::post('settings/social',[SocialController::class, "Update"])->name("socialUpdate");
+
+Route::get('/partners/list',[listPartnerController::class, "PartnersListView"])->name("PartnersListView");
+Route::get('/partners/add',[addPartnerController::class, "addPartnersIndex"])->name("addPartnersIndex");
+Route::post('/partners/add',[addPartnerController::class, "addPartnersPost"])->name("addPartnersPost");

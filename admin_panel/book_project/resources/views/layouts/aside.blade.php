@@ -36,15 +36,15 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{ route('index') }}" class="nav-link @if(Request::segment(1) == "") active @endif" href="{{ route('index') }}">
-                  <i class="fas fa-home "></i>
+                  <i class="fas fa-home"></i>
                   <p>Əsas Səhifə</p>
                 </a>
               </li>
             </ul>
           </li>
-          <li class="nav-item menu-open">
-            <a href="" class="nav-link active">
-              <i class="nav-icon fas fa-th"></i>
+          <li class="nav-item @if(Request::segment(1) == "settings") menu-open @endif">
+            <a href="" class="nav-link @if(Request::segment(1) == "settings") active @endif">
+              <i class="fas fa-cog"></i>
               <p>
                 Nizamlamalar
                 <i class="right fas fa-angle-left"></i>
@@ -53,26 +53,50 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{ route('seoIndex') }}" class="nav-link @if(Request::segment(2) == "seo") active @endif" href="{{ route('seoIndex') }}">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fab fa-gg-circle"></i>
                   <p>Seo Nizamlamaları</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('logoIndex') }}" class="nav-link @if(Request::segment(2) == "logo") active @endif" href="{{ route('logoIndex') }}">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fab fa-gg-circle"></i>
                   <p>Logo Nizamlamaları</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('contactIndex') }}" class="nav-link @if(Request::segment(2) == "contact") active @endif" href="{{ route('contactIndex') }}">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fab fa-gg-circle"></i>
                   <p>Əlaqə Nizamlamaları</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('socialIndex') }}" class="nav-link @if(Request::segment(2) == "social") active @endif" href="{{ route('socialIndex') }}">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fab fa-gg-circle"></i>
                   <p>Sosial Şəbəkələr Nizamlamaları</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item @if(Request::segment(1) == "partners") menu-open @endif">
+            <a href="" class="nav-link @if(Request::segment(1) == "partners") active @endif">
+              <i class="fas fa-handshake"></i>
+              <p>
+                Tərəfdaşlar
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('PartnersListView') }}" class="nav-link @if(Request::segment(2) == "list") active @endif" href="{{ route('PartnersListView') }}">
+                  <i class="far fa-stop-circle"></i>
+                  <p>Siyahı</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('addPartnersIndex') }}" class="nav-link @if(Request::segment(2) == "add") active @endif" href="{{ route('addPartnersIndex') }}">
+                  <i class="far fa-stop-circle"></i>
+                  <p>Əlavə Et</p>
                 </a>
               </li>
             </ul>
