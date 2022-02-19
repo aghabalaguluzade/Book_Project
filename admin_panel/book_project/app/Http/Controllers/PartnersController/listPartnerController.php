@@ -14,4 +14,22 @@ class listPartnerController extends Controller
         View::share('partners',$partners);
         return view('partners.partners_list');
     }
+
+    public function partnerDelete($id) {
+
+        $referer = isset($_SERVER["HTTP_REFERER"]);
+        if(!$referer) return redirect()->back();
+
+        $data = Partners::find($id);
+
+        if($data) {
+            
+            if(file_exists($data->img)) {
+                unlink($data->img);
+            }
+            return redirect()->back()->with($data->delete() ? "success" : "error", true);
+
+        }
+        return redirect()->back();
+    }
 }

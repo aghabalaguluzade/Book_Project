@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\generalController\generalController;
 use App\Http\Controllers\PartnersController\addPartnerController;
+use App\Http\Controllers\PartnersController\editPartnerController;
 use App\Http\Controllers\PartnersController\listPartnerController;
 use App\Http\Controllers\SettingsController\ContactController;
 use App\Http\Controllers\SettingsController\LogoController;
@@ -26,5 +27,8 @@ Route::get('settings/social',[SocialController::class, "index"])->name("socialIn
 Route::post('settings/social',[SocialController::class, "Update"])->name("socialUpdate");
 
 Route::get('/partners/list',[listPartnerController::class, "PartnersListView"])->name("PartnersListView");
+Route::get('/partners/delete/{id}',[listPartnerController::class, "partnerDelete"])->name("partnerDelete");
 Route::get('/partners/add',[addPartnerController::class, "addPartnersIndex"])->name("addPartnersIndex");
 Route::post('/partners/add',[addPartnerController::class, "addPartnersPost"])->name("addPartnersPost");
+Route::get('partners/edit/{id}',[editPartnerController::class, "editPartnersIndex"])->name("editPartnersIndex");
+Route::post('partners/edit/{id}',[editPartnerController::class, "editPartnersPost"])->name("editPartnersPost");

@@ -4,6 +4,7 @@
 @include('widget.breadcrumb')
 
 <div class="card">
+  @include('settings.errors')
     <div class="card-header">
       <h3 class="card-title">Tərəfdaş Siyahısı</h3>
     </div>
@@ -25,7 +26,7 @@
             @foreach ($partners as $partner)
             
             <tr class="odd">
-                <td class="dtr-control sorting_1" tabindex="0"><img src="{{ asset($partner->img) }}" alt="{{ $partner->img }}"></td>
+                <td class="dtr-control sorting_1" tabindex="0"><img src="{{ asset($partner->img) }}" alt="{{ $partner->img }}" style="width: 250px; height: auto;" ></td>
                 <td>{{ $partner->title }}</td>
                 <td><a href="{{ $partner->url }}" target="_blank">Keçid üçün click edin!</a></td>
                 <td>
@@ -36,25 +37,14 @@
                     @endif
                 </td>
                 <td>
-                    <button class="btn btn-outline-danger btn-sm">Sil</button>
-                    <button class="btn btn-outline-info btn-sm">Redaktə Et</button>
+                    <button class="btn btn-outline-danger btn-sm" onclick="partnerDelete({{ $partner->id }})">Sil</button>
+                    <a href="{{ route("editPartnersIndex",$partner->id) }}"><button class="btn btn-outline-info btn-sm">Redaktə Et</button></a>
                 </td>
               </tr>
-
+              
             @endforeach
     </tbody>
       </table>
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm-12 col-md-7">
-        <div class="dataTables_paginate paging_simple_numbers" id="example1_paginate">
-            <ul class="pagination"><li class="paginate_button page-item previous disabled" id="example1_previous"><a href="#" aria-controls="example1" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
-                <li class="paginate_button page-item active"><a href="#" aria-controls="example1" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
-                <li class="paginate_button page-item next" id="example1_next"><a href="#" aria-controls="example1" data-dt-idx="7" tabindex="0" class="page-link">Next</a>
-                </li>
-            </ul>
-        </div>
     </div>
 </div>
 </div>
@@ -65,6 +55,7 @@
 <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
 @endsection
 @section('footer')
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
 <script>
@@ -84,4 +75,5 @@
       });
     });
   </script>
+  <script src="{{ asset('plugins/main/partners_list.js') }}"></script>
 @endsection
