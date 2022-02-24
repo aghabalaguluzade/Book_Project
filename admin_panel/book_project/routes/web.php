@@ -14,21 +14,33 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/',[generalController::class,'index'])->name("index");
-Route::get('/settings/seo',[SeoController::class,"index"])->name("seoIndex");
-Route::post('/settings/seo',[SeoController::class,"update"])->name("seoUpdate");
 
-Route::get('/settings/logo',[LogoController::class,"index"])->name("logoIndex");
-Route::post('/settings/logo',[LogoController::class, "Update"])->name("logoUpdate");
 
-Route::get('/settings/contact',[ContactController::class, "index"])->name("contactIndex");
-Route::post('/settings/contact',[ContactController::class, "Update"])->name("contactUpdate");
+Route::prefix('settings')->group(function () {
+    
+    Route::get('/seo',[SeoController::class,"index"])->name("seoIndex");
+    Route::post('/seo',[SeoController::class,"update"])->name("seoUpdate");
+    
+    Route::get('/logo',[LogoController::class,"index"])->name("logoIndex");
+    Route::post('/logo',[LogoController::class, "Update"])->name("logoUpdate");
+    
+    Route::get('/contact',[ContactController::class, "index"])->name("contactIndex");
+    Route::post('/contact',[ContactController::class, "Update"])->name("contactUpdate");
+    
+    Route::get('/social',[SocialController::class, "index"])->name("socialIndex");
+    Route::post('/social',[SocialController::class, "Update"])->name("socialUpdate");
 
-Route::get('settings/social',[SocialController::class, "index"])->name("socialIndex");
-Route::post('settings/social',[SocialController::class, "Update"])->name("socialUpdate");
 
-Route::get('/partners/list',[listPartnerController::class, "PartnersListView"])->name("PartnersListView");
-Route::get('/partners/delete/{id}',[listPartnerController::class, "partnerDelete"])->name("partnerDelete");
-Route::get('/partners/add',[addPartnerController::class, "addPartnersIndex"])->name("addPartnersIndex");
-Route::post('/partners/add',[addPartnerController::class, "addPartnersPost"])->name("addPartnersPost");
-Route::get('partners/edit/{id}',[editPartnerController::class, "editPartnersIndex"])->name("editPartnersIndex");
-Route::post('partners/edit/{id}',[editPartnerController::class, "editPartnersPost"])->name("editPartnersPost");
+});
+
+
+Route::prefix('partners')->group(function () {
+
+    Route::get('/list',[listPartnerController::class, "PartnersListView"])->name("PartnersListView");
+    Route::get('/delete/{id}',[listPartnerController::class, "partnerDelete"])->name("partnerDelete");
+    Route::get('/add',[addPartnerController::class, "addPartnersIndex"])->name("addPartnersIndex");
+    Route::post('/add',[addPartnerController::class, "addPartnersPost"])->name("addPartnersPost");
+    Route::get('/edit/{id}',[editPartnerController::class, "editPartnersIndex"])->name("editPartnersIndex");
+    Route::post('/edit/{id}',[editPartnerController::class, "editPartnersPost"])->name("editPartnersPost");
+
+});
