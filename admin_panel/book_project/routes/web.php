@@ -4,6 +4,9 @@ use App\Http\Controllers\generalController\generalController;
 use App\Http\Controllers\PartnersController\addPartnerController;
 use App\Http\Controllers\PartnersController\editPartnerController;
 use App\Http\Controllers\PartnersController\listPartnerController;
+use App\Http\Controllers\QuestionsController\listQuestionsController;
+use App\Http\Controllers\QuestionsController\addQuestionsController;
+use App\Http\Controllers\QuestionsController\editQuestionsController;
 use App\Http\Controllers\SettingsController\ContactController;
 use App\Http\Controllers\SettingsController\LogoController;
 use App\Http\Controllers\SettingsController\SeoController;
@@ -16,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[generalController::class,'index'])->name("index");
 
 
-Route::prefix('settings')->group(function () {
+Route::prefix('settings')->group(function() {
     
     Route::get('/seo',[SeoController::class,"index"])->name("seoIndex");
     Route::post('/seo',[SeoController::class,"update"])->name("seoUpdate");
@@ -34,7 +37,7 @@ Route::prefix('settings')->group(function () {
 });
 
 
-Route::prefix('partners')->group(function () {
+Route::prefix('partners')->group(function() {
 
     Route::get('/list',[listPartnerController::class, "PartnersListView"])->name("PartnersListView");
     Route::get('/delete/{id}',[listPartnerController::class, "partnerDelete"])->name("partnerDelete");
@@ -42,5 +45,16 @@ Route::prefix('partners')->group(function () {
     Route::post('/add',[addPartnerController::class, "addPartnersPost"])->name("addPartnersPost");
     Route::get('/edit/{id}',[editPartnerController::class, "editPartnersIndex"])->name("editPartnersIndex");
     Route::post('/edit/{id}',[editPartnerController::class, "editPartnersPost"])->name("editPartnersPost");
+
+});
+
+Route::prefix('questions')->group(function() {
+
+    Route::get('/questions_list',[listQuestionsController::class, "listQuestions"])->name("listQuestions");
+    Route::get('/questions_add',[addQuestionsController::class, "addQuestionsIndex"])->name("addQuestionsIndex");
+    Route::post('/questions_add',[addQuestionsController::class, "addQuestionsPost"])->name("addQuestionsPost");
+    Route::get('/questions_edit/{id}',[editQuestionsController::class, "editQuestionsIndex"])->name("editQuestionsIndex");
+    Route::post('/questions_edit/{id}',[editQuestionsController::class, "editQuestionsPost"])->name("editQuestionsPost");
+    Route::get('/delete/{id}',[editQuestionsController::class, "questionDelete"])->name("questionDelete");
 
 });

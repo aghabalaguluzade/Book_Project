@@ -101,6 +101,30 @@
               </li>
             </ul>
           </li>
+
+          <li class="nav-item @if(Request::segment(1) == "questions") menu-open @endif">
+            <a href="" class="nav-link @if(Request::segment(1) == "questions") active @endif">
+              <i class="fas fa-question"></i>
+              <p>
+                Suallar
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('listQuestions') }}" class="nav-link @if(Request::segment(2) == "questions_list") active @endif" href="{{ route('listQuestions') }}">
+                  <i class="fas fa-question-circle"></i>
+                  <p>Siyahı</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('addQuestionsIndex') }}" class="nav-link @if(Request::segment(2) == "questions_add") active @endif" href="{{ route('addQuestionsIndex') }}">
+                  <i class="fas fa-question-circle"></i>
+                  <p>Əlavə Et</p>
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </div>
