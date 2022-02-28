@@ -27,7 +27,7 @@
                 <td>{{ $question->question_title }}</td>
                 <td>{{ $question->question_answer }}</td>
                 <td>
-                    <button class="btn btn-outline-danger btn-sm" onclick="questionsDelete({{ $question->id }})">Sil</button>
+                    <button class="btn btn-outline-danger btn-sm" onclick="questionsDelete({{ $question->id }})"><i class="fas fa-trash"></i></button>
                     <a href="{{ route("editQuestionsIndex", $question->id) }}"><button class="btn btn-outline-info btn-sm">Redaktə Et</button></a>
                 </td>
               </tr>

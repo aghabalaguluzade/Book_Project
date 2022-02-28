@@ -125,6 +125,30 @@
               </li>
             </ul>
           </li>
+
+          <li class="nav-item @if(Request::segment(1) == "blogs") menu-open @endif">
+            <a href="" class="nav-link @if(Request::segment(1) == "blogs") active @endif">
+              <i class="fas fa-blog"></i>
+              <p>
+                Bloq
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('BlogList') }}" class="nav-link @if(Request::segment(2) == "blog_list") active @endif" href="{{ route('BlogList') }}">
+                  <i class="fab fa-blogger-b"></i>
+                  <p>Siyahı</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('BlogAddIndex') }}" class="nav-link @if(Request::segment(2) == "blog_add") active @endif" href="{{ route('BlogAddIndex') }}">
+                  <i class="fab fa-blogger-b"></i>
+                  <p>Əlavə Et</p>
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </div>

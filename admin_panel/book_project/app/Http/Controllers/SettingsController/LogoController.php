@@ -16,7 +16,7 @@ class LogoController extends Controller
     }
 
     public function Update(Request $request) {
-        $validated = $request->validate([
+        $request->validate([
             'logo' => 'image|mimes:png,jpg|max:1024',
             'favicon' => 'image|mimes:png,jpg|max:1024'
         ]);

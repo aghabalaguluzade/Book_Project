@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\BlogsController\BlogAddController;
+use App\Http\Controllers\BlogsController\BlogEditController;
+use App\Http\Controllers\BlogsController\BlogListController;
 use App\Http\Controllers\generalController\generalController;
 use App\Http\Controllers\PartnersController\addPartnerController;
 use App\Http\Controllers\PartnersController\editPartnerController;
@@ -57,4 +60,14 @@ Route::prefix('questions')->group(function() {
     Route::post('/questions_edit/{id}',[editQuestionsController::class, "editQuestionsPost"])->name("editQuestionsPost");
     Route::get('/delete/{id}',[editQuestionsController::class, "questionDelete"])->name("questionDelete");
 
+});
+
+Route::prefix('blogs')->group(function() {
+
+    Route::get('/blog_list', [BlogListController::class, "BlogList"])->name("BlogList");
+    Route::post('/blog_view', [BlogListController::class, "BlogView"]);
+    Route::get('/blog_add',[BlogAddController::class, "BlogAddIndex"])->name("BlogAddIndex");
+    Route::post('/blog_add',[BlogAddController::class, "BlogAddPost"])->name("BlogAddPost");
+    Route::post('/blog_edit', [BlogEditController::class, "BlogEdit"])->name("BlogEdit");
+    Route::get('/blog_delete/{id}', [BlogListController::class, "BlogDelete"])->name("BlogDelete");
 });
