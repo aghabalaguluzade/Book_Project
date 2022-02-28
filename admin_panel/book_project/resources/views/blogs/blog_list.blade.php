@@ -143,15 +143,15 @@
                   <th>Status</th>
                   <td>
                     <select class="form-control" name="status" id="edit_status">
-                      <option value="1">Aktiv</option>
-                      <option value="0">Deaktiv</option>
+                      <option value="1"  {{ $blog->status == 1 ? "selected" : "" }}>Aktiv</option>
+                      <option value="0"  {{ $blog->status == 0 ? "selected" : "" }}>Deaktiv</option>
                     </select>
                   </td>
                 </tr>
                 <tr>
                   <th>Məzmun</th>
                   <td>
-                    <textarea class="form-control" name="contents" id="edit_contents" cols="30" rows="10" name="contents"></textarea>
+                    <textarea class="form-control edit_contents" name="contents" id="edit_contents" cols="30" rows="10" name="contents"></textarea>
                   </td>
                 </tr>
               </tbody>
@@ -169,6 +169,7 @@
 @endsection
 @section('head')
 <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+<link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
 @endsection
 @section('footer')
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -192,4 +193,10 @@
     });
   </script>
   <script src="{{ asset('plugins/main/blog_list.js') }}"></script>
+  <script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
+<script>
+  $(function () {
+    $('.edit_contents').summernote()
+  })
+</script>
 @endsection

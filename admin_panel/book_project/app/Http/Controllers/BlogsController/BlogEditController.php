@@ -25,7 +25,7 @@ class BlogEditController extends Controller
         if($request->hasFile("img")) {
 
             $image = $request->file('img');
-            $directory = 'uploads/partners/';
+            $directory = 'uploads/blog/';
             $img_name = Str::slug($request->title).'.' . $image->getClientOriginalExtension();
             
             if(file_exists($data->img)) {
