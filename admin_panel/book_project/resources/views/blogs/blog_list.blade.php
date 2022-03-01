@@ -170,6 +170,13 @@
 @section('head')
 <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
 <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
+<style>
+
+  .note-editable {
+    height: 300px
+  }
+
+</style>
 @endsection
 @section('footer')
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

@@ -51,8 +51,8 @@ const blog_edit = (id,url) => {
             document.getElementById('edit_img').innerHTML = `<img src="${url+data.img}" style="height:150px; width:auto;" />`;
             document.getElementById('edit_title').value = data.title;
             document.getElementById('edit_author').value = data.author;
-            document.getElementById('edit_status').value = data.status === "1" ? "Aktiv" : "Deaktiv";
-            document.getElementById('edit_contents').innerHTML = data.contents;
+            document.getElementById('edit_status').value = data.status;
+            document.getElementsByClassName('note-editable')[0].innerHTML = data.contents;
             document.getElementById('edit_id').value = id;
             $('#blog_modal_edit').modal('show')
         }
