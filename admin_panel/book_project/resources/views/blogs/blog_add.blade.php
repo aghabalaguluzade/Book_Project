@@ -52,6 +52,13 @@
 @endsection
 @section('head')
 <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
+<style>
+
+  .note-editable {
+    height: 300px
+  }
+
+</style>
 @endsection
 @section('footer')
 <script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
