@@ -143,8 +143,8 @@
                   <th>Status</th>
                   <td>
                     <select class="form-control" name="status" id="edit_status">
-                      <option value="1"  {{ $blog->status == 1 ? "selected" : "" }}>Aktiv</option>
-                      <option value="0"  {{ $blog->status == 0 ? "selected" : "" }}>Deaktiv</option>
+                      <option value="1" >Aktiv</option>
+                      <option value="0">Deaktiv</option>
                     </select>
                   </td>
                 </tr>

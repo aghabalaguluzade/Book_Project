@@ -18,7 +18,7 @@
                 <div class="card-body">
                   <table class="table table-reponsive-sm">
                     <tr>
-                      <td><img src="{{ asset($data->logo) }}" style="width: 100px; height: auto;"></td>
+                      <td><img src="{{ asset($data->logo) }}" style="width: 100px; height: auto;" class="img-circle"></td>
                       <td>
                         <div class="form-group">
                           <div class="input-group">
@@ -31,7 +31,7 @@
                       </td>
                     </tr>
                     <tr>
-                      <td><img src="{{ asset($data->favicon) }}" style="width:50px; height: auto"></td>
+                      <td><img src="{{ asset($data->favicon) }}" style="width:50px; height: auto" class="img-circle"></td>
                       <td colspan="2">
                         <div class="form-group">
                           <div class="input-group">
