@@ -37,7 +37,7 @@
                     @endif
                 </td>
                 <td>
-                    <button class="btn btn-outline-danger btn-sm" onclick="partnerDelete({{ $partner->id }})"><i class="fas fa-trash"></i></button>
+                    <button class="btn btn-outline-danger btn-sm" onclick="partnerDelete({{ $partner->id }})">Sil</button>
                     <a href="{{ route("editPartnersIndex",$partner->id) }}"><button class="btn btn-outline-info btn-sm">Redaktə Et</button></a>
                 </td>
               </tr>

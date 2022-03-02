@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 21, 2022 at 10:33 PM
+-- Generation Time: Mar 02, 2022 at 08:44 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -24,6 +24,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `blog`
+--
+
+CREATE TABLE `blog` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `contents` longtext NOT NULL,
+  `img` varchar(255) NOT NULL,
+  `author` varchar(255) NOT NULL,
+  `status` enum('0','1') NOT NULL DEFAULT '0',
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `blog`
+--
+
+INSERT INTO `blog` (`id`, `title`, `contents`, `img`, `author`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'İlk Bloq', 'Bu mənim əlavə etdiyim ilk bloqdur', 'uploads/blog/ilk-bloq.png', 'Quluzadə Ağabala', '0', '2022-02-28 01:16:22', '2022-02-28 22:21:04');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `failed_jobs`
 --
 
@@ -36,6 +60,27 @@ CREATE TABLE `failed_jobs` (
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `general_question`
+--
+
+CREATE TABLE `general_question` (
+  `id` int(11) NOT NULL,
+  `question_title` varchar(255) NOT NULL,
+  `question_answer` text NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `general_question`
+--
+
+INSERT INTO `general_question` (`id`, `question_title`, `question_answer`, `created_at`, `updated_at`) VALUES
+(1, 'Kitabı Necə Ala Bilərik ?', 'Nağd və Kart ilə', '2022-02-27 19:10:34', '2022-02-27 20:18:49');
 
 -- --------------------------------------------------------
 
@@ -81,7 +126,6 @@ CREATE TABLE `partners` (
 
 INSERT INTO `partners` (`id`, `title`, `url`, `img`, `status`, `created_at`, `updated_at`) VALUES
 (1, '3docean', 'https://3docean.net/', 'uploads/partners/3docean.jpg', '0', '2022-02-19 04:45:04', '2022-02-19 04:45:04'),
-(2, 'activeden', 'https://graphicriver.net/activeden-graphics', 'uploads/partners/activeden.jpg', '0', '2022-02-19 05:57:23', '2022-02-19 05:57:23'),
 (4, 'Kitab', 'https://kitab.com/', 'uploads/partners/kitab.jpg', '1', '2022-02-20 01:39:39', '2022-02-20 02:17:59');
 
 -- --------------------------------------------------------
@@ -164,11 +208,23 @@ CREATE TABLE `users` (
 --
 
 --
+-- Indexes for table `blog`
+--
+ALTER TABLE `blog`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `general_question`
+--
+ALTER TABLE `general_question`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `migrations`
@@ -214,10 +270,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `blog`
+--
+ALTER TABLE `blog`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `general_question`
+--
+ALTER TABLE `general_question`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `migrations`
