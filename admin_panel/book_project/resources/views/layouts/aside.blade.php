@@ -137,6 +137,30 @@
               </li>
             </ul>
           </li>
+
+          <li class="nav-item @if(Request::segment(1) == "category") menu-open @endif">
+            <a href="" class="nav-link @if(Request::segment(1) == "category") active @endif">
+              <i class="fas fa-bars"></i>
+              <p>
+                Kateqoriya
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('BlogList') }}" class="nav-link @if(Request::segment(2) == "blog_list") active @endif" href="{{ route('BlogList') }}">
+                  <i class="fas fa-caret-down"></i>
+                  <p>Siyahı</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('CategoryAddIndex') }}" class="nav-link @if(Request::segment(2) == "category_add") active @endif" href="{{ route('CategoryAddIndex') }}">
+                  <i class="fas fa-caret-down"></i>
+                  <p>Əlavə Et</p>
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </div>

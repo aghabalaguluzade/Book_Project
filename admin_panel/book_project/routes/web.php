@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogsController\BlogAddController;
 use App\Http\Controllers\BlogsController\BlogEditController;
 use App\Http\Controllers\BlogsController\BlogListController;
+use App\Http\Controllers\CategoryController\CategoryAddController;
 use App\Http\Controllers\generalController\generalController;
 use App\Http\Controllers\PartnersController\addPartnerController;
 use App\Http\Controllers\PartnersController\editPartnerController;
@@ -70,4 +71,10 @@ Route::prefix('blogs')->group(function() {
     Route::post('/blog_add',[BlogAddController::class, "BlogAddPost"])->name("BlogAddPost");
     Route::post('/blog_edit', [BlogEditController::class, "BlogEdit"])->name("BlogEdit");
     Route::get('/blog_delete/{id}', [BlogListController::class, "BlogDelete"])->name("BlogDelete");
+});
+
+Route::prefix('category')->group(function() {
+
+    Route::get('/category_add', [CategoryAddController::class, "CategoryAddIndex"])->name("CategoryAddIndex");
+
 });
