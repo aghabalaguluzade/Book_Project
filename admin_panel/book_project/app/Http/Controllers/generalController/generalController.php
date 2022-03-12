@@ -12,4 +12,8 @@ class generalController extends Controller
         return view('index');
     }
 
+    public function templates() {
+        return view('templates.index');
+    }
+
 }

@@ -14,7 +14,7 @@ const blog_view = (id,url) => {
             document.getElementById('author').innerHTML = data.author;
             document.getElementById('status').innerHTML = data.status === "1" ? "Aktiv" : "Deaktiv";
             document.getElementById('contents').innerHTML = data.contents;
-            document.getElementById('created_at').innerHTML = data.created_at;
+            document.getElementById('created_at').innerHTML = new Date(data.created_at).toLocaleString();
             $('#blog_modal').modal('show')
         }
     });

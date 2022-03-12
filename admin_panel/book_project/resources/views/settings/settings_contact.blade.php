@@ -29,7 +29,7 @@
                   </div>
                 </div>
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Təsdiq Et</button>
+                  <button type="submit" class="btn btn-success">Təsdiq Et</button>
                 </div>
               </form>
             </div>

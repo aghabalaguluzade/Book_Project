@@ -10,4 +10,12 @@ class Category extends Model
     use HasFactory;
     protected $table = "category";
     protected $guarded = [];
+
+    public function ParentId($id) {
+        
+        $category = Category::where([
+            'id' => $id
+        ])->first();
+        return $category ? $category->category_name : "--";
+    }
 }

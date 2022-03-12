@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="{{ route('index') }}" class="brand-link">
       <img src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Book House</span>
     </a>
@@ -148,7 +148,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('BlogList') }}" class="nav-link @if(Request::segment(2) == "blog_list") active @endif" href="{{ route('BlogList') }}">
+                <a href="{{ route('CategoryListIndex') }}" class="nav-link @if(Request::segment(2) == "category_list") active @endif" href="{{ route('CategoryListIndex') }}">
                   <i class="fas fa-caret-down"></i>
                   <p>Siyahı</p>
                 </a>

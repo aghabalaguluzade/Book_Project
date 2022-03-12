@@ -12,14 +12,21 @@
                 <h3 class="card-title">Kateqoriya Əlavə Et</h3>
               </div>
               @include('settings.errors')
-              <form action="{{ route('BlogAddPost') }}" method="POST" enctype="multipart/form-data">
+              <form action="{{ route('CategoryAddPost') }}" method="POST" enctype="multipart/form-data">
                   @csrf
                 <div class="card-body">
                   <div class="form-group">
-                    <label>Kateqoriya</label>
-                    <select class="form-control">
-                      <option>option 1</option>
+                    <label for="category">Kateqoriya</label>
+                    <select class="form-control" id="category" name="parent_id">
+                      <option value="" selected="selected">Üst Kateqoriya</option>
+                      @foreach ($categories as $category)
+                          <option value="{{ $category->id }}">{{ $category->category_name }}</option>
+                      @endforeach
                     </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="category-add">Kateqoriya Əlavə Et</label>
+                      <input type="text" id="category-add" class="form-control" name="category_name" />
                   </div>
                 </div>
                 <div class="card-footer">

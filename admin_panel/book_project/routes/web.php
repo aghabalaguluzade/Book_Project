@@ -4,6 +4,7 @@ use App\Http\Controllers\BlogsController\BlogAddController;
 use App\Http\Controllers\BlogsController\BlogEditController;
 use App\Http\Controllers\BlogsController\BlogListController;
 use App\Http\Controllers\CategoryController\CategoryAddController;
+use App\Http\Controllers\CategoryController\CategoryListController;
 use App\Http\Controllers\generalController\generalController;
 use App\Http\Controllers\PartnersController\addPartnerController;
 use App\Http\Controllers\PartnersController\editPartnerController;
@@ -19,9 +20,8 @@ use Illuminate\Support\Facades\Route;
 
 
 
-
-Route::get('/',[generalController::class,'index'])->name("index");
-
+Route::get('/admin',[generalController::class,'index'])->name("index");
+Route::get('/',[generalController::class,"templates"])->name("templates");
 
 Route::prefix('settings')->group(function() {
     
@@ -36,7 +36,6 @@ Route::prefix('settings')->group(function() {
     
     Route::get('/social',[SocialController::class, "index"])->name("socialIndex");
     Route::post('/social',[SocialController::class, "Update"])->name("socialUpdate");
-
 
 });
 
@@ -75,6 +74,9 @@ Route::prefix('blogs')->group(function() {
 
 Route::prefix('category')->group(function() {
 
+    Route::get('/category_list', [CategoryListController::class, "CategoryListIndex"])->name("CategoryListIndex");
     Route::get('/category_add', [CategoryAddController::class, "CategoryAddIndex"])->name("CategoryAddIndex");
-
+    Route::post('/category_add', [CategoryAddController::class, "CategoryAddPost"])->name("CategoryAddPost");
+    Route::post('/category_status', [CategoryListController::class, "CategoryListStatus"]);
+    
 });
