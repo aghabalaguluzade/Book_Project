@@ -5,6 +5,9 @@ use App\Http\Controllers\BlogsController\BlogEditController;
 use App\Http\Controllers\BlogsController\BlogListController;
 use App\Http\Controllers\CategoryController\CategoryAddController;
 use App\Http\Controllers\CategoryController\CategoryListController;
+use App\Http\Controllers\FeatureSection\FeatureSectionAdd;
+use App\Http\Controllers\FeatureSection\FeatureSectionEdit;
+use App\Http\Controllers\FeatureSection\FeatureSectionIndex;
 use App\Http\Controllers\generalController\generalController;
 use App\Http\Controllers\PartnersController\addPartnerController;
 use App\Http\Controllers\PartnersController\editPartnerController;
@@ -36,6 +39,16 @@ Route::prefix('settings')->group(function() {
     
     Route::get('/social',[SocialController::class, "index"])->name("socialIndex");
     Route::post('/social',[SocialController::class, "Update"])->name("socialUpdate");
+
+});
+
+Route::prefix('features')->group(function() {
+
+    Route::get('/features_list',[FeatureSectionIndex::class, "FeatureSectionIndex"])->name("FeatureSectionIndex");
+    Route::get('/features_add',[FeatureSectionAdd::class, "FeatureSectionAdd"])->name("FeatureSectionAdd");
+    Route::post('/features_add',[FeatureSectionAdd::class, "FeatureSectionAddPost"])->name("FeatureSectionAddPost");
+    Route::get('/features_edit/{id}',[FeatureSectionEdit::class, "FeatureSectionEdit"])->name("FeatureSectionEdit");
+    Route::post('/features_edit/{id}',[FeatureSectionEdit::class, "FeatureSectionEditPost"])->name("FeatureSectionEditPost");
 
 });
 

@@ -18,15 +18,4 @@ class listQuestionsController extends Controller
 
     }
 
-    public function questionDelete($id) {
-
-        $referer = isset($_SERVER["HTTP_REFERER"]);
-        if(!$referer) return redirect()->back();
-
-        $data = General_Questions::find($id);
-
-        return redirect()->back()->with($data->delete() ? "success" : "error", true);
-
-    }
-
 }

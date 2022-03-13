@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 02, 2022 at 08:44 PM
+-- Generation Time: Mar 13, 2022 at 01:23 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -48,6 +48,30 @@ INSERT INTO `blog` (`id`, `title`, `contents`, `img`, `author`, `status`, `creat
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `category`
+--
+
+CREATE TABLE `category` (
+  `id` int(11) NOT NULL,
+  `category_name` varchar(255) NOT NULL,
+  `parent_id` int(11) NOT NULL DEFAULT 0,
+  `slug` varchar(255) NOT NULL,
+  `status` enum('0','1') NOT NULL DEFAULT '0',
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id`, `category_name`, `parent_id`, `slug`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Uşaq Kitabları', 0, 'usaq-kitablari', '0', '2022-03-12 18:23:38', '2022-03-13 00:10:57'),
+(2, 'Balaca şahzadə', 1, 'balaca-sahzade', '0', '2022-03-12 18:25:12', '2022-03-13 00:10:57');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `failed_jobs`
 --
 
@@ -60,6 +84,25 @@ CREATE TABLE `failed_jobs` (
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feature_section`
+--
+
+CREATE TABLE `feature_section` (
+  `id` int(11) NOT NULL,
+  `feature_title` varchar(255) NOT NULL,
+  `feature_content` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `feature_section`
+--
+
+INSERT INTO `feature_section` (`id`, `feature_title`, `feature_content`) VALUES
+(1, 'Pulsuz Çatdırılma', '500 manatdan yuxarı sifarişlər');
 
 -- --------------------------------------------------------
 
@@ -214,11 +257,23 @@ ALTER TABLE `blog`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `feature_section`
+--
+ALTER TABLE `feature_section`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `general_question`
@@ -276,10 +331,22 @@ ALTER TABLE `blog`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `feature_section`
+--
+ALTER TABLE `feature_section`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `general_question`

@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','Sualları Redaktə Et')
+@section('title','Xüsusiyyətlər Bölməsi Redaktə Et')
 @section('content')
 @include('widget.breadcrumb')
 
@@ -9,24 +9,22 @@
           <div class="col-md-10">
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Sualları Redaktə Et</h3>
+                <h3 class="card-title">Xüsusiyyətlər Bölməsi Redaktə Et</h3>
               </div>
               @include('settings.errors')
-              <form action="{{ route('editQuestionsPost', $data->id) }}" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="id" value="{{ $data->id }}" />  
+              <form action="{{ route('FeatureSectionEditPost', $features->id) }}" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="{{ $features->id }}" />  
                 @csrf
                 <div class="card-body">
-                  <div class="card-body">
                     <div class="form-group">
-                      <label for="question_title">Başlıq</label>
-                      <input type="text" class="form-control" id="question_title" name="question_title" value="{{ $data->question_title }}" />
+                      <label for="feature_title">Başlıq</label>
+                      <input type="text" class="form-control" id="feature_title" name="feature_title" value="{{ $features->feature_title }}" />
                     </div>
                     <div class="form-group">
-                      <label for="question_answer">Sualın Cavabı</label> <br />
-                      <textarea class="form-control" name="question_answer" id="question_answer" cols="30" rows="10" name="question_answer">{{ $data->question_answer }}</textarea>
+                      <label for="feature_content">Açıqlama</label> <br />
+                      <input type="text" class="form-control" id="feature_content" name="feature_content" value="{{ $features->feature_content }}" />
                     </div>
                   </div>
-                </div>
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Redaktə Et</button>
                 </div>

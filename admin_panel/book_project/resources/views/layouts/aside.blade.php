@@ -65,6 +65,30 @@
               </li>
             </ul>
           </li>
+          
+          <li class="nav-item @if(Request::segment(1) == "features") menu-open @endif">
+            <a href="" class="nav-link @if(Request::segment(1) == "features") active @endif">
+              <i class="fas fa-braille"></i>
+              <p>
+                Xüsusiyyət Bölməsi
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('FeatureSectionIndex') }}" class="nav-link @if(Request::segment(2) == "features_list") active @endif" href="{{ route('FeatureSectionIndex') }}">
+                  <i class="fab fa-buffer"></i>
+                  <p>Siyahı</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('FeatureSectionAdd') }}" class="nav-link @if(Request::segment(2) == "features_add") active @endif" href="{{ route('FeatureSectionAdd') }}">
+                  <i class="fab fa-buffer"></i>
+                  <p>Əlavə Et</p>
+                </a>
+              </li>
+            </ul>
+          </li>
 
           <li class="nav-item @if(Request::segment(1) == "partners") menu-open @endif">
             <a href="" class="nav-link @if(Request::segment(1) == "partners") active @endif">
