@@ -6,12 +6,15 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Str;
 
 class CategoryListController extends Controller
 {
     public function CategoryListIndex() {
         $categories = Category::all();
+        $parent_id = Category::where('parent_id',0)->get();
         View::share('categories',$categories);
+        View::share('parent_id', $parent_id);
         return view('category.category_list');
     }
 
@@ -50,5 +53,25 @@ class CategoryListController extends Controller
         return response()->json([
             'status'=> ($category->save() && $sub_category_count == count($sub_categories)) ? true : false
         ]);
+    }
+
+    public function CategoryEditView(Request $request) {
+        $categories = Category::find($request->id);
+        if(!$categories) return $categories ?? null;
+    }
+
+    public function CategoryEdit(Request $request) {
+        $request->validate([
+            'category_name' => 'required|max:255'
+        ]);
+
+        $categories = Category::find($request->id);
+
+        $categories->category_name = $request->category_name;
+        $categories->slug = Str::slug($request->category_name);
+        $categories->parent_id = $request->parent_id;
+
+        return redirect()->back()->with($categories->save() ? "success" : "error", true);
+
     }
 }

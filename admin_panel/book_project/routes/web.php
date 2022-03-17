@@ -91,5 +91,6 @@ Route::prefix('category')->group(function() {
     Route::get('/category_add', [CategoryAddController::class, "CategoryAddIndex"])->name("CategoryAddIndex");
     Route::post('/category_add', [CategoryAddController::class, "CategoryAddPost"])->name("CategoryAddPost");
     Route::post('/category_status', [CategoryListController::class, "CategoryListStatus"]);
-    
+    Route::post('/category_edit_view', [CategoryListController::class, "CategoryEditView"])->name('CategoryEditView');
+    Route::post('/category_edit', [CategoryListController::class, "CategoryEdit"])->name("CategoryEdit");
 });

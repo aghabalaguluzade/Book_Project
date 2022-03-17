@@ -37,7 +37,7 @@
                 </td>
                 <td>
                     <button class="btn btn-outline-danger btn-sm" onclick="blog_delete({{ $category->id }})">Sil</button>
-                    <button class="btn btn-outline-info btn-sm">Redaktə Et</button>
+                    <button class="btn btn-outline-info btn-sm" onclick="categoryEdit({{ $category->id }})">Redaktə Et</button>
                 </td>
               </tr>
               
@@ -47,6 +47,42 @@
     </div>
 </div>
 </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="category_edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Redaktə et</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="{{ route('CategoryEdit') }}" method="POST">
+            <input type="hidden" id="id" name="id" value="" />
+            @csrf
+            <div class="form-group">
+                    <label for="parent_id">Kateqoriya</label>
+                    <select class="form-control" id="parent_id" name="parent_id">
+                      <option value="0" selected="selected">Üst Kateqoriya</option>
+                      @foreach ($parent_id as $category)
+                          <option value="{{ $category->id }}">{{ $category->category_name }}</option>
+                      @endforeach
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="category_name" class="col-form-label">Kateqoriya adı</label>
+                    <input type="text" class="form-control" id="category_name" name="category_name" />
+                  </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Bağla</button>
+              <button class="btn btn-primary">Redaktə et</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 
