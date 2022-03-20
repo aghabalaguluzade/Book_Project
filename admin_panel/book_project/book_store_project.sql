@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2022 at 01:23 AM
+-- Generation Time: Mar 21, 2022 at 12:33 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `blog` (
-  `id` int(11) NOT NULL,
+  `id` int(11) UNSIGNED NOT NULL,
   `title` varchar(255) NOT NULL,
   `contents` longtext NOT NULL,
   `img` varchar(255) NOT NULL,
@@ -48,11 +48,33 @@ INSERT INTO `blog` (`id`, `title`, `contents`, `img`, `author`, `status`, `creat
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `carousel_banner`
+--
+
+CREATE TABLE `carousel_banner` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `banner_name` varchar(255) NOT NULL,
+  `banner_title` varchar(255) NOT NULL,
+  `banner_content` varchar(255) NOT NULL,
+  `banner_link` varchar(500) NOT NULL,
+  `banner_img` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `carousel_banner`
+--
+
+INSERT INTO `carousel_banner` (`id`, `banner_name`, `banner_title`, `banner_content`, `banner_link`, `banner_img`) VALUES
+(1, 'Magazine Cover', 'Mockup', 'Cover up front of book and leave summary', 'http://smartbook4.demo.towerthemes.com/image/cache/catalog/slider/slider1-smartbooks4-870x494.jpg', 'uploads/banners/.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `category`
 --
 
 CREATE TABLE `category` (
-  `id` int(11) NOT NULL,
+  `id` int(11) UNSIGNED NOT NULL,
   `category_name` varchar(255) NOT NULL,
   `parent_id` int(11) NOT NULL DEFAULT 0,
   `slug` varchar(255) NOT NULL,
@@ -92,7 +114,7 @@ CREATE TABLE `failed_jobs` (
 --
 
 CREATE TABLE `feature_section` (
-  `id` int(11) NOT NULL,
+  `id` int(11) UNSIGNED NOT NULL,
   `feature_title` varchar(255) NOT NULL,
   `feature_content` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -111,7 +133,7 @@ INSERT INTO `feature_section` (`id`, `feature_title`, `feature_content`) VALUES
 --
 
 CREATE TABLE `general_question` (
-  `id` int(11) NOT NULL,
+  `id` int(11) UNSIGNED NOT NULL,
   `question_title` varchar(255) NOT NULL,
   `question_answer` text NOT NULL,
   `created_at` datetime NOT NULL,
@@ -208,7 +230,7 @@ CREATE TABLE `personal_access_tokens` (
 --
 
 CREATE TABLE `settings` (
-  `id` int(11) NOT NULL,
+  `id` int(11) UNSIGNED NOT NULL,
   `seo_title` varchar(255) DEFAULT NULL,
   `seo_description` varchar(255) DEFAULT NULL,
   `seo_keywords` text DEFAULT NULL,
@@ -254,6 +276,12 @@ CREATE TABLE `users` (
 -- Indexes for table `blog`
 --
 ALTER TABLE `blog`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `carousel_banner`
+--
+ALTER TABLE `carousel_banner`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -328,13 +356,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `carousel_banner`
+--
+ALTER TABLE `carousel_banner`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -346,13 +380,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `feature_section`
 --
 ALTER TABLE `feature_section`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `general_question`
 --
 ALTER TABLE `general_question`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -376,7 +410,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`

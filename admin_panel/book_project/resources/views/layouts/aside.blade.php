@@ -65,7 +65,31 @@
               </li>
             </ul>
           </li>
-          
+
+          <li class="nav-item @if(Request::segment(1) == "banners") menu-open @endif">
+            <a href="" class="nav-link @if(Request::segment(1) == "banners") active @endif">
+              <i class="fas fa-images"></i>
+              <p>
+                Banner Bölməsi
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('BannerList') }}" class="nav-link @if(Request::segment(2) == "banner_list") active @endif" href="{{ route('BannerList') }}">
+                  <i class="fas fa-image"></i>
+                  <p>Siyahı</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('BannerAdd') }}" class="nav-link @if(Request::segment(2) == "banner_add") active @endif" href="{{ route('BannerAdd') }}">
+                  <i class="fas fa-image"></i>
+                  <p>Əlavə Et</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
           <li class="nav-item @if(Request::segment(1) == "features") menu-open @endif">
             <a href="" class="nav-link @if(Request::segment(1) == "features") active @endif">
               <i class="fas fa-braille"></i>

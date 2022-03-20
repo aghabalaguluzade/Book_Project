@@ -40,6 +40,7 @@ const blog_delete = (id) => {
 
 
 const blog_edit = (id,url) => {
+    
     $.ajax({
         type: "POST",
         url: "/blogs/blog_view",

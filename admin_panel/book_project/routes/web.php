@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\BannerController\BannerControllerAdd;
+use App\Http\Controllers\BannerController\BannerControllerEdit;
+use App\Http\Controllers\BannerController\BannerControllerList;
 use App\Http\Controllers\BlogsController\BlogAddController;
 use App\Http\Controllers\BlogsController\BlogEditController;
 use App\Http\Controllers\BlogsController\BlogListController;
@@ -27,16 +30,16 @@ Route::get('/admin',[generalController::class,'index'])->name("index");
 Route::get('/',[generalController::class,"templates"])->name("templates");
 
 Route::prefix('settings')->group(function() {
-    
+
     Route::get('/seo',[SeoController::class,"index"])->name("seoIndex");
     Route::post('/seo',[SeoController::class,"update"])->name("seoUpdate");
-    
+
     Route::get('/logo',[LogoController::class,"index"])->name("logoIndex");
     Route::post('/logo',[LogoController::class, "Update"])->name("logoUpdate");
-    
+
     Route::get('/contact',[ContactController::class, "index"])->name("contactIndex");
     Route::post('/contact',[ContactController::class, "Update"])->name("contactUpdate");
-    
+
     Route::get('/social',[SocialController::class, "index"])->name("socialIndex");
     Route::post('/social',[SocialController::class, "Update"])->name("socialUpdate");
 
@@ -52,6 +55,16 @@ Route::prefix('features')->group(function() {
 
 });
 
+Route::prefix('banners')->group(function() {
+
+    Route::get('/banner_list', [BannerControllerList::class, "BannerList"])->name("BannerList");
+    Route::get('/banner_add', [BannerControllerAdd::class, "BannerAdd"])->name("BannerAdd");
+    Route::post('/banner_add', [BannerControllerAdd::class, "BannerAddPost"])->name("BannerAddPost");
+    Route::post('banner_edit_view', [BannerControllerEdit::class, "BannerEditView"]);
+    Route::post('/banner_edit', [BannerControllerEdit::class, "BannerEdit"])->name("BannerEdit");
+
+
+});
 
 Route::prefix('partners')->group(function() {
 
