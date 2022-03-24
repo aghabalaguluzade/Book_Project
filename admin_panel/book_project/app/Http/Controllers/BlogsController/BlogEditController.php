@@ -14,8 +14,6 @@ class BlogEditController extends Controller
         $request->validate([
             'title' => "required|max:255",
             'author' => "required|max:255",
-            'status' => "required",
-            'contents' => "required",
             'img' => 'image|mimes:png,jpg,jpeg,gif,jfif,webp|max:1024',
         ]);
 

@@ -34,7 +34,7 @@
                 </div>
                   <div class="form-group">
                     <label for="contents">Məzmun</label> <br />
-                    <textarea class="form-control" name="contents" id="contents" cols="30" rows="10" name="contents"></textarea>
+                    <textarea class="form-control" id="contents" cols="30" rows="10" name="contents"></textarea>
                   </div>
                 </div>
                 <div class="card-footer">

@@ -36,7 +36,7 @@
                   </div>
                 </td>
                 <td>
-                    <button class="btn btn-outline-danger btn-sm" onclick="blog_delete({{ $category->id }})">Sil</button>
+                    <button class="btn btn-outline-danger btn-sm">Sil</button>
                     <button class="btn btn-outline-info btn-sm" onclick="categoryEdit({{ $category->id }})">Redaktə Et</button>
                 </td>
               </tr>
@@ -50,7 +50,7 @@
     </div>
   </div>
 
-  <div class="modal fade" id="category_edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">

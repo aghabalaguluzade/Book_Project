@@ -57,7 +57,7 @@ class CategoryListController extends Controller
 
     public function CategoryEditView(Request $request) {
         $categories = Category::find($request->id);
-        if(!$categories) return $categories ?? null;
+        return $categories ?? null;
     }
 
     public function CategoryEdit(Request $request) {

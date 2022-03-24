@@ -20,6 +20,9 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+          {{-- Nizamlamalar --}}
+
           <li class="nav-item menu-open">
             <ul class="nav nav-treeview">
               <li class="nav-item">
@@ -66,6 +69,8 @@
             </ul>
           </li>
 
+          {{-- Banner Bölməsi --}}
+
           <li class="nav-item @if(Request::segment(1) == "banners") menu-open @endif">
             <a href="" class="nav-link @if(Request::segment(1) == "banners") active @endif">
               <i class="fas fa-images"></i>
@@ -89,6 +94,8 @@
               </li>
             </ul>
           </li>
+
+          {{-- Xüsusiyyət Bölməsi --}}
 
           <li class="nav-item @if(Request::segment(1) == "features") menu-open @endif">
             <a href="" class="nav-link @if(Request::segment(1) == "features") active @endif">
@@ -114,6 +121,8 @@
             </ul>
           </li>
 
+          {{-- Tərəfdaşlar --}}
+
           <li class="nav-item @if(Request::segment(1) == "partners") menu-open @endif">
             <a href="" class="nav-link @if(Request::segment(1) == "partners") active @endif">
               <i class="fas fa-handshake"></i>
@@ -137,6 +146,34 @@
               </li>
             </ul>
           </li>
+
+          {{-- Yazıçılar --}}
+
+          <li class="nav-item @if(Request::segment(1) == "writers") menu-open @endif">
+            <a href="" class="nav-link @if(Request::segment(1) == "writers") active @endif">
+              <i class="fas fa-user-edit"></i>
+              <p>
+                Yazıçılar
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('listWriters') }}" class="nav-link @if(Request::segment(2) == "writers_list") active @endif" href="{{ route('listWriters') }}">
+                  <i class="fas fa-pen-nib"></i>
+                  <p>Siyahı</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('addWriters') }}" class="nav-link @if(Request::segment(2) == "writers_add") active @endif" href="{{ route('addWriters') }}">
+                  <i class="fas fa-feather-alt"></i>
+                  <p>Əlavə Et</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          {{-- Suallar --}}
 
           <li class="nav-item @if(Request::segment(1) == "questions") menu-open @endif">
             <a href="" class="nav-link @if(Request::segment(1) == "questions") active @endif">
@@ -162,6 +199,8 @@
             </ul>
           </li>
 
+          {{-- Bloq --}}
+
           <li class="nav-item @if(Request::segment(1) == "blogs") menu-open @endif">
             <a href="" class="nav-link @if(Request::segment(1) == "blogs") active @endif">
               <i class="fas fa-blog"></i>
@@ -186,6 +225,8 @@
             </ul>
           </li>
 
+          {{-- Kateqoriya --}}
+          
           <li class="nav-item @if(Request::segment(1) == "category") menu-open @endif">
             <a href="" class="nav-link @if(Request::segment(1) == "category") active @endif">
               <i class="fas fa-bars"></i>

@@ -47,7 +47,7 @@ const blog_delete = (id) => {
 const categoryEdit = (id) => {
     $.ajax({
         type : "POST",
-        url : '/category/category_edit_view',
+        url : "/category/category_edit_view",
         data : {
             _token, 
             id
@@ -57,8 +57,8 @@ const categoryEdit = (id) => {
                 document.getElementById('id').value = data.id;
                 document.getElementById('parent_id').value = data.parent_id;
                 document.getElementById('category_name').value = data.category_name;
+                $('#edit').modal('show');
             }
-            $('#category_edit').modal('show')
         }
     })
 }

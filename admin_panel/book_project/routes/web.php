@@ -22,6 +22,9 @@ use App\Http\Controllers\SettingsController\ContactController;
 use App\Http\Controllers\SettingsController\LogoController;
 use App\Http\Controllers\SettingsController\SeoController;
 use App\Http\Controllers\SettingsController\SocialController;
+use App\Http\Controllers\Writers\addWritersController;
+use App\Http\Controllers\Writers\editWritersController;
+use App\Http\Controllers\Writers\listWritersController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -77,6 +80,17 @@ Route::prefix('partners')->group(function() {
 
 });
 
+Route::prefix('writers')->group(function() {
+
+    Route::get('/writers_list', [listWritersController::class, "listWriters"])->name("listWriters");
+    Route::get('/writers_add', [addWritersController::class, "addWriters"])->name("addWriters");
+    Route::post('/writers_add', [addWritersController::class, "addWritersPost"])->name("addWritersPost");
+    Route::post('/writers_edit_view', [listWritersController::class, "viewWriters"]);
+    Route::post('/writers_edit', [editWritersController::class, "editWriters"])->name("editWriters");
+    Route::get('/writers_delete/{id}', [editWritersController::class, "deleteWriters"])->name("deleteWriters");
+
+});
+
 Route::prefix('questions')->group(function() {
 
     Route::get('/questions_list',[listQuestionsController::class, "listQuestions"])->name("listQuestions");
@@ -96,6 +110,7 @@ Route::prefix('blogs')->group(function() {
     Route::post('/blog_add',[BlogAddController::class, "BlogAddPost"])->name("BlogAddPost");
     Route::post('/blog_edit', [BlogEditController::class, "BlogEdit"])->name("BlogEdit");
     Route::get('/blog_delete/{id}', [BlogListController::class, "BlogDelete"])->name("BlogDelete");
+
 });
 
 Route::prefix('category')->group(function() {
@@ -106,4 +121,5 @@ Route::prefix('category')->group(function() {
     Route::post('/category_status', [CategoryListController::class, "CategoryListStatus"]);
     Route::post('/category_edit_view', [CategoryListController::class, "CategoryEditView"])->name('CategoryEditView');
     Route::post('/category_edit', [CategoryListController::class, "CategoryEdit"])->name("CategoryEdit");
+
 });

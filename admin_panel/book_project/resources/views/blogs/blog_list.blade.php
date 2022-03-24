@@ -151,7 +151,7 @@
                 <tr>
                   <th>Məzmun</th>
                   <td>
-                    <textarea class="form-control edit_contents" name="contents" id="edit_contents" cols="30" rows="10" name="contents"></textarea>
+                    <textarea class="form-control edit_contents" name="contents" id="edit_contents" cols="30" rows="10"></textarea>
                   </td>
                 </tr>
               </tbody>
