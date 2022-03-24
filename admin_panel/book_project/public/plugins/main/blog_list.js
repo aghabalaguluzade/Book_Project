@@ -37,25 +37,3 @@ const blog_delete = (id) => {
         }
       });
 }
-
-
-const blog_edit = (id,url) => {
-    
-    $.ajax({
-        type: "POST",
-        url: "/blogs/blog_view",
-        data: {
-            _token,
-            id
-        },
-        success: function(data) {
-            document.getElementById('edit_img').innerHTML = `<img src="${url+data.img}" style="height:150px; width:auto;" />`;
-            document.getElementById('edit_title').value = data.title;
-            document.getElementById('edit_author').value = data.author;
-            document.getElementById('edit_status').value = data.status;
-            document.getElementsByClassName('note-editable')[0].innerHTML = data.contents;
-            document.getElementById('edit_id').value = id;
-            $('#blog_modal_edit').modal('show')
-        }
-    });
-} 

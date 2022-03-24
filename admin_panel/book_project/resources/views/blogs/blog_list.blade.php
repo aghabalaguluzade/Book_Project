@@ -39,7 +39,7 @@
                 <td>
                     <button class="btn btn-outline-danger btn-sm" onclick="blog_delete({{ $blog->id }})">Sil</button>
                     <button class="btn btn-outline-info btn-sm" onclick="blog_view({{ $blog->id }}, '{{ asset('') }}')">Bax</button>
-                    <button class="btn btn-outline-info btn-sm" onclick="blog_edit({{ $blog->id }}, '{{ asset('') }}')">Redaktə Et</button>
+                    <a href="{{ route('BlogEditIndex', $blog->id) }}"><button class="btn btn-outline-info btn-sm">Redaktə Et</button></a>
                 </td>
               </tr>
               
@@ -99,82 +99,10 @@
   </div>
 
 
-  <div class="modal fade" id="blog_modal_edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Bloq Redaktə Et</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form action="{{ route('BlogEdit') }}" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="id" value="" id="edit_id" />
-            @csrf
-            <table class="table table-responsive-sm">
-              <tbody>
-                <tr>
-                  <th>Şəkil</th>
-                  <td id="edit_img"></td>
-                </tr>
-                <tr>
-                  <th>Şəkili dəyişmək üçün seçin</th>
-                  <td>
-                    <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="img" name="img" />
-                      <label class="custom-file-label" for="img">Şəkil Seç</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <th>Başlıq</th>
-                  <td>
-                    <input type="text" class="form-control"  id="edit_title" name="title" />
-                  </td>
-                </tr>
-                <tr>
-                  <th>Yazıcı</th>
-                  <td>
-                    <input type="text" class="form-control" id="edit_author" name="author" />
-                  </td>
-                </tr>
-                <tr>
-                  <th>Status</th>
-                  <td>
-                    <select class="form-control" name="status" id="edit_status">
-                      <option value="1" >Aktiv</option>
-                      <option value="0">Deaktiv</option>
-                    </select>
-                  </td>
-                </tr>
-                <tr>
-                  <th>Məzmun</th>
-                  <td>
-                    <textarea class="form-control edit_contents" name="contents" id="edit_contents" cols="30" rows="10"></textarea>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="modal-footer">
-              <button class="btn btn-info">Redaktə Et</button>
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Bağla</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
 @endsection
 @section('head')
 <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
-<link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
 <style>
-
-  .note-editable {
-    height: 300px;
-  }
 
 </style>
 @endsection
@@ -200,10 +128,14 @@
     });
   </script>
   <script src="{{ asset('plugins/main/blog_list.js') }}"></script>
-  <script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
-<script>
-  $(function () {
-    $('.edit_contents').summernote()
-  })
-</script>
+  <script>
+    tinymce.init({
+      selector: '#edit_contents',
+      plugins: 'a11ychecker advcode casechange export formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+      toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter pageembed permanentpen table',
+      toolbar_mode: 'floating',
+      tinycomments_mode: 'embedded',
+      tinycomments_author: 'Author name',
+    });
+  </script>
 @endsection

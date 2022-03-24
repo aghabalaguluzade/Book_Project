@@ -18,11 +18,10 @@ class BlogAddController extends Controller
         $request->validate([
             'title' => 'required|max:255',
             'author' => 'required|max:255',
-            'img' => 'image|mimes:png,jpg,jpeg,gif,jfif,webp|max:1024',
+            'img' => 'required|image|mimes:png,jpg,jpeg,gif,jfif,webp|max:1024',
             'contents' => 'required'
         ]);
 
-        if($request->hasFile('img')) {
             $image = $request->file('img');
             $directory = 'uploads/blog/';
             $img_name = Str::slug($request->title).'.' . $image->getClientOriginalExtension();
@@ -37,7 +36,6 @@ class BlogAddController extends Controller
             ]);
 
             return redirect()->back()->with($data ? "success" : "error", true);
-           
-        }
+    
     }
 }

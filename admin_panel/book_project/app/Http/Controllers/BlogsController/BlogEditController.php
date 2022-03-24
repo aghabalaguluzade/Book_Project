@@ -9,6 +9,12 @@ use Illuminate\Support\Str;
 
 class BlogEditController extends Controller
 {
+    public function BlogEditIndex($id) {
+        $data = Blog::find($id);
+        if(!$data) return redirect()->back()->with("not_found", true);
+        return view('blogs.blog_edit', compact('data'));
+    }
+
     public function BlogEdit(Request $request) {
 
         $request->validate([
@@ -18,7 +24,7 @@ class BlogEditController extends Controller
         ]);
 
         $data = Blog::find($request->id);
-        if(!$data) return redirect()->back();
+        if(!$data) return redirect()->route('BlogList')->with("not_found", true);
 
         if($request->hasFile("img")) {
 

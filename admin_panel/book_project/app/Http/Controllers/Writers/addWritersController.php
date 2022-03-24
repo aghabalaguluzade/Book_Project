@@ -30,15 +30,16 @@ class addWritersController extends Controller
             
             $image->move($directory,$img_name);
             $img_name = $directory.$img_name;
-
-            $writers = Writers::create([
-                'writer_name' => $request->writer_name,
-                'writer_about' => $request->writer_about,
-                'writer_img' => $img_name
-            ]);
-
-            return redirect()->back()->with($writers ? "success" : "error", true);
-
         }
+    
+        $writers = Writers::create([
+            'writer_name' => $request->writer_name,
+            'writer_about' => $request->writer_about,
+            'writer_img' => $img_name ?? null
+        ]);
+
+        return redirect()->back()->with($writers ? "success" : "error", true);
+
+    
     }
 }

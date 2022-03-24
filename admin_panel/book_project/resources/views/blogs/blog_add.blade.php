@@ -51,20 +51,16 @@
 
 @endsection
 @section('head')
-<link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
-<style>
-
-  .note-editable {
-    height: 300px
-  }
-
-</style>
 @endsection
 @section('footer')
-<script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
 <script>
-  $(function () {
-    $('#contents').summernote()
-  })
+  tinymce.init({
+    selector: '#contents',
+    plugins: 'a11ychecker advcode casechange export formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+    toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter pageembed permanentpen table',
+    toolbar_mode: 'floating',
+    tinycomments_mode: 'embedded',
+    tinycomments_author: 'Author name',
+  });
 </script>
 @endsection

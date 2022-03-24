@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2022 at 12:33 AM
+-- Generation Time: Mar 25, 2022 at 12:09 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -43,7 +43,8 @@ CREATE TABLE `blog` (
 --
 
 INSERT INTO `blog` (`id`, `title`, `contents`, `img`, `author`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'İlk Bloq', 'Bu mənim əlavə etdiyim ilk bloqdur', 'uploads/blog/ilk-bloq.png', 'Quluzadə Ağabala', '0', '2022-02-28 01:16:22', '2022-02-28 22:21:04');
+(1, 'İlk Bloq', '<p>Bu mənim əlavə etdiyim ilk bloqdur.</p>', 'uploads/blog/ilk-bloq.png', 'Quluzadə Ağabala', '0', '2022-02-28 01:16:22', '2022-03-25 02:54:14'),
+(4, 'İkinci Bloq', '<p>Bu ikinci bloqdur.</p>', 'uploads/blog/ikinci-bloq.jpg', 'Quluzadə Ağabala', '0', '2022-03-25 02:56:03', '2022-03-25 02:56:30');
 
 -- --------------------------------------------------------
 
@@ -89,7 +90,9 @@ CREATE TABLE `category` (
 
 INSERT INTO `category` (`id`, `category_name`, `parent_id`, `slug`, `status`, `created_at`, `updated_at`) VALUES
 (1, 'Uşaq Kitabları', 0, 'usaq-kitablari', '0', '2022-03-12 18:23:38', '2022-03-13 00:10:57'),
-(2, 'Balaca şahzadə', 1, 'balaca-sahzade', '0', '2022-03-12 18:25:12', '2022-03-13 00:10:57');
+(2, 'Balaca şahzadə', 1, 'balaca-sahzade', '0', '2022-03-12 18:25:12', '2022-03-13 00:10:57'),
+(3, 'Bioqrafiyalar', 0, 'bioqrafiyalar', '0', '2022-03-24 00:20:33', '2022-03-24 00:20:33'),
+(4, 'Avtobioqrafiya', 0, 'avtobioqrafiya', '0', '2022-03-24 00:23:30', '2022-03-24 00:23:30');
 
 -- --------------------------------------------------------
 
@@ -249,7 +252,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `seo_title`, `seo_description`, `seo_keywords`, `logo`, `favicon`, `contact_address`, `contact_email`, `contact_phone`, `social_instagram`, `social_facebook`, `social_twitter`) VALUES
-(1, 'Book Home Store', 'Book Home Kitab Satışı və Çatdırılması', 'Book Home, kitab, satış, kitab satışı, kitablar', 'uploads/logo/logo.png', 'uploads/logo/favicon.jpg', 'Bakı', 'agabala.oyunda@gmail.com', '0504946684', 'https://www.instagram.com/quluzade_agabala/', 'https://www.facebook.com/profile.php?id=100008415033478', 'https://twitter.com/home');
+(1, 'Book Home Store', 'Book Home Kitab Satışı və Çatdırılması', 'Book Home, kitab, satış, kitab satışı, kitablar', 'uploads/logo/logo.png', 'uploads/logo/favicon.jpg', 'Azərbaycan, Bakı, Buzovna', 'agabala.oyunda@gmail.com', '0504946684', 'https://www.instagram.com/quluzade_agabala/', 'https://www.facebook.com/profile.php?id=100008415033478', 'https://twitter.com/home');
 
 -- --------------------------------------------------------
 
@@ -267,6 +270,29 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `writers`
+--
+
+CREATE TABLE `writers` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `writer_name` varchar(255) NOT NULL,
+  `writer_img` varchar(255) DEFAULT NULL,
+  `writer_about` text DEFAULT NULL,
+  `writer_status` enum('0','1') NOT NULL DEFAULT '0',
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `writers`
+--
+
+INSERT INTO `writers` (`id`, `writer_name`, `writer_img`, `writer_about`, `writer_status`, `created_at`, `updated_at`) VALUES
+(1, 'Fyodor Dostoyevski', 'uploads/writers/fyodor-dostoyevski.jpg', 'Fyodor Mixayloviç Dostoyevski — rus yazıçı, dünya ədəbiyyatının ən böyük yazıçısı. Adı tarixdə 100 ən çox öyrənilmiş şəxsiyyətlər siyahısına daxil edilib. Dostoyevskinin əsərləri Ceyms Coys, Virciniya Vulf, Fridrix Nitsşe, Ernest Heminquey, Knut Hamsun, Lüdviq Vitgenşteyn, Alberto Moravia, Aleksandr Soljenitsın, Çarlz Bukovski, Marsel Prust, Ayn Rand, Ziqmund Freyd, Frans Kafka, Orxan Pamuk və Lev Tolstoy kimi bir çox yazıçıların əsərlərinə işıq tutdu. Fridrix Nitsşe \"O mənim psixianaliz haqqında bir şeylər öyrəndiyim yeganə insandır. O mənim həyatımın ən böyük sevincidr.\"', '0', '2022-03-24 02:10:22', '2022-03-24 19:45:07');
 
 --
 -- Indexes for dumped tables
@@ -349,6 +375,12 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
+-- Indexes for table `writers`
+--
+ALTER TABLE `writers`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -356,7 +388,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `carousel_banner`
@@ -368,7 +400,7 @@ ALTER TABLE `carousel_banner`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -417,6 +449,12 @@ ALTER TABLE `settings`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `writers`
+--
+ALTER TABLE `writers`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

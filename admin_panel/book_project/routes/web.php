@@ -108,7 +108,8 @@ Route::prefix('blogs')->group(function() {
     Route::post('/blog_view', [BlogListController::class, "BlogView"]);
     Route::get('/blog_add',[BlogAddController::class, "BlogAddIndex"])->name("BlogAddIndex");
     Route::post('/blog_add',[BlogAddController::class, "BlogAddPost"])->name("BlogAddPost");
-    Route::post('/blog_edit', [BlogEditController::class, "BlogEdit"])->name("BlogEdit");
+    Route::get('/blog_edit/{id}', [BlogEditController::class, "BlogEditIndex"])->name("BlogEditIndex");
+    Route::post('/blog_edit/{id}', [BlogEditController::class, "BlogEdit"])->name("BlogEdit");
     Route::get('/blog_delete/{id}', [BlogListController::class, "BlogDelete"])->name("BlogDelete");
 
 });
