@@ -18,4 +18,9 @@ class Category extends Model
         ])->first();
         return $category ? $category->category_name : "--";
     }
+
+    public function getSubCategory($id) {
+        // return count(Category::where("parent_id",$id)->get()) > 0 ? Category::where("parent_id",$id)->get() : null;
+        return Category::where("parent_id",$id)->get();
+    }
 }

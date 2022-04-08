@@ -250,6 +250,33 @@
               </li>
             </ul>
           </li>
+
+          {{-- Kitablar --}}
+
+          <li class="nav-item @if(Request::segment(1) == "books") menu-open @endif">
+            <a href="" class="nav-link @if(Request::segment(1) == "books") active @endif">
+              <i class="fas fa-book"></i>
+              <p>
+                Kitablar
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('BooksList') }}" class="nav-link @if(Request::segment(2) == "books-list") active @endif" href="{{ route('BooksList') }}">
+                  <i class="fas fa-book"></i>
+                  <p>Siyahı</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('BooksAdd') }}" class="nav-link @if(Request::segment(2) == "books-add") active @endif" href="{{ route('BooksAdd') }}">
+                  <i class="fas fa-book"></i>
+                  <p>Əlavə Et</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
         </ul>
       </nav>
     </div>

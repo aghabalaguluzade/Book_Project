@@ -30,7 +30,7 @@
                     <a href="{{ route("FeatureSectionEdit", $feature->id) }}"><button class="btn btn-outline-info btn-sm">Redaktə Et</button></a>
                 </td>
               </tr>
-              
+
             @endforeach
     </tbody>
       </table>

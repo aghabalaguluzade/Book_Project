@@ -6,6 +6,9 @@ use App\Http\Controllers\BannerController\BannerControllerList;
 use App\Http\Controllers\BlogsController\BlogAddController;
 use App\Http\Controllers\BlogsController\BlogEditController;
 use App\Http\Controllers\BlogsController\BlogListController;
+use App\Http\Controllers\BooksController\BooksAddController;
+use App\Http\Controllers\BooksController\BooksEditController;
+use App\Http\Controllers\BooksController\BooksListController;
 use App\Http\Controllers\CategoryController\CategoryAddController;
 use App\Http\Controllers\CategoryController\CategoryListController;
 use App\Http\Controllers\FeatureSection\FeatureSectionAdd;
@@ -122,5 +125,15 @@ Route::prefix('category')->group(function() {
     Route::post('/category_status', [CategoryListController::class, "CategoryListStatus"]);
     Route::post('/category_edit_view', [CategoryListController::class, "CategoryEditView"])->name('CategoryEditView');
     Route::post('/category_edit', [CategoryListController::class, "CategoryEdit"])->name("CategoryEdit");
+
+});
+
+Route::prefix('books')->group(function() {
+
+    Route::get('/books-list',[BooksListController::class, "BooksList"])->name("BooksList");
+    Route::get('/books-add',[BooksAddController::class, "BooksAdd"])->name("BooksAdd");
+    Route::post('/books-add',[BooksAddController::class, "BooksAddPost"])->name("BooksAddPost");
+    Route::get('/books-edit/{id}',[BooksEditController::class, "BooksEdit"])->name("BooksEdit");
+    Route::post('/books-edit/{id}',[BooksEditController::class, "BooksEditPost"])->name("BooksEditPost");
 
 });

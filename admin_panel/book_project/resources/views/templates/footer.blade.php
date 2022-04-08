@@ -3,12 +3,8 @@
 					    <div class="brand-slider">
   
   <div id="banner0" class="swiper-container">
-    <div class="swiper-wrapper">      <div class="swiper-slide"><a href="#"><img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/brand/br6-170x58.jpg" alt="br6" class="img-responsive" /></a></div>
-            <div class="swiper-slide"><a href="#"><img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/brand/br5-170x58.jpg" alt="br5" class="img-responsive" /></a></div>
-            <div class="swiper-slide"><a href="#"><img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/brand/br4-170x58.jpg" alt="br4" class="img-responsive" /></a></div>
-            <div class="swiper-slide"><a href="#"><img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/brand/br1-170x58.jpg" alt="br1" class="img-responsive" /></a></div>
-            <div class="swiper-slide"><a href="#"><img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/brand/br2-170x58.jpg" alt="br2" class="img-responsive" /></a></div>
-            <div class="swiper-slide"><a href="#"><img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/brand/br3-170x58.jpg" alt="br3" class="img-responsive" /></a></div>
+    <div class="swiper-wrapper">
+			<div class="swiper-slide"><a href="#"><img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/brand/br6-170x58.jpg" alt="br6" class="img-responsive" /></a></div>
       </div>
   </div>
   
@@ -52,11 +48,11 @@ $('#banner0').swiper({
 <a class="logo-footer" href="#"><img src="image/catalog/logo/logo.png" alt="logo-footer"></a>
 
 <ul class="list-unstyled text-content">
-<li class="address"><p>Address:</p><p>Example Street 98, HH2 
+<li class="address"><p>Ünvan:</p><p>Example Street 98, HH2 
 BacHa, New York, USA</p></li>
 
-<li class="phone"><p>Phone:</p><p>+18088 234 5678</p></li>
-<li class="email"><p>Email:</p><p>suport@plazathemes.com</p></li>
+<li class="phone"><p>Telefon:</p><p>+18088 234 5678</p></li>
+<li class="email"><p>E-poçt:</p><p>suport@plazathemes.com</p></li>
 </ul>
 </div> 		
 </div>							 									 									 									 									 									 									 									 									 									 									 									 									 									
@@ -64,7 +60,7 @@ BacHa, New York, USA</p></li>
 													
 			</div>
 			<div class="col2 col-md-3 col-sm-6 col-xs-12 col-footer">
-				<div class="footer-title"><h5>Information</h5></div>
+				<div class="footer-title"><h5>İnformasiya</h5></div>
 				<div class="footer-content">
 					<ul class="list-unstyled text-content">
 											  					  <li><a href="http://smartbook4.demo.towerthemes.com/index.php?route=information/information&amp;information_id=4">About Us</a></li>
@@ -172,14 +168,11 @@ function email_unsubscribe(){
 </div>
   
 													    										  										  										  <div class="follow">
-<label>Stay Connected</label>
+<label>Sosial Şəbəkələr</label>
 <ul class="link-follow">
-<li><a class="facebook ion-social-facebook" title="Facebook" href="https://www.facebook.com/plazathemes1"><span>facebook</span></a></li>
-<li><a class="twitter ion-social-twitter" title="Twitter" href="https://twitter.com/plazathemes"><span>twitter</span></a></li>
-<li><a class="google ion-social-googleplus-outline" title="Google" href="#"><span>google </span></a></li>
-
-<li><a class="youtube ion-social-youtube" title="Youtube" href="https://www.youtube.com/user/plazathemes"><span>youtube </span></a></li>
-
+<li><a class="facebook ion-social-facebook" title="Facebook" href="https://www.facebook.com/plazathemes1"><span>Facebook</span></a></li>
+<li><a class="twitter ion-social-twitter" title="Twitter" href="https://twitter.com/plazathemes"><span>Twitter</span></a></li>
+<li><a class="google ion-social-googleplus-outline" title="Google" href="#"><span>Google</span></a></li>
 </ul>
 </div> 									 									 									
   
@@ -199,7 +192,7 @@ function email_unsubscribe(){
 </div> 									 									 									
   
 								<div class="footer-copyright">
-					<p>Copyright &copy; 2019 <a href="http://www.plazathemes.com">PlazaThemes</a>. All Right Reserved.<span>Design by Plazathemes.com</span></p>
+					<p>Copyright &copy; {{ date("Y") }} <a href="/">Book House</a>. Bütün Hüquqlar Qorunur.<span>Design by Quluzadə Ağabala</span></p>
 				</div>
 			</div>
 		</div>

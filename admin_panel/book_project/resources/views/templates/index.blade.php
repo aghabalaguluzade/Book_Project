@@ -1,9 +1,8 @@
 @extends('templates.master')
 @section('content')
 
-<div id="content">
-				
-	<div class="main-row slider-group">
+<div id="content">				
+<div class="main-row slider-group">
 <div class="container">
 <div class="row">
 <div class="main-col col-sm-12 col-md-12">
@@ -12,11 +11,10 @@
 <div class="newletter-popup">
 <div id="boxes" class="newletter-container">
 <div id="dialog" class="window">
-
 </div>	
 </div><!-- /.box -->
 </div>
-																		<div id="ajax-login-block">
+<div id="ajax-login-block">
 </div>
 <div id="ajax-loader">
 <img src="http://smartbook4.demo.towerthemes.com/image/catalog/AjaxLoader.gif" alt="" />
@@ -319,31 +317,24 @@ if ($('#form-upload input[name=\'file\']').val() != '') {
 <div class="opc-hidden">
 <input type="hidden" id="input-opc-status" value="1" />
 </div>
-
-																								</div>
-										</div>
-									<div class="row sub-row">
-												<div class="sub-col col-sm-12 col-md-3">
-														</div>
-												<div class="sub-col col-sm-12 col-md-9">
-																											<div class="banner7">
+</div>
+</div>
+<div class="row sub-row">
+<div class="sub-col col-sm-12 col-md-3">
+</div>
+<div class="sub-col col-sm-12 col-md-9">
+<div class="banner7">
 <div class= "oc-banner7-container">
 <div class="flexslider oc-nivoslider">
 <div class="oc-loading"></div>
 <div id="oc-inivoslider1" class="nivoSlider">
-
-																								<a  href="#">
-							<img style="display: none;" src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/slider/slider1-smartbooks4-870x494.jpg" alt="" title="#banner7-caption2"  />
-							</a>
-																					<a  href="#">
-							<img style="display: none;" src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/slider/slider2-smartbooks4-870x494.jpg" alt="" title="#banner7-caption3"  />
-							</a>
-						
-</div>
-
-						
-									
-														
+	<a  href="#">
+	<img style="display: none;" src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/slider/slider1-smartbooks4-870x494.jpg" alt="" title="#banner7-caption2"  />
+	</a>
+	<a  href="#">
+	<img style="display: none;" src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/slider/slider2-smartbooks4-870x494.jpg" alt="" title="#banner7-caption3"  />
+	</a>				
+</div>										
 					
 					<div id="banner7-caption2" class="banner7-caption nivo-html-caption nivo-caption move-slides-effect" data-class="slide-movetype2">
 		<div class="timeloading"></div>
@@ -383,16 +374,15 @@ leave summary</p>
 						</div>
 												
 					<div class="banner7-des">
-						<p>Cover up front of book and 
-leave summary</p>
+						<p>Cover up front of book and leave summary</p>
 
 					</div>
 														<div class="banner7-readmore">
 							<a class="link-more" href="#">Shopping Now</a>
-						</div>
-												</div>
-		</div>
-	</div>
+</div>
+</div>
+</div>
+</div>
 			<script >
 	$(window).load(function() {
 		$('#oc-inivoslider1').nivoSlider({
@@ -420,19 +410,18 @@ leave summary</p>
 </div>
 </div>
 </div>
-																								</div>
-										</div>
-												</div>
-				</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="main-row ">
 <div class="container">
 <div class="row">
-					<div class="main-col col-sm-12 col-md-12">
-														<div class="row sub-row">
-												<div class="sub-col col-sm-12 col-md-12">
-																																																																					<div class="policy-block">
+<div class="main-col col-sm-12 col-md-12">
+<div class="row sub-row">
+<div class="sub-col col-sm-12 col-md-12">																																																															<div class="policy-block">
 <div class="inner">
 <div class="col ">
 <div class="box">
@@ -465,8 +454,8 @@ leave summary</p>
 <div class="box">
 
 <div class="text">
-<h4>Help &amp; Support</h4>
-<p>Call us : + 0123.4567.89</p>
+<h4>Kömək &amp; Dəstək</h4>
+<p>Zəng edin bizə : + 0123.4567.89</p>
 </div>
 </div>
 </div>
@@ -487,546 +476,67 @@ leave summary</p>
 </div>
 <div class="clearfix"></div>  
 </div> 									 									 									
-																								</div>
-										</div>
-												</div>
-				</div>
+</div>
+</div>												
+</div>
+</div>
 </div>
 </div>
 <div class="main-row ">
 <div class="container">
 <div class="row">
-					<div class="main-col col-sm-12 col-md-12">
-														<div class="row sub-row">
-												<div class="sub-col col-sm-12 col-md-3">
-																											<div class="tt_product_module multi-rows list-module2" id="product_module703">
+<div class="main-col col-sm-12 col-md-12">
+<div class="row sub-row">
+<div class="sub-col col-sm-12 col-md-3">
+<div class="tt_product_module multi-rows list-module2" id="product_module703">
 <div class="module-title">
-
 
 	  <h2>Best Sellers</h2>
 		  
 </div>
-
-
-																		<div class="box-style">
+<div class="box-style">
 <div class="col-product">	
 <div class="owl-container">
-<div class="tt-product  owl-carousel owl-theme ">	
-					<!-- Grid -->
-						<div class="row_items  odd">
-									<!-- List -->
-<div class="product-layout list-style ">
+<div class="tt-product  owl-carousel owl-theme ">
+<div class="row_items  odd">
+
+	{{-- SOL TEREF BEST SELLER YERI --}}
+
+<div class="product-layout list-style">
 		<div class="product-thumb transition">
 			<div class="item">
 				<div class="item-inner">
 					<div class="image images-container">
 						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=56" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/11-600x600.jpg" alt="Koss KPH7 Lightweight  Portable Headphone" title="Koss KPH7 Lightweight  Portable Headphone" class="img-responsive" />
+							<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/11-600x600.jpg" alt="Koss KPH7 Lightweight  Portable Headphone" title="Koss KPH7 Lightweight  Portable Headphone" class="img-responsive" />
 						</a>				  
 						<div class="box-label">
-																	
-							
-						</div>
-						
-														</div><!-- image -->
+						</div>	
+					</div>
 					<div class="caption">
 						<div class="inner">
-																	<p class="manufacture-product">
+							<p class="manufacture-product">
 								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
 							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=56">Koss KPH7 Lightweight  Portable Headphone</a></h4> 
+								<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=56">Koss KPH7 Lightweight  Portable Headphone</a></h4> 
 							<div class="ratings">
 								<div class="rating-box">
-																																																																																										<div class="rating2">rating</div>
-																																																																																																				</div>
-							</div>					
-							
-							
-																	
-																												<div class="price-box">
+								<div class="rating2">rating</div>																																																																																						</div>
+							</div>												
+								<div class="price-box">
 								<label>Price:</label>
-																				<p class="special-price"><span class="price">$70.00</span></p>
+									<p class="special-price"><span class="price">$70.00</span></p>
 									<p class="old-price"><span class="price">$75.00</span></p>						  
-																														</div>
-																																					
-							
-																</div>	
-					</div><!-- caption -->
+							</div>
+						</div>	
+					</div>
 				</div>
 			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-												<!-- Grid -->
-									<!-- List -->
-<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=54" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/12-600x600.jpg" alt="Koss Porta Pro On Ear  Headphones " title="Koss Porta Pro On Ear  Headphones " class="img-responsive" />
-						</a>				  
-						<div class="box-label">
-																	
-							
-						</div>
-						
-														</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=54">Koss Porta Pro On Ear  Headphones </a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																																																															<div class="rating5">rating</div>
-																															</div>
-							</div>					
-							
-							
-																	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="special-price"><span class="price">$65.00</span></p>
-									<p class="old-price"><span class="price">$70.00</span></p>						  
-																														</div>
-																																					
-							
-																</div>	
-					</div><!-- caption -->
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-												<!-- Grid -->
-									<!-- List -->
-<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=51" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/8-600x600.jpg" alt="Bose SoundLink Micro  Bluetooth Speaker" title="Bose SoundLink Micro  Bluetooth Speaker" class="img-responsive" />
-						</a>				  
-						<div class="box-label">
-																	
-							
-						</div>
-						
-														</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=9">Canon</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=51">Bose SoundLink Micro  Bluetooth Speaker</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																	<div class="rating3">rating</div>
-																																																																													</div>
-							</div>					
-							
-							
-																	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="regular-price"><span class="price">$100.00</span></p>
-																														</div>
-																																					
-							
-																</div>	
-					</div><!-- caption -->
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-												<!-- Grid -->
-									<!-- List -->
-<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=138" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/4-600x600.jpg" alt="Beats EP Wired On-Ear  Headphone-Black" title="Beats EP Wired On-Ear  Headphone-Black" class="img-responsive" />
-						</a>				  
-						<div class="box-label">
-																	
-							
-						</div>
-						
-														</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=9">Canon</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=138">Beats EP Wired On-Ear  Headphone-Black</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																																								<div class="rating4">rating</div>
-																																																						</div>
-							</div>					
-							
-							
-																	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="regular-price"><span class="price">$100.00</span></p>
-																														</div>
-																																					
-							
-																</div>	
-					</div><!-- caption -->
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								</div>
-									<!-- Grid -->
-						<div class="row_items  even">
-									<!-- List -->
-<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=53" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/15-600x600.jpg" alt="Sony KD55X72 55-Inch  4k Ultra HD" title="Sony KD55X72 55-Inch  4k Ultra HD" class="img-responsive" />
-						</a>				  
-						<div class="box-label">
-																	
-							
-						</div>
-						
-														</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=5">HTC</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=53">Sony KD55X72 55-Inch  4k Ultra HD</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																	<div class="rating3">rating</div>
-																																																																													</div>
-							</div>					
-							
-							
-																	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="special-price"><span class="price">$64.00</span></p>
-									<p class="old-price"><span class="price">$65.00</span></p>						  
-																														</div>
-																																					
-							
-																</div>	
-					</div><!-- caption -->
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-												<!-- Grid -->
-									<!-- List -->
-<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/2-600x600.jpg" alt="Apple iPad with Retina  Display MD510LL/A " title="Apple iPad with Retina  Display MD510LL/A " class="img-responsive" />
-						</a>				  
-						<div class="box-label">
-																	
-							
-						</div>
-						
-														</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=7">Hewlett-Packard</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52">Apple iPad with Retina  Display MD510LL/A </a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																												<div class="rating0">rating</div>
-																																																																																																																																																		</div>
-							</div>					
-							
-							
-																	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="special-price"><span class="price">$55.00</span></p>
-									<p class="old-price"><span class="price">$60.00</span></p>						  
-																														</div>
-																																					
-							
-																</div>	
-					</div><!-- caption -->
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-												<!-- Grid -->
-									<!-- List -->
-<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=57" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/1-600x600.jpg" alt="Amazon Cloud Cam  Security Camera" title="Amazon Cloud Cam  Security Camera" class="img-responsive" />
-						</a>				  
-						<div class="box-label">
-																	
-							
-						</div>
-						
-														</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=57">Amazon Cloud Cam  Security Camera</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																																								<div class="rating4">rating</div>
-																																																						</div>
-							</div>					
-							
-							
-																	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="regular-price"><span class="price">$80.00</span></p>
-																														</div>
-																																					
-							
-																</div>	
-					</div><!-- caption -->
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-												<!-- Grid -->
-									<!-- List -->
-<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=59" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/3-600x600.jpg" alt="Apple iPhone SE 16GB  Factory Unlocked" title="Apple iPhone SE 16GB  Factory Unlocked" class="img-responsive" />
-						</a>				  
-						<div class="box-label">
-																	
-							
-						</div>
-						
-														</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=59">Apple iPhone SE 16GB  Factory Unlocked</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																	<div class="rating3">rating</div>
-																																																																													</div>
-							</div>					
-							
-							
-																	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="regular-price"><span class="price">$85.00</span></p>
-																														</div>
-																																					
-							
-																</div>	
-					</div><!-- caption -->
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								</div>
-									<!-- Grid -->
-						<div class="row_items  odd">
-									<!-- List -->
-<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=62" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/5-600x600.jpg" alt="Beats Solo Wireless On-Ear Headphone" title="Beats Solo Wireless On-Ear Headphone" class="img-responsive" />
-						</a>				  
-						<div class="box-label">
-																	
-							
-						</div>
-						
-														</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=7">Hewlett-Packard</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=62">Beats Solo Wireless On-Ear Headphone</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																																																															<div class="rating5">rating</div>
-																															</div>
-							</div>					
-							
-							
-																	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="regular-price"><span class="price">$199.99</span></p>
-																														</div>
-																																					
-							
-																</div>	
-					</div><!-- caption -->
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-												<!-- Grid -->
-									<!-- List -->
-<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=55" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/7-600x600.jpg" alt="Beats Solo3 Wireless  On-Ear Headphones" title="Beats Solo3 Wireless  On-Ear Headphones" class="img-responsive" />
-						</a>				  
-						<div class="box-label">
-																	
-							
-						</div>
-						
-														</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=10">Sony</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=55">Beats Solo3 Wireless  On-Ear Headphones</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																																								<div class="rating4">rating</div>
-																																																						</div>
-							</div>					
-							
-							
-																	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="regular-price"><span class="price">$1,000.00</span></p>
-																														</div>
-																																					
-							
-																</div>	
-					</div><!-- caption -->
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-												<!-- Grid -->
-									<!-- List -->
-<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=61" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/6-600x600.jpg" alt="Beats Solo2 Solo 2  Wired On-Ear Headphone" title="Beats Solo2 Solo 2  Wired On-Ear Headphone" class="img-responsive" />
-						</a>				  
-						<div class="box-label">
-																	
-							
-						</div>
-						
-														</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=61">Beats Solo2 Solo 2  Wired On-Ear Headphone</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																	<div class="rating3">rating</div>
-																																																																													</div>
-							</div>					
-							
-							
-																	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="regular-price"><span class="price">$500.00</span></p>
-																														</div>
-																																					
-							
-																</div>	
-					</div><!-- caption -->
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-												<!-- Grid -->
-									<!-- List -->
-<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=60" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/10-600x600.jpg" alt="Kodak PIXPRO Astro Zoom AZ421 16 MP" title="Kodak PIXPRO Astro Zoom AZ421 16 MP" class="img-responsive" />
-						</a>				  
-						<div class="box-label">
-																	
-							
-						</div>
-						
-														</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=60">Kodak PIXPRO Astro Zoom AZ421 16 MP</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																																								<div class="rating4">rating</div>
-																																																						</div>
-							</div>					
-							
-							
-																	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="regular-price"><span class="price">$95.00</span></p>
-																														</div>
-																																					
-							
-																</div>	
-					</div><!-- caption -->
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								</div>
-				
+		</div>
+	</div>
+
+
+</div>				
 </div>
 </div>
 </div>
@@ -1545,392 +1055,6 @@ $(this).addClass('active');
 <a href="index.php?route=product/special"><img src="image/catalog/cmsblock/img-middle-smartbooks4.jpg" alt="img-middle-smartbooks4"></a>
 </div>
 </div> 									
-																		<div class="tt_product_module occountdown_module" id="product_module817">
-<div class="module-title">
-
-
-	  <h2>Special offer</h2>
-		  
-</div>
-
-
-																		<div class="box-style">
-<div class="col-product">	
-<div class="owl-container">
-<div class="tt-product  owl-carousel owl-theme ">	
-					<!-- Grid -->
-						<div class="row_items  odd">
-										<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item" >
-				<div class="item-inner">
-					<div class="caption-top">
-						
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=7">Hewlett-Packard</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52">Apple iPad with Retina  Display MD510LL/A </a></h4>
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/2-600x600.jpg" alt="Apple iPad with Retina  Display MD510LL/A " title="Apple iPad with Retina  Display MD510LL/A " class="img-responsive " />
-							</a>				  
-							<div class="box-label">	
-																			
-								
-							</div>
-							
-								
-								<div class="action-links">
-									
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('52');"><span>Add to Cart</span></button>
-																							
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('52');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('52');"><span>Compare this Product</span></button>
-										
-																																				<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52')"><span>Quick View</span></button>
-																																	</div>
-																</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-							<div class="ratings">
-								<div class="rating-box">
-																																												<div class="rating0">rating</div>
-																																																																																																																																																		</div>
-							</div>	
-							
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="special-price"><span class="price">$55.00</span></p>
-									<p class="old-price"><span class="price">$60.00</span></p>						  
-																														</div>
-																																																	<div class="label-product label_sale"><span>-8% </span></div>
-								 
-																	<p class="available">Available:<span class="ex-text">In Stock</span></p>
-							
-								
-							<div class="box-countdown"><div class="inner"><p class="text-hurryup">Ends in:</p><div id="Countdown52-1" class="box-timer"></div></div></div>																					<div class="product-des">Stop your co-workers in their tracks with the stunning new 30-inch diagonal HP LP3065 Flat Panel Mon..</div>
-																	</div>
-						</div><!-- caption -->
-					</div>
-					
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-									<script >
-			$(document).ready(function () {
-			$('#Countdown52-1').countdown({
-			until: new Date(2024, 03-1, 30, 00, 00, 00),
-			labels: ['years', 'months ', 'weeks', 'days', 'hours', 'mins', 'secs'],
-			labels1: ['years', 'months ', 'weeks', 'days', 'hours', 'mins', 'secs'],
-			});
-			//$('#Countdown52-1').countdown('pause');
-			});
-			</script>
-							</div><!-- product-layout -->
-								</div>
-									<!-- Grid -->
-						<div class="row_items  even">
-										<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item" >
-				<div class="item-inner">
-					<div class="caption-top">
-						
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=5">HTC</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=53">Sony KD55X72 55-Inch  4k Ultra HD</a></h4>
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=53" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/15-600x600.jpg" alt="Sony KD55X72 55-Inch  4k Ultra HD" title="Sony KD55X72 55-Inch  4k Ultra HD" class="img-responsive " />
-							</a>				  
-							<div class="box-label">	
-																			
-								
-							</div>
-							
-								
-								<div class="action-links">
-									
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('53');"><span>Add to Cart</span></button>
-																							
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('53');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('53');"><span>Compare this Product</span></button>
-										
-																																				<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=53')"><span>Quick View</span></button>
-																																	</div>
-																</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																	<div class="rating3">rating</div>
-																																																																													</div>
-							</div>	
-							
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="special-price"><span class="price">$64.00</span></p>
-									<p class="old-price"><span class="price">$65.00</span></p>						  
-																														</div>
-																																																	<div class="label-product label_sale"><span>-2% </span></div>
-								 
-																	<p class="available">Available:<span class="ex-text">In Stock</span></p>
-							
-								
-							<div class="box-countdown"><div class="inner"><p class="text-hurryup">Ends in:</p><div id="Countdown53-2" class="box-timer"></div></div></div>																					<div class="product-des">HTC Touch - in High Definition. Watch music videos and streaming content in awe-inspiring high defin..</div>
-																	</div>
-						</div><!-- caption -->
-					</div>
-					
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-									<script >
-			$(document).ready(function () {
-			$('#Countdown53-2').countdown({
-			until: new Date(2024, 06-1, 12, 00, 00, 00),
-			labels: ['years', 'months ', 'weeks', 'days', 'hours', 'mins', 'secs'],
-			labels1: ['years', 'months ', 'weeks', 'days', 'hours', 'mins', 'secs'],
-			});
-			//$('#Countdown53-2').countdown('pause');
-			});
-			</script>
-							</div><!-- product-layout -->
-								</div>
-									<!-- Grid -->
-						<div class="row_items  odd">
-										<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item" >
-				<div class="item-inner">
-					<div class="caption-top">
-						
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=54">Koss Porta Pro On Ear  Headphones </a></h4>
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=54" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/12-600x600.jpg" alt="Koss Porta Pro On Ear  Headphones " title="Koss Porta Pro On Ear  Headphones " class="img-responsive " />
-							</a>				  
-							<div class="box-label">	
-																			
-								
-							</div>
-							
-								
-								<div class="action-links">
-									
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('54');"><span>Add to Cart</span></button>
-																							
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('54');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('54');"><span>Compare this Product</span></button>
-										
-																																				<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=54')"><span>Quick View</span></button>
-																																	</div>
-																</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																																																															<div class="rating5">rating</div>
-																															</div>
-							</div>	
-							
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="special-price"><span class="price">$65.00</span></p>
-									<p class="old-price"><span class="price">$70.00</span></p>						  
-																														</div>
-																																																	<div class="label-product label_sale"><span>-7% </span></div>
-								 
-																	<p class="available">Available:<span class="ex-text">In Stock</span></p>
-							
-								
-							<div class="box-countdown"><div class="inner"><p class="text-hurryup">Ends in:</p><div id="Countdown54-3" class="box-timer"></div></div></div>																					<div class="product-des">Just when you thought iMac had everything, now there´s even more. More powerful Intel Core 2 Duo pro..</div>
-																	</div>
-						</div><!-- caption -->
-					</div>
-					
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-									<script >
-			$(document).ready(function () {
-			$('#Countdown54-3').countdown({
-			until: new Date(2024, 05-1, 08, 00, 00, 00),
-			labels: ['years', 'months ', 'weeks', 'days', 'hours', 'mins', 'secs'],
-			labels1: ['years', 'months ', 'weeks', 'days', 'hours', 'mins', 'secs'],
-			});
-			//$('#Countdown54-3').countdown('pause');
-			});
-			</script>
-							</div><!-- product-layout -->
-								</div>
-									<!-- Grid -->
-						<div class="row_items  even">
-										<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item" >
-				<div class="item-inner">
-					<div class="caption-top">
-						
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=56">Koss KPH7 Lightweight  Portable Headphone</a></h4>
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=56" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/11-600x600.jpg" alt="Koss KPH7 Lightweight  Portable Headphone" title="Koss KPH7 Lightweight  Portable Headphone" class="img-responsive " />
-							</a>				  
-							<div class="box-label">	
-																			
-								
-							</div>
-							
-								
-								<div class="action-links">
-									
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('56');"><span>Add to Cart</span></button>
-																							
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('56');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('56');"><span>Compare this Product</span></button>
-										
-																																				<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=56')"><span>Quick View</span></button>
-																																	</div>
-																</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																										<div class="rating2">rating</div>
-																																																																																																				</div>
-							</div>	
-							
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="special-price"><span class="price">$70.00</span></p>
-									<p class="old-price"><span class="price">$75.00</span></p>						  
-																														</div>
-																																																	<div class="label-product label_sale"><span>-7% </span></div>
-								 
-																	<p class="available">Available:<span class="ex-text">In Stock</span></p>
-							
-								
-							<div class="box-countdown"><div class="inner"><p class="text-hurryup">Ends in:</p><div id="Countdown56-4" class="box-timer"></div></div></div>																					<div class="product-des">iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name o..</div>
-																	</div>
-						</div><!-- caption -->
-					</div>
-					
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-									<script >
-			$(document).ready(function () {
-			$('#Countdown56-4').countdown({
-			until: new Date(2024, 05-1, 08, 00, 00, 00),
-			labels: ['years', 'months ', 'weeks', 'days', 'hours', 'mins', 'secs'],
-			labels1: ['years', 'months ', 'weeks', 'days', 'hours', 'mins', 'secs'],
-			});
-			//$('#Countdown56-4').countdown('pause');
-			});
-			</script>
-							</div><!-- product-layout -->
-								</div>
-									<!-- Grid -->
-						<div class="row_items  odd">
-										<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item" >
-				<div class="item-inner">
-					<div class="caption-top">
-						
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=140">Marshall Portable  Bluetooth Speaker</a></h4>
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=140" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/13-600x600.jpg" alt="Marshall Portable  Bluetooth Speaker" title="Marshall Portable  Bluetooth Speaker" class="img-responsive " />
-							</a>				  
-							<div class="box-label">	
-																			
-								
-							</div>
-							
-								
-								<div class="action-links">
-									
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('140');"><span>Add to Cart</span></button>
-																							
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('140');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('140');"><span>Compare this Product</span></button>
-										
-																																				<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=140')"><span>Quick View</span></button>
-																																	</div>
-																</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																																								<div class="rating4">rating</div>
-																																																						</div>
-							</div>	
-							
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="special-price"><span class="price">$65.00</span></p>
-									<p class="old-price"><span class="price">$70.00</span></p>						  
-																														</div>
-																																																	<div class="label-product label_sale"><span>-7% </span></div>
-								 
-																	<p class="available">Available:<span class="ex-text">In Stock</span></p>
-							
-								
-							<div class="box-countdown"><div class="inner"><p class="text-hurryup">Ends in:</p><div id="Countdown140-5" class="box-timer"></div></div></div>																					<div class="product-des">Just when you thought iMac had everything, now there´s even more. More powerful Intel Core 2 Duo pro..</div>
-																	</div>
-						</div><!-- caption -->
-					</div>
-					
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-									<script >
-			$(document).ready(function () {
-			$('#Countdown140-5').countdown({
-			until: new Date(2024, 05-1, 08, 00, 00, 00),
-			labels: ['years', 'months ', 'weeks', 'days', 'hours', 'mins', 'secs'],
-			labels1: ['years', 'months ', 'weeks', 'days', 'hours', 'mins', 'secs'],
-			});
-			//$('#Countdown140-5').countdown('pause');
-			});
-			</script>
-							</div><!-- product-layout -->
-								</div>
-				
-</div>
-</div>
-</div>
-</div>
-
-<div class="clearfix"></div>
-</div>
 <script >
 var product_owlCarousel = $("#product_module817 .tt-product");
 product_owlCarousel.owlCarousel({
@@ -2177,172 +1301,7 @@ $('.img-main-140').attr('src', img);
 $(".swiper-container-pimg-140 .img-slide").removeClass('active');
 $(this).addClass('active');
 });
-</script>
-																		<div class="testimonial-container">
-
-
-<div class="module-title">
-
-<h2>
-	Client Testimonials
-</h2>
-</div>
-
-				
-<div class="block-content">
-<div class="owl-container">
-<div id="slides" class="owl-carousel owl-theme">
-											<div class="row_items">
-												<div class="testimonial-content">
-			<div class="item">
-			<div class="item-inner">
-				<div class="testimonial-images">
-					<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/testimonial/testimor1-100x100.png" alt="Rebecka Filson">							
-				</div>
-				<div class="testimonial-caption">
-														<h4 class="title"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/octestimonial">A really great experience</a></h4>
-													<div class="testimonial-box">							
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/octestimonial"> This is Photoshops version  of Lorem Ipsum. Proin gravida nibh vel velit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. In molestie augue magna. Pell..</a>
-					</div>
-					<p class="testimonial-author">Rebecka Filson</p>
-				</div>
-			</div>
-			</div>
-		</div><!--testimonial-content-->
-								</div>
-																<div class="row_items">
-												<div class="testimonial-content">
-			<div class="item">
-			<div class="item-inner">
-				<div class="testimonial-images">
-					<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/testimonial/testimor2-100x100.png" alt="Nathanael Jaworski">							
-				</div>
-				<div class="testimonial-caption">
-														<h4 class="title"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/octestimonial">A really great experience</a></h4>
-													<div class="testimonial-box">							
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/octestimonial"> Mauris blandit, metus a venenatis lacinia, felis enim tincidunt est, condimentum vulputate orci augue eu metus. Fusce dictum, nisi et semper ultricies, felis t..</a>
-					</div>
-					<p class="testimonial-author">Nathanael Jaworski</p>
-				</div>
-			</div>
-			</div>
-		</div><!--testimonial-content-->
-								</div>
-																<div class="row_items">
-												<div class="testimonial-content">
-			<div class="item">
-			<div class="item-inner">
-				<div class="testimonial-images">
-					<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/testimonial/testimor3-100x100.png" alt="Magdalena Valencia">							
-				</div>
-				<div class="testimonial-caption">
-														<h4 class="title"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/octestimonial">A really great experience</a></h4>
-													<div class="testimonial-box">							
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/octestimonial"> Sed vel urna at dui iaculis gravida. Maecenas pretium, velit vitae placerat faucibus, velit quam facilisis elit, sit amet lacinia est est id ligula. Duis feugi..</a>
-					</div>
-					<p class="testimonial-author">Magdalena Valencia</p>
-				</div>
-			</div>
-			</div>
-		</div><!--testimonial-content-->
-								</div>
-																<div class="row_items">
-												<div class="testimonial-content">
-			<div class="item">
-			<div class="item-inner">
-				<div class="testimonial-images">
-					<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/testimonial/testimor3-100x100.png" alt="Alva Ono">							
-				</div>
-				<div class="testimonial-caption">
-														<h4 class="title"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/octestimonial">A really great experience</a></h4>
-													<div class="testimonial-box">							
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/octestimonial"> Vivamus a lobortis ipsum, vel condimentum magna. Etiam id turpis tortor. Nunc scelerisque, nisi a blandit varius, nunc purus venenatis ligula, sed venenatis or..</a>
-					</div>
-					<p class="testimonial-author">Alva Ono</p>
-				</div>
-			</div>
-			</div>
-		</div><!--testimonial-content-->
-								</div>
-																<div class="row_items">
-												<div class="testimonial-content">
-			<div class="item">
-			<div class="item-inner">
-				<div class="testimonial-images">
-					<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/testimonial/testimor1-100x100.png" alt="Dewey Tetzlaff">							
-				</div>
-				<div class="testimonial-caption">
-														<h4 class="title"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/octestimonial">A really great experience</a></h4>
-													<div class="testimonial-box">							
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/octestimonial"> This is Photoshops version  of Lorem Ipsum. Proin gravida nibh vel velit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. In molestie augue magna. Pell..</a>
-					</div>
-					<p class="testimonial-author">Dewey Tetzlaff</p>
-				</div>
-			</div>
-			</div>
-		</div><!--testimonial-content-->
-								</div>
-																<div class="row_items">
-												<div class="testimonial-content">
-			<div class="item">
-			<div class="item-inner">
-				<div class="testimonial-images">
-					<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/testimonial/testimor5-100x100.png" alt="Lavina Wilderman">							
-				</div>
-				<div class="testimonial-caption">
-														<h4 class="title"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/octestimonial">A really great experience</a></h4>
-													<div class="testimonial-box">							
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/octestimonial"> Mauris blandit, metus a venenatis lacinia, felis enim tincidunt est, condimentum vulputate orci augue eu metus. Fusce dictum, nisi et semper ultricies, felis t..</a>
-					</div>
-					<p class="testimonial-author">Lavina Wilderman</p>
-				</div>
-			</div>
-			</div>
-		</div><!--testimonial-content-->
-								</div>
-																<div class="row_items">
-												<div class="testimonial-content">
-			<div class="item">
-			<div class="item-inner">
-				<div class="testimonial-images">
-					<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/testimonial/testimor2-100x100.png" alt="Amber Laha">							
-				</div>
-				<div class="testimonial-caption">
-														<h4 class="title"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/octestimonial">A really great experience</a></h4>
-													<div class="testimonial-box">							
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/octestimonial"> Sed vel urna at dui iaculis gravida. Maecenas pretium, velit vitae placerat faucibus, velit quam facilisis elit, sit amet lacinia est est id ligula. Duis feugi..</a>
-					</div>
-					<p class="testimonial-author">Amber Laha</p>
-				</div>
-			</div>
-			</div>
-		</div><!--testimonial-content-->
-								</div>
-																<div class="row_items">
-												<div class="testimonial-content">
-			<div class="item">
-			<div class="item-inner">
-				<div class="testimonial-images">
-					<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/testimonial/testimor4-100x100.png" alt="Lindsy Neloms">							
-				</div>
-				<div class="testimonial-caption">
-														<h4 class="title"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/octestimonial">A really great experience</a></h4>
-													<div class="testimonial-box">							
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/octestimonial"> Vivamus a lobortis ipsum, vel condimentum magna. Etiam id turpis tortor. Nunc scelerisque, nisi a blandit varius, nunc purus venenatis ligula, sed venenatis or..</a>
-					</div>
-					<p class="testimonial-author">Lindsy Neloms</p>
-				</div>
-			</div>
-			</div>
-		</div><!--testimonial-content-->
-								</div>
-									</div>
-</div>
-</div><!--block-content-->
-
-
-
-</div><!--testimonial-container-->					
+</script>				
 <script >
 $(document).ready(function() {
 $("#slides").owlCarousel({
@@ -2414,624 +1373,187 @@ responsive:{
 <div class="tt-product ">
 <div class="tab-content">
   
+	{{-- Birinci Təbəqə --}}
 						
 	<div class="tab-container-610  owl-carousel owl-theme  tab-pane tab-product-container  fade " id="tab-6100">		
-	
-							<!-- Grid -->
-	
-			<div class="row_items ">
-								
+			<div class="row_items">		
 	<div class="product-layout grid-style ">
 		<div class="product-thumb transition">
 			<div class="item">
 				<div class="item-inner">
 					<div class="caption-top">
-															<p class="manufacture-product">
+						<p class="manufacture-product">
 							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=7">Hewlett-Packard</a>
 						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52">Apple iPad with Retina  Display MD510LL/A </a></h4>
-						
+						<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52">Apple iPad with Retina  Display MD510LL/A </a></h4>
 					</div>
 					<div class="box-border">
 						<div class="image images-container">
 							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/2-600x600.jpg" alt="Apple iPad with Retina  Display MD510LL/A " title="Apple iPad with Retina  Display MD510LL/A " class="img-responsive " />
+							<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/2-600x600.jpg" alt="Apple iPad with Retina  Display MD510LL/A " title="Apple iPad with Retina  Display MD510LL/A " class="img-responsive " />
 							</a>
 							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('52');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('52');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('52');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52')"><span>Quick View</span></button>
-																																	</div>
-																	
+							</div>											
+							<div class="action-links">
+							<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('52');"><span>Add to Cart</span></button>												
+							<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('52');"><span>Add to Wish List</span></button>																																	
+						</div>															
 						</div><!-- image -->
 						<div class="caption">
 							<div class="inner">
 								<div class="ratings">
 									<div class="rating-box">
-																																																<div class="rating0">rating</div>
-																																																																																																																																																															</div>
+									<div class="rating0">rating</div>																																																																																																																																																	</div>
 								</div>	
-																															<div class="price-box">
+								<div class="price-box">
 									<label>Price:</label>
-																						<p class="special-price"><span class="price">$55.00</span></p>
+										<p class="special-price"><span class="price">$55.00</span></p>
 										<p class="old-price"><span class="price">$60.00</span></p>						  
-																																	</div>
-																																											<div class="label-product label_sale"><span>-8% </span></div>
-																																																					
+								</div>
+								<div class="label-product label_sale"><span>-8% </span></div>																																														
 							</div>
-						</div><!-- caption -->
+						</div>
 					</div>
 				</div>
 			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-	
-								
+		</div>
+	</div>
+</div>  
+
+
+<div class="row_items">		
 	<div class="product-layout grid-style ">
 		<div class="product-thumb transition">
 			<div class="item">
 				<div class="item-inner">
 					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=59">Apple iPhone SE 16GB  Factory Unlocked</a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=59" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/3-600x600.jpg" alt="Apple iPhone SE 16GB  Factory Unlocked" title="Apple iPhone SE 16GB  Factory Unlocked" class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('59');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('59');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('59');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=59')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																																											<div class="rating3">rating</div>
-																																																																																				</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="regular-price"><span class="price">$85.00</span></p>
-																																	</div>
-																																																																											
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-					</div>
-								
-					  <!-- Grid -->
-	
-			<div class="row_items ">
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=9">Canon</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=138">Beats EP Wired On-Ear  Headphone-Black</a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=138" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/4-600x600.jpg" alt="Beats EP Wired On-Ear  Headphone-Black" title="Beats EP Wired On-Ear  Headphone-Black" class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('138');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('138');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('138');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=138')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																																																																				<div class="rating4">rating</div>
-																																																											</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="regular-price"><span class="price">$100.00</span></p>
-																																	</div>
-																																																																											
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-	
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
+						<p class="manufacture-product">
 							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=7">Hewlett-Packard</a>
 						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=62">Beats Solo Wireless On-Ear Headphone</a></h4>
-						
+						<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52">Apple iPad with Retina  Display MD510LL/A </a></h4>
 					</div>
 					<div class="box-border">
 						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=62" class="product-image">
-								<img class="img-r" src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/11-600x600.jpg" alt="Beats Solo Wireless On-Ear Headphone" />											<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/5-600x600.jpg" alt="Beats Solo Wireless On-Ear Headphone" title="Beats Solo Wireless On-Ear Headphone" class="img-responsive has-rotator" />
+							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52" class="product-image">
+							<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/2-600x600.jpg" alt="Apple iPad with Retina  Display MD510LL/A " title="Apple iPad with Retina  Display MD510LL/A " class="img-responsive " />
 							</a>
 							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('62');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('62');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('62');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=62')"><span>Quick View</span></button>
-																																	</div>
-																	
+							</div>											
+							<div class="action-links">
+							<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('52');"><span>Add to Cart</span></button>												
+							<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('52');"><span>Add to Wish List</span></button>																																	
+						</div>															
 						</div><!-- image -->
 						<div class="caption">
 							<div class="inner">
 								<div class="ratings">
 									<div class="rating-box">
-																																																																																																																																																																													<div class="rating5">rating</div>
-																																		</div>
+									<div class="rating0">rating</div>																																																																																																																																																	</div>
 								</div>	
-																															<div class="price-box">
+								<div class="price-box">
 									<label>Price:</label>
-																						<p class="regular-price"><span class="price">$199.99</span></p>
-																																	</div>
-																																																																											
+										<p class="special-price"><span class="price">$55.00</span></p>
+										<p class="old-price"><span class="price">$60.00</span></p>						  
+								</div>
+								<div class="label-product label_sale"><span>-8% </span></div>																																														
 							</div>
-						</div><!-- caption -->
+						</div>
 					</div>
 				</div>
 			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-					</div>
-								
-					  <!-- Grid -->
-	
-			<div class="row_items ">
-								
+		</div>
+	</div>
+</div>  
+
+<div class="row_items">		
 	<div class="product-layout grid-style ">
 		<div class="product-thumb transition">
 			<div class="item">
 				<div class="item-inner">
 					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
+						<p class="manufacture-product">
+							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=7">Hewlett-Packard</a>
 						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=61">Beats Solo2 Solo 2  Wired On-Ear Headphone</a></h4>
-						
+						<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52">Apple iPad with Retina  Display MD510LL/A </a></h4>
 					</div>
 					<div class="box-border">
 						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=61" class="product-image">
-								<img class="img-r" src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/9-600x600.jpg" alt="Beats Solo2 Solo 2  Wired On-Ear Headphone" />											<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/6-600x600.jpg" alt="Beats Solo2 Solo 2  Wired On-Ear Headphone" title="Beats Solo2 Solo 2  Wired On-Ear Headphone" class="img-responsive has-rotator" />
+							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52" class="product-image">
+							<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/2-600x600.jpg" alt="Apple iPad with Retina  Display MD510LL/A " title="Apple iPad with Retina  Display MD510LL/A " class="img-responsive " />
 							</a>
 							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('61');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('61');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('61');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=61')"><span>Quick View</span></button>
-																																	</div>
-																	
+							</div>											
+							<div class="action-links">
+							<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('52');"><span>Add to Cart</span></button>												
+							<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('52');"><span>Add to Wish List</span></button>																																	
+						</div>															
 						</div><!-- image -->
 						<div class="caption">
 							<div class="inner">
 								<div class="ratings">
 									<div class="rating-box">
-																																																																																																																											<div class="rating3">rating</div>
-																																																																																				</div>
+									<div class="rating0">rating</div>																																																																																																																																																	</div>
 								</div>	
-																															<div class="price-box">
+								<div class="price-box">
 									<label>Price:</label>
-																						<p class="regular-price"><span class="price">$500.00</span></p>
-																																	</div>
-																																																																											
+										<p class="special-price"><span class="price">$55.00</span></p>
+										<p class="old-price"><span class="price">$60.00</span></p>						  
+								</div>
+								<div class="label-product label_sale"><span>-8% </span></div>																																														
 							</div>
-						</div><!-- caption -->
+						</div>
 					</div>
 				</div>
 			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-	
-								
+		</div>
+	</div>
+</div>  <div class="row_items">		
 	<div class="product-layout grid-style ">
 		<div class="product-thumb transition">
 			<div class="item">
 				<div class="item-inner">
 					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=10">Sony</a>
+						<p class="manufacture-product">
+							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=7">Hewlett-Packard</a>
 						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=55">Beats Solo3 Wireless  On-Ear Headphones</a></h4>
-						
+						<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52">Apple iPad with Retina  Display MD510LL/A </a></h4>
 					</div>
 					<div class="box-border">
 						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=55" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/7-600x600.jpg" alt="Beats Solo3 Wireless  On-Ear Headphones" title="Beats Solo3 Wireless  On-Ear Headphones" class="img-responsive " />
+							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52" class="product-image">
+							<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/2-600x600.jpg" alt="Apple iPad with Retina  Display MD510LL/A " title="Apple iPad with Retina  Display MD510LL/A " class="img-responsive " />
 							</a>
 							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('55');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('55');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('55');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=55')"><span>Quick View</span></button>
-																																	</div>
-																	
+							</div>											
+							<div class="action-links">
+							<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('52');"><span>Add to Cart</span></button>												
+							<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('52');"><span>Add to Wish List</span></button>																																	
+						</div>															
 						</div><!-- image -->
 						<div class="caption">
 							<div class="inner">
 								<div class="ratings">
 									<div class="rating-box">
-																																																																																																																																																				<div class="rating4">rating</div>
-																																																											</div>
+									<div class="rating0">rating</div>																																																																																																																																																	</div>
 								</div>	
-																															<div class="price-box">
+								<div class="price-box">
 									<label>Price:</label>
-																						<p class="regular-price"><span class="price">$1,000.00</span></p>
-																																	</div>
-																																																																											
+										<p class="special-price"><span class="price">$55.00</span></p>
+										<p class="old-price"><span class="price">$60.00</span></p>						  
+								</div>
+								<div class="label-product label_sale"><span>-8% </span></div>																																														
 							</div>
-						</div><!-- caption -->
+						</div>
 					</div>
 				</div>
 			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-					</div>
-								
-					  <!-- Grid -->
+		</div>
+	</div>
+</div>  
+</div>
 	
-			<div class="row_items ">
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=10">Sony</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=189">Beats Solo3 Wireless  On-Ear Headphones 2</a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=189" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/16-600x600.jpg" alt="Beats Solo3 Wireless  On-Ear Headphones 2" title="Beats Solo3 Wireless  On-Ear Headphones 2" class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('189');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('189');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('189');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=189')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																<div class="rating0">rating</div>
-																																																																																																																																																															</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="regular-price"><span class="price">$1,000.00</span></p>
-																																	</div>
-																																																																											
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-	
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=139">JBL Flip 3 Splashproof  Portable Bluetooth</a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=139" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/9-600x600.jpg" alt="JBL Flip 3 Splashproof  Portable Bluetooth" title="JBL Flip 3 Splashproof  Portable Bluetooth" class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('139');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('139');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('139');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=139')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																																											<div class="rating3">rating</div>
-																																																																																				</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="regular-price"><span class="price">$500.00</span></p>
-																																	</div>
-																																																																											
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-					</div>
-								
-					  <!-- Grid -->
-	
-			<div class="row_items ">
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=60">Kodak PIXPRO Astro Zoom AZ421 16 MP</a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=60" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/10-600x600.jpg" alt="Kodak PIXPRO Astro Zoom AZ421 16 MP" title="Kodak PIXPRO Astro Zoom AZ421 16 MP" class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('60');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('60');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('60');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=60')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																																																																				<div class="rating4">rating</div>
-																																																											</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="regular-price"><span class="price">$95.00</span></p>
-																																	</div>
-																																																																											
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-	
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=56">Koss KPH7 Lightweight  Portable Headphone</a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=56" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/11-600x600.jpg" alt="Koss KPH7 Lightweight  Portable Headphone" title="Koss KPH7 Lightweight  Portable Headphone" class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('56');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('56');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('56');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=56')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																		<div class="rating2">rating</div>
-																																																																																																													</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="special-price"><span class="price">$70.00</span></p>
-										<p class="old-price"><span class="price">$75.00</span></p>						  
-																																	</div>
-																																											<div class="label-product label_sale"><span>-7% </span></div>
-																																																					
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-					</div>
-								
-					  <!-- Grid -->
-	
-			<div class="row_items ">
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=54">Koss Porta Pro On Ear  Headphones </a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=54" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/12-600x600.jpg" alt="Koss Porta Pro On Ear  Headphones " title="Koss Porta Pro On Ear  Headphones " class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('54');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('54');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('54');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=54')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																																																																																													<div class="rating5">rating</div>
-																																		</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="special-price"><span class="price">$65.00</span></p>
-										<p class="old-price"><span class="price">$70.00</span></p>						  
-																																	</div>
-																																											<div class="label-product label_sale"><span>-7% </span></div>
-																																																					
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-					</div>
-								
-				  
-			</div>
-	
+			{{-- İkinci təbəqə --}}
+
 		<div class="tab-container-610  owl-carousel owl-theme  tab-pane tab-product-container  fade " id="tab-6101">		
 	
 							<!-- Grid -->
@@ -3088,622 +1610,11 @@ responsive:{
 			</div>
 		</div><!-- product-thumb -->
 							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-	
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=143">Nokia Steel HR Hybrid  Smartwatch</a></h4>
-						
 					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=143" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/14-600x600.jpg" alt="Nokia Steel HR Hybrid  Smartwatch" title="Nokia Steel HR Hybrid  Smartwatch" class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('143');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('143');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('143');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=143')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																																																																																													<div class="rating5">rating</div>
-																																		</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="regular-price"><span class="price">$95.00</span></p>
-																																	</div>
-																																																																											
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
 			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-					</div>
-								
-					  <!-- Grid -->
-	
-			<div class="row_items ">
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=140">Marshall Portable  Bluetooth Speaker</a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=140" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/13-600x600.jpg" alt="Marshall Portable  Bluetooth Speaker" title="Marshall Portable  Bluetooth Speaker" class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('140');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('140');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('140');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=140')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																																																																				<div class="rating4">rating</div>
-																																																											</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="special-price"><span class="price">$65.00</span></p>
-										<p class="old-price"><span class="price">$70.00</span></p>						  
-																																	</div>
-																																											<div class="label-product label_sale"><span>-7% </span></div>
-																																																					
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-	
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=139">JBL Flip 3 Splashproof  Portable Bluetooth</a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=139" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/9-600x600.jpg" alt="JBL Flip 3 Splashproof  Portable Bluetooth" title="JBL Flip 3 Splashproof  Portable Bluetooth" class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('139');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('139');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('139');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=139')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																																											<div class="rating3">rating</div>
-																																																																																				</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="regular-price"><span class="price">$500.00</span></p>
-																																	</div>
-																																																																											
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-					</div>
-								
-					  <!-- Grid -->
-	
-			<div class="row_items ">
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=9">Canon</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=138">Beats EP Wired On-Ear  Headphone-Black</a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=138" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/4-600x600.jpg" alt="Beats EP Wired On-Ear  Headphone-Black" title="Beats EP Wired On-Ear  Headphone-Black" class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('138');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('138');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('138');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=138')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																																																																				<div class="rating4">rating</div>
-																																																											</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="regular-price"><span class="price">$100.00</span></p>
-																																	</div>
-																																																																											
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-	
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=5">HTC</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=53">Sony KD55X72 55-Inch  4k Ultra HD</a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=53" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/15-600x600.jpg" alt="Sony KD55X72 55-Inch  4k Ultra HD" title="Sony KD55X72 55-Inch  4k Ultra HD" class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('53');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('53');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('53');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=53')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																																											<div class="rating3">rating</div>
-																																																																																				</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="special-price"><span class="price">$64.00</span></p>
-										<p class="old-price"><span class="price">$65.00</span></p>						  
-																																	</div>
-																																											<div class="label-product label_sale"><span>-2% </span></div>
-																																																					
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-					</div>
-								
-					  <!-- Grid -->
-	
-			<div class="row_items ">
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=54">Koss Porta Pro On Ear  Headphones </a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=54" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/12-600x600.jpg" alt="Koss Porta Pro On Ear  Headphones " title="Koss Porta Pro On Ear  Headphones " class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('54');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('54');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('54');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=54')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																																																																																													<div class="rating5">rating</div>
-																																		</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="special-price"><span class="price">$65.00</span></p>
-										<p class="old-price"><span class="price">$70.00</span></p>						  
-																																	</div>
-																																											<div class="label-product label_sale"><span>-7% </span></div>
-																																																					
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-	
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=56">Koss KPH7 Lightweight  Portable Headphone</a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=56" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/11-600x600.jpg" alt="Koss KPH7 Lightweight  Portable Headphone" title="Koss KPH7 Lightweight  Portable Headphone" class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('56');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('56');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('56');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=56')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																		<div class="rating2">rating</div>
-																																																																																																													</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="special-price"><span class="price">$70.00</span></p>
-										<p class="old-price"><span class="price">$75.00</span></p>						  
-																																	</div>
-																																											<div class="label-product label_sale"><span>-7% </span></div>
-																																																					
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-					</div>
-								
-					  <!-- Grid -->
-	
-			<div class="row_items ">
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=60">Kodak PIXPRO Astro Zoom AZ421 16 MP</a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=60" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/10-600x600.jpg" alt="Kodak PIXPRO Astro Zoom AZ421 16 MP" title="Kodak PIXPRO Astro Zoom AZ421 16 MP" class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('60');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('60');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('60');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=60')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																																																																				<div class="rating4">rating</div>
-																																																											</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="regular-price"><span class="price">$95.00</span></p>
-																																	</div>
-																																																																											
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-	
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=9">Canon</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=51">Bose SoundLink Micro  Bluetooth Speaker</a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=51" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/8-600x600.jpg" alt="Bose SoundLink Micro  Bluetooth Speaker" title="Bose SoundLink Micro  Bluetooth Speaker" class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('51');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('51');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('51');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=51')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																																											<div class="rating3">rating</div>
-																																																																																				</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="regular-price"><span class="price">$100.00</span></p>
-																																	</div>
-																																																																											
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-					</div>
-								
-					  <!-- Grid -->
-	
-			<div class="row_items ">
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=10">Sony</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=55">Beats Solo3 Wireless  On-Ear Headphones</a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=55" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/7-600x600.jpg" alt="Beats Solo3 Wireless  On-Ear Headphones" title="Beats Solo3 Wireless  On-Ear Headphones" class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('55');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('55');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('55');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=55')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																																																																				<div class="rating4">rating</div>
-																																																											</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="regular-price"><span class="price">$1,000.00</span></p>
-																																	</div>
-																																																																											
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-	
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=61">Beats Solo2 Solo 2  Wired On-Ear Headphone</a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=61" class="product-image">
-								<img class="img-r" src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/9-600x600.jpg" alt="Beats Solo2 Solo 2  Wired On-Ear Headphone" />											<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/6-600x600.jpg" alt="Beats Solo2 Solo 2  Wired On-Ear Headphone" title="Beats Solo2 Solo 2  Wired On-Ear Headphone" class="img-responsive has-rotator" />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('61');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('61');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('61');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=61')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																																											<div class="rating3">rating</div>
-																																																																																				</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="regular-price"><span class="price">$500.00</span></p>
-																																	</div>
-																																																																											
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-					</div>
-								
-				  
-			</div>
+
+
+			{{-- Üçüncü təbəqə --}}
 	
 		<div class="tab-container-610  owl-carousel owl-theme  tab-pane tab-product-container  fade " id="tab-6102">		
 	
@@ -3762,622 +1673,8 @@ responsive:{
 				</div>
 			</div>
 		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-	
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=9">Canon</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=138">Beats EP Wired On-Ear  Headphone-Black</a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=138" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/4-600x600.jpg" alt="Beats EP Wired On-Ear  Headphone-Black" title="Beats EP Wired On-Ear  Headphone-Black" class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
 							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('138');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('138');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('138');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=138')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																																																																				<div class="rating4">rating</div>
-																																																											</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="regular-price"><span class="price">$100.00</span></p>
-																																	</div>
-																																																																											
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-					</div>
-								
-					  <!-- Grid -->
-	
-			<div class="row_items ">
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=139">JBL Flip 3 Splashproof  Portable Bluetooth</a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=139" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/9-600x600.jpg" alt="JBL Flip 3 Splashproof  Portable Bluetooth" title="JBL Flip 3 Splashproof  Portable Bluetooth" class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('139');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('139');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('139');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=139')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																																											<div class="rating3">rating</div>
-																																																																																				</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="regular-price"><span class="price">$500.00</span></p>
-																																	</div>
-																																																																											
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-	
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=56">Koss KPH7 Lightweight  Portable Headphone</a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=56" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/11-600x600.jpg" alt="Koss KPH7 Lightweight  Portable Headphone" title="Koss KPH7 Lightweight  Portable Headphone" class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('56');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('56');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('56');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=56')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																		<div class="rating2">rating</div>
-																																																																																																													</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="special-price"><span class="price">$70.00</span></p>
-										<p class="old-price"><span class="price">$75.00</span></p>						  
-																																	</div>
-																																											<div class="label-product label_sale"><span>-7% </span></div>
-																																																					
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-					</div>
-								
-					  <!-- Grid -->
-	
-			<div class="row_items ">
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=57">Amazon Cloud Cam  Security Camera</a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=57" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/1-600x600.jpg" alt="Amazon Cloud Cam  Security Camera" title="Amazon Cloud Cam  Security Camera" class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('57');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('57');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('57');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=57')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																																																																				<div class="rating4">rating</div>
-																																																											</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="regular-price"><span class="price">$80.00</span></p>
-																																	</div>
-																																																																											
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-	
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=9">Canon</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=51">Bose SoundLink Micro  Bluetooth Speaker</a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=51" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/8-600x600.jpg" alt="Bose SoundLink Micro  Bluetooth Speaker" title="Bose SoundLink Micro  Bluetooth Speaker" class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('51');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('51');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('51');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=51')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																																											<div class="rating3">rating</div>
-																																																																																				</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="regular-price"><span class="price">$100.00</span></p>
-																																	</div>
-																																																																											
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-					</div>
-								
-					  <!-- Grid -->
-	
-			<div class="row_items ">
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=59">Apple iPhone SE 16GB  Factory Unlocked</a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=59" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/3-600x600.jpg" alt="Apple iPhone SE 16GB  Factory Unlocked" title="Apple iPhone SE 16GB  Factory Unlocked" class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('59');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('59');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('59');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=59')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																																											<div class="rating3">rating</div>
-																																																																																				</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="regular-price"><span class="price">$85.00</span></p>
-																																	</div>
-																																																																											
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-	
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=54">Koss Porta Pro On Ear  Headphones </a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=54" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/12-600x600.jpg" alt="Koss Porta Pro On Ear  Headphones " title="Koss Porta Pro On Ear  Headphones " class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('54');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('54');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('54');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=54')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																																																																																													<div class="rating5">rating</div>
-																																		</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="special-price"><span class="price">$65.00</span></p>
-										<p class="old-price"><span class="price">$70.00</span></p>						  
-																																	</div>
-																																											<div class="label-product label_sale"><span>-7% </span></div>
-																																																					
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-					</div>
-								
-					  <!-- Grid -->
-	
-			<div class="row_items ">
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=61">Beats Solo2 Solo 2  Wired On-Ear Headphone</a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=61" class="product-image">
-								<img class="img-r" src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/9-600x600.jpg" alt="Beats Solo2 Solo 2  Wired On-Ear Headphone" />											<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/6-600x600.jpg" alt="Beats Solo2 Solo 2  Wired On-Ear Headphone" title="Beats Solo2 Solo 2  Wired On-Ear Headphone" class="img-responsive has-rotator" />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('61');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('61');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('61');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=61')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																																											<div class="rating3">rating</div>
-																																																																																				</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="regular-price"><span class="price">$500.00</span></p>
-																																	</div>
-																																																																											
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-	
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=5">HTC</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=53">Sony KD55X72 55-Inch  4k Ultra HD</a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=53" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/15-600x600.jpg" alt="Sony KD55X72 55-Inch  4k Ultra HD" title="Sony KD55X72 55-Inch  4k Ultra HD" class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('53');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('53');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('53');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=53')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																																											<div class="rating3">rating</div>
-																																																																																				</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="special-price"><span class="price">$64.00</span></p>
-										<p class="old-price"><span class="price">$65.00</span></p>						  
-																																	</div>
-																																											<div class="label-product label_sale"><span>-2% </span></div>
-																																																					
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-					</div>
-								
-					  <!-- Grid -->
-	
-			<div class="row_items ">
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=140">Marshall Portable  Bluetooth Speaker</a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=140" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/13-600x600.jpg" alt="Marshall Portable  Bluetooth Speaker" title="Marshall Portable  Bluetooth Speaker" class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('140');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('140');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('140');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=140')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																																																																				<div class="rating4">rating</div>
-																																																											</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="special-price"><span class="price">$65.00</span></p>
-										<p class="old-price"><span class="price">$70.00</span></p>						  
-																																	</div>
-																																											<div class="label-product label_sale"><span>-7% </span></div>
-																																																					
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-	
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=60">Kodak PIXPRO Astro Zoom AZ421 16 MP</a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=60" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/10-600x600.jpg" alt="Kodak PIXPRO Astro Zoom AZ421 16 MP" title="Kodak PIXPRO Astro Zoom AZ421 16 MP" class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('60');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('60');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('60');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=60')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																																																																																																																				<div class="rating4">rating</div>
-																																																											</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="regular-price"><span class="price">$95.00</span></p>
-																																	</div>
-																																																																											
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-					</div>
-								
-				  
+					</div>								  
 			</div>
 	
 	
@@ -4588,47 +1885,7 @@ if(count == 1) {
 			</div>
 		</div><!-- product-thumb -->
 							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-			<!-- List -->
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=139" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/9-600x600.jpg" alt="JBL Flip 3 Splashproof  Portable Bluetooth" title="JBL Flip 3 Splashproof  Portable Bluetooth" class="img-responsive" />
-						</a>
-						<div class="box-label">			
-																	
-							
-						</div>
-						
-					</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=139">JBL Flip 3 Splashproof  Portable Bluetooth</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																	<div class="rating3">rating</div>
-																																																																													</div>
-							</div>	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="regular-price"><span class="price">$500.00</span></p>
-																														</div>
-																																									
-							
-																																				</div>
-					</div><!-- caption -->
-					
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
+			
 					</div>
 								
 					  <!-- Grid -->
@@ -5764,8 +3021,11 @@ if(count == 1) {
 </div>
 		<div class="owl-container">
 <div class="articles-container owl-carousel owl-theme">
-								<div class="row_items">
-										<div class="articles-inner ">
+
+	{{-- Bloq yeri --}}
+
+		<div class="row_items">
+			<div class="articles-inner ">
 			<div class="articles-image">
 				<a href="http://smartbook4.demo.towerthemes.com/index.php?route=blog/article&amp;article_id=6"><img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/blog/2-370x244.jpg" alt="How to Grow Epiphytic Tropical Plants"/><span class="icon-view"></span></a>
 			</div>	
@@ -5784,77 +3044,9 @@ if(count == 1) {
 				</div>
 			</div>
 		</div>
-			</div>
-			<div class="row_items">
-			<div class="articles-inner ">
-			<div class="articles-image">
-				<a href="http://smartbook4.demo.towerthemes.com/index.php?route=blog/article&amp;article_id=8"><img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/blog/1-370x244.jpg" alt="How To Pot Up and Care For Juvenile"/><span class="icon-view"></span></a>
-			</div>	
-			<div class="aritcles-content">
-				<div class="content-inner">
-					<div class="box-name">	
-						<p class="date-time-post">		
-							<span class="date-post">30</span>
-							<span class="month-post">Oct</span>		
-						</p>
-						<a class="articles-name" href="http://smartbook4.demo.towerthemes.com/index.php?route=blog/article&amp;article_id=8">How To Pot Up and Care For Juvenile</a>
-					</div>
-					<p class="author-name">Post by <span>Plaza Themes</span></p>
-					<div class="articles-intro"><p>Virtual reality and 3-D technology are already well-established in the entertainment...</p></div>								
-					<a href="http://smartbook4.demo.towerthemes.com/index.php?route=blog/article&amp;article_id=8" class="read-more">Read more</a>
-				</div>
-			</div>
 		</div>
-		</div>
-			<div class="row_items">
-			<div class="articles-inner ">
-			<div class="articles-image">
-				<a href="http://smartbook4.demo.towerthemes.com/index.php?route=blog/article&amp;article_id=5"><img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/blog/2-370x244.jpg" alt="How to Water and Care for Mounted"/><span class="icon-view"></span></a>
-			</div>	
-			<div class="aritcles-content">
-				<div class="content-inner">
-					<div class="box-name">	
-						<p class="date-time-post">
-							<span class="date-post">30</span>
-							<span class="month-post">Oct</span>
-						</p>
-						<a class="articles-name" href="http://smartbook4.demo.towerthemes.com/index.php?route=blog/article&amp;article_id=5">How to Water and Care for Mounted</a>
-					</div>
-					<p class="author-name">Post by <span>Plaza Themes</span></p>
-					<div class="articles-intro"><p>Virtual reality and 3-D technology are already well-established in the entertainment...</p></div>								
-					<a href="http://smartbook4.demo.towerthemes.com/index.php?route=blog/article&amp;article_id=5" class="read-more">Read more</a>
-				</div>
-			</div>	
-		</div>
-		</div>
-		<div class="row_items">
-		<div class="articles-inner ">
-			<div class="articles-image">
-				<a href="http://smartbook4.demo.towerthemes.com/index.php?route=blog/article&amp;article_id=10"><img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/blog/1-370x244.jpg" alt="List of Pumpkin Spice Everything fotr 2018"/><span class="icon-view"></span></a>
-			</div>	
-			<div class="aritcles-content">
-				<div class="content-inner">
-					<div class="box-name">	
-						<p class="date-time-post">
-							
-							<span class="date-post">06</span>
-							<span class="month-post">Sep</span>
-							<!--span class="year-post">2018</span-->
-							
-						</p>
-						<a class="articles-name" href="http://smartbook4.demo.towerthemes.com/index.php?route=blog/article&amp;article_id=10">List of Pumpkin Spice Everything fotr 2018</a>
-					</div>
-					<p class="author-name">Post by <span>Plaza Themes</span></p>
-					
-					
-					<div class="articles-intro"><p>Maria Denardo is the Fashion Director at theFashionSpot. Prior to joining tFS, she worked as...</p></div>								
-					<a href="http://smartbook4.demo.towerthemes.com/index.php?route=blog/article&amp;article_id=10" class="read-more">Read more</a>
-					
-</div>
-</div>
-	
-</div>
-</div>
+			
+
 </div>
 </div>
 </div>
