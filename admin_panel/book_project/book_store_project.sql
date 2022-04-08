@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 25, 2022 at 12:09 AM
+-- Generation Time: Apr 09, 2022 at 12:12 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -45,6 +45,28 @@ CREATE TABLE `blog` (
 INSERT INTO `blog` (`id`, `title`, `contents`, `img`, `author`, `status`, `created_at`, `updated_at`) VALUES
 (1, 'İlk Bloq', '<p>Bu mənim əlavə etdiyim ilk bloqdur.</p>', 'uploads/blog/ilk-bloq.png', 'Quluzadə Ağabala', '0', '2022-02-28 01:16:22', '2022-03-25 02:54:14'),
 (4, 'İkinci Bloq', '<p>Bu ikinci bloqdur.</p>', 'uploads/blog/ikinci-bloq.jpg', 'Quluzadə Ağabala', '0', '2022-03-25 02:56:03', '2022-03-25 02:56:30');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `books`
+--
+
+CREATE TABLE `books` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `writer_id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `books_name` varchar(500) NOT NULL,
+  `books_description` longtext NOT NULL,
+  `books_img` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `old_price` decimal(10,2) NOT NULL,
+  `price_cut` int(11) NOT NULL,
+  `status` enum('0','1') NOT NULL DEFAULT '0',
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -92,7 +114,12 @@ INSERT INTO `category` (`id`, `category_name`, `parent_id`, `slug`, `status`, `c
 (1, 'Uşaq Kitabları', 0, 'usaq-kitablari', '0', '2022-03-12 18:23:38', '2022-03-13 00:10:57'),
 (2, 'Balaca şahzadə', 1, 'balaca-sahzade', '0', '2022-03-12 18:25:12', '2022-03-13 00:10:57'),
 (3, 'Bioqrafiyalar', 0, 'bioqrafiyalar', '0', '2022-03-24 00:20:33', '2022-03-24 00:20:33'),
-(4, 'Avtobioqrafiya', 0, 'avtobioqrafiya', '0', '2022-03-24 00:23:30', '2022-03-24 00:23:30');
+(4, 'Avtobioqrafiya', 0, 'avtobioqrafiya', '0', '2022-03-24 00:23:30', '2022-03-24 00:23:30'),
+(5, 'Mübarizəm', 4, 'mubarizem', '0', '2022-04-03 04:18:59', '2022-04-03 04:18:59'),
+(6, 'Bir döyüşçünün gündəliyi', 3, 'bir-doyuscunun-gundeliyi', '0', '2022-04-03 04:24:08', '2022-04-03 04:24:08'),
+(7, 'Ədəbiyyat', 0, 'edebiyyat', '0', '2022-04-03 04:30:36', '2022-04-03 04:30:36'),
+(8, 'Rus Ədəbiyyatı', 7, 'rus-edebiyyati', '0', '2022-04-05 02:32:30', '2022-04-05 02:32:30'),
+(9, 'Fransız Ədəbiyyatı', 7, 'fransiz-edebiyyati', '0', '2022-04-05 02:50:24', '2022-04-05 02:50:24');
 
 -- --------------------------------------------------------
 
@@ -127,7 +154,8 @@ CREATE TABLE `feature_section` (
 --
 
 INSERT INTO `feature_section` (`id`, `feature_title`, `feature_content`) VALUES
-(1, 'Pulsuz Çatdırılma', '500 manatdan yuxarı sifarişlər');
+(1, 'Pulsuz Çatdırılma', '500 manatdan yuxarı sifarişlər'),
+(2, 'Pulun Geri Qayıtması Zəmanəti', '100% Pulun geri qaytarılması');
 
 -- --------------------------------------------------------
 
@@ -292,7 +320,8 @@ CREATE TABLE `writers` (
 --
 
 INSERT INTO `writers` (`id`, `writer_name`, `writer_img`, `writer_about`, `writer_status`, `created_at`, `updated_at`) VALUES
-(1, 'Fyodor Dostoyevski', 'uploads/writers/fyodor-dostoyevski.jpg', 'Fyodor Mixayloviç Dostoyevski — rus yazıçı, dünya ədəbiyyatının ən böyük yazıçısı. Adı tarixdə 100 ən çox öyrənilmiş şəxsiyyətlər siyahısına daxil edilib. Dostoyevskinin əsərləri Ceyms Coys, Virciniya Vulf, Fridrix Nitsşe, Ernest Heminquey, Knut Hamsun, Lüdviq Vitgenşteyn, Alberto Moravia, Aleksandr Soljenitsın, Çarlz Bukovski, Marsel Prust, Ayn Rand, Ziqmund Freyd, Frans Kafka, Orxan Pamuk və Lev Tolstoy kimi bir çox yazıçıların əsərlərinə işıq tutdu. Fridrix Nitsşe \"O mənim psixianaliz haqqında bir şeylər öyrəndiyim yeganə insandır. O mənim həyatımın ən böyük sevincidr.\"', '0', '2022-03-24 02:10:22', '2022-03-24 19:45:07');
+(1, 'Fyodor Dostoyevski', 'uploads/writers/fyodor-dostoyevski.jpg', 'Fyodor Mixayloviç Dostoyevski — rus yazıçı, dünya ədəbiyyatının ən böyük yazıçısı. Adı tarixdə 100 ən çox öyrənilmiş şəxsiyyətlər siyahısına daxil edilib. Dostoyevskinin əsərləri Ceyms Coys, Virciniya Vulf, Fridrix Nitsşe, Ernest Heminquey, Knut Hamsun, Lüdviq Vitgenşteyn, Alberto Moravia, Aleksandr Soljenitsın, Çarlz Bukovski, Marsel Prust, Ayn Rand, Ziqmund Freyd, Frans Kafka, Orxan Pamuk və Lev Tolstoy kimi bir çox yazıçıların əsərlərinə işıq tutdu. Fridrix Nitsşe \"O mənim psixianaliz haqqında bir şeylər öyrəndiyim yeganə insandır. O mənim həyatımın ən böyük sevincidr.\"', '0', '2022-03-24 02:10:22', '2022-03-24 19:45:07'),
+(4, 'Jan Pol Sartr', 'uploads/writers/jan-pol-sartr.jpg', 'Jan-Pol Sartr (fr. Jean-Paul Charles Aymard Sartre; 21 iyun 1905, Paris – 15 aprel 1980, 14-cü Paris dairəsi) — XX əsr fransız filosofu, yazıçı və dramaturq, ekzistensialist ədəbi-fəlsəfi cərəyanın yaradıcılarından biri, 1964-cü ildə Ədəbiyyat üzrə Nobel mükafatına layiq görülsə də, bundan imtina etmişdir.', '0', '2022-04-05 02:53:47', '2022-04-05 02:53:47');
 
 --
 -- Indexes for dumped tables
@@ -302,6 +331,12 @@ INSERT INTO `writers` (`id`, `writer_name`, `writer_img`, `writer_about`, `write
 -- Indexes for table `blog`
 --
 ALTER TABLE `blog`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `books`
+--
+ALTER TABLE `books`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -391,6 +426,12 @@ ALTER TABLE `blog`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `books`
+--
+ALTER TABLE `books`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `carousel_banner`
 --
 ALTER TABLE `carousel_banner`
@@ -400,7 +441,7 @@ ALTER TABLE `carousel_banner`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -412,7 +453,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `feature_section`
 --
 ALTER TABLE `feature_section`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `general_question`
@@ -454,7 +495,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `writers`
 --
 ALTER TABLE `writers`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
