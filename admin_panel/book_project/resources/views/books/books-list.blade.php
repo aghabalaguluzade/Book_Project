@@ -16,20 +16,26 @@
         <thead>
         <tr>
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Şəkil</th>
-            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Kitab Adı</th>
-            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Kitab Məzmunu</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Kateqoriya</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Yazıcı</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Adı</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Məzmun</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Qiyməti</th>
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Əməliyyatlar</th></tr>
         </thead>
-        <tbody>
+        <tbody class="text-center">
 
             @foreach ($books as $book)
             
-            <tr class="odd">
-                <td><img src="{{ asset( $book->books_img) }}" alt="{{ $book->books_img }}" style="width: 100px; height: auto;"></td>
-                <td>{{ $book->books_name }}</td>
-                <td>{{ $book->books_description }}</td>
+            <tr class="odd text-center">
+                <td><img src="{{ asset( $book->books_img) }}" alt="{{ $book->books_img }}" style="width: 50px; height: auto;"></td>
+                <td>{{ $book->Category($book->category_id)->category_name }}</td>
+                <td>{{ $book->Writers($book->writer_id)->writer_name }}</td>
+                <td class="text-center">{{ $book->books_name }}</td>
+                <td class="text-center">{{ Str::limit($book->books_description, 65, '...') }}</td>
+                <td>{{ $book->price }} AZN</td>
                 <td>
-                    <button class="btn btn-outline-danger btn-sm" onclick="blog_delete({{ $book->id }})">Sil</button>
+                    <button class="btn btn-outline-danger btn-sm mb-1-md" onclick="blog_delete({{ $book->id }})">Sil</button>
                     <a href="{{ route('BooksEdit', $book->id) }}"><button class="btn btn-outline-info btn-sm">Redaktə Et</button></a>
                 </td>
               </tr>

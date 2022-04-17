@@ -52,6 +52,10 @@
                     </div>
                   </div>
                 </div>
+                <div class="form-group">
+                  <label for="price">Kitab Qiyməti</label>
+                  <input type="number" class="form-control" min="0" max="10000" step="0.01" id="price" name="price" />
+                </div>
                 </div>
                 <div class="card-footer">
                   <button type="submit" class="btn btn-success">Təsdiq Et</button>

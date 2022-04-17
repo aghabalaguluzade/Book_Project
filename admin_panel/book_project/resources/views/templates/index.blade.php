@@ -1385,11 +1385,11 @@ responsive:{
 						<p class="manufacture-product">
 							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=7">Hewlett-Packard</a>
 						</p>
-						<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52">Apple iPad with Retina  Display MD510LL/A </a></h4>
+						<h4 class="product-name"><a href="">Apple iPad with Retina  Display MD510LL/A </a></h4>
 					</div>
 					<div class="box-border">
 						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52" class="product-image">
+							<a href="" class="product-image">
 							<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/2-600x600.jpg" alt="Apple iPad with Retina  Display MD510LL/A " title="Apple iPad with Retina  Display MD510LL/A " class="img-responsive " />
 							</a>
 							<div class="box-label">	

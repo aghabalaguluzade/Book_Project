@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','Bloq Redaktə Et')
+@section('title','Kitab Redaktə Et')
 @section('content')
 @include('widget.breadcrumb')
 
@@ -9,7 +9,7 @@
           <div class="col-md-10">
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Bloq Redaktə Et</h3>
+                <h3 class="card-title">Kitab Redaktə Et</h3>
               </div>
               @include('settings.errors')
               <form action="{{ route('BooksEditPost', $books->id) }}" method="POST" enctype="multipart/form-data">
@@ -26,14 +26,51 @@
                         </div>
                       </div>
                     </div>
+                    <div class="form-group">
+                      <label for="category_id">Kateqoriya</label>
+                      <select class="form-control" id="category_id" name="category_id">
+                        @foreach ($main_category as $category)
+                            <optgroup label="{{ $category->category_name }}">
+                              @foreach ($category->getSubCategory($category->id) as $sub_category)
+                                  <option value="{{ $sub_category->id }}" {{ $sub_category->id == $books->category_id ? "selected" : "" }}>{{ $sub_category->category_name }}</option>
+                              @endforeach
+                            </optgroup>
+                        @endforeach
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="writer_id">Yazıçılar</label>
+                      <select class="form-control" id="writer_id" name="writer_id">
+                        @foreach ($writers as $writer)
+                          <option value="{{ $writer->id }}" {{ $writer->id == $books->writer_id ? "selected" : "" }}>{{ $writer->writer_name }}</option>
+                        @endforeach
+                      </select>
+                    </div>
                   <div class="form-group">
                     <label for="books_name">Kitab Adı</label>
                     <input type="text" class="form-control" id="books_name" name="books_name" value="{{ $books->books_name }}" />
                   </div>
                   <div class="form-group">
-                    <label for="books_description">Məzmun</label> <br />
+                    <label for="books_description">Kitabın Məzmunu</label> <br />
                     <textarea class="form-control" id="books_description" cols="30" rows="10" name="books_description">{{ $books->books_description }}</textarea>
                   </div>
+                  <div class="form-group">
+                    <label for="price">Kitab Qiyməti</label>
+                    <input type="number" class="form-control" min="0" max="10000" step="0.01" id="price" name="price" value="{{ $books->price }}" />
+                  </div>
+                  <div class="jumbotron jumbotron-fluid" id="priceView" style="display: none; text-align:center">
+                    <div class="container">
+                      <h2>Hazırda olan qiymət</h2>
+                      <h3 class="display-6 old-price">{{ $books->price }}</h3>
+                      <h2>Yeni Qiymət</h2>
+                      <div class="form-group">
+                        <p class="display-5">Köhnə Qiymət</p>
+                        <p>{{ $books->old_price }}</p>
+                        <input type="number" class="form-control" min="0" max="1000" step="0.01" name="old_price" id="old_price" />
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-outline-info" onclick="priceView()">Qiymət Tənzimləmələri</button>
                 </div>
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Redaktə Et</button>
@@ -48,6 +85,13 @@
 
 @endsection
 @section('head')
+<style>
+
+  .old-price {
+    text-decoration: line-through;
+  }
+
+</style>
 @endsection
 @section('footer')
 <script>
@@ -60,4 +104,5 @@
       tinycomments_author: 'Author name',
     });
   </script>
+  <script src="{{ asset('plugins/main/books-edit.js') }}"></script>
 @endsection

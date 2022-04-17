@@ -10,4 +10,12 @@ class Books extends Model
     use HasFactory;
     protected $table = "books";
     protected $guarded = [];
+
+    public function Category($id) {
+        return Category::find($id) ?? null;
+    }
+
+    public function Writers($id) {
+        return Writers::find($id) ?? null;
+    }
 }

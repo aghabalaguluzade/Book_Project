@@ -23,4 +23,8 @@ class Category extends Model
         // return count(Category::where("parent_id",$id)->get()) > 0 ? Category::where("parent_id",$id)->get() : null;
         return Category::where("parent_id",$id)->get();
     }
+
+    public function children() {
+        return $this->hasMany(Category::class,'parent_id');
+    }
 }

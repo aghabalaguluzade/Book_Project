@@ -1046,24 +1046,39 @@
                     <div class="right"><i class="fas fa-chevron-down" aria-hidden="true"></i></div>
                 </div>
                 <ul class="ul-top-items">
-                                                                                                    <li class="li-top-item left  has-child">
-                                                                    <a class="a-top-link a-item" href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=451">
-                                                                                                                            <span>Üst Kateqoriya</span>
-                                                                                                                            <i class="fas fa-chevron-right" aria-hidden="true"></i>
-                                                                            </a>
-                                                                            
-                                                                                                                                    <div class="flyout-menu-container sub-menu-container left">
-                                                    <ul class="ul-second-items">
-                                                                                                                                                                                                                                                                                                                                <li class="li-second-items">
-                                                                            <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=451_452" class="a-second-link a-item">
-                                                                                <span class="a-second-title">Alt Kateqoriyalar</span></a>
+
+                    @foreach ($categories as $category)
+
+                    <li class="li-top-item left  has-child">
+                        <a class="a-top-link a-item" href="">
+
+                            
+
+                            <span>{{ $category->category_name }}</span>
+                      
+                         
+                                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                    </a>
+                                        
+                                         <div class="flyout-menu-container sub-menu-container left">
+                                        
+                                            @foreach ($category->children as $child)
+
+                                            <ul class="ul-second-items">                                                                                                                                                                                                                                                     <li class="li-second-items">
+                                                <a href="" class="a-second-link a-item">
+                                                <span class="a-second-title">{{ $child->category_name }}</span></a>
+                        </li>
+                                            </ul>
+
+                                            @endforeach
+
+                                        </div>
+                        </li>  
+
+                        @endforeach                                                                             
 </li>
-</ul>
-</div>
-</li>                                                                                    
-</li>
-</ul>
-</div>
+                </ul>
+        </div>
     
     
   

@@ -1,13 +1,21 @@
 <footer>
 	<div class="container">
-					    <div class="brand-slider">
-  
+	    <div class="brand-slider">
+			
   <div id="banner0" class="swiper-container">
-    <div class="swiper-wrapper">
-			<div class="swiper-slide"><a href="#"><img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/brand/br6-170x58.jpg" alt="br6" class="img-responsive" /></a></div>
-      </div>
-  </div>
-  
+	<div class="swiper-wrapper">
+
+		
+			@foreach ($partners as $partner)
+				<div class="swiper-slide">
+
+					<img src="{{ asset($partner->img) }}" alt="{{ $partner->title }}" class="img-responsive" style="width:170px;height:58px;" />
+
+				</div>
+			@endforeach
+		
+	</div>
+	</div>
 </div>
 <script ><!--
 $('#banner0').swiper({
