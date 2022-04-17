@@ -58,19 +58,27 @@
                     <label for="price">Kitab Qiyməti</label>
                     <input type="number" class="form-control" min="0" max="10000" step="0.01" id="price" name="price" value="{{ $books->price }}" />
                   </div>
-                  <div class="jumbotron jumbotron-fluid" id="priceView" style="display: none; text-align:center">
+                  <button type="button" class="btn btn-outline-info mb-3" id="btnView">Qiymət Tənzimləmələri</button>
+                  <div class="jumbotron jumbotron-fluid" id="priceView" style="display:none; text-align:center">
                     <div class="container">
                       <h2>Hazırda olan qiymət</h2>
                       <h3 class="display-6 old-price">{{ $books->price }}</h3>
-                      <h2>Yeni Qiymət</h2>
                       <div class="form-group">
-                        <p class="display-5">Köhnə Qiymət</p>
+                        <h2>Köhnə Qiymət</h2>
                         <p>{{ $books->old_price }}</p>
-                        <input type="number" class="form-control" min="0" max="1000" step="0.01" name="old_price" id="old_price" />
+                        <label for="prince_cut">Endirim</label>
+                        <input type="number" class="form-control" min="0" max="100" name="price_cut" id="price_cut" value="{{ $books->price_cut }}" />
                       </div>
                     </div>
                   </div>
-                  <button type="button" class="btn btn-outline-info" onclick="priceView()">Qiymət Tənzimləmələri</button>
+                  <div class="form-group">
+                    <label for="page">Kitabın Səhifə</label>
+                    <input type="number" class="form-control" min="1" max="4000" id="page" name="page" value="{{ $books->page }}" />
+                  </div>
+                  <div class="form-group">
+                    <label for="quantity">Kitabın Sayı</label>
+                    <input type="number" class="form-control" min="1" max="100000" id="quantity" name="quantity" value="{{ $books->quantity }}" />
+                  </div>
                 </div>
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Redaktə Et</button>
@@ -104,5 +112,10 @@
       tinycomments_author: 'Author name',
     });
   </script>
-  <script src="{{ asset('plugins/main/books-edit.js') }}"></script>
+  {{-- <script src="{{ asset('plugins/main/books-edit.js') }}"></script> --}}
+  <script>
+    $( "#btnView" ).click(function() {
+    $( "#priceView" ).toggle();
+  });
+  </script>
 @endsection

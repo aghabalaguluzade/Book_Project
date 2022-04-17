@@ -140,7 +140,6 @@ Route::prefix('books')->group(function() {
     Route::post('/books-add',[BooksAddController::class, "BooksAddPost"])->name("BooksAddPost");
     Route::get('/books-edit/{id}',[BooksEditController::class, "BooksEdit"])->name("BooksEdit");
     Route::post('/books-edit/{id}',[BooksEditController::class, "BooksEditPost"])->name("BooksEditPost");
-    // Route::post('/book-edit/price',[BooksEditController::class, "BooksEditPrice"]);
 
 });
 

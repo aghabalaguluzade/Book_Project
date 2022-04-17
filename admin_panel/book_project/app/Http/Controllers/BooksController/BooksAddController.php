@@ -26,8 +26,10 @@ class BooksAddController extends Controller
         $request->validate([
             'books_name' => 'required|max:500',
             'books_description' => 'required',
-            'books_img' => 'required|image|mimes:png,jpg,jpeg,gif,jfif,webp|max:1024',
-            'price' => 'required|regex:/^\d+(\.\d{1,2})?$/|numeric|between:0,99.99'
+            'books_img' => 'required|image|mimes:png,jpg,jpeg,gif,jfif,webp|max:2048',
+            'price' => 'required|regex:/^\d+(\.\d{1,2})?$/|numeric|between:0,99.99',
+            'quantity' => 'required|numeric',
+            'page' => 'numeric'
         ]);
 
         $image = $request->file('books_img');
@@ -43,7 +45,10 @@ class BooksAddController extends Controller
             'slug' => Str::slug($request->books_name),
             'books_description' => $request->books_description,
             'books_img' => $img_name,
-            'price' => $request->price
+            'price' => $request->price,
+            'quantity' => $request->quantity,
+            'code' => Str::upper(uniqid($request->code)),
+            'page' => $request->page
         ]);
 
         return redirect()->back()->with($books ? "success" : "error", true);

@@ -21,6 +21,9 @@
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Adı</th>
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Məzmun</th>
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Qiyməti</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Sayı</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Səhifə Sayı</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Məhsul Kodu</th>
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Əməliyyatlar</th></tr>
         </thead>
         <tbody class="text-center">
@@ -34,6 +37,9 @@
                 <td class="text-center">{{ $book->books_name }}</td>
                 <td class="text-center">{{ Str::limit($book->books_description, 65, '...') }}</td>
                 <td>{{ $book->price }} AZN</td>
+                <td>{{ $book->quantity }}</td>
+                <td>{{ $book->page }}</td>
+                <td>{{ $book->code }}</td>
                 <td>
                     <button class="btn btn-outline-danger btn-sm mb-1-md" onclick="blog_delete({{ $book->id }})">Sil</button>
                     <a href="{{ route('BooksEdit', $book->id) }}"><button class="btn btn-outline-info btn-sm">Redaktə Et</button></a>

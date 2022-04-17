@@ -27,8 +27,10 @@ class BooksEditController extends Controller
     public function BooksEditPost(Request $request) {
         $request->validate([
             'books_name' => 'required|max:500',
-            'books_img' => 'image|mimes:png,jpg,jpeg,gif,jfif,webp|max:1024',
+            'books_img' => 'image|mimes:png,jpg,jpeg,gif,jfif,webp|max:2048',
             'price' => 'regex:/^\d+(\.\d{1,2})?$/|numeric|between:0,99.99',
+            'quantity' => 'numeric',
+            'page' => 'numeric'
         ]);
 
         $books = Books::find($request->id);
@@ -54,12 +56,14 @@ class BooksEditController extends Controller
         $books->books_name = $request->books_name;
         $books->books_description = $request->books_description;
         $books->price = $request->price;
-        $books->old_price = $request->old_price;
-        
-        if($books->old_price &&  $books->old_price > 0) {
-            $books->old_price = Str::slug($request->price);
-        }
-        $books->price = Str::slug($request->old_price);
+        $books->price_cut = $request->price_cut;
+        $books->quantity = $request->quantity;
+        $books->page = $request->page;
+
+        $books->price_cut > 0 ? $books->old_price = $books->price : null;
+        $books->price_cut > 0 ? $books->price = Str::slug(((100 - $books->price_cut) / 100) * $books->price) : null;
+
+
         return redirect()->back()->with($books->save() ? "success" : "error", true);
 
     }

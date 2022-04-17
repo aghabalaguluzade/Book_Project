@@ -56,6 +56,15 @@
                   <label for="price">Kitab Qiyməti</label>
                   <input type="number" class="form-control" min="0" max="10000" step="0.01" id="price" name="price" />
                 </div>
+                <div class="form-group">
+                  <label for="page">Səhifə Sayı</label>
+                  <input type="number" class="form-control" min="1" max="3000" id="page" name="page" />
+                </div>
+                <div class="form-group">
+                  <label for="quantity">Kitabın Sayı</label>
+                  <input type="number" class="form-control" min="1" max="100000" id="quantity" name="quantity" />
+                </div>
+                <input type="hidden" name="code" />
                 </div>
                 <div class="card-footer">
                   <button type="submit" class="btn btn-success">Təsdiq Et</button>
