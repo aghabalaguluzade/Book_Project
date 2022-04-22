@@ -47,7 +47,7 @@
                 </div>
             </div>
         </main>
-
+        <div id="map"></div>
         <div class="contact-bottom-info inner-page-sec-padding-bottom">
             <div class="container">
                 <div class="row">
@@ -112,12 +112,43 @@
             </div>
         </div>
     </div>
+
 @endsection
 @section('addcss')
     <link rel="stylesheet" href="{{ asset('css/plugins.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <style>
+        #map {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+}
+    </style>
 @endsection
 @section('addjs')
+    <script>
+        function initMap() {
+  // The location of Uluru
+  const uluru = { lat: -25.344, lng: 131.031 };
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 4,
+    center: uluru,
+  });
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: uluru,
+    map: map,
+  });
+}
+
+window.initMap = initMap;
+    </script>
+     <script
+     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+     defer
+   ></script>
     <script src="{{ asset('js/plugins.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
 @endsection

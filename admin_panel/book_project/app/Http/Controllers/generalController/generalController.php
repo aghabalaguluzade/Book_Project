@@ -35,8 +35,10 @@ class generalController extends Controller
     public function templates() {
         $this->fragmented();
         $banners = Banner::all();
+        $blogs = Blog::orderBy('created_at','desc')->get();
         View::share([
-            'banners' => $banners
+            'banners' => $banners,
+            'blogs' => $blogs
         ]);
         return view('templates.index');
 
@@ -58,7 +60,7 @@ class generalController extends Controller
 
     public function Bloq() {
         $this->fragmented();
-        $blogs = Blog::all();
+        $blogs = Blog::orderBy('created_at','desc')->get();
         $blogs_archive = Blog::whereDate('created_at', Carbon::today())->get();
         $blogs_count = Blog::count();
         View::share([
@@ -66,6 +68,16 @@ class generalController extends Controller
             'blogs_archive' => $blogs_archive,
             'blogs_count' => $blogs_count
         ]);
+        return view('templates.blog');
+    }
+
+    public function BloqContent($slug) {
+        $this->fragmented();
+        $blogs = Blog::where('slug',$slug)->get();
+        View::share([
+            'blogs' => $blogs
+        ]);
+        return view('templates.blog-content');
         return view('templates.blog');
     }
 

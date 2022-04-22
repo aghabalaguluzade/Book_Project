@@ -2997,35 +2997,38 @@ if(count == 1) {
 <div id="blog_home" class="menu-recent module-nav2">
 <div>
 <div class="blog-title module-title">
-<h2>Latest Blogs</h2>
+<h2>Son Bloqlar</h2>
 </div>
 		<div class="owl-container">
 <div class="articles-container owl-carousel owl-theme">
 
 	{{-- Bloq yeri --}}
 
+	@foreach ($blogs as $blog)
+
 		<div class="row_items">
 			<div class="articles-inner ">
 			<div class="articles-image">
-				<a href="http://smartbook4.demo.towerthemes.com/index.php?route=blog/article&amp;article_id=6"><img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/blog/2-370x244.jpg" alt="How to Grow Epiphytic Tropical Plants"/><span class="icon-view"></span></a>
+				<a href="{{ route('BloqContent',$blog->slug) }}"><img src="{{ $blog->img }}" alt="{{ $blog->title }}"/><span class="icon-view"></span></a>
 			</div>	
 			<div class="aritcles-content">
 				<div class="content-inner">
 					<div class="box-name">	
 						<p class="date-time-post">
-							<span class="date-post">30</span>
-							<span class="month-post">Oct</span>
+							<span class="date-post">{{ $blog->created_at->format('d') }}</span>
+							<span class="month-post">{{ $blog->created_at->format('M') }}</span>
 						</p>
-						<a class="articles-name" href="http://smartbook4.demo.towerthemes.com/index.php?route=blog/article&amp;article_id=6">How to Grow Epiphytic Tropical Plants</a>
+						<a class="articles-name" href="{{ route('BloqContent',$blog->slug) }}">{{ $blog->title }}</a>
 					</div>
-					<p class="author-name">Post by <span>Plaza Themes</span></p>
-					<div class="articles-intro"><p>Maria Denardo is the Fashion Director at theFashionSpot. Prior to joining tFS, she worked as...</p></div>								
-					<a href="http://smartbook4.demo.towerthemes.com/index.php?route=blog/article&amp;article_id=6" class="read-more">Read more</a>	
+					<p class="author-name">Yayımlayan <span>{{ $blog->author }}</span></p>
+					<div class="articles-intro"><p>{!! Str::limit($blog->contents, 80, '...') !!}</p></div>								
+					<a href="{{ route('BloqContent',$blog->slug) }}" class="read-more">Davamını oxu</a>	
 				</div>
 			</div>
 		</div>
 		</div>
-			
+
+		@endforeach
 
 </div>
 </div>

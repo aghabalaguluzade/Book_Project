@@ -32,7 +32,8 @@ class BlogAddController extends Controller
                 'title' => $request->title,
                 'author' => $request->author,
                 'img' => $img_name,
-                'contents' => $request->contents
+                'contents' => $request->contents,
+                'slug' => Str::slug($request->title)
             ]);
 
             return redirect()->back()->with($data ? "success" : "error", true);
