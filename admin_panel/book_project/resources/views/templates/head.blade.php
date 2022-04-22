@@ -2,6 +2,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>@yield('title','Book House')</title>
     <script src="{{ asset('catalog/view/javascript/jquery/jquery-2.1.1.min.js') }}" ></script>
     <script src="{{ asset('catalog/view/javascript/jquery/owl-carousel/js/owl.carousel.min.js') }}" ></script>
     <script src="{{ asset('catalog/view/javascript/jquery/swiper/js/swiper.jquery.js') }}" ></script>
@@ -31,5 +32,4 @@
     <link href="{{ asset('catalog/view/javascript/jquery/swiper/css/swiper.min.css') }}" type="text/css" rel="stylesheet" media="screen" />
     <link href="{{ asset('catalog/view/javascript/jquery/swiper/css/opencart.css') }}" type="text/css" rel="stylesheet" media="screen" />
     <link href="{{ asset('image/catalog/cart.png') }}" rel="icon" />
-    <title>@yield('title','Book Store')</title>
 </head>

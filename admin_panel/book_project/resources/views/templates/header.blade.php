@@ -5,7 +5,7 @@
 			<div class="inner">
 				<div class="inner-inner">
 					<div class="col-menu-mobile">
-													    <style>
+<style>
     #oc-menu-4705 .oc-menu-bar {
         background: #FFFFFF;
         color: #333333;
@@ -121,24 +121,7 @@
                                                                                                                                                                             <li class="li-third-items">
                                                                                             <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=20_307_424" class="a-third-link"><span class="a-third-title">All-in-One Computers</span></a>
                                                                                         </li>
-                                                                                                                                                                            <li class="li-third-items">
-                                                                                            <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=20_307_423" class="a-third-link"><span class="a-third-title">Computer Cards &amp; Components</span></a>
-                                                                                        </li>
-                                                                                                                                                                            <li class="li-third-items">
-                                                                                            <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=20_307_415" class="a-third-link"><span class="a-third-title">Fans, Heatsinks &amp; Cooling</span></a>
-                                                                                        </li>
-                                                                                                                                                                            <li class="li-third-items">
-                                                                                            <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=20_307_416" class="a-third-link"><span class="a-third-title">GPUs / Video Graphics Cards</span></a>
-                                                                                        </li>
-                                                                                                                                                                            <li class="li-third-items">
-                                                                                            <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=20_307_417" class="a-third-link"><span class="a-third-title">Hard Drives &amp; Storage</span></a>
-                                                                                        </li>
-                                                                                                                                                                            <li class="li-third-items">
-                                                                                            <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=20_307_360" class="a-third-link"><span class="a-third-title">Microsoft Surface Go</span></a>
-                                                                                        </li>
-                                                                                                                                                                            <li class="li-third-items">
-                                                                                            <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=20_307_414" class="a-third-link"><span class="a-third-title">Optical Drives</span></a>
-                                                                                        </li>
+                                                                                         
                                                                                                                                                                     </ul>
                                                                             </div>
                                                                                                                                             </li>
@@ -1084,8 +1067,10 @@
   
 									</div>
 									    <div class="header-phone">
-<p>Free Support 24/7</p>
-<p>+01-202-555-0181</p>
+<p>Pulsuz Dəstək 24/7  </p>
+@foreach ($settings as $setting)
+    <p>{!! "&nbsp" !!}{{ $setting->contact_phone }}</p>
+@endforeach
 </div>
   
 								<div class="col-hoz fix">
@@ -1172,194 +1157,26 @@
                             <input type="hidden" id="menu-effect-2199" class="menu-effect" value="none" />
                 <ul class="ul-top-items">
                                                                         <li class="li-top-item left " style="float: left">
-                                                                    <a class="a-top-link" href="index.php?route=common/home">
-                                                                                                                            <span>Home</span>
+                                                                    <a class="a-top-link" href="{{ route('templates') }}">
+                                                                                                                            <span>Ana Səhifə</span>
                                                                                                                     </a>
                                                                                             </li>
-                                                                                                <li class="li-top-item left has-child" style="float: left">
-                                                                    <a class="a-top-link" href="index.php?route=product/category&amp;path=20">
-                                                                                                                            <span>Shop</span>
-                                                                                                                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                                                                            </a>
-                                                                                                    <!-- Mega Menu -->
-                                                                            
-                                        
-                                                                                                                                    <div class="mega-menu-container sub-menu-container left ">
-                                                    <div class="row">
-													                                                                                                                                                                                                                                                                                                                                <div class="col-md-4 sub-item2-content sub-item2-category-content" data-cols="4">
-                                                                                                                                                        <h4><a class="a-mega-second-link" href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=50">Drills</a></h4>
-                                                                                                                                                            <div class="sub_item3-content">
-                                                                                                                                                                            <h5><a class="a-mega-third-link" href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=50_418">Cables &amp; Connectors</a></h5>
-                                                                                                                                                                            <h5><a class="a-mega-third-link" href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=50_419">Cleaning Equipment &amp; Kits</a></h5>
-                                                                                                                                                                            <h5><a class="a-mega-third-link" href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=50_420">Computer Speakers</a></h5>
-                                                                                                                                                                            <h5><a class="a-mega-third-link" href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=50_421">Graphics Tablets</a></h5>
-                                                                                                                                                                            <h5><a class="a-mega-third-link" href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=50_359">Microsoft Surface Pro</a></h5>
-                                                                                                                                                                            <h5><a class="a-mega-third-link" href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=50_422">Printers, Ink &amp; Toner</a></h5>
-                                                                                                                                                                            <h5><a class="a-mega-third-link" href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=50_363">Refurbished Tablets</a></h5>
-                                                                                                                                                                    </div>
-                                                                                                                                                    </div>
-                                                                    
-                                                                    
-                                                                    
-                                                                                                                                                                                                                                                                                <div class="col-md-4 sub-item2-content sub-item2-category-content" data-cols="4">
-                                                                                                                                                        <h4><a class="a-mega-second-link" href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=307">Saws</a></h4>
-                                                                                                                                                            <div class="sub_item3-content">
-                                                                                                                                                                            <h5><a class="a-mega-third-link" href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=307_424">All-in-One Computers</a></h5>
-                                                                                                                                                                            <h5><a class="a-mega-third-link" href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=307_423">Computer Cards &amp; Components</a></h5>
-                                                                                                                                                                            <h5><a class="a-mega-third-link" href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=307_415">Fans, Heatsinks &amp; Cooling</a></h5>
-                                                                                                                                                                            <h5><a class="a-mega-third-link" href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=307_416">GPUs / Video Graphics Cards</a></h5>
-                                                                                                                                                                            <h5><a class="a-mega-third-link" href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=307_417">Hard Drives &amp; Storage</a></h5>
-                                                                                                                                                                            <h5><a class="a-mega-third-link" href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=307_360">Microsoft Surface Go</a></h5>
-                                                                                                                                                                            <h5><a class="a-mega-third-link" href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=307_414">Optical Drives</a></h5>
-                                                                                                                                                                    </div>
-                                                                                                                                                    </div>
-                                                                    
-                                                                    
-                                                                    
-                                                                                                                                                                                                        
-                                                                    
-                                                                                                                                            <div class="col-md-4 sub-item2-content" data-cols="4">
-                                                                            <p class="widget-html-title"></p>
-                                                                            <div><div class="banner-static static-menu-right">
-<div class="image">
-<a href="#">
-<img src="image/catalog/cmsblock/img-right-menu.jpg" alt="img-right-menu">
-</a>
-</div>
-</div></div>
-                                                                        </div>
-                                                                    
-                                                                                                                                                                                                                                                                                                            													</div>
-                                                </div>
-                                                                                                                        
-                                    <!-- Flyout Menu -->
-                                                                                                </li>
-                                                                                                <li class="li-top-item left has-child" style="float: left">
-                                                                    <a class="a-top-link" href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=56">
-                                                                                                                            <span>Tools</span>
-                                                                                                                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                                                                            </a>
-                                                                                                    <!-- Mega Menu -->
-                                    
-                                    <!-- Flyout Menu -->
-                                                                            
-                                                                                                                                    <div class="flyout-menu-container sub-menu-container left">
-                                                    <ul class="ul-second-items">
-                                                                                                                                                                                                                                                                                                                                <li class="li-second-items">
-                                                                            <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=56_84" class="a-second-link a-item">
-                                                                                <span class="a-second-title">Wheel Simulators</span>
-                                                                                                                                                                                                                                                            <i class="fas fa-chevron-right" aria-hidden="true"></i>
-                                                                                                                                                                                                                                                                                                                                    </a>
-                                                                                                                                                            <div class="flyout-third-items left">
-                                                                                    <ul class="ul-third-items">
-                                                                                                                                                                                    <li class="li-third-items">
-                                                                                                <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=56_84_329" class="a-third-link"><span class="a-third-title">Bags &amp; Cases</span></a>
-                                                                                            </li>
-                                                                                                                                                                                    <li class="li-third-items">
-                                                                                                <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=56_84_330" class="a-third-link"><span class="a-third-title">Binoculars &amp; Scopes</span></a>
-                                                                                            </li>
-                                                                                                                                                                                    <li class="li-third-items">
-                                                                                                <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=56_84_331" class="a-third-link"><span class="a-third-title">Digital Cameras</span></a>
-                                                                                            </li>
-                                                                                                                                                                                    <li class="li-third-items">
-                                                                                                <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=56_84_332" class="a-third-link"><span class="a-third-title">Film Photography</span></a>
-                                                                                            </li>
-                                                                                                                                                                                    <li class="li-third-items">
-                                                                                                <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=56_84_334" class="a-third-link"><span class="a-third-title">Lighting &amp; Studio</span></a>
-                                                                                            </li>
-                                                                                                                                                                            </ul>
-                                                                                </div>
-                                                                                                                                                    </li>
-                                                                                                                                            <li class="li-second-items">
-                                                                            <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=56_86" class="a-second-link a-item">
-                                                                                <span class="a-second-title">Seals &amp; Hubs</span>
-                                                                                                                                                                                                                                                            <i class="fas fa-chevron-right" aria-hidden="true"></i>
-                                                                                                                                                                                                                                                                                                                                    </a>
-                                                                                                                                                            <div class="flyout-third-items left">
-                                                                                    <ul class="ul-third-items">
-                                                                                                                                                                                    <li class="li-third-items">
-                                                                                                <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=56_86_396" class="a-third-link"><span class="a-third-title">DSLR Body &amp; Lens</span></a>
-                                                                                            </li>
-                                                                                                                                                                                    <li class="li-third-items">
-                                                                                                <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=56_86_397" class="a-third-link"><span class="a-third-title">DSLR Body Only</span></a>
-                                                                                            </li>
-                                                                                                                                                                                    <li class="li-third-items">
-                                                                                                <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=56_86_399" class="a-third-link"><span class="a-third-title">DSLR Lenses</span></a>
-                                                                                            </li>
-                                                                                                                                                                                    <li class="li-third-items">
-                                                                                                <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=56_86_398" class="a-third-link"><span class="a-third-title">DSLR Package Deals</span></a>
-                                                                                            </li>
-                                                                                                                                                                            </ul>
-                                                                                </div>
-                                                                                                                                                    </li>
-                                                                                                                                            <li class="li-second-items">
-                                                                            <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=56_62" class="a-second-link a-item">
-                                                                                <span class="a-second-title">Wheel Rim Screws</span>
-                                                                                                                                                                                                                                                            <i class="fas fa-chevron-right" aria-hidden="true"></i>
-                                                                                                                                                                                                                                                                                                                                    </a>
-                                                                                                                                                            <div class="flyout-third-items left">
-                                                                                    <ul class="ul-third-items">
-                                                                                                                                                                                    <li class="li-third-items">
-                                                                                                <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=56_62_401" class="a-third-link"><span class="a-third-title">Camera Lenses</span></a>
-                                                                                            </li>
-                                                                                                                                                                                    <li class="li-third-items">
-                                                                                                <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=56_62_400" class="a-third-link"><span class="a-third-title">DSLR Lenses</span></a>
-                                                                                            </li>
-                                                                                                                                                                                    <li class="li-third-items">
-                                                                                                <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=56_62_402" class="a-third-link"><span class="a-third-title">Lens Accessories</span></a>
-                                                                                            </li>
-                                                                                                                                                                                    <li class="li-third-items">
-                                                                                                <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=56_62_408" class="a-third-link"><span class="a-third-title">Lowepro</span></a>
-                                                                                            </li>
-                                                                                                                                                                                    <li class="li-third-items">
-                                                                                                <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=56_62_410" class="a-third-link"><span class="a-third-title">SanDisk</span></a>
-                                                                                            </li>
-                                                                                                                                                                            </ul>
-                                                                                </div>
-                                                                                                                                                    </li>
-                                                                                                                                            <li class="li-second-items">
-                                                                            <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=56_91" class="a-second-link a-item">
-                                                                                <span class="a-second-title">Wheel Bearings</span>
-                                                                                                                                                                                                                                                            <i class="fas fa-chevron-right" aria-hidden="true"></i>
-                                                                                                                                                                                                                                                                                                                                    </a>
-                                                                                                                                                            <div class="flyout-third-items left">
-                                                                                    <ul class="ul-third-items">
-                                                                                                                                                                                    <li class="li-third-items">
-                                                                                                <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=56_91_407" class="a-third-link"><span class="a-third-title">Bower</span></a>
-                                                                                            </li>
-                                                                                                                                                                                    <li class="li-third-items">
-                                                                                                <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=56_91_411" class="a-third-link"><span class="a-third-title">Celestron</span></a>
-                                                                                            </li>
-                                                                                                                                                                                    <li class="li-third-items">
-                                                                                                <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=56_91_412" class="a-third-link"><span class="a-third-title">Flipbac</span></a>
-                                                                                            </li>
-                                                                                                                                                                                    <li class="li-third-items">
-                                                                                                <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=56_91_409" class="a-third-link"><span class="a-third-title">Gary Fong</span></a>
-                                                                                            </li>
-                                                                                                                                                                                    <li class="li-third-items">
-                                                                                                <a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/category&amp;path=56_91_413" class="a-third-link"><span class="a-third-title">GigaPan</span></a>
-                                                                                            </li>
-                                                                                                                                                                            </ul>
-                                                                                </div>
-                                                                                                                                                    </li>
-                                                                                                                                                                                                                                                                                                            </ul>
-                                                </div>
-                                                                                                                                                                                    </li>
+                                                
                                                                                                 <li class="li-top-item left " style="float: left">
-                                                                    <a class="a-top-link" href="index.php?route=information/contact">
-                                                                                                                            <span>Contact us</span>
+                                                                    <a class="a-top-link" href="{{ route('Bloq') }}">
+                                                                                                                            <span>Bloq</span>
                                                                                                                     </a>
                                                                                             </li>
-                                                                                                <li class="li-top-item left " style="float: left">
-                                                                    <a class="a-top-link" href="index.php?route=product/special">
-                                                                                                                            <span>Specials</span>
-                                                                                                                    </a>
-                                                                                            </li>
-                                                                                                <li class="li-top-item left " style="float: left">
-                                                                    <a class="a-top-link" href="index.php?route=blog/blog">
-                                                                                                                            <span>Blog</span>
-                                                                                                                    </a>
-                                                                                            </li>
+                                                                                            <li class="li-top-item left " style="float: left">
+                                                                                                <a class="a-top-link" href="{{ route('faq') }}">
+                                                                                                                                                        <span>Suallar</span>
+                                                                                                                                                </a>
+                                                                                                                        </li>
+                                                                                            <li class="li-top-item left " style="float: left">
+                                                                                                <a class="a-top-link" href="{{ route('contact') }}">
+                                                                                                                                                        <span>Əlaqə</span>
+                                                                                                                                                </a>
+                                                                                                                        </li>
                                                             </ul>
             			
         </div>

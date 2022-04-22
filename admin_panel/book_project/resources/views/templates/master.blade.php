@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     @include('templates.head')
+    @yield('addcss')
 <body >
 
     <div class="wrapper">
@@ -10,6 +11,6 @@
     </div>
     
     @include('templates.js')
-    
+    @yield('addjs')
 </body>
 </html>

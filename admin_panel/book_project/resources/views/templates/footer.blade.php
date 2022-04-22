@@ -45,6 +45,9 @@ $('#banner0').swiper({
 --></script> 
   
 			</div>
+			
+			@foreach ($settings as $setting)
+			
 	<div class="footer-top ">
 	  <div class="container">
 		<div class="container-inner">
@@ -56,11 +59,10 @@ $('#banner0').swiper({
 <a class="logo-footer" href="#"><img src="image/catalog/logo/logo.png" alt="logo-footer"></a>
 
 <ul class="list-unstyled text-content">
-<li class="address"><p>Ünvan:</p><p>Example Street 98, HH2 
-BacHa, New York, USA</p></li>
+<li class="address"><p>Ünvan:</p><p>{{ $setting->contact_address }}</p></li>
 
-<li class="phone"><p>Telefon:</p><p>+18088 234 5678</p></li>
-<li class="email"><p>E-poçt:</p><p>suport@plazathemes.com</p></li>
+<li class="phone"><p>Telefon:</p><p>{{ $setting->contact_phone }}</p></li>
+<li class="email"><p>E-poçt:</p><p>{{ $setting->contact_email }}</p></li>
 </ul>
 </div> 		
 </div>							 									 									 									 									 									 									 									 									 									 									 									 									 									
@@ -71,13 +73,9 @@ BacHa, New York, USA</p></li>
 				<div class="footer-title"><h5>İnformasiya</h5></div>
 				<div class="footer-content">
 					<ul class="list-unstyled text-content">
-											  					  <li><a href="http://smartbook4.demo.towerthemes.com/index.php?route=information/information&amp;information_id=4">About Us</a></li>
-					  					  <li><a href="http://smartbook4.demo.towerthemes.com/index.php?route=information/information&amp;information_id=6">Delivery Information</a></li>
-					  					  <li><a href="http://smartbook4.demo.towerthemes.com/index.php?route=information/information&amp;information_id=3">Privacy Policy</a></li>
-					  					  <li><a href="http://smartbook4.demo.towerthemes.com/index.php?route=information/information&amp;information_id=5">Terms &amp; Conditions</a></li>
-					  					  					  <li><a href="http://smartbook4.demo.towerthemes.com/index.php?route=information/contact">Contact Us</a></li>
-					  <li><a href="http://smartbook4.demo.towerthemes.com/index.php?route=information/sitemap">Site Map</a></li>
-					  <li><a href="http://smartbook4.demo.towerthemes.com/index.php?route=account/newsletter">Newsletter</a></li>
+						<li><a href="">About Us</a></li>
+					  	<li><a href="{{ route('contact') }}">Əlaqə</a></li>
+					  	<li><a href="{{ route('faq') }}">Suallar</a></li>
 					</ul>
 				</div>
 			  </div>
@@ -178,9 +176,9 @@ function email_unsubscribe(){
 													    										  										  										  <div class="follow">
 <label>Sosial Şəbəkələr</label>
 <ul class="link-follow">
-<li><a class="facebook ion-social-facebook" title="Facebook" href="https://www.facebook.com/plazathemes1"><span>Facebook</span></a></li>
-<li><a class="twitter ion-social-twitter" title="Twitter" href="https://twitter.com/plazathemes"><span>Twitter</span></a></li>
-<li><a class="google ion-social-googleplus-outline" title="Google" href="#"><span>Google</span></a></li>
+<li><a class="facebook ion-social-facebook" title="Facebook" href="{{ $setting->social_facebook }}"><span>Facebook</span></a></li>
+<li><a class="twitter ion-social-twitter" title="Twitter" href="{{ $setting->social_twitter }}"><span>Twitter</span></a></li>
+<li><a class="google ion-social-instagram-outline" title="İnstagram" href="{{ $setting->social_instagram }}"><span>İnstagram</span></a></li>
 </ul>
 </div> 									 									 									
   
@@ -190,6 +188,8 @@ function email_unsubscribe(){
 		</div>
 	  </div>
 	</div>
+
+	@endforeach
 
 	<div class="footer-bottom ">
 		<div class="container">

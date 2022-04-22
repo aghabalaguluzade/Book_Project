@@ -25,8 +25,6 @@ use App\Http\Controllers\SettingsController\ContactController;
 use App\Http\Controllers\SettingsController\LogoController;
 use App\Http\Controllers\SettingsController\SeoController;
 use App\Http\Controllers\SettingsController\SocialController;
-use App\Http\Controllers\ShareController\CategoryController;
-use App\Http\Controllers\ShareController\PartnersController;
 use App\Http\Controllers\Writers\addWritersController;
 use App\Http\Controllers\Writers\editWritersController;
 use App\Http\Controllers\Writers\listWritersController;
@@ -36,9 +34,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/admin',[generalController::class,'index'])->name("index");
 
-Route::get('/',[generalController::class,"templates"])->name("templates");
-// Route::get('/',[PartnersController::class, "partnersShare"])->name("partnersShare");
-Route::get('/',[CategoryController::class, "categoryShare"])->name("categoryShare");
+Route::get('/ana-səhifə',[generalController::class,"templates"])->name("templates");
+Route::get('/suallar',[generalController::class, "faq"])->name('faq');
+Route::get('/əlaqə',[generalController::class, "contact"])->name('contact');
+Route::get('/haqqımızda',[generalController::class, "templates"])->name('about');
+Route::get('/bloq',[generalController::class, "Bloq"])->name('Bloq');
 
 Route::prefix('settings')->group(function() {
 

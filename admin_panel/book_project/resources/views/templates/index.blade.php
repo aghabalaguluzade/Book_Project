@@ -1,6 +1,6 @@
 @extends('templates.master')
+@section('title','Book House')
 @section('content')
-
 <div id="content">				
 <div class="main-row slider-group">
 <div class="container">
@@ -327,12 +327,13 @@ if ($('#form-upload input[name=\'file\']').val() != '') {
 <div class= "oc-banner7-container">
 <div class="flexslider oc-nivoslider">
 <div class="oc-loading"></div>
+
+	@foreach ($banners as $banner)
+	
+
 <div id="oc-inivoslider1" class="nivoSlider">
 	<a  href="#">
-	<img style="display: none;" src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/slider/slider1-smartbooks4-870x494.jpg" alt="" title="#banner7-caption2"  />
-	</a>
-	<a  href="#">
-	<img style="display: none;" src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/slider/slider2-smartbooks4-870x494.jpg" alt="" title="#banner7-caption3"  />
+	<img style="display: none;" src="{{ $banner->banner_img }}" alt="" title="#banner7-caption2"  />
 	</a>				
 </div>										
 					
@@ -342,47 +343,26 @@ if ($('#form-upload input[name=\'file\']').val() != '') {
 			
 				<div class="text-content">							
 														<div>
-							<p class="title1">Magazine Cover</p>
+							<p class="title1">{{ $banner->banner_name }}</p>
 						</div>
 																			
 														<div>
-							<p class="sub-title">Mockup.</p>
+							<p class="sub-title">{{ $banner->banner_title }}</p>
 						</div>
 												
 					<div class="banner7-des">
-						<p>Cover up front of book and 
-leave summary</p>
+						<p>{{ $banner->banner_content }}</p>
 					</div>
 														<div class="banner7-readmore">
-							<a class="link-more" href="#">Shopping Now</a>
+							<a class="link-more" href="{{ $banner->banner_link }}">İndi al</a>
 						</div>
 												</div>
 		</div>
 	</div>
 			
-																		
+	@endforeach																
 					
 					
-					<div id="banner7-caption3" class="banner7-caption nivo-html-caption nivo-caption move-slides-effect" data-class="slide-movetype1">
-		<div class="timeloading"></div>
-		<div class=" banner7-content slider-1">
-			
-				<div class="text-content">							
-																			
-														<div>
-							<p class="sub-title">I Love This Idea!</p>
-						</div>
-												
-					<div class="banner7-des">
-						<p>Cover up front of book and leave summary</p>
-
-					</div>
-														<div class="banner7-readmore">
-							<a class="link-more" href="#">Shopping Now</a>
-</div>
-</div>
-</div>
-</div>
 			<script >
 	$(window).load(function() {
 		$('#oc-inivoslider1').nivoSlider({
