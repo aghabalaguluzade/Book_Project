@@ -37,9 +37,11 @@ Route::get('/admin',[generalController::class,'index'])->name("index");
 Route::get('/ana-səhifə',[generalController::class,"templates"])->name("templates");
 Route::get('/suallar',[generalController::class, "faq"])->name('faq');
 Route::get('/əlaqə',[generalController::class, "contact"])->name('contact');
+Route::post('/əlaqə',[generalController::class, "contactPost"])->name('contactPost');
 Route::get('/haqqımızda',[generalController::class, "templates"])->name('about');
 Route::get('/bloq',[generalController::class, "Bloq"])->name('Bloq');
 Route::get('/bloq/{slug}',[generalController::class, "BloqContent"])->name('BloqContent');
+Route::get('/haqqımızda',[generalController::class, "AboutUs"])->name("AboutUs");
 
 Route::prefix('settings')->group(function() {
 

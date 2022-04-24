@@ -22,14 +22,18 @@ class ContactController extends Controller
         $validated = $request->validate([
             'contact_address' => 'required|max:255',
             'contact_email' => 'required|email|max:255',
-            'contact_phone' => 'required|max:50'
+            'contact_phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10|max:50',
+            'map_name' => 'max:255',
+            'about_us' => 'required'
         ]);
 
         $data = Settings::find(1);
         $data->contact_address = $request->contact_address;
+        $data->map_name = $request->map_name;
         $data->contact_email = $request->contact_email;
         $data->contact_phone = $request->contact_phone;
-
+        $data->about_us = $request->about_us;
+       
         return redirect()->back()->with($data->save() ? "success" : "error", true);
 
     }

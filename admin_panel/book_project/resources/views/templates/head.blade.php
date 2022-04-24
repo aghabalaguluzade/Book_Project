@@ -1,4 +1,7 @@
 <head>
+
+    @foreach($settings as $setting)
+    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -31,5 +34,8 @@
     <link href="{{ asset('catalog/view/theme/tt_smartbooks4/stylesheet/opentheme/ocpagebuilder.css') }}" type="text/css" rel="stylesheet" media="screen" />
     <link href="{{ asset('catalog/view/javascript/jquery/swiper/css/swiper.min.css') }}" type="text/css" rel="stylesheet" media="screen" />
     <link href="{{ asset('catalog/view/javascript/jquery/swiper/css/opencart.css') }}" type="text/css" rel="stylesheet" media="screen" />
-    <link href="{{ asset('image/catalog/cart.png') }}" rel="icon" />
+    <link rel="icon" href="{{ $setting->favicon }}" type="image/x-icon" />
+
+    @endforeach
+
 </head>

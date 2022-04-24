@@ -655,10 +655,14 @@
   
 											</div>
 					<div class="logo-container">
+                        @foreach ($settings as $setting)
+                            
 						<div id="logo">
-						  							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=common/home"><img src="http://smartbook4.demo.towerthemes.com/image/catalog/logo/logo.png" title="Smartbooks4" alt="Smartbooks4" class="img-responsive" /></a>
+						  							<a href="{{ route('templates') }}"><img src="{{ $setting->logo }}" style="width: 226px; height: 80px;" title="Smartbooks4" alt="Smartbooks4" class="img-responsive" /></a>
 						  						</div>
-					</div>
+                                                  @endforeach
+
+                                            </div>
 					
 					<div class="box-cart">
 						<div id="top-links">
@@ -1177,6 +1181,11 @@
                                                                                                                                                         <span>Əlaqə</span>
                                                                                                                                                 </a>
                                                                                                                         </li>
+                                                                                            <li class="li-top-item left " style="float: left">
+                                                                    <a class="a-top-link" href="{{ route('AboutUs') }}">
+                                                                                                                            <span>Haqqımızda</span>
+                                                                                                                    </a>
+                                                                                            </li>
                                                             </ul>
             			
         </div>

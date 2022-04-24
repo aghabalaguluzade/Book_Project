@@ -12,6 +12,7 @@ use App\Models\Settings;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\View;
 
 class generalController extends Controller
@@ -38,7 +39,7 @@ class generalController extends Controller
         $blogs = Blog::orderBy('created_at','desc')->get();
         View::share([
             'banners' => $banners,
-            'blogs' => $blogs
+            'blogs' => $blogs,
         ]);
         return view('templates.index');
 
@@ -53,9 +54,29 @@ class generalController extends Controller
 
     public function contact() {
         $this->fragmented();
-        $settings = Settings::all();
-        View::share('settings',$settings); 
         return view('templates.contact');
+    }
+
+    public function contactPost(Request $request) {
+
+        $request->validate([
+            'name' => 'required|max:30',
+            'email' => 'required|email',
+            'message'=> 'required|min:5'
+        ]);
+
+        $contact_message = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'messages' => $request->message
+        ];
+
+            Mail::send('templates.contact-message',$contact_message, function($message) use ($contact_message) {
+                $message->from($contact_message['email']);
+                $message->to('agabala.oyunda@gmail.com');
+            });
+            return back()->with('message_sent','Message Göndərildi');;
+
     }
 
     public function Bloq() {
@@ -79,6 +100,11 @@ class generalController extends Controller
         ]);
         return view('templates.blog-content');
         return view('templates.blog');
+    }
+
+    public function AboutUs() {
+        $this->fragmented();
+        return view('templates.about_us');
     }
 
 }

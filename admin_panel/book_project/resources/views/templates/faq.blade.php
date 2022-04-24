@@ -22,19 +22,17 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="mb-0"><button class="collapsed" data-bs-toggle="collapse" data-bs-target="#gq-faq-1">{{ $question->question_title }} ?</button></h5>
+                            <h5 class="mb-0"><button class="collapsed" data-bs-toggle="collapse" data-bs-target="#gq-faq-{{ $question->id }}">{{ $question->question_title }}</button></h5>
                         </div>
-                        <div id="gq-faq-1" class="collapse show" data-parent="#gq-faqs-1">
+                        <div id="gq-faq-{{ $question->id }}" class="collapse" data-parent="#gq-faqs-1">
                             <div class="card-body">
                                 <p>{{ $question->question_answer }}</p>
                             </div>
                         </div>
                     </div>
-                    
-                    @endforeach
 
                     <!--Cart End-->
-                    
+                    @endforeach        
                 </div><!--FAQ (Accordion) End-->
             </div>
             
