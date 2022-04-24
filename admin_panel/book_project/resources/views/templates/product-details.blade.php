@@ -1,5 +1,7 @@
 @extends('templates.master')
 @section('content')
+@foreach ($slugs as $slug)
+@section('title',$slug->books_name)
 <div id="product-product" class="container">
     
     <div class="row">
@@ -8,14 +10,12 @@
 			<div class="row">                                                     <div class="product-image-main col-sm-6">
                     
 					                        <input type="hidden" id="check-use-zoom" value="1">
-						<input type="hidden" id="light-box-position" value="3">
-						<input type="hidden" id="product-identify" value="62">
 						<div class="lightbox-container"></div>
                                                     <div class="product-zoom-image">
-                                                                    <div id="wrap" style="top:0px;z-index:9999;position:relative;"><a href="image/cache/catalog/product/11-700x700.jpg" class="cloud-zoom main-image" id="product-cloud-zoom" style="width: 600px; height: 600px; position: relative; display: block;" rel="                                             showTitle: false ,
+                                                                    <div id="wrap" style="top:0px;z-index:9999;position:relative;"><a href="{{ $slug->books_img }}" class="cloud-zoom main-image" id="product-cloud-zoom" style="width: 600px; height: 600px; position: relative; display: block;" rel="                                             showTitle: false ,
                                             zoomWidth:600,zoomHeight:600,
                                              position:'inside', adjustX: 0 ">
-                                        <img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/11-600x600.jpg" title="Beats Solo Wireless On-Ear Headphone" alt="Beats Solo Wireless On-Ear Headphone" style="display: block;">
+                                        <img src="{{ $slug->books_img }}" style="width:580px; height:590px" title="{{ $slug->books_name }}" alt="{{ $slug->books_name }}" style="display: block;">
                                     </a><div class="mousetrap" style="background-image:url(&quot;.&quot;);z-index:999;position:absolute;width:570px;height:570px;left:0px;top:0px;"></div><div class="mousetrap" style="background-image:url(&quot;.&quot;);z-index:999;position:absolute;width:570px;height:570px;left:0px;top:0px;"></div><div class="mousetrap" style="background-image: url(&quot;.&quot;); z-index: 999; position: absolute; width: 570px; height: 570px; left: 0px; top: 0px; cursor: move;"></div><div class="mousetrap" style="background-image:url(&quot;.&quot;);z-index:999;position:absolute;width:570px;height:570px;left:0px;top:0px;"></div><div class="mousetrap" style="background-image:url(&quot;.&quot;);z-index:999;position:absolute;width:570px;height:570px;left:0px;top:0px;"></div><div class="mousetrap" style="background-image:url(&quot;.&quot;);z-index:999;position:absolute;width:570px;height:570px;left:0px;top:0px;"></div><div class="mousetrap" style="background-image:url(&quot;.&quot;);z-index:999;position:absolute;width:570px;height:570px;left:0px;top:0px;"></div><div class="mousetrap" style="background-image:url(&quot;.&quot;);z-index:999;position:absolute;width:570px;height:570px;left:0px;top:0px;"></div><div class="mousetrap" style="background-image:url(&quot;.&quot;);z-index:999;position:absolute;width:570px;height:570px;left:0px;top:0px;"></div><div class="mousetrap" style="background-image:url(&quot;.&quot;);z-index:999;position:absolute;width:570px;height:570px;left:0px;top:0px;"></div><div class="mousetrap" style="background-image:url(&quot;.&quot;);z-index:999;position:absolute;width:570px;height:570px;left:0px;top:0px;"></div></div>
                                                             </div>
                             <div class="additional-images owl-carousel owl-theme owl-loaded owl-drag">
@@ -33,24 +33,8 @@
                                                                                                                     
                                                                                                                     
                                                                                                                                         <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 663px;"><div class="owl-item active" style="width: 112.5px; margin-right: 20px;"><div class="item">
-                                            <a class="cloud-zoom-gallery sub-image" id="product-image-options-" href="image/cache/catalog/product/3-700x700.jpg" title="Beats Solo Wireless On-Ear Headphone" rel="useZoom: 'product-cloud-zoom', smallImage: 'http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/3-600x600.jpg'" data-pos="2">
-                                                <img src="image/cache/catalog/product/3-600x600.jpg" title="Beats Solo Wireless On-Ear Headphone" alt="Beats Solo Wireless On-Ear Headphone">
-                                            </a>
-                                        </div></div><div class="owl-item active" style="width: 112.5px; margin-right: 20px;"><div class="item img-active">
-                                            <a class="cloud-zoom-gallery sub-image" id="product-image-options-" href="image/cache/catalog/product/11-700x700.jpg" title="Beats Solo Wireless On-Ear Headphone" rel="useZoom: 'product-cloud-zoom', smallImage: 'http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/11-600x600.jpg'" data-pos="3">
-                                                <img src="image/cache/catalog/product/11-600x600.jpg" title="Beats Solo Wireless On-Ear Headphone" alt="Beats Solo Wireless On-Ear Headphone">
-                                            </a>
-                                        </div></div><div class="owl-item active" style="width: 112.5px; margin-right: 20px;"><div class="item">
-                                            <a class="cloud-zoom-gallery sub-image" id="product-image-options-" href="image/cache/catalog/product/5-700x700.jpg" title="Beats Solo Wireless On-Ear Headphone" rel="useZoom: 'product-cloud-zoom', smallImage: 'http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/5-600x600.jpg'" data-pos="4">
-                                                <img src="image/cache/catalog/product/5-600x600.jpg" title="Beats Solo Wireless On-Ear Headphone" alt="Beats Solo Wireless On-Ear Headphone">
-                                            </a>
-                                        </div></div><div class="owl-item active" style="width: 112.5px; margin-right: 20px;"><div class="item">
-                                            <a class="cloud-zoom-gallery sub-image" id="product-image-options-" href="image/cache/catalog/product/1-700x700.jpg" title="Beats Solo Wireless On-Ear Headphone" rel="useZoom: 'product-cloud-zoom', smallImage: 'http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/1-600x600.jpg'" data-pos="5">
-                                                <img src="image/cache/catalog/product/1-600x600.jpg" title="Beats Solo Wireless On-Ear Headphone" alt="Beats Solo Wireless On-Ear Headphone">
-                                            </a>
-                                        </div></div><div class="owl-item" style="width: 112.5px; margin-right: 20px;"><div class="item">
-                                            <a class="cloud-zoom-gallery sub-image" id="product-image-options-" href="image/cache/catalog/product/12-700x700.jpg" title="Beats Solo Wireless On-Ear Headphone" rel="useZoom: 'product-cloud-zoom', smallImage: 'http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/12-600x600.jpg'" data-pos="6">
-                                                <img src="image/cache/catalog/product/12-600x600.jpg" title="Beats Solo Wireless On-Ear Headphone" alt="Beats Solo Wireless On-Ear Headphone">
+                                            <a class="cloud-zoom-gallery sub-image" id="product-image-options-" href="{{ $slug->books_img }}" title="Beats Solo Wireless On-Ear Headphone" rel="useZoom: 'product-cloud-zoom', smallImage: '{{ $slug->books_img }}'" data-pos="2">
+                                                <img src="{{ $slug->books_img }}" title="Beats Solo Wireless On-Ear Headphone" alt="Beats Solo Wireless On-Ear Headphone">
                                             </a>
                                         </div></div></div></div><div class="owl-nav"><div class="owl-prev disabled">prev</div><div class="owl-next">next</div></div><div class="owl-dots disabled"></div></div>
 
@@ -58,24 +42,22 @@
                 </div>
                                                                     <div class="col-sm-6 product-info-main">
                     <div class="inner">
-											<p class="tags">Tags:
-															 <a href="index8711.html?route=product/search&amp;tag=Movado">Movado</a>,
-																							 <a href="indexaeb5.html?route=product/search&amp;tag=Omega">Omega</a> 															 <a href="#"></a> 							 </p>
-										<h1 class="product-name">Beats Solo Wireless On-Ear Headphone</h1>
+										
+			 															 <a href="#"></a> 							 </p>
+										<h1 class="product-name">{{ $slug->books_name }}</h1>
 					<ul class="list-unstyled">
                         							
 																												
-												                            <li>Brands <a href="indexe69c.html?route=product/manufacturer/info&amp;manufacturer_id=7">Hewlett-Packard</a></li>
-                                                <li>Product Code: <span>model1</span></li>
-                                                    <li>Reward Points: <span>1000</span></li>
-                                                <li>Availability: <span>In Stock</span></li>
+												                            <li>Yazıçı <a href="indexe69c.html?route=product/manufacturer/info&amp;manufacturer_id=7">{{ $slug->Writers($slug->writer_id)->writer_name }}</a></li>
+                                                <li>Məhsul Kodu: <span>{{ $slug->code }}</span></li>
+                                                <li>Səhifə: <span>{{ $slug->page }}</span></li>
 						
                     </ul>
                     
 					
 					 												<div class="price-box box-regular">
 							<span class="regular-price">
-								<span class="price">$199.99</span>
+								<span class="price">{{ $slug->price }}</span>
 							</span>
 						</div>
 																                        <div class="ratings">
@@ -86,7 +68,7 @@
 						</div>	
                     					
 					
-					<p class="short-des">Samsung Galaxy Tab 10.1, is the world’s thinnest tablet, measuring 8.6 mm thickness, running with Android 3.0 Honeycomb OS on a 1GHz dual-core T..</p>
+					<p class="short-des">{{ Str::limit($slug->books_description,60,) }}</p>
 
                     <div id="product">                                                 <div class="form-group">
                             <label class="control-label" for="input-quantity">Qty</label>
@@ -110,16 +92,12 @@
             </div>
 			<div class="product-info-detailed">
 				<ul class="nav nav-tabs">
-				<li class="active"><a href="#tab-description" data-toggle="tab">Description</a></li>
+				<li class="active"><a href="#tab-description" data-toggle="tab">Məzmunu</a></li>
 													<li><a href="#tab-review" data-toggle="tab">Reviews (1)</a></li>
 							</ul>
 			<div class="tab-content">
-				<div class="tab-pane active" id="tab-description"><p>
-	Samsung Galaxy Tab 10.1, is the world’s thinnest tablet, measuring 8.6 mm thickness, running with Android 3.0 Honeycomb OS on a 1GHz dual-core Tegra 2 processor, similar to its younger brother Samsung Galaxy Tab 8.9.</p>
-<p>
-	Samsung Galaxy Tab 10.1 gives pure Android 3.0 experience, adding its new TouchWiz UX or TouchWiz 4.0 – includes a live panel, which lets you to customize with different content, such as your pictures, bookmarks, and social feeds, sporting a 10.1 inches WXGA capacitive touch screen with 1280 x 800 pixels of resolution, equipped with 3 megapixel rear camera with LED flash and a 2 megapixel front camera, HSPA+ connectivity up to 21Mbps, 720p HD video recording capability, 1080p HD playback, DLNA support, Bluetooth 2.1, USB 2.0, gyroscope, Wi-Fi 802.11 a/b/g/n, micro-SD slot, 3.5mm headphone jack, and SIM slot, including the Samsung Stick – a Bluetooth microphone that can be carried in a pocket like a pen and sound dock with powered subwoofer.</p>
-<p>
-	Samsung Galaxy Tab 10.1 will come in 16GB / 32GB / 64GB verities and pre-loaded with Social Hub, Reader’s Hub, Music Hub and Samsung Mini Apps Tray – which gives you access to more commonly used apps to help ease multitasking and it is capable of Adobe Flash Player 10.2, powered by 6860mAh battery that gives you 10hours of video-playback time.&nbsp;äö</p>
+				<div class="tab-pane active" id="tab-description">
+					<p>{{ $slug->books_description }}</p>
 </div>
 													<div class="tab-pane" id="tab-review">
 						<form class="form-horizontal" id="form-review">
@@ -163,462 +141,49 @@
 					</div>
 				</div>
 			</div>
-            <div class="related-products">
+           
+			<div class="related-products">
 				<div class="module-title">
 					<h2>Related Products</h2>
 					
 				</div>
 				
 				<div class="owl-container">
-				<div class="related-container tt-product owl-carousel owl-theme owl-loaded owl-drag">
-																						
+				<div class="related-container tt-product owl-carousel owl-carousel-related owl-theme owl-loaded owl-drag">															
 																			
-																			
-																			
-																			
-																			
-																			
-																			
-																			
-													<div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2700px;"><div class="owl-item active first" style="width: 300px;"><div class="row_items">
-															<div class="product-layout grid-style">
+				<div class="owl-stage-outer">
+				<div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 3600px;">
+														
+					@foreach ($related as $relate)
+						
+															
+						<div class="owl-item" style="width: 300px;">
+						<div class="row_items">
+						<div class="product-layout grid-style active">
 						<div class="product-thumb transition">
 							<div class="item">		
 								<div class="item-inner">
 									<div class="caption-top">
 																				<p class="manufacture-product">
-											<a href="index98fa.html?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
+											<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=7">{{ $relate->Writers($relate->writer_id)->writer_name }}</a>
 										</p>
 											
-										<h4 class="product-name"><a href="index00bd.html?route=product/product&amp;product_id=54">Koss Porta Pro On Ear  Headphones </a></h4>
+										<h4 class="product-name"><a href="{{ route('BooksProduct',$relate->slug) }}">{{ $relate->books_name }}</a></h4>
 										
 									</div>
 									<div class="image images-container">
 										<div class="inner">
-										<a href="index00bd.html?route=product/product&amp;product_id=54" class="product-image">
-																						<img src="image/cache/catalog/product/12-600x600.jpg" alt="Koss Porta Pro On Ear  Headphones " title="Koss Porta Pro On Ear  Headphones " class="img-responsive">
-										</a>
-										<div class="box-label">	
-										
-																					<div class="label-product label_new"><span>New</span></div>
-																				
-										</div>
-										<div class="action-links">
-											<button class="button btn-cart" type="button" title="Add to Cart" onclick="cart.add('54');"><span>Add to Cart</span></button>
-											<button class="button btn-wishlist" type="button" title="Add to Wish List" onclick="wishlist.add('54');"><span>Add to Wish List</span></button>
-											<button class="button btn-compare" type="button" title="Compare this Product" onclick="compare.add('54');"><span>Compare this Product</span></button>
-											
-										</div>
-										</div>
-									</div><!-- image -->
-									<div class="caption">
-										<div class="inner">
-										<div class="ratings">
-											<div class="rating-box">
-																																																																																																																																																																		<div class="rating5">rating</div>
-																																		</div>
-										</div>			
-																					<div class="price-box">
-											<label></label>
-																							<p class="special-price"><span class="price">$65.00</span></p>
-												<p class="old-price"><span class="price">$70.00</span></p>						  
-																																	</div>
-																															<div class="label-product label_sale"><span>-7% </span></div>
-																				
-										</div>
-									</div><!-- caption -->
-									
-										
-								</div>
-							</div>
-						</div><!-- product-thumb -->						
-					</div><!-- product-layout -->        
-										</div></div><div class="owl-item active" style="width: 300px;"><div class="row_items">
-															<div class="product-layout grid-style">
-						<div class="product-thumb transition">
-							<div class="item">		
-								<div class="item-inner">
-									<div class="caption-top">
-																				<p class="manufacture-product">
-											<a href="index8be0.html?route=product/manufacturer/info&amp;manufacturer_id=10">Sony</a>
-										</p>
-											
-										<h4 class="product-name"><a href="index6f6c.html?route=product/product&amp;product_id=55">Beats Solo3 Wireless  On-Ear Headphones</a></h4>
-										
-									</div>
-									<div class="image images-container">
-										<div class="inner">
-										<a href="index6f6c.html?route=product/product&amp;product_id=55" class="product-image">
-																						<img src="image/cache/catalog/product/7-600x600.jpg" alt="Beats Solo3 Wireless  On-Ear Headphones" title="Beats Solo3 Wireless  On-Ear Headphones" class="img-responsive">
+										<a href="{{ route('BooksProduct',$relate->slug) }}" class="product-image">
+																						<img src="{{ $relate->books_img }}" alt="{{ $relate->books_name }}" title="{{ $relate->books_name }}" class="img-responsive">
 										</a>
 										<div class="box-label">	
 										
 																				
 										</div>
 										<div class="action-links">
-											<button class="button btn-cart" type="button" title="Add to Cart" onclick="cart.add('55');"><span>Add to Cart</span></button>
-											<button class="button btn-wishlist" type="button" title="Add to Wish List" onclick="wishlist.add('55');"><span>Add to Wish List</span></button>
-											<button class="button btn-compare" type="button" title="Compare this Product" onclick="compare.add('55');"><span>Compare this Product</span></button>
-											
-										</div>
-										</div>
-									</div><!-- image -->
-									<div class="caption">
-										<div class="inner">
-										<div class="ratings">
-											<div class="rating-box">
-																																																																																																																																											<div class="rating4">rating</div>
-																																																									</div>
-										</div>			
-																					<div class="price-box">
-											<label></label>
-																							<p class="regular-price"><span class="price">$1,000.00</span></p>
-																																	</div>
-																														
-										</div>
-									</div><!-- caption -->
-									
-										
-								</div>
-							</div>
-						</div><!-- product-thumb -->						
-					</div><!-- product-layout -->        
-										</div></div><div class="owl-item active" style="width: 300px;"><div class="row_items">
-															<div class="product-layout grid-style">
-						<div class="product-thumb transition">
-							<div class="item">		
-								<div class="item-inner">
-									<div class="caption-top">
-																				<p class="manufacture-product">
-											<a href="index98fa.html?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-										</p>
-											
-										<h4 class="product-name"><a href="index6918.html?route=product/product&amp;product_id=56">Koss KPH7 Lightweight  Portable Headphone</a></h4>
-										
-									</div>
-									<div class="image images-container">
-										<div class="inner">
-										<a href="index6918.html?route=product/product&amp;product_id=56" class="product-image">
-																						<img src="image/cache/catalog/product/11-600x600.jpg" alt="Koss KPH7 Lightweight  Portable Headphone" title="Koss KPH7 Lightweight  Portable Headphone" class="img-responsive">
-										</a>
-										<div class="box-label">	
-										
-																					<div class="label-product label_new"><span>New</span></div>
-																				
-										</div>
-										<div class="action-links">
-											<button class="button btn-cart" type="button" title="Add to Cart" onclick="cart.add('56');"><span>Add to Cart</span></button>
-											<button class="button btn-wishlist" type="button" title="Add to Wish List" onclick="wishlist.add('56');"><span>Add to Wish List</span></button>
-											<button class="button btn-compare" type="button" title="Compare this Product" onclick="compare.add('56');"><span>Compare this Product</span></button>
-											
-										</div>
-										</div>
-									</div><!-- image -->
-									<div class="caption">
-										<div class="inner">
-										<div class="ratings">
-											<div class="rating-box">
-																																																																																													<div class="rating2">rating</div>
-																																																																																																							</div>
-										</div>			
-																					<div class="price-box">
-											<label></label>
-																							<p class="special-price"><span class="price">$70.00</span></p>
-												<p class="old-price"><span class="price">$75.00</span></p>						  
-																																	</div>
-																															<div class="label-product label_sale"><span>-7% </span></div>
-																				
-										</div>
-									</div><!-- caption -->
-									
-										
-								</div>
-							</div>
-						</div><!-- product-thumb -->						
-					</div><!-- product-layout -->        
-										</div></div><div class="owl-item active last" style="width: 300px;"><div class="row_items">
-															<div class="product-layout grid-style">
-						<div class="product-thumb transition">
-							<div class="item">		
-								<div class="item-inner">
-									<div class="caption-top">
-																				<p class="manufacture-product">
-											<a href="index98fa.html?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-										</p>
-											
-										<h4 class="product-name"><a href="index7668.html?route=product/product&amp;product_id=60">Kodak PIXPRO Astro Zoom AZ421 16 MP</a></h4>
-										
-									</div>
-									<div class="image images-container">
-										<div class="inner">
-										<a href="index7668.html?route=product/product&amp;product_id=60" class="product-image">
-																						<img src="image/cache/catalog/product/10-600x600.jpg" alt="Kodak PIXPRO Astro Zoom AZ421 16 MP" title="Kodak PIXPRO Astro Zoom AZ421 16 MP" class="img-responsive">
-										</a>
-										<div class="box-label">	
-										
-																					<div class="label-product label_new"><span>New</span></div>
-																				
-										</div>
-										<div class="action-links">
-											<button class="button btn-cart" type="button" title="Add to Cart" onclick="cart.add('60');"><span>Add to Cart</span></button>
-											<button class="button btn-wishlist" type="button" title="Add to Wish List" onclick="wishlist.add('60');"><span>Add to Wish List</span></button>
-											<button class="button btn-compare" type="button" title="Compare this Product" onclick="compare.add('60');"><span>Compare this Product</span></button>
-											
-										</div>
-										</div>
-									</div><!-- image -->
-									<div class="caption">
-										<div class="inner">
-										<div class="ratings">
-											<div class="rating-box">
-																																																																																																																																											<div class="rating4">rating</div>
-																																																									</div>
-										</div>			
-																					<div class="price-box">
-											<label></label>
-																							<p class="regular-price"><span class="price">$95.00</span></p>
-																																	</div>
-																														
-										</div>
-									</div><!-- caption -->
-									
-										
-								</div>
-							</div>
-						</div><!-- product-thumb -->						
-					</div><!-- product-layout -->        
-										</div></div><div class="owl-item" style="width: 300px;"><div class="row_items">
-															<div class="product-layout grid-style">
-						<div class="product-thumb transition">
-							<div class="item">		
-								<div class="item-inner">
-									<div class="caption-top">
-																				<p class="manufacture-product">
-											<a href="index98fa.html?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-										</p>
-											
-										<h4 class="product-name"><a href="index086b.html?route=product/product&amp;product_id=61">Beats Solo2 Solo 2  Wired On-Ear Headphone</a></h4>
-										
-									</div>
-									<div class="image images-container">
-										<div class="inner">
-										<a href="index086b.html?route=product/product&amp;product_id=61" class="product-image">
-											<img class="img-r" src="image/cache/catalog/product/9-600x600.jpg" alt="Beats Solo2 Solo 2  Wired On-Ear Headphone">											<img src="image/cache/catalog/product/6-600x600.jpg" alt="Beats Solo2 Solo 2  Wired On-Ear Headphone" title="Beats Solo2 Solo 2  Wired On-Ear Headphone" class="img-responsive">
-										</a>
-										<div class="box-label">	
-										
-																				
-										</div>
-										<div class="action-links">
-											<button class="button btn-cart" type="button" title="Add to Cart" onclick="cart.add('61');"><span>Add to Cart</span></button>
-											<button class="button btn-wishlist" type="button" title="Add to Wish List" onclick="wishlist.add('61');"><span>Add to Wish List</span></button>
-											<button class="button btn-compare" type="button" title="Compare this Product" onclick="compare.add('61');"><span>Compare this Product</span></button>
-											
-										</div>
-										</div>
-									</div><!-- image -->
-									<div class="caption">
-										<div class="inner">
-										<div class="ratings">
-											<div class="rating-box">
-																																																																																																																				<div class="rating3">rating</div>
-																																																																																</div>
-										</div>			
-																					<div class="price-box">
-											<label></label>
-																							<p class="regular-price"><span class="price">$500.00</span></p>
-																																	</div>
-																														
-										</div>
-									</div><!-- caption -->
-									
-										
-								</div>
-							</div>
-						</div><!-- product-thumb -->						
-					</div><!-- product-layout -->        
-										</div></div><div class="owl-item" style="width: 300px;"><div class="row_items">
-															<div class="product-layout grid-style">
-						<div class="product-thumb transition">
-							<div class="item">		
-								<div class="item-inner">
-									<div class="caption-top">
-																				<p class="manufacture-product">
-											<a href="index98fa.html?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-										</p>
-											
-										<h4 class="product-name"><a href="index5b79.html?route=product/product&amp;product_id=139">JBL Flip 3 Splashproof  Portable Bluetooth</a></h4>
-										
-									</div>
-									<div class="image images-container">
-										<div class="inner">
-										<a href="index5b79.html?route=product/product&amp;product_id=139" class="product-image">
-																						<img src="image/cache/catalog/product/9-600x600.jpg" alt="JBL Flip 3 Splashproof  Portable Bluetooth" title="JBL Flip 3 Splashproof  Portable Bluetooth" class="img-responsive">
-										</a>
-										<div class="box-label">	
-										
-																					<div class="label-product label_new"><span>New</span></div>
-																				
-										</div>
-										<div class="action-links">
-											<button class="button btn-cart" type="button" title="Add to Cart" onclick="cart.add('139');"><span>Add to Cart</span></button>
-											<button class="button btn-wishlist" type="button" title="Add to Wish List" onclick="wishlist.add('139');"><span>Add to Wish List</span></button>
-											<button class="button btn-compare" type="button" title="Compare this Product" onclick="compare.add('139');"><span>Compare this Product</span></button>
-											
-										</div>
-										</div>
-									</div><!-- image -->
-									<div class="caption">
-										<div class="inner">
-										<div class="ratings">
-											<div class="rating-box">
-																																																																																																																				<div class="rating3">rating</div>
-																																																																																</div>
-										</div>			
-																					<div class="price-box">
-											<label></label>
-																							<p class="regular-price"><span class="price">$500.00</span></p>
-																																	</div>
-																														
-										</div>
-									</div><!-- caption -->
-									
-										
-								</div>
-							</div>
-						</div><!-- product-thumb -->						
-					</div><!-- product-layout -->        
-										</div></div><div class="owl-item" style="width: 300px;"><div class="row_items">
-															<div class="product-layout grid-style">
-						<div class="product-thumb transition">
-							<div class="item">		
-								<div class="item-inner">
-									<div class="caption-top">
-																				<p class="manufacture-product">
-											<a href="index98fa.html?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-										</p>
-											
-										<h4 class="product-name"><a href="indexf74b.html?route=product/product&amp;product_id=140">Marshall Portable  Bluetooth Speaker</a></h4>
-										
-									</div>
-									<div class="image images-container">
-										<div class="inner">
-										<a href="indexf74b.html?route=product/product&amp;product_id=140" class="product-image">
-																						<img src="image/cache/catalog/product/13-600x600.jpg" alt="Marshall Portable  Bluetooth Speaker" title="Marshall Portable  Bluetooth Speaker" class="img-responsive">
-										</a>
-										<div class="box-label">	
-										
-																					<div class="label-product label_new"><span>New</span></div>
-																				
-										</div>
-										<div class="action-links">
-											<button class="button btn-cart" type="button" title="Add to Cart" onclick="cart.add('140');"><span>Add to Cart</span></button>
-											<button class="button btn-wishlist" type="button" title="Add to Wish List" onclick="wishlist.add('140');"><span>Add to Wish List</span></button>
-											<button class="button btn-compare" type="button" title="Compare this Product" onclick="compare.add('140');"><span>Compare this Product</span></button>
-											
-										</div>
-										</div>
-									</div><!-- image -->
-									<div class="caption">
-										<div class="inner">
-										<div class="ratings">
-											<div class="rating-box">
-																																																																																																																																											<div class="rating4">rating</div>
-																																																									</div>
-										</div>			
-																					<div class="price-box">
-											<label></label>
-																							<p class="special-price"><span class="price">$65.00</span></p>
-												<p class="old-price"><span class="price">$70.00</span></p>						  
-																																	</div>
-																															<div class="label-product label_sale"><span>-7% </span></div>
-																				
-										</div>
-									</div><!-- caption -->
-									
-										
-								</div>
-							</div>
-						</div><!-- product-thumb -->						
-					</div><!-- product-layout -->        
-										</div></div><div class="owl-item" style="width: 300px;"><div class="row_items">
-															<div class="product-layout grid-style">
-						<div class="product-thumb transition">
-							<div class="item">		
-								<div class="item-inner">
-									<div class="caption-top">
-																				<p class="manufacture-product">
-											<a href="index98fa.html?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-										</p>
-											
-										<h4 class="product-name"><a href="index7f0c.html?route=product/product&amp;product_id=143">Nokia Steel HR Hybrid  Smartwatch</a></h4>
-										
-									</div>
-									<div class="image images-container">
-										<div class="inner">
-										<a href="index7f0c.html?route=product/product&amp;product_id=143" class="product-image">
-																						<img src="image/cache/catalog/product/14-600x600.jpg" alt="Nokia Steel HR Hybrid  Smartwatch" title="Nokia Steel HR Hybrid  Smartwatch" class="img-responsive">
-										</a>
-										<div class="box-label">	
-										
-																					<div class="label-product label_new"><span>New</span></div>
-																				
-										</div>
-										<div class="action-links">
-											<button class="button btn-cart" type="button" title="Add to Cart" onclick="cart.add('143');"><span>Add to Cart</span></button>
-											<button class="button btn-wishlist" type="button" title="Add to Wish List" onclick="wishlist.add('143');"><span>Add to Wish List</span></button>
-											<button class="button btn-compare" type="button" title="Compare this Product" onclick="compare.add('143');"><span>Compare this Product</span></button>
-											
-										</div>
-										</div>
-									</div><!-- image -->
-									<div class="caption">
-										<div class="inner">
-										<div class="ratings">
-											<div class="rating-box">
-																																																																																																																																																																		<div class="rating5">rating</div>
-																																		</div>
-										</div>			
-																					<div class="price-box">
-											<label></label>
-																							<p class="regular-price"><span class="price">$95.00</span></p>
-																																	</div>
-																														
-										</div>
-									</div><!-- caption -->
-									
-										
-								</div>
-							</div>
-						</div><!-- product-thumb -->						
-					</div><!-- product-layout -->        
-										</div></div><div class="owl-item" style="width: 300px;"><div class="row_items">
-															<div class="product-layout grid-style">
-						<div class="product-thumb transition">
-							<div class="item">		
-								<div class="item-inner">
-									<div class="caption-top">
-																				<p class="manufacture-product">
-											<a href="index8be0.html?route=product/manufacturer/info&amp;manufacturer_id=10">Sony</a>
-										</p>
-											
-										<h4 class="product-name"><a href="index9c0c.html?route=product/product&amp;product_id=189">Beats Solo3 Wireless  On-Ear Headphones 2</a></h4>
-										
-									</div>
-									<div class="image images-container">
-										<div class="inner">
-										<a href="index9c0c.html?route=product/product&amp;product_id=189" class="product-image">
-																						<img src="image/cache/catalog/product/16-600x600.jpg" alt="Beats Solo3 Wireless  On-Ear Headphones 2" title="Beats Solo3 Wireless  On-Ear Headphones 2" class="img-responsive">
-										</a>
-										<div class="box-label">	
-										
-																					<div class="label-product label_new"><span>New</span></div>
-																				
-										</div>
-										<div class="action-links">
-											<button class="button btn-cart" type="button" title="Add to Cart" onclick="cart.add('189');"><span>Add to Cart</span></button>
-											<button class="button btn-wishlist" type="button" title="Add to Wish List" onclick="wishlist.add('189');"><span>Add to Wish List</span></button>
-											<button class="button btn-compare" type="button" title="Compare this Product" onclick="compare.add('189');"><span>Compare this Product</span></button>
+											<button class="button btn-cart" type="button" title="Add to Cart" onclick="cart.add('52');"><span>Add to Cart</span></button>
+											<button class="button btn-wishlist" type="button" title="Add to Wish List" onclick="wishlist.add('52');"><span>Add to Wish List</span></button>
+											<button class="button btn-compare" type="button" title="Compare this Product" onclick="compare.add('52');"><span>Compare this Product</span></button>
 											
 										</div>
 										</div>
@@ -632,9 +197,11 @@
 										</div>			
 																					<div class="price-box">
 											<label></label>
-																							<p class="regular-price"><span class="price">$1,000.00</span></p>
+																							<p class="special-price"><span class="price">{{ $relate->price }} AZN</span></p>
+												<p class="old-price"><span class="price">{{ $relate->old_price }} AZN</span></p>						  
 																																	</div>
-																														
+																															<div class="label-product label_sale"><span>-{{ $relate->price_cut }}% </span></div>
+																				
 										</div>
 									</div><!-- caption -->
 									
@@ -643,12 +210,47 @@
 							</div>
 						</div><!-- product-thumb -->						
 					</div><!-- product-layout -->        
-										</div></div></div></div><div class="owl-nav disabled"><div class="owl-prev">prev</div><div class="owl-next">next</div></div><div class="owl-dots"><div class="owl-dot active"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div></div></div>
+										</div></div>
+
+										@endforeach
+										
+									</div></div></div>
 				</div>
 			
 			</div>
-            
-            </div>
+
         </div>
 </div>
+</div>
+@endforeach
+
+@endsection
+@section('addcss')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+@endsection
+@section('addjs')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+	var owl = $('.owl-carousel-related');
+owl.owlCarousel({
+    loop:true,
+    nav:true,
+    margin:10,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:2
+        },            
+        960:{
+            items:3
+        },
+        1200:{
+            items:4
+        }
+    }
+});
+</script>
 @endsection

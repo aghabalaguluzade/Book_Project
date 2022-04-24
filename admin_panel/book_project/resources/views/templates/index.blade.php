@@ -406,6 +406,7 @@ if ($('#form-upload input[name=\'file\']').val() != '') {
 <div class="col ">
 <div class="box">
 
+
 <div class="text">
 <h4>Free Shipping Item</h4>
 <p>Orders over $500</p>
@@ -441,7 +442,7 @@ if ($('#form-upload input[name=\'file\']').val() != '') {
 </div>
 </div>
 </div>
-																																																															
+
 																																																	  <div class="banner-static static-top-smartbooks3">
 <div class="container-inner">
 <div class="col col-top-1">
@@ -1326,7 +1327,7 @@ responsive:{
 	<ul class="tab-heading tabs-categorys">
 											<li>
 			<a data-toggle="pill" href="#tab-6100">
-				<span>Featured Products</span>
+				<span>Yeni Məhsullar</span>
 			</a>
 		</li>
 											  <li>
@@ -1352,25 +1353,29 @@ responsive:{
 <div class="owl-container">
 <div class="tt-product ">
 <div class="tab-content">
-  
+
+
 	{{-- Birinci Təbəqə --}}
 						
 	<div class="tab-container-610  owl-carousel owl-theme  tab-pane tab-product-container  fade " id="tab-6100">		
-			<div class="row_items">		
+
+		@foreach ($books as $book)
+
+  <div class="row_items">		
 	<div class="product-layout grid-style ">
 		<div class="product-thumb transition">
 			<div class="item">
 				<div class="item-inner">
 					<div class="caption-top">
 						<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=7">Hewlett-Packard</a>
+							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=7">{{ $book->Writers($book->writer_id)->writer_name }}</a>
 						</p>
-						<h4 class="product-name"><a href="">Apple iPad with Retina  Display MD510LL/A </a></h4>
+						<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52">{{ $book->books_name }}</a></h4>
 					</div>
 					<div class="box-border">
 						<div class="image images-container">
-							<a href="" class="product-image">
-							<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/2-600x600.jpg" alt="Apple iPad with Retina  Display MD510LL/A " title="Apple iPad with Retina  Display MD510LL/A " class="img-responsive " />
+							<a href="{{ route('BooksProduct',$book->slug) }}" class="product-image">
+							<img src="{{ $book->books_img }}" alt="{{ $book->books_name }}" title="{{ $book->books_name }}" class="img-responsive " />
 							</a>
 							<div class="box-label">	
 							</div>											
@@ -1387,10 +1392,10 @@ responsive:{
 								</div>	
 								<div class="price-box">
 									<label>Price:</label>
-										<p class="special-price"><span class="price">$55.00</span></p>
-										<p class="old-price"><span class="price">$60.00</span></p>						  
+										<p class="special-price"><span class="price">{{ $book->price }}</span></p>
+										<p class="old-price"><span class="price">{{ $book->old_price }}</span></p>						  
 								</div>
-								<div class="label-product label_sale"><span>-8% </span></div>																																														
+								<div class="label-product label_sale"><span>-{{ $book->price_cut }}% </span></div>																																														
 							</div>
 						</div>
 					</div>
@@ -1400,141 +1405,13 @@ responsive:{
 	</div>
 </div>  
 
+@endforeach
 
-<div class="row_items">		
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-						<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=7">Hewlett-Packard</a>
-						</p>
-						<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52">Apple iPad with Retina  Display MD510LL/A </a></h4>
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52" class="product-image">
-							<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/2-600x600.jpg" alt="Apple iPad with Retina  Display MD510LL/A " title="Apple iPad with Retina  Display MD510LL/A " class="img-responsive " />
-							</a>
-							<div class="box-label">	
-							</div>											
-							<div class="action-links">
-							<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('52');"><span>Add to Cart</span></button>												
-							<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('52');"><span>Add to Wish List</span></button>																																	
-						</div>															
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-									<div class="rating0">rating</div>																																																																																																																																																	</div>
-								</div>	
-								<div class="price-box">
-									<label>Price:</label>
-										<p class="special-price"><span class="price">$55.00</span></p>
-										<p class="old-price"><span class="price">$60.00</span></p>						  
-								</div>
-								<div class="label-product label_sale"><span>-8% </span></div>																																														
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>  
-
-<div class="row_items">		
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-						<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=7">Hewlett-Packard</a>
-						</p>
-						<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52">Apple iPad with Retina  Display MD510LL/A </a></h4>
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52" class="product-image">
-							<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/2-600x600.jpg" alt="Apple iPad with Retina  Display MD510LL/A " title="Apple iPad with Retina  Display MD510LL/A " class="img-responsive " />
-							</a>
-							<div class="box-label">	
-							</div>											
-							<div class="action-links">
-							<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('52');"><span>Add to Cart</span></button>												
-							<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('52');"><span>Add to Wish List</span></button>																																	
-						</div>															
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-									<div class="rating0">rating</div>																																																																																																																																																	</div>
-								</div>	
-								<div class="price-box">
-									<label>Price:</label>
-										<p class="special-price"><span class="price">$55.00</span></p>
-										<p class="old-price"><span class="price">$60.00</span></p>						  
-								</div>
-								<div class="label-product label_sale"><span>-8% </span></div>																																														
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>  <div class="row_items">		
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-						<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=7">Hewlett-Packard</a>
-						</p>
-						<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52">Apple iPad with Retina  Display MD510LL/A </a></h4>
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52" class="product-image">
-							<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/2-600x600.jpg" alt="Apple iPad with Retina  Display MD510LL/A " title="Apple iPad with Retina  Display MD510LL/A " class="img-responsive " />
-							</a>
-							<div class="box-label">	
-							</div>											
-							<div class="action-links">
-							<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('52');"><span>Add to Cart</span></button>												
-							<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('52');"><span>Add to Wish List</span></button>																																	
-						</div>															
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-									<div class="rating0">rating</div>																																																																																																																																																	</div>
-								</div>	
-								<div class="price-box">
-									<label>Price:</label>
-										<p class="special-price"><span class="price">$55.00</span></p>
-										<p class="old-price"><span class="price">$60.00</span></p>						  
-								</div>
-								<div class="label-product label_sale"><span>-8% </span></div>																																														
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>  
 </div>
 	
 			{{-- İkinci təbəqə --}}
 
-		<div class="tab-container-610  owl-carousel owl-theme  tab-pane tab-product-container  fade " id="tab-6101">		
+		{{-- <div class="tab-container-610  owl-carousel owl-theme  tab-pane tab-product-container  fade " id="tab-6101">		
 	
 							<!-- Grid -->
 	
@@ -1591,71 +1468,7 @@ responsive:{
 		</div><!-- product-thumb -->
 							</div><!-- product-layout -->
 					</div>
-			</div>
-
-
-			{{-- Üçüncü təbəqə --}}
-	
-		<div class="tab-container-610  owl-carousel owl-theme  tab-pane tab-product-container  fade " id="tab-6102">		
-	
-							<!-- Grid -->
-	
-			<div class="row_items ">
-								
-	<div class="product-layout grid-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="caption-top">
-															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=7">Hewlett-Packard</a>
-						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52">Apple iPad with Retina  Display MD510LL/A </a></h4>
-						
-					</div>
-					<div class="box-border">
-						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/2-600x600.jpg" alt="Apple iPad with Retina  Display MD510LL/A " title="Apple iPad with Retina  Display MD510LL/A " class="img-responsive " />
-							</a>
-							<div class="box-label">	
-																			
-								
-							</div>
-																		
-								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('52');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('52');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('52');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52')"><span>Quick View</span></button>
-																																	</div>
-																	
-						</div><!-- image -->
-						<div class="caption">
-							<div class="inner">
-								<div class="ratings">
-									<div class="rating-box">
-																																																<div class="rating0">rating</div>
-																																																																																																																																																															</div>
-								</div>	
-																															<div class="price-box">
-									<label>Price:</label>
-																						<p class="special-price"><span class="price">$55.00</span></p>
-										<p class="old-price"><span class="price">$60.00</span></p>						  
-																																	</div>
-																																											<div class="label-product label_sale"><span>-8% </span></div>
-																																																					
-							</div>
-						</div><!-- caption -->
-					</div>
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div>
-					</div>								  
-			</div>
+			</div> --}}
 	
 	
 </div>
@@ -2932,6 +2745,8 @@ if(count == 1) {
 </div>
 <div class="clearfix"></div>
 </div>
+
+
 
 <script >
 $(document).ready(function() {

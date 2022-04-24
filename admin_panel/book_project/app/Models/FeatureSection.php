@@ -11,4 +11,8 @@ class FeatureSection extends Model
     protected $table = "feature_section";
     protected $guarded = [];
     public $timestamps = false;
+
+    public function GetID($id) {
+        return FeatureSection::find($id) ?? null;
+    }
 }

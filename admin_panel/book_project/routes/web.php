@@ -42,6 +42,7 @@ Route::get('/haqqımızda',[generalController::class, "templates"])->name('about
 Route::get('/bloq',[generalController::class, "Bloq"])->name('Bloq');
 Route::get('/bloq/{slug}',[generalController::class, "BloqContent"])->name('BloqContent');
 Route::get('/haqqımızda',[generalController::class, "AboutUs"])->name("AboutUs");
+Route::get('/{slug}',[generalController::class, "BooksProduct"])->name("BooksProduct");
 
 Route::prefix('settings')->group(function() {
 

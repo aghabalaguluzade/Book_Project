@@ -5,7 +5,9 @@ namespace App\Http\Controllers\generalController;
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
 use App\Models\Blog;
+use App\Models\Books;
 use App\Models\Category;
+use App\Models\FeatureSection;
 use App\Models\General_Questions;
 use App\Models\Partners;
 use App\Models\Settings;
@@ -37,9 +39,11 @@ class generalController extends Controller
         $this->fragmented();
         $banners = Banner::all();
         $blogs = Blog::orderBy('created_at','desc')->get();
+        $books = Books::orderBy('created_at','desc')->get();
         View::share([
             'banners' => $banners,
             'blogs' => $blogs,
+            'books' => $books
         ]);
         return view('templates.index');
 
@@ -83,11 +87,9 @@ class generalController extends Controller
         $this->fragmented();
         $blogs = Blog::orderBy('created_at','desc')->get();
         $blogs_archive = Blog::whereDate('created_at', Carbon::today())->get();
-        $blogs_count = Blog::count();
         View::share([
             'blogs' => $blogs,
             'blogs_archive' => $blogs_archive,
-            'blogs_count' => $blogs_count
         ]);
         return view('templates.blog');
     }
@@ -99,12 +101,24 @@ class generalController extends Controller
             'blogs' => $blogs
         ]);
         return view('templates.blog-content');
-        return view('templates.blog');
     }
 
     public function AboutUs() {
         $this->fragmented();
         return view('templates.about_us');
+    }
+
+    public function BooksProduct($slug) {
+        $this->fragmented();
+        $slugs = Books::where('slug',$slug)->get();
+        $relate_books = Books::where('slug',$slug)->first();
+        $relate = $relate_books->category_id;
+        $related = Books::where('slug','!=',$slug)->where('category_id',$relate)->get();
+        View::share([
+            'slugs' => $slugs,
+            'related' => $related
+        ]);
+        return view('templates.product-details');
     }
 
 }
