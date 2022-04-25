@@ -3,8 +3,16 @@
     @foreach($settings as $setting)
     
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta property="og:title" content="{{ $setting->seo_title }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ route('templates') }}" />
+    <meta name="keywords" content="{{ $setting->seo_keywords }}" />
+    <meta name="description" content="{{ $setting->seo_description }}"/>
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="Quluzadə Ağabala" />
+    <meta property="og:image" content="{{ asset($setting->logo) }}" />
     <title>@yield('title','Book House')</title>
     <script src="{{ asset('catalog/view/javascript/jquery/jquery-2.1.1.min.js') }}" ></script>
     <script src="{{ asset('catalog/view/javascript/jquery/owl-carousel/js/owl.carousel.min.js') }}" ></script>
@@ -34,7 +42,7 @@
     <link href="{{ asset('catalog/view/theme/tt_smartbooks4/stylesheet/opentheme/ocpagebuilder.css') }}" type="text/css" rel="stylesheet" media="screen" />
     <link href="{{ asset('catalog/view/javascript/jquery/swiper/css/swiper.min.css') }}" type="text/css" rel="stylesheet" media="screen" />
     <link href="{{ asset('catalog/view/javascript/jquery/swiper/css/opencart.css') }}" type="text/css" rel="stylesheet" media="screen" />
-    <link rel="icon" href="{{ $setting->favicon }}" type="image/x-icon" />
+    <link rel="icon" href="{{ asset($setting->favicon) }}" type="image/x-icon" />
 
     @endforeach
 

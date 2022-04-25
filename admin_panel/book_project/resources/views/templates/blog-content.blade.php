@@ -51,7 +51,7 @@
                             <span class="time">October 8, 2014 at 12:38 pm</span>
                             <p>Ame No Parade</p>
                         </div>
-                        <a href="#" class="btn btn-outlined--primary btn-rounded reply-btn">Reply</a>
+                        <a href="#" class="btn btn-outlined--primary btn-rounded reply-btn mt-5">Reply</a>
                     </div>
                 </div>
                 <div class="replay-form-wrapper">

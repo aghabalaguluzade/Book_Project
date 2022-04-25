@@ -59,14 +59,13 @@
                         </ul>
                     </div>
                     <div class="single-block">
-                        <h2 class="sidebar-title mb--30">BLOG ARCHIVES</h2>
+                        <h2 class="sidebar-title mb--30">Bloq Arxivi</h2>
                         <ul class="sidebar-list mb--30">
                             
-                            @foreach($blogs_archive as $archive)
+                            @foreach($blogs_count as $blog_count)
 
-                                @foreach ($blogs_count as $blog_count)
-                                    <li><a href="#">{{ $archive->created_at->format('M Y') }} ()</a></li>
-                                @endforeach
+
+                                    <li><a href="#">{{ $blog_count->created_at->format('M Y') }} ({{ $blog_count->count() }})</a></li>
 
                             
                             {{-- <li><a href="#">December 2014 (3)</a></li>

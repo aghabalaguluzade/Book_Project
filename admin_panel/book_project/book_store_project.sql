@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 18, 2022 at 01:40 AM
+-- Generation Time: Apr 25, 2022 at 10:30 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -33,6 +33,7 @@ CREATE TABLE `blog` (
   `contents` longtext NOT NULL,
   `img` varchar(255) NOT NULL,
   `author` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
   `status` enum('0','1') NOT NULL DEFAULT '0',
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
@@ -42,9 +43,9 @@ CREATE TABLE `blog` (
 -- Dumping data for table `blog`
 --
 
-INSERT INTO `blog` (`id`, `title`, `contents`, `img`, `author`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'İlk Bloq', '<p>Bu mənim əlavə etdiyim ilk bloqdur.</p>', 'uploads/blog/ilk-bloq.png', 'Quluzadə Ağabala', '0', '2022-02-28 01:16:22', '2022-03-25 02:54:14'),
-(4, 'İkinci Bloq', '<p>Bu ikinci bloqdur.</p>', 'uploads/blog/ikinci-bloq.jpg', 'Quluzadə Ağabala', '0', '2022-03-25 02:56:03', '2022-03-25 02:56:30');
+INSERT INTO `blog` (`id`, `title`, `contents`, `img`, `author`, `slug`, `status`, `created_at`, `updated_at`) VALUES
+(6, 'BLOĞUN BAŞLIĞI Məni necə daha yaxşı bir satıcı etdi', '<p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue condimentum rhoncus. Praesent ornare tortor ac ante egestas hendrerit. Aliquam et metus pharetra, bibendum massa nec, fermentum odio. Nunc id leo ultrices, mollis ligula in, finibus tortor. Mauris eu dui ut lectus fermentum eleifend. Pellentesque faucibus sem ante, non malesuada odio varius nec. Suspendisse potenti.</p>', 'uploads/blog/blogun-basligi-meni-nece-daha-yaxsi-bir-satici-etdi.jpg', 'Quluzadə Ağabala', 'blogun-basligi-meni-nece-daha-yaxsi-bir-satici-etdi', '0', '2022-04-22 23:38:38', '2022-04-22 23:38:38'),
+(7, 'İnkişaf edən bir iş istəyirsiniz? BLOQ BAŞINA diqqət yetirin!', '<p>Aenean et tempor eros, vitae sollicitudin velit. Etiam varius enim nec quam tempor, sed efficitur ex ultrices. Phasellus pretium est vel dui vestibulum condimentum. Aenean nec suscipit nibh. Phasellus nec lacus id arcu facilisis elementum. Curabitur lobortis, elit ut elementum congue, erat ex bibendum odio, nec iaculis lacus sem non lorem. Duis suscipit metus ante, sed convallis quam posuere quis. Ut tincidunt eleifend odio, ac fringilla mi vehicula nec. Nunc vitae lacus eget lectus imperdiet tempus sed in dui. Nam molestie magna at risus consectetur, placerat suscipit justo dignissim. Sed vitae fringilla enim, nec ullamcorper arcu.</p>', 'uploads/blog/inkisaf-eden-bir-is-isteyirsiniz-bloq-basina-diqqet-yetirin.jpg', 'Quluzadə Ağabala', 'inkisaf-eden-bir-is-isteyirsiniz-bloq-basina-diqqet-yetirin', '0', '2022-04-22 23:41:17', '2022-04-22 23:41:17');
 
 -- --------------------------------------------------------
 
@@ -185,16 +186,19 @@ CREATE TABLE `failed_jobs` (
 CREATE TABLE `feature_section` (
   `id` int(11) UNSIGNED NOT NULL,
   `feature_title` varchar(255) NOT NULL,
-  `feature_content` varchar(255) NOT NULL
+  `feature_content` varchar(255) NOT NULL,
+  `icon` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `feature_section`
 --
 
-INSERT INTO `feature_section` (`id`, `feature_title`, `feature_content`) VALUES
-(1, 'Pulsuz Çatdırılma', '500 manatdan yuxarı sifarişlər'),
-(2, 'Pulun Geri Qayıtması Zəmanəti', '100% Pulun geri qaytarılması');
+INSERT INTO `feature_section` (`id`, `feature_title`, `feature_content`, `icon`) VALUES
+(1, 'Pulsuz Çatdırılma', '500 manatdan yuxarı sifarişlər', ''),
+(2, 'Pulun Geri Qayıtması Zəmanəti', '100% Pulun geri qaytarılması', ''),
+(3, 'Nəğd Çatdırılma', 'Qapıda Ödəmə', NULL),
+(4, 'Kömək & Dəstək', 'Zəng edin bizə :', NULL);
 
 -- --------------------------------------------------------
 
@@ -215,7 +219,10 @@ CREATE TABLE `general_question` (
 --
 
 INSERT INTO `general_question` (`id`, `question_title`, `question_answer`, `created_at`, `updated_at`) VALUES
-(1, 'Kitabı Necə Ala Bilərik ?', 'Nağd və Kart ilə', '2022-02-27 19:10:34', '2022-02-27 20:18:49');
+(1, 'Kitabı Necə Ala Bilərik ?', 'Nağd və Kart ilə', '2022-02-27 19:10:34', '2022-02-27 20:18:49'),
+(3, 'Bakıda kitabı necə sifariş etmək olar?', 'Yeni texnologiyaların inkişafı ilə, yaşayış yeri iş və təhsildə böyük rol oynamır. Artıq bir çox insanlar meqapolisin səs-küyündən qaçaraq şəhər kənarı evlərdə yaşamağa üstünlük verirlər. Hətta belə hallarda belə internet mağazadan kitab almaq problem deyil, çünki mağaza bütün Bakı və Azərbaycan ərazisində fəaliyyət göstərir. Müxtəlif janrlarda istədiyiniz kitabı indi çox asanlıqda, evdən bayıra çıxmadan sifariş edə bilərsiniz. Mağazamızda istədiyiniz dildə kitablar – azərbaycan, rus, ingilis, türk dilində kitablar, uşaq ədəbiyyatı, bədii ədəbiyyat, detektivlər, klassik əsərlər, romanlar, biznes kitabları, lüğətlər, memarlıq haqqında kitablar, tarixi, hüquq kitabları, dəbə aid kitablar, kulinariya, uşaq tərbiyəsi, tibbi, psixologiya, ezoterika, dini, əl işləri, turizm, filosifiya, elmi-kütləvi ədəbiyyəta aid kitablar var. Bizim mağazamızdan istədiyiniz – fantastikadan tutmuş, elmi ədəbiyyata kimi kitabları əldə edə bilərsiniz.\r\n\r\nKitab almaq heç belə asan olmamışdı. İndi siz nəinki vaxt itirmədən kitab əldə edə biləcəksiniz, həm də mağazamız tərəfindən keçirilən müxtəlif aksiyalar və ya endirimlər, 50 % endirimli kitablar və hətta 1 manata olan kitabları da əldə edə biləcəksiniz. İndi siz çox asanlıqla elektron kataloqdan istifadə etməklə istədiyiz kitabı seçə, kitab annotasiyasını və kitab haqqında digər oxucuların yazdığı rəyləri oxuya bilərsiniz. Siz əmin ola bilərsiniz ki, sifarişi aldıqdan sonra məyus olmayacaqsınız – siz istədiyiniz kitabı əldə etmiş olacaqsınız.', '2022-04-24 04:43:21', '2022-04-24 04:43:21'),
+(4, 'Russiya, Amerika və Avropaya kitab sifariş etmək olar?', 'Xarici ölkədə yaşasanız da bizim mağazamızdan internet ilə azərbaycan kitabları və milli suvenirləri ala bilərsiniz. Bu rus dilində və digər dillərdə olan kitablara da aiddir. Azərbaycan dilində olan kitabları biz özümüz tərcümə edib nəşr edirik.\r\nSifariş etdiyiniz kitabı, ödəniş edildiyi gündən bir gün sonra istədiyiniz ölkəyə göndərə bilərik. Siz sifarişlərinizi 3-12 gün arası ala bilərsiniz.', '2022-04-24 04:53:33', '2022-04-24 04:53:33'),
+(5, 'Azərbaycanın rayonlarından necə sifariş edə bilərik?', 'Əgər siz Azərbaycanda yaşayırsınızda kitab sifariş etmək sizin üçün çox asan olacaq. 15 illik iş təcrübəsində biz işimizin peşəkarı olmuşuq. Sifarişinizi xüsusi ödənişlə Ağstafa, Naxçıvan, Gəncə, Şamaxı, Lənkəran, Zaqatala, Quba, Qəbələ, Gədəbəy, Mingəçevir və digər şəhərlərə çatdırırıq. Siz ödənişi kitabı aldıqdan sonra edirsiniz.', '2022-04-24 04:54:06', '2022-04-24 04:54:06');
 
 -- --------------------------------------------------------
 
@@ -296,6 +303,30 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `review`
+--
+
+CREATE TABLE `review` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `books_id` int(11) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `review` longtext NOT NULL,
+  `rating` int(11) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `review`
+--
+
+INSERT INTO `review` (`id`, `books_id`, `name`, `review`, `rating`, `created_at`, `updated_at`) VALUES
+(4, 7, 'Ağabala Quluzadə', 'Çox bəyəndim məlumatlandırıcı kitabdı.', 5, '2022-04-25 22:48:11', '2022-04-25 22:48:11'),
+(5, 7, 'Ağabala', 'Gözəl kitabdı', 5, '2022-04-25 21:48:19', '2022-04-25 21:48:19');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `settings`
 --
 
@@ -306,7 +337,9 @@ CREATE TABLE `settings` (
   `seo_keywords` text DEFAULT NULL,
   `logo` varchar(255) DEFAULT NULL,
   `favicon` varchar(255) DEFAULT NULL,
+  `about_us` longtext NOT NULL,
   `contact_address` varchar(255) DEFAULT NULL,
+  `map_name` varchar(255) NOT NULL,
   `contact_email` varchar(255) DEFAULT NULL,
   `contact_phone` varchar(25) DEFAULT NULL,
   `social_instagram` varchar(255) DEFAULT NULL,
@@ -318,8 +351,8 @@ CREATE TABLE `settings` (
 -- Dumping data for table `settings`
 --
 
-INSERT INTO `settings` (`id`, `seo_title`, `seo_description`, `seo_keywords`, `logo`, `favicon`, `contact_address`, `contact_email`, `contact_phone`, `social_instagram`, `social_facebook`, `social_twitter`) VALUES
-(1, 'Book Home Store', 'Book Home Kitab Satışı və Çatdırılması', 'Book Home, kitab, satış, kitab satışı, kitablar', 'uploads/logo/logo.png', 'uploads/logo/favicon.jpg', 'Azərbaycan, Bakı, Buzovna', 'agabala.oyunda@gmail.com', '0504946684', 'https://www.instagram.com/quluzade_agabala/', 'https://www.facebook.com/profile.php?id=100008415033478', 'https://twitter.com/home');
+INSERT INTO `settings` (`id`, `seo_title`, `seo_description`, `seo_keywords`, `logo`, `favicon`, `about_us`, `contact_address`, `map_name`, `contact_email`, `contact_phone`, `social_instagram`, `social_facebook`, `social_twitter`) VALUES
+(1, 'Book Home Store', 'Book Home Kitab Satışı və Çatdırılması', 'Book Home, kitab, satış, kitab satışı, kitablar', 'uploads/logo/logo.png', 'uploads/logo/favicon.png', '<p><strong>Missiyamız</strong></p>\r\n<p>&bull; Azərbaycan oxucusunu m&uuml;asir d&uuml;nya ədəbiyyatının ən yaxşı n&uuml;munələri ilə tanış etmək;</p>\r\n<p>&bull; &Ouml;tən əsrin sonlarında ke&ccedil;miş SSRİ-nin ən &ccedil;ox m&uuml;taliə edən respublikalarından sayılan indiki m&uuml;stəqil Azərbaycanın vətəndaşlarında yenidən k&uuml;tləvi oxu vərdişlərini bərpa və daha da inkişaf etdirmək, onların ən m&uuml;xtəlif sahələrə aid maraqlı və dəyərli kitablara olan tələbatının &ouml;dənilməsində fəal iştirak etmək;</p>\r\n<p>&bull; Azərbaycan Respublikasının d&uuml;nyada daha yaxından tanıdılmasında m&uuml;h&uuml;m rol oynaya biləcək m&uuml;xtəlif &ccedil;eşidli kitabların nəşrini təmin etmək və bu nəşrləri yaymaq;</p>\r\n<p>&bull; &Uuml;mummilli lider Heydər Əliyevin Azərbaycan dilinin kiril qrafikasından latın qrafikasına ke&ccedil;irilməsi barədəki tapşırığı əks etdirən bəndin də yer aldığı \"D&ouml;vlət dilinin tətbiqi işinin təkmilləşdirilməsi haqqında\" 18 iyun, 2001-ci il tarixli fərmanından, Azərbaycan Respublikasının Prezidenti cənab İlham Əliyevin \"Azərbaycan dilində latın qrafikası ilə k&uuml;tləvi nəşrlərin həyata ke&ccedil;irilməsi haqqında\" 12 yanvar, 2004-c&uuml; il tarixli və \"D&uuml;nya ədəbiyyatının g&ouml;rkəmli n&uuml;mayəndələrinin əsərlərinin Azərbaycan dilində nəşr edilməsi haqqında\" 24 avqust, 2007-ci il tarixli sərəncamlarından irəli gələn vəzifələrin həyata ke&ccedil;irilməsinə bir nəşriyyat olaraq &ouml;z t&ouml;hfəmizi vermək;</p>\r\n<p>&bull; D&uuml;nyanın m&uuml;xtəlif &ouml;lkələrində yaşayan soydaşlarımızı Azərbaycan ədəbiyyatının m&uuml;xtəlif səpkili n&uuml;munələri, klassik və m&uuml;asir yazı&ccedil;ılarımızın əsərlərinin ən yaxşı &ouml;rnəkləri ilə təmin etmək;</p>\r\n<p>&bull; Azərbaycan vətəndaşlarını, x&uuml;susilə də gənc nəsli, gənc elm və iş adamlarını m&uuml;asir d&uuml;nyanın inkişaf tendensiyalarının nəbzini tutan, yeni texnika və texnologiyalardan bəhs edən, m&uuml;asir biznesin inkişaf istiqamətlərini elmi şəkildə şərh edən elmi-k&uuml;tləvi, habelə bədii-fantastik, əyləncəli, maarif&ccedil;i ədəbiyyatla, m&uuml;asir dərslik və tədris vəsaitləri ilə təmin etmək.</p>', 'Yuptechnology', 'Yuptechnology', 'agabala.oyunda@gmail.com', '0504946684', 'https://www.instagram.com/quluzade_agabala/', 'https://www.facebook.com/profile.php?id=100008415033478', 'https://twitter.com/home');
 
 -- --------------------------------------------------------
 
@@ -439,6 +472,12 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
+-- Indexes for table `review`
+--
+ALTER TABLE `review`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `settings`
 --
 ALTER TABLE `settings`
@@ -465,7 +504,7 @@ ALTER TABLE `writers`
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `books`
@@ -495,13 +534,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `feature_section`
 --
 ALTER TABLE `feature_section`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `general_question`
 --
 ALTER TABLE `general_question`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -520,6 +559,12 @@ ALTER TABLE `partners`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `review`
+--
+ALTER TABLE `review`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `settings`

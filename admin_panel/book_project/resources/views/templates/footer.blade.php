@@ -56,7 +56,7 @@ $('#banner0').swiper({
 									    										  										  										  										  										  										  										  										  										  										  										  										  										  <div class="footer-contact">
 
 <div class="footer-content">
-<a class="logo-footer" href="#"><img src="image/catalog/logo/logo.png" alt="logo-footer"></a>
+<a class="logo-footer" href="#"><img src="{{ asset($setting->logo) }}" alt="{{ $setting->seo_title }}"></a>
 
 <ul class="list-unstyled text-content">
 <li class="address"><p>Ünvan:</p><p>{{ $setting->contact_address }}</p></li>

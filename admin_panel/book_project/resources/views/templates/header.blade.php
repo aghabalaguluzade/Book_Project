@@ -658,7 +658,7 @@
                         @foreach ($settings as $setting)
                             
 						<div id="logo">
-						  							<a href="{{ route('templates') }}"><img src="{{ $setting->logo }}" style="width: 226px; height: 80px;" title="Smartbooks4" alt="Smartbooks4" class="img-responsive" /></a>
+						  							<a href="{{ route('templates') }}"><img src="{{ asset($setting->logo) }}" style="width: 226px; height: 80px;" title="Smartbooks4" alt="Smartbooks4" class="img-responsive" /></a>
 						  						</div>
                                                   @endforeach
 

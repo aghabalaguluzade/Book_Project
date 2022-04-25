@@ -333,7 +333,7 @@ if ($('#form-upload input[name=\'file\']').val() != '') {
 
 <div id="oc-inivoslider1" class="nivoSlider">
 	<a  href="#">
-	<img style="display: none;" src="{{ $banner->banner_img }}" alt="" title="#banner7-caption2"  />
+	<img style="display: none;" src="{{ asset($banner->banner_img) }}" alt="" title="#banner7-caption2"  />
 	</a>				
 </div>										
 					
@@ -1317,6 +1317,49 @@ responsive:{
 });
 });
 </script>
+
+<div class="testimonial-container">
+	
+	
+	<div class="module-title">
+		
+		<h2>
+			Client Testimonials
+		</h2>
+	</div>
+
+						
+	<div class="block-content">
+		<div class="owl-container">
+		<div id="slides" class="owl-carousel owl-theme owl-loaded owl-drag">																												
+											<div class="owl-stage-outer">
+												<div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2400px;">
+													<div class="owl-item active" style="width: 300px;">
+														<div class="row_items">
+														<div class="testimonial-content">
+					<div class="item">
+					<div class="item-inner">
+						<div class="testimonial-caption">
+																<h4 class="title"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/octestimonial">A really great experience</a></h4>
+															<div class="testimonial-box">							
+								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/octestimonial"> This is Photoshops version  of Lorem Ipsum. Proin gravida nibh vel velit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. In molestie augue magna. Pell..</a>
+							</div>
+							<p class="testimonial-author">Rebecka Filson</p>
+						</div>
+					</div>
+					</div>
+				</div><!--testimonial-content-->
+										</div>
+									</div>
+										
+										</div></div></div>
+		</div>
+	</div><!--block-content-->
+
+
+
+</div>
+
 																								</div>
 												<div class="sub-col col-sm-12 col-md-9">
 																											<div class="tt_tabsproduct_module multi-rows product-tabs-container-slider" id="product_module610">
@@ -1375,7 +1418,7 @@ responsive:{
 					<div class="box-border">
 						<div class="image images-container">
 							<a href="{{ route('BooksProduct',$book->slug) }}" class="product-image">
-							<img src="{{ $book->books_img }}" alt="{{ $book->books_name }}" title="{{ $book->books_name }}" class="img-responsive " />
+							<img src="{{ asset($book->books_img) }}" alt="{{ $book->books_name }}" title="{{ $book->books_name }}" class="img-responsive " />
 							</a>
 							<div class="box-label">	
 							</div>											
@@ -2824,7 +2867,7 @@ if(count == 1) {
 		<div class="row_items">
 			<div class="articles-inner ">
 			<div class="articles-image">
-				<a href="{{ route('BloqContent',$blog->slug) }}"><img src="{{ $blog->img }}" alt="{{ $blog->title }}"/><span class="icon-view"></span></a>
+				<a href="{{ route('BloqContent',$blog->slug) }}"><img src="{{ asset($blog->img) }}" alt="{{ $blog->title }}"/><span class="icon-view"></span></a>
 			</div>	
 			<div class="aritcles-content">
 				<div class="content-inner">

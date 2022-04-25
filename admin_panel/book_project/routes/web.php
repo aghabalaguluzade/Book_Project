@@ -42,7 +42,8 @@ Route::get('/haqqımızda',[generalController::class, "templates"])->name('about
 Route::get('/bloq',[generalController::class, "Bloq"])->name('Bloq');
 Route::get('/bloq/{slug}',[generalController::class, "BloqContent"])->name('BloqContent');
 Route::get('/haqqımızda',[generalController::class, "AboutUs"])->name("AboutUs");
-Route::get('/{slug}',[generalController::class, "BooksProduct"])->name("BooksProduct");
+Route::get('/kitablar/{slug}',[generalController::class, "BooksProduct"])->name("BooksProduct");
+Route::post('/review',[generalController::class, "BooksReviewPost"])->name("BooksReviewPost");
 
 Route::prefix('settings')->group(function() {
 
