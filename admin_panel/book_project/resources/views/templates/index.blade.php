@@ -406,9 +406,7 @@ if ($('#form-upload input[name=\'file\']').val() != '') {
 </div>
 </div>
 </div>
-</div>
-
-																																																	  <div class="banner-static static-top-smartbooks3">
+</div>																																															  <div class="banner-static static-top-smartbooks3">
 <div class="container-inner">
 <div class="col col-top-1">
 <div class="image"><a href="index.php?route=product/category&amp;path=124"><img src="image/catalog/cmsblock/img1-top-smartbooks3.jpg" alt="image"></a></div>

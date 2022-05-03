@@ -3,15 +3,31 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Partners;
+use App\Models\Settings;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules;
 
 class RegisteredUserController extends Controller
 {
+    public function RegisterIndex() {
+        $categories = Category::where('parent_id',0)->get();
+        $partners = Partners::where('status','1')->inRandomOrder()->get();
+        $settings = Settings::all();
+        View::share([
+            'categories' => $categories,
+            'partners' => $partners,
+            'settings' => $settings,
+        ]);
+        return view('templates.register');
+    }
+
     public function RegisteredUserController(Request $request) {
 
         $request->validate([

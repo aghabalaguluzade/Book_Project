@@ -9,11 +9,6 @@ use Illuminate\Support\Str;
 
 class addPartnerController extends Controller
 {
-    
-    public function addPartnersIndex() {
-        return view('partners.partners_add');
-    }
-
     public function addPartnersPost(Request $request) {
         
         $request->validate([

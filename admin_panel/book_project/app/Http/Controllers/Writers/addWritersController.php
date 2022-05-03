@@ -9,10 +9,6 @@ use Illuminate\Support\Str;
 
 class addWritersController extends Controller
 {
-    public function addWriters() {
-        return view('writers.writers_add');
-    }
-
     public function addWritersPost(Request $request) {
         $request->validate([
             'writer_name' => 'required|max:255',

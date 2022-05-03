@@ -9,10 +9,6 @@ use Illuminate\Support\Str;
 
 class BlogAddController extends Controller
 {
-    public function BlogAddIndex() {
-        return view('blogs.blog_add');
-    }
-
     public function BlogAddPost(Request $request) {
         
         $request->validate([

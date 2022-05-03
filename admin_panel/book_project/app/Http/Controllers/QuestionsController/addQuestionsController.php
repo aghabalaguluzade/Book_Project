@@ -8,11 +8,6 @@ use Illuminate\Http\Request;
 
 class addQuestionsController extends Controller
 {
-
-    public function addQuestionsIndex() {
-        return view('questions.questions_add');
-    }
-
     public function addQuestionsPost(Request $request) {
 
         $request->validate([

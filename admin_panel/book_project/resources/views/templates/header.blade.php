@@ -668,14 +668,18 @@
 						<div id="top-links">
 															<ul class="user ul-account list-unstyled">
 															
-																	<li>
-																					<a id="a-login-link" href="http://smartbook4.demo.towerthemes.com/index.php?route=account/login">Giriş</a>
-																			</li>
-									
-									<li>
-										və ya
-																					<a id="a-register-link" href="http://smartbook4.demo.towerthemes.com/index.php?route=account/register">Qeydiyyat</a>
-																			</li>
+																	@if (Auth::check())
+                                                                        <a href="{{ route('LogoutUserController') }}">Çıxış</a>
+                                                                    @else
+                                                                    <li>
+                                                                        <a href="{{ route('LoginIndex') }}">Giriş</a>
+                                                                </li>
+                        
+                        <li>
+                            və ya
+                                                                        <a  href="{{ route('RegisterIndex') }}">Qeydiyyat</a>
+                                                                </li>
+                                                                    @endif
 									
 															</ul>
 						</div>

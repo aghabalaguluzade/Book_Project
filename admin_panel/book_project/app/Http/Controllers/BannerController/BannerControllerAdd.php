@@ -9,10 +9,6 @@ use Illuminate\Support\Str;
 
 class BannerControllerAdd extends Controller
 {
-    public function BannerAdd() {
-        return view('banners.banners_add');
-    }
-
     public function BannerAddPost(Request $request) {
         $request->validate([
             'banner_name' => 'required|max:255',

@@ -5,6 +5,7 @@
 <body >
 
     <div class="wrapper">
+        @include('templates.nav')
         @include('templates.header')
         @yield('content')
         @include('templates.footer')

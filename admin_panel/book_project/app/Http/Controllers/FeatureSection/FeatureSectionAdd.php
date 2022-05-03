@@ -8,10 +8,6 @@ use Illuminate\Http\Request;
 
 class FeatureSectionAdd extends Controller
 {
-    public function FeatureSectionAdd() {
-        return view('feature_section.feature_add');
-    }
-
     public function FeatureSectionAddPost(Request $request) {
         
         $request->validate([

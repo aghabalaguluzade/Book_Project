@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Acount\EditAcountController;
+use App\Http\Controllers\Acount\ResetPasswordController;
+use App\Http\Controllers\Auth\LoginUserController;
+use App\Http\Controllers\Auth\LogoutUserController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\BannerController\BannerControllerAdd;
 use App\Http\Controllers\BannerController\BannerControllerEdit;
@@ -24,18 +28,19 @@ use App\Http\Controllers\PartnersController\listPartnerController;
 use App\Http\Controllers\QuestionsController\listQuestionsController;
 use App\Http\Controllers\QuestionsController\addQuestionsController;
 use App\Http\Controllers\QuestionsController\editQuestionsController;
+use App\Http\Controllers\Roles\RolesAddController;
 use App\Http\Controllers\SettingsController\ContactController;
 use App\Http\Controllers\SettingsController\LogoController;
 use App\Http\Controllers\SettingsController\SeoController;
 use App\Http\Controllers\SettingsController\SettingsTemplateController;
 use App\Http\Controllers\SettingsController\SocialController;
+use App\Http\Controllers\UsersController\UsersAddController;
+use App\Http\Controllers\UsersController\UsersListController;
 use App\Http\Controllers\Writers\addWritersController;
 use App\Http\Controllers\Writers\editWritersController;
 use App\Http\Controllers\Writers\listWritersController;
 use Illuminate\Support\Facades\Route;
 
-
-Route::view('/admin','index')->name('index');
 
 Route::get('/ana-səhifə',[generalController::class,"templates"])->name("templates");
 Route::get('/suallar',[SettingsTemplateController::class, "faq"])->name('faq');
@@ -48,8 +53,27 @@ Route::get('/bloq/{slug}',[BlogsTemplateController::class, "BloqContent"])->name
 Route::get('/kitablar/{slug}',[BooksTemplateController::class, "BooksProduct"])->name("BooksProduct");
 Route::post('/review',[BooksTemplateController::class, "BooksReviewPost"])->name("BooksReviewPost");
 Route::post('/newsletter-subscribe',[generalController::class, "newsletterSubscribe"])->name("newsletterSubscribe");
+Route::get('/qeydiyyat',[RegisteredUserController::class, "RegisterIndex"])->name("RegisterIndex");
 Route::post("/register",[RegisteredUserController::class, "RegisteredUserController"])->name("RegisteredUserController");
+Route::get('/giriş',[LoginUserController::class, "LoginIndex"])->name("LoginIndex");
+Route::post('/giriş',[LoginUserController::class, "LoginUserController"])->name("LoginUserController");
+Route::get('/logout',[LogoutUserController::class, "LogoutUserController"])->name("LogoutUserController");
 
+Route::prefix('hesab')->group(function() {
+
+    Route::get('/',[EditAcountController::class, "Acount"])->name("Acount");
+    Route::get('/hesab-redaktəsi',[EditAcountController::class, "EditAcountIndex"])->name("EditAcountIndex");
+    Route::post('/hesab-redaktəsi',[EditAcountController::class, "EditAcountPost"])->name("EditAcountPost");
+
+});
+
+Route::middleware('admin')->group(function() {
+
+
+
+Route::prefix('admin')->group(function() {
+
+    Route::view('/','index')->name('index');
 
 Route::prefix('settings')->group(function() {
 
@@ -70,7 +94,7 @@ Route::prefix('settings')->group(function() {
 Route::prefix('features')->group(function() {
 
     Route::get('/features_list',[FeatureSectionIndex::class, "FeatureSectionIndex"])->name("FeatureSectionIndex");
-    Route::get('/features_add',[FeatureSectionAdd::class, "FeatureSectionAdd"])->name("FeatureSectionAdd");
+    Route::view('/features_add','feature_section.feature_add')->name("FeatureSectionAdd");
     Route::post('/features_add',[FeatureSectionAdd::class, "FeatureSectionAddPost"])->name("FeatureSectionAddPost");
     Route::get('/features_edit/{id}',[FeatureSectionEdit::class, "FeatureSectionEdit"])->name("FeatureSectionEdit");
     Route::post('/features_edit/{id}',[FeatureSectionEdit::class, "FeatureSectionEditPost"])->name("FeatureSectionEditPost");
@@ -80,7 +104,7 @@ Route::prefix('features')->group(function() {
 Route::prefix('banners')->group(function() {
 
     Route::get('/banner_list', [BannerControllerList::class, "BannerList"])->name("BannerList");
-    Route::get('/banner_add', [BannerControllerAdd::class, "BannerAdd"])->name("BannerAdd");
+    Route::view('/banner_add','banners.banners_add')->name("BannerAdd");
     Route::post('/banner_add', [BannerControllerAdd::class, "BannerAddPost"])->name("BannerAddPost");
     Route::post('banner_edit_view', [BannerControllerEdit::class, "BannerEditView"]);
     Route::post('/banner_edit', [BannerControllerEdit::class, "BannerEdit"])->name("BannerEdit");
@@ -92,7 +116,7 @@ Route::prefix('partners')->group(function() {
 
     Route::get('/list',[listPartnerController::class, "PartnersListView"])->name("PartnersListView");
     Route::get('/delete/{id}',[listPartnerController::class, "partnerDelete"])->name("partnerDelete");
-    Route::get('/add',[addPartnerController::class, "addPartnersIndex"])->name("addPartnersIndex");
+    Route::view('/add','partners.partners_add')->name("addPartnersIndex");
     Route::post('/add',[addPartnerController::class, "addPartnersPost"])->name("addPartnersPost");
     Route::get('/edit/{id}',[editPartnerController::class, "editPartnersIndex"])->name("editPartnersIndex");
     Route::post('/edit/{id}',[editPartnerController::class, "editPartnersPost"])->name("editPartnersPost");
@@ -102,7 +126,7 @@ Route::prefix('partners')->group(function() {
 Route::prefix('writers')->group(function() {
 
     Route::get('/writers_list', [listWritersController::class, "listWriters"])->name("listWriters");
-    Route::get('/writers_add', [addWritersController::class, "addWriters"])->name("addWriters");
+    Route::view('/writers_add','writers.writers_add')->name("addWriters");
     Route::post('/writers_add', [addWritersController::class, "addWritersPost"])->name("addWritersPost");
     Route::post('/writers_edit_view', [listWritersController::class, "viewWriters"]);
     Route::post('/writers_edit', [editWritersController::class, "editWriters"])->name("editWriters");
@@ -113,7 +137,7 @@ Route::prefix('writers')->group(function() {
 Route::prefix('questions')->group(function() {
 
     Route::get('/questions_list',[listQuestionsController::class, "listQuestions"])->name("listQuestions");
-    Route::get('/questions_add',[addQuestionsController::class, "addQuestionsIndex"])->name("addQuestionsIndex");
+    Route::view('/questions_add','questions.questions_add')->name("addQuestionsIndex");
     Route::post('/questions_add',[addQuestionsController::class, "addQuestionsPost"])->name("addQuestionsPost");
     Route::get('/questions_edit/{id}',[editQuestionsController::class, "editQuestionsIndex"])->name("editQuestionsIndex");
     Route::post('/questions_edit/{id}',[editQuestionsController::class, "editQuestionsPost"])->name("editQuestionsPost");
@@ -125,7 +149,7 @@ Route::prefix('blogs')->group(function() {
 
     Route::get('/blog_list', [BlogListController::class, "BlogList"])->name("BlogList");
     Route::post('/blog_view', [BlogListController::class, "BlogView"]);
-    Route::get('/blog_add',[BlogAddController::class, "BlogAddIndex"])->name("BlogAddIndex");
+    Route::view('/blog_add','blogs.blog_add')->name("BlogAddIndex");
     Route::post('/blog_add',[BlogAddController::class, "BlogAddPost"])->name("BlogAddPost");
     Route::get('/blog_edit/{id}', [BlogEditController::class, "BlogEditIndex"])->name("BlogEditIndex");
     Route::post('/blog_edit/{id}', [BlogEditController::class, "BlogEdit"])->name("BlogEdit");
@@ -152,4 +176,19 @@ Route::prefix('books')->group(function() {
     Route::get('/books-edit/{id}',[BooksEditController::class, "BooksEdit"])->name("BooksEdit");
     Route::post('/books-edit/{id}',[BooksEditController::class, "BooksEditPost"])->name("BooksEditPost");
 
+});
+
+Route::prefix('users')->group(function() {
+
+    Route::get('/users-list',[UsersListController::class, "UsersListIndex"])->name("UsersListIndex");
+
+});
+
+Route::prefix('roles')->group(function() {
+
+    Route::view('/roles-add', 'roles.roles-add')->name("RolesAddIndex");
+    Route::post('/roles-add',[RolesAddController::class, "RolesAddPost"])->name("RolesAddPost");
+
+});
+});
 });

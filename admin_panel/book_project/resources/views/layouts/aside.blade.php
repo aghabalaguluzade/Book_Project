@@ -26,15 +26,15 @@
           <li class="nav-item menu-open">
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('index') }}" class="nav-link @if(Request::segment(1) == "") active @endif" href="{{ route('index') }}">
+                <a href="{{ route('index') }}" class="nav-link @if(Request::segment(2) == "") active @endif" href="{{ route('index') }}">
                   <i class="fas fa-home"></i>
                   <p>Əsas Səhifə</p>
                 </a>
               </li>
             </ul>
           </li>
-          <li class="nav-item @if(Request::segment(1) == "settings") menu-open @endif">
-            <a href="" class="nav-link @if(Request::segment(1) == "settings") active @endif">
+          <li class="nav-item @if(Request::segment(2) == "settings") menu-open @endif">
+            <a href="" class="nav-link @if(Request::segment(2) == "settings") active @endif">
               <i class="fas fa-cog"></i>
               <p>
                 Nizamlamalar
@@ -43,25 +43,25 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('seoIndex') }}" class="nav-link @if(Request::segment(2) == "seo") active @endif" href="{{ route('seoIndex') }}">
+                <a href="{{ route('seoIndex') }}" class="nav-link @if(Request::segment(3) == "seo") active @endif" href="{{ route('seoIndex') }}">
                   <i class="fab fa-gg-circle"></i>
                   <p>Seo Nizamlamaları</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('logoIndex') }}" class="nav-link @if(Request::segment(2) == "logo") active @endif" href="{{ route('logoIndex') }}">
+                <a href="{{ route('logoIndex') }}" class="nav-link @if(Request::segment(3) == "logo") active @endif" href="{{ route('logoIndex') }}">
                   <i class="fab fa-gg-circle"></i>
                   <p>Logo Nizamlamaları</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('contactIndex') }}" class="nav-link @if(Request::segment(2) == "contact") active @endif" href="{{ route('contactIndex') }}">
+                <a href="{{ route('contactIndex') }}" class="nav-link @if(Request::segment(3) == "contact") active @endif" href="{{ route('contactIndex') }}">
                   <i class="fab fa-gg-circle"></i>
                   <p>Əlaqə Nizamlamaları</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('socialIndex') }}" class="nav-link @if(Request::segment(2) == "social") active @endif" href="{{ route('socialIndex') }}">
+                <a href="{{ route('socialIndex') }}" class="nav-link @if(Request::segment(3) == "social") active @endif" href="{{ route('socialIndex') }}">
                   <i class="fab fa-gg-circle"></i>
                   <p>Sosial Şəbəkələr Nizamlamaları</p>
                 </a>
@@ -71,8 +71,8 @@
 
           {{-- Banner Bölməsi --}}
 
-          <li class="nav-item @if(Request::segment(1) == "banners") menu-open @endif">
-            <a href="" class="nav-link @if(Request::segment(1) == "banners") active @endif">
+          <li class="nav-item @if(Request::segment(2) == "banners") menu-open @endif">
+            <a href="" class="nav-link @if(Request::segment(2) == "banners") active @endif">
               <i class="fas fa-images"></i>
               <p>
                 Banner Bölməsi
@@ -81,13 +81,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('BannerList') }}" class="nav-link @if(Request::segment(2) == "banner_list") active @endif" href="{{ route('BannerList') }}">
+                <a href="{{ route('BannerList') }}" class="nav-link @if(Request::segment(3) == "banner_list") active @endif" href="{{ route('BannerList') }}">
                   <i class="fas fa-image"></i>
                   <p>Siyahı</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('BannerAdd') }}" class="nav-link @if(Request::segment(2) == "banner_add") active @endif" href="{{ route('BannerAdd') }}">
+                <a href="{{ route('BannerAdd') }}" class="nav-link @if(Request::segment(3) == "banner_add") active @endif" href="{{ route('BannerAdd') }}">
                   <i class="fas fa-image"></i>
                   <p>Əlavə Et</p>
                 </a>
@@ -97,8 +97,8 @@
 
           {{-- Xüsusiyyət Bölməsi --}}
 
-          <li class="nav-item @if(Request::segment(1) == "features") menu-open @endif">
-            <a href="" class="nav-link @if(Request::segment(1) == "features") active @endif">
+          <li class="nav-item @if(Request::segment(2) == "features") menu-open @endif">
+            <a href="" class="nav-link @if(Request::segment(2) == "features") active @endif">
               <i class="fas fa-braille"></i>
               <p>
                 Xüsusiyyət Bölməsi
@@ -107,13 +107,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('FeatureSectionIndex') }}" class="nav-link @if(Request::segment(2) == "features_list") active @endif" href="{{ route('FeatureSectionIndex') }}">
+                <a href="{{ route('FeatureSectionIndex') }}" class="nav-link @if(Request::segment(3) == "features_list") active @endif" href="{{ route('FeatureSectionIndex') }}">
                   <i class="fab fa-buffer"></i>
                   <p>Siyahı</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('FeatureSectionAdd') }}" class="nav-link @if(Request::segment(2) == "features_add") active @endif" href="{{ route('FeatureSectionAdd') }}">
+                <a href="{{ route('FeatureSectionAdd') }}" class="nav-link @if(Request::segment(3) == "features_add") active @endif" href="{{ route('FeatureSectionAdd') }}">
                   <i class="fab fa-buffer"></i>
                   <p>Əlavə Et</p>
                 </a>
@@ -123,8 +123,8 @@
 
           {{-- Tərəfdaşlar --}}
 
-          <li class="nav-item @if(Request::segment(1) == "partners") menu-open @endif">
-            <a href="" class="nav-link @if(Request::segment(1) == "partners") active @endif">
+          <li class="nav-item @if(Request::segment(2) == "partners") menu-open @endif">
+            <a href="" class="nav-link @if(Request::segment(2) == "partners") active @endif">
               <i class="fas fa-handshake"></i>
               <p>
                 Tərəfdaşlar
@@ -133,13 +133,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('PartnersListView') }}" class="nav-link @if(Request::segment(2) == "list") active @endif" href="{{ route('PartnersListView') }}">
+                <a href="{{ route('PartnersListView') }}" class="nav-link @if(Request::segment(3) == "list") active @endif" href="{{ route('PartnersListView') }}">
                   <i class="far fa-stop-circle"></i>
                   <p>Siyahı</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('addPartnersIndex') }}" class="nav-link @if(Request::segment(2) == "add") active @endif" href="{{ route('addPartnersIndex') }}">
+                <a href="{{ route('addPartnersIndex') }}" class="nav-link @if(Request::segment(3) == "add") active @endif" href="{{ route('addPartnersIndex') }}">
                   <i class="far fa-stop-circle"></i>
                   <p>Əlavə Et</p>
                 </a>
@@ -149,8 +149,8 @@
 
           {{-- Yazıçılar --}}
 
-          <li class="nav-item @if(Request::segment(1) == "writers") menu-open @endif">
-            <a href="" class="nav-link @if(Request::segment(1) == "writers") active @endif">
+          <li class="nav-item @if(Request::segment(2) == "writers") menu-open @endif">
+            <a href="" class="nav-link @if(Request::segment(2) == "writers") active @endif">
               <i class="fas fa-user-edit"></i>
               <p>
                 Yazıçılar
@@ -159,13 +159,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('listWriters') }}" class="nav-link @if(Request::segment(2) == "writers_list") active @endif" href="{{ route('listWriters') }}">
+                <a href="{{ route('listWriters') }}" class="nav-link @if(Request::segment(3) == "writers_list") active @endif" href="{{ route('listWriters') }}">
                   <i class="fas fa-pen-nib"></i>
                   <p>Siyahı</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('addWriters') }}" class="nav-link @if(Request::segment(2) == "writers_add") active @endif" href="{{ route('addWriters') }}">
+                <a href="{{ route('addWriters') }}" class="nav-link @if(Request::segment(3) == "writers_add") active @endif" href="{{ route('addWriters') }}">
                   <i class="fas fa-feather-alt"></i>
                   <p>Əlavə Et</p>
                 </a>
@@ -175,8 +175,8 @@
 
           {{-- Suallar --}}
 
-          <li class="nav-item @if(Request::segment(1) == "questions") menu-open @endif">
-            <a href="" class="nav-link @if(Request::segment(1) == "questions") active @endif">
+          <li class="nav-item @if(Request::segment(2) == "questions") menu-open @endif">
+            <a href="" class="nav-link @if(Request::segment(2) == "questions") active @endif">
               <i class="fas fa-question"></i>
               <p>
                 Suallar
@@ -185,13 +185,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('listQuestions') }}" class="nav-link @if(Request::segment(2) == "questions_list") active @endif" href="{{ route('listQuestions') }}">
+                <a href="{{ route('listQuestions') }}" class="nav-link @if(Request::segment(3) == "questions_list") active @endif" href="{{ route('listQuestions') }}">
                   <i class="fas fa-question-circle"></i>
                   <p>Siyahı</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('addQuestionsIndex') }}" class="nav-link @if(Request::segment(2) == "questions_add") active @endif" href="{{ route('addQuestionsIndex') }}">
+                <a href="{{ route('addQuestionsIndex') }}" class="nav-link @if(Request::segment(3) == "questions_add") active @endif" href="{{ route('addQuestionsIndex') }}">
                   <i class="fas fa-question-circle"></i>
                   <p>Əlavə Et</p>
                 </a>
@@ -201,8 +201,8 @@
 
           {{-- Bloq --}}
 
-          <li class="nav-item @if(Request::segment(1) == "blogs") menu-open @endif">
-            <a href="" class="nav-link @if(Request::segment(1) == "blogs") active @endif">
+          <li class="nav-item @if(Request::segment(2) == "blogs") menu-open @endif">
+            <a href="" class="nav-link @if(Request::segment(2) == "blogs") active @endif">
               <i class="fas fa-blog"></i>
               <p>
                 Bloq
@@ -211,13 +211,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('BlogList') }}" class="nav-link @if(Request::segment(2) == "blog_list") active @endif" href="{{ route('BlogList') }}">
+                <a href="{{ route('BlogList') }}" class="nav-link @if(Request::segment(3) == "blog_list") active @endif" href="{{ route('BlogList') }}">
                   <i class="fab fa-blogger-b"></i>
                   <p>Siyahı</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('BlogAddIndex') }}" class="nav-link @if(Request::segment(2) == "blog_add") active @endif" href="{{ route('BlogAddIndex') }}">
+                <a href="{{ route('BlogAddIndex') }}" class="nav-link @if(Request::segment(3) == "blog_add") active @endif" href="{{ route('BlogAddIndex') }}">
                   <i class="fab fa-blogger-b"></i>
                   <p>Əlavə Et</p>
                 </a>
@@ -227,8 +227,8 @@
 
           {{-- Kateqoriya --}}
           
-          <li class="nav-item @if(Request::segment(1) == "category") menu-open @endif">
-            <a href="" class="nav-link @if(Request::segment(1) == "category") active @endif">
+          <li class="nav-item @if(Request::segment(2) == "category") menu-open @endif">
+            <a href="" class="nav-link @if(Request::segment(2) == "category") active @endif">
               <i class="fas fa-bars"></i>
               <p>
                 Kateqoriya
@@ -237,13 +237,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('CategoryListIndex') }}" class="nav-link @if(Request::segment(2) == "category_list") active @endif" href="{{ route('CategoryListIndex') }}">
+                <a href="{{ route('CategoryListIndex') }}" class="nav-link @if(Request::segment(3) == "category_list") active @endif" href="{{ route('CategoryListIndex') }}">
                   <i class="fas fa-caret-down"></i>
                   <p>Siyahı</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('CategoryAddIndex') }}" class="nav-link @if(Request::segment(2) == "category_add") active @endif" href="{{ route('CategoryAddIndex') }}">
+                <a href="{{ route('CategoryAddIndex') }}" class="nav-link @if(Request::segment(3) == "category_add") active @endif" href="{{ route('CategoryAddIndex') }}">
                   <i class="fas fa-caret-down"></i>
                   <p>Əlavə Et</p>
                 </a>
@@ -253,8 +253,8 @@
 
           {{-- Kitablar --}}
 
-          <li class="nav-item @if(Request::segment(1) == "books") menu-open @endif">
-            <a href="" class="nav-link @if(Request::segment(1) == "books") active @endif">
+          <li class="nav-item @if(Request::segment(2) == "books") menu-open @endif">
+            <a href="" class="nav-link @if(Request::segment(2) == "books") active @endif">
               <i class="fas fa-book"></i>
               <p>
                 Kitablar
@@ -263,14 +263,60 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('BooksList') }}" class="nav-link @if(Request::segment(2) == "books-list") active @endif" href="{{ route('BooksList') }}">
+                <a href="{{ route('BooksList') }}" class="nav-link @if(Request::segment(3) == "books-list") active @endif" href="{{ route('BooksList') }}">
                   <i class="fas fa-book"></i>
                   <p>Siyahı</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('BooksAdd') }}" class="nav-link @if(Request::segment(2) == "books-add") active @endif" href="{{ route('BooksAdd') }}">
+                <a href="{{ route('BooksAdd') }}" class="nav-link @if(Request::segment(3) == "books-add") active @endif" href="{{ route('BooksAdd') }}">
                   <i class="fas fa-book"></i>
+                  <p>Əlavə Et</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          {{-- İstifadəçilər --}}
+
+          <li class="nav-item @if(Request::segment(2) == "users") menu-open @endif">
+            <a href="" class="nav-link @if(Request::segment(2) == "users") active @endif">
+              <i class="fas fa-user-friends"></i>
+              <p>
+                İstifadəçilər
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('UsersListIndex') }}" class="nav-link @if(Request::segment(3) == "users-list") active @endif" href="{{ route('UsersListIndex') }}">
+                  <i class="fas fa-user"></i>
+                  <p>Siyahı</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          {{-- Rollar --}}
+
+          <li class="nav-item @if(Request::segment(2) == "roles") menu-open @endif">
+            <a href="" class="nav-link @if(Request::segment(2) == "roles") active @endif">
+              <i class="fas fa-user-friends"></i>
+              <p>
+                Rollar
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('UsersListIndex') }}" class="nav-link @if(Request::segment(3) == "users-list") active @endif" href="{{ route('UsersListIndex') }}">
+                  <i class="fas fa-user"></i>
+                  <p>Siyahı</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('RolesAddIndex') }}" class="nav-link @if(Request::segment(3) == "roles-add") active @endif" href="{{ route('RolesAddIndex') }}">
+                  <i class="fas fa-user"></i>
                   <p>Əlavə Et</p>
                 </a>
               </li>
