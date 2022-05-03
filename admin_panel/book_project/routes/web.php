@@ -1,14 +1,17 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\BannerController\BannerControllerAdd;
 use App\Http\Controllers\BannerController\BannerControllerEdit;
 use App\Http\Controllers\BannerController\BannerControllerList;
 use App\Http\Controllers\BlogsController\BlogAddController;
 use App\Http\Controllers\BlogsController\BlogEditController;
 use App\Http\Controllers\BlogsController\BlogListController;
+use App\Http\Controllers\BlogsController\BlogsTemplateController;
 use App\Http\Controllers\BooksController\BooksAddController;
 use App\Http\Controllers\BooksController\BooksEditController;
 use App\Http\Controllers\BooksController\BooksListController;
+use App\Http\Controllers\BooksController\BooksTemplateController;
 use App\Http\Controllers\CategoryController\CategoryAddController;
 use App\Http\Controllers\CategoryController\CategoryListController;
 use App\Http\Controllers\FeatureSection\FeatureSectionAdd;
@@ -24,6 +27,7 @@ use App\Http\Controllers\QuestionsController\editQuestionsController;
 use App\Http\Controllers\SettingsController\ContactController;
 use App\Http\Controllers\SettingsController\LogoController;
 use App\Http\Controllers\SettingsController\SeoController;
+use App\Http\Controllers\SettingsController\SettingsTemplateController;
 use App\Http\Controllers\SettingsController\SocialController;
 use App\Http\Controllers\Writers\addWritersController;
 use App\Http\Controllers\Writers\editWritersController;
@@ -31,19 +35,21 @@ use App\Http\Controllers\Writers\listWritersController;
 use Illuminate\Support\Facades\Route;
 
 
-
-Route::get('/admin',[generalController::class,'index'])->name("index");
+Route::view('/admin','index')->name('index');
 
 Route::get('/ana-səhifə',[generalController::class,"templates"])->name("templates");
-Route::get('/suallar',[generalController::class, "faq"])->name('faq');
-Route::get('/əlaqə',[generalController::class, "contact"])->name('contact');
-Route::post('/əlaqə',[generalController::class, "contactPost"])->name('contactPost');
-Route::get('/haqqımızda',[generalController::class, "templates"])->name('about');
-Route::get('/bloq',[generalController::class, "Bloq"])->name('Bloq');
-Route::get('/bloq/{slug}',[generalController::class, "BloqContent"])->name('BloqContent');
-Route::get('/haqqımızda',[generalController::class, "AboutUs"])->name("AboutUs");
-Route::get('/kitablar/{slug}',[generalController::class, "BooksProduct"])->name("BooksProduct");
-Route::post('/review',[generalController::class, "BooksReviewPost"])->name("BooksReviewPost");
+Route::get('/suallar',[SettingsTemplateController::class, "faq"])->name('faq');
+Route::get('/əlaqə',[SettingsTemplateController::class, "contact"])->name('contact');
+Route::post('/əlaqə',[SettingsTemplateController::class, "contactPost"])->name('contactPost');
+Route::get('/haqqımızda',[SettingsTemplateController::class, "AboutUs"])->name('AboutUs');
+Route::get('/bloq',[BlogsTemplateController::class, "Bloq"])->name('Bloq');
+Route::post('/bloq',[BlogsTemplateController::class, "BloqSearch"])->name('BloqSearch');
+Route::get('/bloq/{slug}',[BlogsTemplateController::class, "BloqContent"])->name('BloqContent');
+Route::get('/kitablar/{slug}',[BooksTemplateController::class, "BooksProduct"])->name("BooksProduct");
+Route::post('/review',[BooksTemplateController::class, "BooksReviewPost"])->name("BooksReviewPost");
+Route::post('/newsletter-subscribe',[generalController::class, "newsletterSubscribe"])->name("newsletterSubscribe");
+Route::post("/register",[RegisteredUserController::class, "RegisteredUserController"])->name("RegisteredUserController");
+
 
 Route::prefix('settings')->group(function() {
 
@@ -147,7 +153,3 @@ Route::prefix('books')->group(function() {
     Route::post('/books-edit/{id}',[BooksEditController::class, "BooksEditPost"])->name("BooksEditPost");
 
 });
-
-
-
-// Template

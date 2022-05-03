@@ -37,4 +37,4 @@
     });
   });
   </script>
-  
+  @yield('addjs')

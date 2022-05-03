@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Blade;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -22,8 +22,15 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
+
+    public function isLocal()
+    {
+        return $this['env'] === 'local';
+    }
+
     public function boot()
     {
-       
+        // Model::preventLazyLoading(! $this->app->isLocal());
+        Paginator::useBootstrap();
     }
 }

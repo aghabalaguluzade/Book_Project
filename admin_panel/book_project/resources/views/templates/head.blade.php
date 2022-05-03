@@ -3,6 +3,7 @@
     @foreach($settings as $setting)
     
     <meta charset="UTF-8" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta property="og:title" content="{{ $setting->seo_title }}" />
@@ -43,7 +44,7 @@
     <link href="{{ asset('catalog/view/javascript/jquery/swiper/css/swiper.min.css') }}" type="text/css" rel="stylesheet" media="screen" />
     <link href="{{ asset('catalog/view/javascript/jquery/swiper/css/opencart.css') }}" type="text/css" rel="stylesheet" media="screen" />
     <link rel="icon" href="{{ asset($setting->favicon) }}" type="image/x-icon" />
-
+    @yield('addcss')
     @endforeach
 
 </head>

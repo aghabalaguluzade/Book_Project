@@ -34,7 +34,7 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-btn">
-                                            <button type="submit" class="btn btn-black w-100">send</button>
+                                            <button type="submit" class="btn btn-black w-100">Göndər</button>
                                         </div>
                                         <div class="form__output"></div>
                                     </div>
@@ -77,7 +77,7 @@
                             <span class="icon"><i class="fa fa-phone"></i></span>
                             <div class="content">
                                 <h3 class="title">Telefon ilə əlaqə</h3>
-                                <p>{{ $setting->contact_phone }} <br /></p>
+                                <a href="tel:{{ $setting->contact_phone }}"><p>{{ $setting->contact_phone }} <br /></p></a>
                             </div>
                         </div>
                     </div>
@@ -89,7 +89,7 @@
                             <span class="icon"><i class="fa fa-envelope"></i></span>
                             <div class="content">
                                 <h3 class="title">E-poçt ilə əlaqə</h3>
-                                <p>{{ $setting->contact_email }} <br /></p>
+                                <a href="mailto:{{ $setting->contact_email }}"><p>{{ $setting->contact_email }} <br /></p></a>
                             </div>
                         </div>
                     </div>

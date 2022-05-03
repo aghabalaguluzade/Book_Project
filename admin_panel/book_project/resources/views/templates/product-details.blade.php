@@ -116,11 +116,11 @@
 			</div>
 				<div class="tab-pane" id="tab-review">
 							<div id="review"></div><button type="button" class="btn btn-primary" style="float: right;" data-toggle="modal" data-target="#exampleModal">Rəy Yaz</button>
-							<h2>Rəylər</h2>
+							<h2 style="margin-bottom: 20px">Rəylər</h2>
 
 							@foreach ($reviews as $review)
 
-							<div class="comment-block-wrapper mb--50">
+							<div class="comment-block-wrapper mb--50" style="margin-bottom:20px"  id="posts">
 								<div class="single-comment" style="border: 0.5px solid silver">	
 									<div class="comment-text" style="margin-left: 20px">
 										<h4 class="author"><a href="#">{{ $review->name }}</a></h4>
@@ -131,6 +131,9 @@
 							</div>
 
 							@endforeach
+							<button type="submit" class="clickMe">Show More</button>
+
+							
 
 								<div class="form-group required">
 									<div class="col-sm-12">
@@ -391,20 +394,6 @@ owl.owlCarousel({
     outline: none;
     border: 1px solid #000; }
 </style>
-<script>
-
-	let quantity = document.getElementById('quantity');
-	let is-count-down = document.getElementById('is-count-down');
-	let is-count-up = document.getElementById('is-count-up');
-
-	let count = 0;
-
-	function countdown = () => {
-		count++;
-	}
-
-
-</script>
 
 @endsection
 @section('addcss')

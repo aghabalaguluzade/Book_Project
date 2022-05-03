@@ -669,12 +669,12 @@
 															<ul class="user ul-account list-unstyled">
 															
 																	<li>
-																					<a id="a-login-link" href="http://smartbook4.demo.towerthemes.com/index.php?route=account/login">Login</a>
+																					<a id="a-login-link" href="http://smartbook4.demo.towerthemes.com/index.php?route=account/login">Giriş</a>
 																			</li>
 									
 									<li>
-										or
-																					<a id="a-register-link" href="http://smartbook4.demo.towerthemes.com/index.php?route=account/register">Register</a>
+										və ya
+																					<a id="a-register-link" href="http://smartbook4.demo.towerthemes.com/index.php?route=account/register">Qeydiyyat</a>
 																			</li>
 									
 															</ul>
@@ -1073,7 +1073,7 @@
 									    <div class="header-phone">
 <p>Pulsuz Dəstək 24/7  </p>
 @foreach ($settings as $setting)
-    <p>{!! "&nbsp" !!}{{ $setting->contact_phone }}</p>
+    <a href="tel:{{ $setting->contact_phone }}"><p>{!! "&nbsp" !!}{{ $setting->contact_phone }}</p></a>
 @endforeach
 </div>
   

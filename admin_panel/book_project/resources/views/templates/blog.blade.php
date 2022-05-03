@@ -3,12 +3,8 @@
 @section('content')
 <section class="inner-page-sec-padding-bottom">
     <div class="container">
-
         <div class="row">
-            <div class="col-lg-9 order-lg-2 mb--40 mb-lg--0">
-
-                <table id="table_id" class="display">
-
+            <div class="col-lg-9 order-lg-2 mb--40 mb-lg--0" style="float: right">
                     <div class="blog-list-cards">
                         @foreach ($blogs as $blog)
                                         <div class="blog-card card-style-list">
@@ -23,9 +19,6 @@
                                                         <h3 class="title"><a href="{{ url('bloq/'.$blog->slug) }}">{{ $blog->title }}</a></h3>
                                                         <p class="post-meta"><span>{{ $blog->created_at->format('d M Y') }} </span> | <a href="#">{{ $blog->author }}</a></p>
                                                         <article>
-                                                            <h2 class="sr-only">
-                                                                Blog Article
-                                                            </h2>
                                                             <p>{!! Str::limit($blog->contents, '80', '...') !!}</p>
                                                             <a href="{{ url('bloq/'.$blog->slug) }}" class="blog-link">Devamını oxu</a>
                                                         </article>
@@ -34,16 +27,20 @@
                                             </div>
                                         </div>
                         @endforeach
+                        {{ $blogs->links() }}
                     </div>  
-                        </table>
+                    
             </div>
+
             <div class="col-lg-3">
                 <div class="inner-page-sidebar">
                     <div class="single-block">
                         <h2 class="sidebar-title mb--30">Search</h2>
                         <div class="site-mini-search">
-                            <input type="text" placeholder="Search">
-                            <button><i class="fas fa-search"></i></button>
+                            <form action="{{ url('/bloq') }}">
+                                <input type="text" name="search" placeholder="Axtar..." />
+                                <button><i class="fas fa-search"></i></button>
+                            </form>
                         </div>
                     </div>
                     <div class="single-block">
@@ -86,16 +83,11 @@
                 </div>
             </div>
         </div>
-        
-              
-         
-
-
     </div>
 </section>
 @endsection
 @section('addcss')
-    <link rel="stylesheet" href="{{ asset('css/plugins.css') }}" />
+    {{-- <link rel="stylesheet" href="{{ asset('css/plugins.css') }}" /> --}}
     <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
     {{-- <link rel="stylesheet" href="{{ asset('js/dataTables.bootstrap4.css') }}"> --}}
     {{-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css"> --}}

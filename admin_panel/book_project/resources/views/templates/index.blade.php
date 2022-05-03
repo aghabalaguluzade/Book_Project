@@ -82,91 +82,55 @@ if(keycode == '13') {
 <div class="ajax-container">
 <div class="register-form-content">
 <h1>Register Account</h1>
-<p>If you already have an account with us, please login at the <a onclick="ocajaxlogin.appendLoginForm()" href="javascript:void(0);">login form</a>.</p>
-<form action="http://smartbook4.demo.towerthemes.com/index.php?route=extension/module/ajaxregister" method="post" id="ajax-register-form" enctype="multipart/form-data" class="form-horizontal">
-<fieldset id="account">
-	<legend>Your Personal Details</legend>
-	<div class="form-group required" style="display:  none ;">
-		<label class="col-sm-2 control-label">Customer Group</label>
-		<div class="col-sm-10">
-															<div class="radio">
-				<label>
-					<input type="radio" name="customer_group_id" value="1" checked="checked" />
-					Default</label>
-			</div>
-														</div>
-	</div>
+<p>Əgər artıq hesabınız varsa, bu ünvana daxil olun <a onclick="ocajaxlogin.appendLoginForm()" href="javascript:void(0);">giriş</a>.</p>
+<form action="{{ route('RegisteredUserController') }}" method="POST" id="ajax-register-form" enctype="multipart/form-data" class="form-horizontal">
+@csrf
+	<fieldset id="account">
 	<div class="form-group required">
-		<label class="col-sm-2 control-label" for="input-firstname">First Name</label>
+		<label class="col-sm-2 control-label" for="input-firstname">Soyad Ad</label>
 		<div class="col-sm-10">
-			<input type="text" name="firstname" value="" placeholder="First Name" id="input-firstname" class="form-control" />
+			<input type="text" name="name" placeholder="Soyad ve Adınızı daxil edin..." id="input-firstname" class="form-control" />
 			<!-- Error First Name -->
 			<div class="for-error error-firstname"></div>
 		</div>
 	</div>
 	<div class="form-group required">
-		<label class="col-sm-2 control-label" for="input-lastname">Last Name</label>
+		<label class="col-sm-2 control-label" for="input-register-email">E-poçt</label>
 		<div class="col-sm-10">
-			<input type="text" name="lastname" value="" placeholder="Last Name" id="input-lastname" class="form-control" />
-			<!-- Error Last Name -->
-			<div class="for-error error-lastname"></div>
-		</div>
-	</div>
-	<div class="form-group required">
-		<label class="col-sm-2 control-label" for="input-register-email">E-Mail</label>
-		<div class="col-sm-10">
-			<input type="email" name="email" value="" placeholder="E-Mail" id="input-register-email" class="form-control" />
+			<input type="email" name="email" placeholder="E-poçtunuzu daxil edin..." id="input-register-email" class="form-control" />
 			<!-- Error Email -->
 			<div class="for-error error-email"></div>
 		</div>
 	</div>
+</fieldset>
 	<div class="form-group required">
-		<label class="col-sm-2 control-label" for="input-telephone">Telephone</label>
+		<label class="col-sm-2 control-label" for="input-register-password">Şifrəniz</label>
 		<div class="col-sm-10">
-			<input type="tel" name="telephone" value="" placeholder="Telephone" id="input-telephone" class="form-control" />
-			<!-- Error Phone -->
-			<div class="for-error error-telephone"></div>
-		</div>
-	</div>
-				</fieldset>
-<fieldset>
-	<legend>Your Password</legend>
-	<div class="form-group required">
-		<label class="col-sm-2 control-label" for="input-register-password">Password</label>
-		<div class="col-sm-10">
-			<input type="password" name="password" value="" placeholder="Password" id="input-register-password" class="form-control" />
+			<input type="password" name="password" placeholder="Şifrənizi daxil edin..." id="input-register-password" class="form-control" />
 			<!-- Error Password -->
 			<div class="for-error error-password"></div>
 		</div>
 	</div>
 	<div class="form-group required">
-		<label class="col-sm-2 control-label" for="input-confirm">Password Confirm</label>
+		<label class="col-sm-2 control-label" for="input-confirm">Təsdiq Şifrəniz</label>
 		<div class="col-sm-10">
-			<input type="password" name="confirm" value="" placeholder="Password Confirm" id="input-confirm" class="form-control" />
+			<input type="password" name="password_confirmation" placeholder="Təsdiq Şifrənizi daxil edin..." id="input-confirm" class="form-control" />
 			<!-- Error Confirm Password -->
 			<div class="for-error error-confirm"></div>
 		</div>
 	</div>
-</fieldset>
-<fieldset>
-	<legend>Newsletter</legend>
-	<div class="form-group">
-		<label class="col-sm-2 control-label">Subscribe</label>
-		<div class="col-sm-10">
-									<label class="radio-inline">
-				<input type="radio" name="newsletter" value="1" />
-				Yes</label>
-			<label class="radio-inline">
-				<input type="radio" name="newsletter" value="0" checked="checked" />
-				No</label>
-								</div>
+	<div class="form-group required">
+		<label class="col-sm-2 control-label" for="img">Şəkil</label>
+	  <div class="input-group col-sm-10">
+		<div class="custom-file" style="width: 100% !important">
+		  <input type="file" class="custom-file-input" id="img" name="img" style="width: 100% !important" />
+		  <label class="custom-file-label" for="img" style="width: 100% !important">Şəkil Seç</label>
+		</div>
+	  </div>
 	</div>
-</fieldset>
-
-			<div class="buttons">
+	<div class="buttons">
 	<div class="pull-right">
-		<button type="button" onclick="ocajaxlogin.registerAction();"  class="button"><span>Continue</span></button>
-		<img class="ajax-load-img" alt="" src="http://smartbook4.demo.towerthemes.com/image/catalog/AjaxLoader.gif" width="30" height="30" />
+		<button type="submit" class="button"><span>Qeydiyyatdan Keç</span></button>
 	</div>
 </div>
 		</form>
@@ -406,10 +370,11 @@ if ($('#form-upload input[name=\'file\']').val() != '') {
 <div class="col ">
 <div class="box">
 
+		
 
 <div class="text">
-<h4>Free Shipping Item</h4>
-<p>Orders over $500</p>
+<h4></h4>
+<p></p>
 </div>
 </div>
 </div>
@@ -417,7 +382,7 @@ if ($('#form-upload input[name=\'file\']').val() != '') {
 <div class="box">
 
 <div class="text">
-<h4>Money Back Guarantee</h4>
+<h4></h4>
 <p>100% money back</p>
 </div>
 </div>
@@ -1319,40 +1284,39 @@ responsive:{
 </script>
 
 <div class="testimonial-container">
-	
-	
 	<div class="module-title">
-		
 		<h2>
-			Client Testimonials
+			Müştəri Rəyləri
 		</h2>
-	</div>
-
-						
+	</div>				
 	<div class="block-content">
 		<div class="owl-container">
-		<div id="slides" class="owl-carousel owl-theme owl-loaded owl-drag">																												
+		<div id="slides" class="owl-carousel owl-theme owl-loaded owl-drag">								
 											<div class="owl-stage-outer">
 												<div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2400px;">
+													
+													@foreach ($reviews as $review)
+													
 													<div class="owl-item active" style="width: 300px;">
 														<div class="row_items">
 														<div class="testimonial-content">
-					<div class="item">
-					<div class="item-inner">
+										<div class="item">
+									<div class="item-inner">
 						<div class="testimonial-caption">
-																<h4 class="title"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/octestimonial">A really great experience</a></h4>
-															<div class="testimonial-box">							
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/octestimonial"> This is Photoshops version  of Lorem Ipsum. Proin gravida nibh vel velit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. In molestie augue magna. Pell..</a>
+															<div class="testimonial-box">																							
+								<a href="">{{ $review->review }}</a>
 							</div>
-							<p class="testimonial-author">Rebecka Filson</p>
+							<p class="testimonial-author">{{ $review->name }}</p>
 						</div>
 					</div>
 					</div>
 				</div><!--testimonial-content-->
 										</div>
 									</div>
+
+										@endforeach
 										
-										</div></div></div>
+									</div></div></div>
 		</div>
 	</div><!--block-content-->
 
@@ -1360,6 +1324,41 @@ responsive:{
 
 </div>
 
+
+<script>
+	$(document).ready(function() {
+		$("#slides").owlCarousel({
+			autoPlay :  1 ,
+				
+			loop: false,
+			margin: 0,
+			navSpeed : 1000,
+			dotsSpeed : 1000,
+			autoplaySpeed : 1000,
+			nav :  false ,
+			dots : true ,
+			lazyLoad: true,
+			navText : ['<i class="ion-ios-arrow-left"></i>','<i class="ion-ios-arrow-right"></i>'],
+			responsive:{
+				0:{
+					items: 1
+				},
+				480:{
+					items: 1
+				},
+				640:{
+					items: 2
+				},
+				992:{
+					items: 1
+				},
+				1200:{
+					items : 1
+				}
+			}
+		});
+	});
+	</script>
 																								</div>
 												<div class="sub-col col-sm-12 col-md-9">
 																											<div class="tt_tabsproduct_module multi-rows product-tabs-container-slider" id="product_module610">
@@ -1413,7 +1412,7 @@ responsive:{
 						<p class="manufacture-product">
 							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=7">{{ $book->Writers($book->writer_id)->writer_name }}</a>
 						</p>
-						<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52">{{ $book->books_name }}</a></h4>
+						<h4 class="product-name"><a href="{{ route('BooksProduct',$book->slug) }}">{{ $book->books_name }}</a></h4>
 					</div>
 					<div class="box-border">
 						<div class="image images-container">
@@ -1609,17 +1608,17 @@ if(count == 1) {
 	<ul class="tab-heading tabs-categorys">
 											<li>
 			<a data-toggle="pill" href="#tab-8110">
-				<span>Arts &amp; Photography</span>
+				<span>Bədii Ədəbiyyat</span>
 			</a>
 		</li>
 											  <li>
 			<a data-toggle="pill" href="#tab-8111">
-				<span>Children's Books</span>
+				<span>Qeyri-Bədii Ədəbiyyat</span>
 			</a>
 		</li>
 											  <li>
 			<a data-toggle="pill" href="#tab-8112">
-				<span>Biographies</span>
+				<span>Uşaq Ədəbiyyatı</span>
 			</a>
 		</li>
 										  </ul>
@@ -1636,389 +1635,46 @@ if(count == 1) {
 <div class="tt-product ">
 <div class="tab-content">
   
-						
+						{{--agabala  --}}
 	<div class="tab-container-811  owl-carousel owl-theme  tab-pane tab-product-container  fade " id="tab-8110">		
 	
 							<!-- Grid -->
+							@foreach ($fictions as $fiction)
 			<!-- List -->
 			<div class="row_items ">
-							<div class="product-layout list-style ">
+		<div class="product-layout list-style ">
 		<div class="product-thumb transition">
 			<div class="item">
 				<div class="item-inner">
 					<div class="image images-container">
 						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=189" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/16-600x600.jpg" alt="Beats Solo3 Wireless  On-Ear Headphones 2" title="Beats Solo3 Wireless  On-Ear Headphones 2" class="img-responsive" />
+						<img src="" alt="" title="" class="img-responsive" />
 						</a>
 						<div class="box-label">			
-																	
-							
 						</div>
-						
 					</div><!-- image -->
 					<div class="caption">
 						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=10">Sony</a>
+							<p class="manufacture-product">
+							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=10">{{ $fiction->Writers($fiction->writer_id)->writer_name }}</a>
 							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=189">Beats Solo3 Wireless  On-Ear Headphones 2</a></h4> 
+							<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=189"></a></h4> 
 							<div class="ratings">
-								<div class="rating-box">
-																																												<div class="rating0">rating</div>
-																																																																																																																																																		</div>
+							<div class="rating-box">
+							<div class="rating0">rating</div>																																																																																																																																								</div>
 							</div>	
-																												<div class="price-box">
+								<div class="price-box">
 								<label>Price:</label>
-																				<p class="regular-price"><span class="price">$1,000.00</span></p>
-																														</div>
-																																									
-							
-																																				</div>
+								<p class="regular-price"><span class="price">$1,000.00</span></p>
+							</div>	
+						</div>
 					</div><!-- caption -->
-					
 				</div>
 			</div>
 		</div><!-- product-thumb -->
 							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-			<!-- List -->
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=143" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/14-600x600.jpg" alt="Nokia Steel HR Hybrid  Smartwatch" title="Nokia Steel HR Hybrid  Smartwatch" class="img-responsive" />
-						</a>
-						<div class="box-label">			
-																	
-							
-						</div>
-						
-					</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=143">Nokia Steel HR Hybrid  Smartwatch</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																																																															<div class="rating5">rating</div>
-																															</div>
-							</div>	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="regular-price"><span class="price">$95.00</span></p>
-																														</div>
-																																									
-							
-																																				</div>
-					</div><!-- caption -->
-					
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-			
-					</div>
-								
-					  <!-- Grid -->
-			<!-- List -->
-			<div class="row_items ">
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=138" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/4-600x600.jpg" alt="Beats EP Wired On-Ear  Headphone-Black" title="Beats EP Wired On-Ear  Headphone-Black" class="img-responsive" />
-						</a>
-						<div class="box-label">			
-																	
-							
-						</div>
-						
-					</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=9">Canon</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=138">Beats EP Wired On-Ear  Headphone-Black</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																																								<div class="rating4">rating</div>
-																																																						</div>
-							</div>	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="regular-price"><span class="price">$100.00</span></p>
-																														</div>
-																																									
-							
-																																				</div>
-					</div><!-- caption -->
-					
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-			<!-- List -->
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=53" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/15-600x600.jpg" alt="Sony KD55X72 55-Inch  4k Ultra HD" title="Sony KD55X72 55-Inch  4k Ultra HD" class="img-responsive" />
-						</a>
-						<div class="box-label">			
-																	
-							
-						</div>
-						
-					</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=5">HTC</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=53">Sony KD55X72 55-Inch  4k Ultra HD</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																	<div class="rating3">rating</div>
-																																																																													</div>
-							</div>	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="special-price"><span class="price">$64.00</span></p>
-									<p class="old-price"><span class="price">$65.00</span></p>						  
-																														</div>
-																																									
-							
-																																				</div>
-					</div><!-- caption -->
-					
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-			<!-- List -->
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=60" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/10-600x600.jpg" alt="Kodak PIXPRO Astro Zoom AZ421 16 MP" title="Kodak PIXPRO Astro Zoom AZ421 16 MP" class="img-responsive" />
-						</a>
-						<div class="box-label">			
-																	
-							
-						</div>
-						
-					</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=60">Kodak PIXPRO Astro Zoom AZ421 16 MP</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																																								<div class="rating4">rating</div>
-																																																						</div>
-							</div>	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="regular-price"><span class="price">$95.00</span></p>
-																														</div>
-																																									
-							
-																																				</div>
-					</div><!-- caption -->
-					
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-					</div>
-								
-					  <!-- Grid -->
-			<!-- List -->
-			<div class="row_items ">
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=55" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/7-600x600.jpg" alt="Beats Solo3 Wireless  On-Ear Headphones" title="Beats Solo3 Wireless  On-Ear Headphones" class="img-responsive" />
-						</a>
-						<div class="box-label">			
-																	
-							
-						</div>
-						
-					</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=10">Sony</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=55">Beats Solo3 Wireless  On-Ear Headphones</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																																								<div class="rating4">rating</div>
-																																																						</div>
-							</div>	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="regular-price"><span class="price">$1,000.00</span></p>
-																														</div>
-																																									
-							
-																																				</div>
-					</div><!-- caption -->
-					
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-			<!-- List -->
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=61" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/6-600x600.jpg" alt="Beats Solo2 Solo 2  Wired On-Ear Headphone" title="Beats Solo2 Solo 2  Wired On-Ear Headphone" class="img-responsive" />
-						</a>
-						<div class="box-label">			
-																	
-							
-						</div>
-						
-					</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=61">Beats Solo2 Solo 2  Wired On-Ear Headphone</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																	<div class="rating3">rating</div>
-																																																																													</div>
-							</div>	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="regular-price"><span class="price">$500.00</span></p>
-																														</div>
-																																									
-							
-																																				</div>
-					</div><!-- caption -->
-					
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-			<!-- List -->
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=62" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/5-600x600.jpg" alt="Beats Solo Wireless On-Ear Headphone" title="Beats Solo Wireless On-Ear Headphone" class="img-responsive" />
-						</a>
-						<div class="box-label">			
-																	
-							
-						</div>
-						
-					</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=7">Hewlett-Packard</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=62">Beats Solo Wireless On-Ear Headphone</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																																																															<div class="rating5">rating</div>
-																															</div>
-							</div>	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="regular-price"><span class="price">$199.99</span></p>
-																														</div>
-																																									
-							
-																																				</div>
-					</div><!-- caption -->
-					
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-					</div>
-								
-					  <!-- Grid -->
-			<!-- List -->
-			<div class="row_items ">
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=59" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/3-600x600.jpg" alt="Apple iPhone SE 16GB  Factory Unlocked" title="Apple iPhone SE 16GB  Factory Unlocked" class="img-responsive" />
-						</a>
-						<div class="box-label">			
-																	
-							
-						</div>
-						
-					</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=59">Apple iPhone SE 16GB  Factory Unlocked</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																	<div class="rating3">rating</div>
-																																																																													</div>
-							</div>	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="regular-price"><span class="price">$85.00</span></p>
-																														</div>
-																																									
-							
-																																				</div>
-					</div><!-- caption -->
-					
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-					</div>
-								
-				  
+					</div>	 
+					@endforeach 
 			</div>
 	
 		<div class="tab-container-811  owl-carousel owl-theme  tab-pane tab-product-container  fade " id="tab-8111">		
@@ -2892,6 +2548,29 @@ if(count == 1) {
 </div>
 </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+	var owl = $('.owl-carousel-related');
+owl.owlCarousel({
+    loop:true,
+    nav:true,
+    margin:10,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:2
+        },            
+        960:{
+            items:3
+        },
+        1200:{
+            items:4
+        }
+    }
+});
+</script>
 <script >
 $(document).ready(function() {
 $(".articles-container").owlCarousel({
@@ -2936,3 +2615,6 @@ responsive:{
 </div>
 
 @endsection
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
