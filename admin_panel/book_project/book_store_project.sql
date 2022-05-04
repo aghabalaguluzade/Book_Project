@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2022 at 10:30 PM
+-- Generation Time: May 04, 2022 at 02:31 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -249,6 +249,19 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `newsletter_subscribe`
+--
+
+CREATE TABLE `newsletter_subscribe` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `subscribe_email` varchar(255) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `partners`
 --
 
@@ -327,6 +340,50 @@ INSERT INTO `review` (`id`, `books_id`, `name`, `review`, `rating`, `created_at`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `roles`
+--
+
+CREATE TABLE `roles` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `roles`
+--
+
+INSERT INTO `roles` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES
+(1, 'admin', 'bu saytın adminidir', '2022-05-03 23:36:09', '2022-05-03 23:36:09'),
+(2, 'user', 'bu istifadəçidir', '2022-05-03 22:28:56', '2022-05-03 22:28:56');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `role_user`
+--
+
+CREATE TABLE `role_user` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `role_id` int(11) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `role_user`
+--
+
+INSERT INTO `role_user` (`id`, `user_id`, `role_id`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, '2022-05-03 21:40:30', '2022-05-03 21:40:30'),
+(2, 2, 2, '2022-05-03 22:29:27', '2022-05-03 22:29:27');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `settings`
 --
 
@@ -362,6 +419,7 @@ INSERT INTO `settings` (`id`, `seo_title`, `seo_description`, `seo_keywords`, `l
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'https://register.pravasikerala.org/public/images/avatar5.png',
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
@@ -370,6 +428,14 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `img`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'uploads/users/agabala-quluzade.jpg', 'Ağabala Quluzadə', 'agabala.oyunda@gmail.com', NULL, '$2y$10$cPGszbMKJW.pmeaMh82NLuv99aiiLayGWwS/zKBirMkLEntLuE7pq', NULL, '2022-05-03 10:47:46', '2022-05-03 20:32:27'),
+(2, 'https://register.pravasikerala.org/public/images/avatar5.png', 'Aysun', 'aysun@gmail.com', NULL, '$2y$10$lQMNiFg.UtULbLIynzmYoudYPuTeb3P6FV1a.o1I1qQqYOvWGc3Ou', NULL, '2022-05-03 20:27:13', '2022-05-03 20:27:13');
 
 -- --------------------------------------------------------
 
@@ -452,6 +518,13 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `newsletter_subscribe`
+--
+ALTER TABLE `newsletter_subscribe`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `subscribe_email` (`subscribe_email`);
+
+--
 -- Indexes for table `partners`
 --
 ALTER TABLE `partners`
@@ -475,6 +548,18 @@ ALTER TABLE `personal_access_tokens`
 -- Indexes for table `review`
 --
 ALTER TABLE `review`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `role_user`
+--
+ALTER TABLE `role_user`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -549,6 +634,12 @@ ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `newsletter_subscribe`
+--
+ALTER TABLE `newsletter_subscribe`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `partners`
 --
 ALTER TABLE `partners`
@@ -567,6 +658,18 @@ ALTER TABLE `review`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `role_user`
+--
+ALTER TABLE `role_user`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
@@ -576,7 +679,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `writers`
