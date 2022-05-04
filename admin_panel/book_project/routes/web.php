@@ -51,6 +51,7 @@ Route::get('/bloq',[BlogsTemplateController::class, "Bloq"])->name('Bloq');
 Route::post('/bloq',[BlogsTemplateController::class, "BloqSearch"])->name('BloqSearch');
 Route::get('/bloq/{slug}',[BlogsTemplateController::class, "BloqContent"])->name('BloqContent');
 Route::get('/kitablar/{slug}',[BooksTemplateController::class, "BooksProduct"])->name("BooksProduct");
+Route::get('/kateqoriya/{slug}/{id}',[generalController::class, "CategoryProduct"])->name("CategoryProduct");
 Route::post('/review',[BooksTemplateController::class, "BooksReviewPost"])->name("BooksReviewPost");
 Route::post('/newsletter-subscribe',[generalController::class, "newsletterSubscribe"])->name("newsletterSubscribe");
 Route::get('/qeydiyyat',[RegisteredUserController::class, "RegisterIndex"])->name("RegisterIndex");

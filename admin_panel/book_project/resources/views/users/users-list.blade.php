@@ -18,7 +18,7 @@
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Şəkil</th>
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Adı</th>
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">E-poçt</th>
-            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Şifrə</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Rol</th>
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">Əməliyyatlar</th></tr>
         </thead>
         <tbody class="text-center">
@@ -29,7 +29,7 @@
                 <td><img src="{{ asset($user->img) }}" alt="{{ $user->name }}" style="width: 50px; height: auto;"></td>
                 <td class="text-center">{{ $user->name }}</td>
                 <td class="text-center">{{ $user->email }}</td>
-                <td class="text-center">{{ $user->password }}</td>
+                <td class="text-center"></td>
                 <td>
                     <button class="btn btn-outline-danger btn-sm mb-1-md">Sil</button>
                     <a href=""><button class="btn btn-outline-info btn-sm">Redaktə Et</button></a>

@@ -55,4 +55,10 @@ class generalController extends Controller
         ]);
     }
 
+    public function CategoryProduct($id,$slug) {
+        $this->fragmented();
+        $products = Books::where('category_id',$id)->get();
+        return view('templates.product-search',compact('products',$products));
+    }
+
 }
