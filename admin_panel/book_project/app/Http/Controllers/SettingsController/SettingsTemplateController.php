@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\View;
 class SettingsTemplateController extends Controller
 {
     public function fragmented() {
-        $categories = Category::where('parent_id',0)->get();
+        $categories = Category::where('parent_id',0)->where('status','1')->get();
         $partners = Partners::where('status','1')->inRandomOrder()->get();
         $settings = Settings::all();
         View::share([

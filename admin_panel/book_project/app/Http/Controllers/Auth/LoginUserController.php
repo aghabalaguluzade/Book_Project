@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\View;
 class LoginUserController extends Controller
 {
     public function LoginIndex() {
-        $categories = Category::where('parent_id',0)->get();
+        $categories = Category::where('parent_id',0)->where('status','1')->get();
         $partners = Partners::where('status','1')->inRandomOrder()->get();
         $settings = Settings::all();
         View::share([
@@ -36,7 +36,8 @@ class LoginUserController extends Controller
             return redirect()->intended('/ana-səhifə');   
         }
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ])->onlyInput('email');
+            'email' => 'Daxil olunan email səhvdir.',
+            'password' => "Daxil olunan şifrə səhvdir"
+        ])->onlyInput('email','password');
     }
 }

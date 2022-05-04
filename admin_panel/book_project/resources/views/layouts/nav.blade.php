@@ -5,5 +5,13 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
     </ul>
+    <ul class="navbar-nav ml-auto">
+      <!-- Navbar Search -->
+      <li class="nav-item">
+        @auth
+        <button class="btn btn-outline-danger"><a href="{{ route('LogoutUserController') }}">Çıxış</a></button>
+        @endauth        
+      </li>
+    </ul>
 
   </nav>

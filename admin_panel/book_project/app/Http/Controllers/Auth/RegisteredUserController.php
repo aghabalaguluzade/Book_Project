@@ -17,7 +17,7 @@ use Illuminate\Validation\Rules;
 class RegisteredUserController extends Controller
 {
     public function RegisterIndex() {
-        $categories = Category::where('parent_id',0)->get();
+        $categories = Category::where('parent_id',0)->where('status','1')->get();
         $partners = Partners::where('status','1')->inRandomOrder()->get();
         $settings = Settings::all();
         View::share([
@@ -60,7 +60,7 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect()->back();
+        return redirect()->back()->with($user ? "success" : "error", true);
 
     }
 }

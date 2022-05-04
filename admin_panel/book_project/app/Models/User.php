@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\UserCreatedEvent;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -24,6 +25,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+    ];
+
+    protected $dispatchesEvents = [
+        'created' => UserCreatedEvent::class
     ];
 
     /**

@@ -5,6 +5,7 @@
         <div class="register-form-content">
             <h1>Hesabı Qeydiyyatdan keçirin</h1>
             <p>Əgər artıq hesabınız varsa, bu ünvana daxil olun <a onclick="ocajaxlogin.appendLoginForm()" href="javascript:void(0);">giriş</a>.</p>
+            @include('templates.errors')
             <form action="{{ route('RegisteredUserController') }}" method="POST" id="ajax-register-form" enctype="multipart/form-data" class="form-horizontal">
             @csrf
                 <fieldset id="account">
