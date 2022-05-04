@@ -2,7 +2,6 @@
 @section('title','Bloq')
 @section('content')
 
-<div class="breadcrumbs" style="height: 70px">
     <div class="container">
         <div class="inner">
             <ul class="breadcrumb">
@@ -11,7 +10,6 @@
             </ul>
         </div>
     </div>
-</div>
 
 <section class="inner-page-sec-padding-bottom">
     <div class="container">
@@ -23,8 +21,8 @@
                                             <div class="row">
                                                 <div class="col-md-5">
                                                         <a href="{{ route('BloqContent',$blog->slug) }}" class="image d-block">
-                                                            <img src="{{ $blog->img }}" style="width:316px; height:208px;" alt="">
-                                                        </>
+                                                            <img src="{{ $blog->img }}" style="width:316px; height:208px;" alt="{{ $blog->title }}">
+                                                        </a>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="card-content">
