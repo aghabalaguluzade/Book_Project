@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2022 at 02:31 AM
+-- Generation Time: May 05, 2022 at 12:26 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -146,15 +146,15 @@ INSERT INTO `category` (`id`, `category_name`, `parent_id`, `slug`, `status`, `c
 (23, 'Fəlsəfə və Elm', 16, 'felsefe-ve-elm', '0', '2022-04-16 22:45:14', '2022-04-16 22:45:14'),
 (24, 'Hazırlıq. Xarici dil. Lüğətlər', 16, 'hazirliq-xarici-dil-lugetler', '0', '2022-04-16 22:45:54', '2022-04-16 22:45:54'),
 (25, 'Bestseller', 16, 'bestseller', '0', '2022-04-16 22:46:13', '2022-04-16 22:46:13'),
-(26, 'Bədii Ədəbiyyat', 0, 'bedii-edebiyyat', '0', '2022-04-16 22:46:28', '2022-04-16 22:46:28'),
-(27, 'Detektivlər. Trillerlər', 26, 'detektivler-trillerler', '0', '2022-04-16 22:47:02', '2022-04-16 22:47:02'),
-(28, 'Tarixi Romanlar', 26, 'tarixi-romanlar', '0', '2022-04-16 22:47:18', '2022-04-16 22:47:18'),
-(29, 'Sevgi Romanları', 26, 'sevgi-romanlari', '0', '2022-04-16 22:47:32', '2022-04-16 22:47:32'),
-(30, 'Azərbaycan Və Dünya Klassikası', 26, 'azerbaycan-ve-dunya-klassikasi', '0', '2022-04-16 22:48:24', '2022-04-16 22:48:24'),
-(31, 'Poeziya', 26, 'poeziya', '0', '2022-04-16 22:48:51', '2022-04-16 22:48:51'),
-(32, 'Müasir Azərbaycan Ədəbiyyatı', 26, 'muasir-azerbaycan-edebiyyati', '0', '2022-04-16 22:49:06', '2022-04-16 22:49:06'),
-(33, 'Müasir Xarici Nəşrlər', 26, 'muasir-xarici-nesrler', '0', '2022-04-16 22:49:21', '2022-04-16 22:49:21'),
-(34, 'Fantastika. Mistika', 26, 'fantastika-mistika', '0', '2022-04-16 22:49:44', '2022-04-16 22:49:44'),
+(26, 'Bədii Ədəbiyyat', 0, 'bedii-edebiyyat', '1', '2022-04-16 22:46:28', '2022-04-16 22:46:28'),
+(27, 'Detektivlər. Trillerlər', 26, 'detektivler-trillerler', '1', '2022-04-16 22:47:02', '2022-04-16 22:47:02'),
+(28, 'Tarixi Romanlar', 26, 'tarixi-romanlar', '1', '2022-04-16 22:47:18', '2022-04-16 22:47:18'),
+(29, 'Sevgi Romanları', 26, 'sevgi-romanlari', '1', '2022-04-16 22:47:32', '2022-04-16 22:47:32'),
+(30, 'Azərbaycan Və Dünya Klassikası', 26, 'azerbaycan-ve-dunya-klassikasi', '1', '2022-04-16 22:48:24', '2022-04-16 22:48:24'),
+(31, 'Poeziya', 26, 'poeziya', '1', '2022-04-16 22:48:51', '2022-04-16 22:48:51'),
+(32, 'Müasir Azərbaycan Ədəbiyyatı', 26, 'muasir-azerbaycan-edebiyyati', '1', '2022-04-16 22:49:06', '2022-04-16 22:49:06'),
+(33, 'Müasir Xarici Nəşrlər', 26, 'muasir-xarici-nesrler', '1', '2022-04-16 22:49:21', '2022-04-16 22:49:21'),
+(34, 'Fantastika. Mistika', 26, 'fantastika-mistika', '1', '2022-04-16 22:49:44', '2022-04-16 22:49:44'),
 (35, 'Bestseller', 26, 'bestseller', '0', '2022-04-16 22:49:53', '2022-04-16 22:49:53'),
 (36, 'Biznes, psixologiya, motivasiya', 0, 'biznes-psixologiya-motivasiya', '0', '2022-04-16 22:50:14', '2022-04-16 22:50:14'),
 (37, 'Biznes Haqqında', 36, 'biznes-haqqinda', '0', '2022-04-16 22:50:30', '2022-04-16 22:50:30'),
@@ -368,18 +368,17 @@ INSERT INTO `roles` (`id`, `name`, `description`, `created_at`, `updated_at`) VA
 CREATE TABLE `role_user` (
   `id` int(11) UNSIGNED NOT NULL,
   `user_id` int(11) NOT NULL,
-  `role_id` int(11) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL
+  `role_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `role_user`
 --
 
-INSERT INTO `role_user` (`id`, `user_id`, `role_id`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, '2022-05-03 21:40:30', '2022-05-03 21:40:30'),
-(2, 2, 2, '2022-05-03 22:29:27', '2022-05-03 22:29:27');
+INSERT INTO `role_user` (`id`, `user_id`, `role_id`) VALUES
+(1, 1, 1),
+(2, 2, 2),
+(5, 8, 2);
 
 -- --------------------------------------------------------
 
@@ -435,7 +434,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `img`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'uploads/users/agabala-quluzade.jpg', 'Ağabala Quluzadə', 'agabala.oyunda@gmail.com', NULL, '$2y$10$cPGszbMKJW.pmeaMh82NLuv99aiiLayGWwS/zKBirMkLEntLuE7pq', NULL, '2022-05-03 10:47:46', '2022-05-03 20:32:27'),
-(2, 'https://register.pravasikerala.org/public/images/avatar5.png', 'Aysun', 'aysun@gmail.com', NULL, '$2y$10$lQMNiFg.UtULbLIynzmYoudYPuTeb3P6FV1a.o1I1qQqYOvWGc3Ou', NULL, '2022-05-03 20:27:13', '2022-05-03 20:27:13');
+(2, 'https://register.pravasikerala.org/public/images/avatar5.png', 'Aysun', 'aysun@gmail.com', NULL, '$2y$10$lQMNiFg.UtULbLIynzmYoudYPuTeb3P6FV1a.o1I1qQqYOvWGc3Ou', NULL, '2022-05-03 20:27:13', '2022-05-03 20:27:13'),
+(8, 'https://register.pravasikerala.org/public/images/avatar5.png', 'Aysel', 'aysel@gmail.com', NULL, '$2y$10$9slm2qk6Y7KU/iMNtFs97unO0OFtyKBHH8mFmO5kBhFXmrtHOflqG', NULL, '2022-05-04 08:23:24', '2022-05-04 08:23:24');
 
 -- --------------------------------------------------------
 
@@ -667,7 +667,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `role_user`
 --
 ALTER TABLE `role_user`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `settings`
@@ -679,7 +679,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `writers`
