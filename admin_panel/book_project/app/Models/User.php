@@ -10,6 +10,9 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+    public function roles() {
+        return $this->belongsToMany(Role::class);
+    }
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -44,8 +47,4 @@ class User extends Authenticatable
 
     protected $table = "users";
     protected $guarded =  [];
-
-    public function roles() {
-        return $this->belongsToMany(Role::class);
-    }
 }

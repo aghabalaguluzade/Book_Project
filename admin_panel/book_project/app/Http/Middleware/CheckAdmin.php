@@ -18,9 +18,9 @@ class CheckAdmin
     public function handle(Request $request, Closure $next)
     {
         $userRoles = Auth::user()->roles->pluck('name');
-        if(!$userRoles->roles->contains('admin')) {
-            redirect()->back()->with("error","Sizin buna icazəniz yoxdu!");
-        } 
+        if(!$userRoles->contains('admin')) {
+            return redirect(route('templates'));
+        }
         return $next($request);
     }
 }
