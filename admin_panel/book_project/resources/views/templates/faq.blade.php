@@ -1,12 +1,24 @@
 @extends('templates.master')
 @section('title','Suallar')
 @section('content')
+
+<div class="breadcrumbs" style="height: 70px">
+    <div class="container">
+        <div class="inner">
+            <ul class="breadcrumb">
+                <li><a href="{{ route('templates') }}">Ana Səhifə</a></li>
+                <li>Suallar</li>
+            </ul>
+        </div>
+    </div>
+  </div>
+
 <div class="faq-area inner-page-sec-padding-bottom">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="inner text-center">
-                    <h1>GENERAL QUESTION</h1>
+                    <h1>Suallar</h1>
                 </div>
             </div>
         </div>

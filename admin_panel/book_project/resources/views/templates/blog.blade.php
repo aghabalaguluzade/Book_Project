@@ -1,6 +1,18 @@
 @extends('templates.master')
 @section('title','Bloq')
 @section('content')
+
+<div class="breadcrumbs" style="height: 70px">
+    <div class="container">
+        <div class="inner">
+            <ul class="breadcrumb">
+                <li><a href="{{ route('templates') }}">Ana Səhifə</a></li>
+                <li>Bloq</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 <section class="inner-page-sec-padding-bottom">
     <div class="container">
         <div class="row">
@@ -12,7 +24,7 @@
                                                 <div class="col-md-5">
                                                         <a href="{{ route('BloqContent',$blog->slug) }}" class="image d-block">
                                                             <img src="{{ $blog->img }}" style="width:316px; height:208px;" alt="">
-                                                        </a>
+                                                        </>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="card-content">
@@ -38,7 +50,7 @@
                         <h2 class="sidebar-title mb--30">Search</h2>
                         <div class="site-mini-search">
                             <form action="{{ url('/bloq') }}">
-                                <input type="text" name="search" placeholder="Axtar..." />
+                                <input type="search" name="search" placeholder="Axtar..." />
                                 <button><i class="fas fa-search"></i></button>
                             </form>
                         </div>

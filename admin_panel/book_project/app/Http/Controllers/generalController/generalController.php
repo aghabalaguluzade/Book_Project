@@ -8,7 +8,6 @@ use App\Models\Blog;
 use App\Models\Books;
 use App\Models\Category;
 use App\Models\FeatureSection;
-use App\Models\General_Questions;
 use App\Models\NewsletterSubscribe;
 use App\Models\Partners;
 use App\Models\Review;
@@ -55,10 +54,15 @@ class generalController extends Controller
         ]);
     }
 
-    public function CategoryProduct($id,$slug) {
+    public function CategoryProduct(Request $request,$id,$slug) {
         $this->fragmented();
-        $products = Books::where('category_id',$id)->get();
-        return view('templates.product-search',compact('products',$products));
+            $products = Books::where('category_id',$id)->get();
+            $title = Category::find($id); 
+        View::share([
+            'products' => $products,
+            'title' => $title,
+        ]);
+        return view('templates.product-search');
     }
 
 }

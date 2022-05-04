@@ -3,6 +3,19 @@
 @section('title',$blog->title)
 @endforeach
 @section('content')
+
+<div class="breadcrumbs" style="height: 70px">
+    <div class="container">
+        <div class="inner">
+            <ul class="breadcrumb">
+                <li><a href="{{ route('templates') }}">Ana Səhifə</a></li>
+                <li><a href="{{ route('Bloq') }}">Bloq</a></li>
+                <li>{{ $blog->title }}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 <section class="inner-page-sec-padding-bottom">
     <div class="container">
         <div class="row">

@@ -1,6 +1,16 @@
 @extends('templates.master')
 @section('title','Qeydiyyat')
 @section('content')
+
+    <div class="container">
+        <div class="inner">
+            <ul class="breadcrumb">
+                <li><a href="{{ route('templates') }}">Ana Səhifə</a></li>
+                <li>Qeydiyyat</li>
+            </ul>
+        </div>
+    </div>
+
     <div class="container">
         <div class="register-form-content">
             <h1>Hesabı Qeydiyyatdan keçirin</h1>

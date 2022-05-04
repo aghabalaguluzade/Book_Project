@@ -1,8 +1,17 @@
 @extends('templates.master')
 @section('title','Haqqımızda')
 @section('content')
+
+    <div class="container">
+        <div class="inner">
+            <ul class="breadcrumb">
+                <li><a href="{{ route('templates') }}">Ana Səhifə</a></li>
+                <li>Haqqımızda</li>
+            </ul>
+        </div>
+    </div>
+
 <div id="information-information" class="container">
-  
     <div class="row">
         <div class="col-order">
                   <div id="content" class="col-sm-12">

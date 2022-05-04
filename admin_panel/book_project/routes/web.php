@@ -48,7 +48,6 @@ Route::get('/əlaqə',[SettingsTemplateController::class, "contact"])->name('con
 Route::post('/əlaqə',[SettingsTemplateController::class, "contactPost"])->name('contactPost');
 Route::get('/haqqımızda',[SettingsTemplateController::class, "AboutUs"])->name('AboutUs');
 Route::get('/bloq',[BlogsTemplateController::class, "Bloq"])->name('Bloq');
-Route::post('/bloq',[BlogsTemplateController::class, "BloqSearch"])->name('BloqSearch');
 Route::get('/bloq/{slug}',[BlogsTemplateController::class, "BloqContent"])->name('BloqContent');
 Route::get('/kitablar/{slug}',[BooksTemplateController::class, "BooksProduct"])->name("BooksProduct");
 Route::get('/kateqoriya/{slug}/{id}',[generalController::class, "CategoryProduct"])->name("CategoryProduct");

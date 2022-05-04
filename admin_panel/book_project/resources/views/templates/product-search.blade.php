@@ -1,14 +1,27 @@
 @extends('templates.master')
+@section('title', $title->category_name)
 @section('content')
+
+<div class="container">
+    <div class="inner">
+        <ul class="breadcrumb">
+            <li><a href="{{ route('templates') }}">Ana Səhifə</a></li>
+            <li>{{ $title->category_name }}</li>
+        </ul>
+    </div>
+</div>
+
 <div id="product-search" class="container">
-  
     <div class="row"><div class="col-order">
                   <div id="content" class="col-sm-12">
         <h1>Search</h1>
         <label class="control-label" for="input-search">Search Criteria</label>
         <div class="row">
           <div class="col-sm-4">
-            <input type="text" name="search" value="" placeholder="Keywords" id="input-search" class="form-control">
+            <form action="{{ url('/') }}">
+                <input type="search" name="search" placeholder="Axtar" id="input-search" class="form-control" />
+                <input type="submit" value="Axtar" id="button-search" class="btn btn-primary" />
+            </form>
           </div>
           <div class="col-sm-3">
             <select name="category_id" class="form-control">
@@ -27,7 +40,6 @@
                       <input type="checkbox" name="description" value="1" id="description">
                       Search in product descriptions</label>
         </p>
-        <input type="button" value="Search" id="button-search" class="btn btn-primary">
         <h2>Search entire store here ...</h2>
         <div class="custom-category">
                               
@@ -75,8 +87,8 @@
                                   <div class="item item1">
                                       <div class="item-inner">
                                           <div class="caption-top"><p class="manufacture-product ">
-                                                  <a href="index98fa.html?route=product/manufacturer/info&amp;manufacturer_id=8">{{ $product->Writers($product->writer_id)->writer_name }}</a>
-                                              </p><h4 class="product-name"><a href="index673a.html?route=product/product&amp;product_id=143&amp;tag=Luxury&amp;sort=pd.name&amp;order=DESC&amp;limit=25">{{ $product->books_name }}</a></h4>  
+                                                  <a href="">{{ $product->Writers($product->writer_id)->writer_name }}</a>
+                                              </p><h4 class="product-name"><a href="{{ route('BooksProduct',$product->slug) }}">{{ $product->books_name }}</a></h4>  
                                           </div>
                                           <div class="box-border">
                                               <div class="image images-container">
@@ -108,8 +120,7 @@
                                                          </div>  <div class="label-product label_sale"><span>-{{ $product->price_cut }}% </span></div>
                                                         <div class="ratings">
                                                         <div class="rating-box">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="rating2">rating</div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>
+                                                        <div class="rating2">rating</div>                                                                                                                                                                                                                                                                                                                                                                                                                                              </div>
                                                     </div>	
                                                     
                                                     </div>

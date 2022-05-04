@@ -1,8 +1,17 @@
 @extends('templates.master')
 @section('title','Giriş')
 @section('content')
+
+  <div class="container">
+      <div class="inner">
+          <ul class="breadcrumb">
+              <li><a href="{{ route('templates') }}">Ana Səhifə</a></li>
+              <li>Giriş</li>
+          </ul>
+      </div>
+  </div>
+
 <div id="account-login" class="container">
-  
     <div class="row">
     <div id="content" class="col-sm-12">
     <div class="row">

@@ -28,7 +28,7 @@ class BlogsTemplateController extends Controller
         $this->fragmented();
         if($request->has("search")) {
             $search = $request->search;
-            $blogs = Blog::where('title','LIKE','%'.$search.'%')->orderBy('created_at','desc')->paginate(1);
+            $blogs = Blog::where('title','LIKE','%'.$search.'%')->paginate(1);
         }else {
             $blogs = Blog::orderBy('created_at','desc')->paginate(1);
         }

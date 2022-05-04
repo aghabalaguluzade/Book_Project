@@ -1,6 +1,18 @@
 @extends('templates.master')
 @section('title','Əlaqə')
 @section('content')
+
+<div class="breadcrumbs" style="height: 70px">
+    <div class="container">
+        <div class="inner">
+            <ul class="breadcrumb">
+                <li><a href="{{ route('templates') }}">Ana Səhifə</a></li>
+                <li>Əlaqə</li>
+            </ul>
+        </div>
+    </div>
+  </div>
+
     <div class="site-wrapper">
         <main class="contact_area inner-page-sec-padding-bottom">
             <div class="container">
