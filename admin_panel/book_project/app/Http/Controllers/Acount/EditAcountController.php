@@ -47,8 +47,8 @@ class EditAcountController extends Controller
             'password' => [Rules\Password::defaults()]
         ]);
 
-        $id = Auth::user()->id;
-        $users = User::find($id);
+        
+        $users = User::find(Auth::id());
 
         if($request->hasFile('img')) {
 

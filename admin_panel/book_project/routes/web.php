@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\Acount\EditAcountController;
-use App\Http\Controllers\Acount\ResetPasswordController;
 use App\Http\Controllers\Auth\LoginUserController;
 use App\Http\Controllers\Auth\LogoutUserController;
 use App\Http\Controllers\Auth\RegisteredUserController;
@@ -34,7 +33,6 @@ use App\Http\Controllers\SettingsController\LogoController;
 use App\Http\Controllers\SettingsController\SeoController;
 use App\Http\Controllers\SettingsController\SettingsTemplateController;
 use App\Http\Controllers\SettingsController\SocialController;
-use App\Http\Controllers\UsersController\UsersAddController;
 use App\Http\Controllers\UsersController\UsersListController;
 use App\Http\Controllers\Writers\addWritersController;
 use App\Http\Controllers\Writers\editWritersController;
@@ -50,7 +48,7 @@ Route::get('/haqqımızda',[SettingsTemplateController::class, "AboutUs"])->name
 Route::get('/bloq',[BlogsTemplateController::class, "Bloq"])->name('Bloq');
 Route::get('/bloq/{slug}',[BlogsTemplateController::class, "BloqContent"])->name('BloqContent');
 Route::get('/kitablar/{slug}',[BooksTemplateController::class, "BooksProduct"])->name("BooksProduct");
-Route::get('/kateqoriya/{slug}/{id}',[generalController::class, "CategoryProduct"])->name("CategoryProduct");
+Route::get('/kateqoriya/{id}/{slug}',[generalController::class, "CategoryProduct"])->name("CategoryProduct");
 Route::post('/review',[BooksTemplateController::class, "BooksReviewPost"])->name("BooksReviewPost");
 Route::post('/newsletter-subscribe',[generalController::class, "newsletterSubscribe"])->name("newsletterSubscribe");
 Route::get('/qeydiyyat',[RegisteredUserController::class, "RegisterIndex"])->name("RegisterIndex");
@@ -104,7 +102,7 @@ Route::prefix('banners')->group(function() {
     Route::get('/banner_list', [BannerControllerList::class, "BannerList"])->name("BannerList");
     Route::view('/banner_add','banners.banners_add')->name("BannerAdd");
     Route::post('/banner_add', [BannerControllerAdd::class, "BannerAddPost"])->name("BannerAddPost");
-    Route::post('banner_edit_view', [BannerControllerEdit::class, "BannerEditView"]);
+    Route::post('/banner_edit_view', [BannerControllerEdit::class, "BannerEditView"]);
     Route::post('/banner_edit', [BannerControllerEdit::class, "BannerEdit"])->name("BannerEdit");
 
 

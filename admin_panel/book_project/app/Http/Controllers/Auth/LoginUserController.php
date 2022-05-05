@@ -31,7 +31,7 @@ class LoginUserController extends Controller
             'password' => 'required'
         ]);
 
-        if(Auth::attempt($request->only('email', 'password'))) {
+        if(Auth::attempt($request->only(['email', 'password']),$request->remember_token)) {
             $request->session()->regenerate();
             return redirect()->intended('/ana-səhifə');   
         }

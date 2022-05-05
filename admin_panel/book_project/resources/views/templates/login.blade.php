@@ -36,7 +36,12 @@
             <div class="form-group">
               <label class="control-label" for="input-password">Şifrəniz</label>
               <input type="password" name="password" placeholder="Şifrənizi daxil edin..." id="input-password" class="form-control" required="required" />
-              <a href="">Şifrəmi unutdum...</a></div>
+              <a href="">Şifrəmi unutdum...</a>
+            </div>
+            <div class="form-group">
+              <input type="checkbox" id="remember_token" name="remember_token" class="mr-2"  />
+              <label for="remember_token">Məni xatırla</label>
+            </div>
               <button class="btn btn-primary">Giriş et</button>
             </form>
         </div>

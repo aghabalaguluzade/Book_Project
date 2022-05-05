@@ -3,7 +3,7 @@ const _token = $('meta[name="csrf-token"]').attr('content');
 const status = (id) => {
     $.ajax({
         type: "POST",
-        url: "/category/category_status",
+        url: "/admin/category/category_status",
         data: {
             _token,
             id
@@ -47,7 +47,7 @@ const blog_delete = (id) => {
 const categoryEdit = (id) => {
     $.ajax({
         type : "POST",
-        url : "/category/category_edit_view",
+        url : "/admin/category/category_edit_view",
         data : {
             _token, 
             id

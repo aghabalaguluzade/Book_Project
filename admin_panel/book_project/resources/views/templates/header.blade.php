@@ -668,9 +668,13 @@
 						<div id="top-links">
 															<ul class="user ul-account list-unstyled">
 															
-																	@if (Auth::check())
-                                                                        <a href="{{ route('LogoutUserController') }}">Çıxış</a>
-                                                                    @else
+																	
+                                                                        @auth
+                                                                            <a href="{{ route('LogoutUserController') }}">Çıxış</a>   
+                                                                        @endauth
+                                                                    
+                                                                    @guest
+                                                                        
                                                                     <li>
                                                                         <a href="{{ route('LoginIndex') }}">Giriş</a>
                                                                 </li>
@@ -679,7 +683,7 @@
                             və ya
                                                                         <a  href="{{ route('RegisterIndex') }}">Qeydiyyat</a>
                                                                 </li>
-                                                                    @endif
+                                                                @endguest
 									
 															</ul>
 						</div>

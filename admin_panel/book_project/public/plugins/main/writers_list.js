@@ -4,7 +4,7 @@ const writers_view = (id) => {
     
     $.ajax({
         type: "POST",
-        url: "/writers/writers_edit_view",
+        url: "/admin/writers/writers_edit_view",
         data: {
             _token,
             id
@@ -21,7 +21,7 @@ const writers_edit = (id,url) => {
 
     $.ajax({
         type: "POST",
-        url: "/writers/writers_edit_view",
+        url: "/admin/writers/writers_edit_view",
         data: {
             _token,
             id

@@ -3,7 +3,7 @@ const _token = $('meta[name="csrf-token"]').attr('content');
 const blog_view = (id,url) => {
     $.ajax({
         type: "POST",
-        url: "/blogs/blog_view",
+        url: "/admin/blogs/blog_view",
         data: {
             _token,
             id
