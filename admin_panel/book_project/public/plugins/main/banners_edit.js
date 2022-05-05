@@ -4,7 +4,7 @@ const banner_edit = (id, url) => {
 
     $.ajax({
         type: "POST",
-        url: "/banners/banner_edit_view",
+        url: "/admin/banners/banner_edit_view",
         data: {
             _token,
             id
