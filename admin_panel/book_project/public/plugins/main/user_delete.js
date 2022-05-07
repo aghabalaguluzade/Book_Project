@@ -1,4 +1,4 @@
-const questionsDelete = (id) => {
+const blog_delete = (user_id,role_id) => {
 
     swal({
         title: "Diqqət!",
@@ -9,11 +9,9 @@ const questionsDelete = (id) => {
       })
       .then((willDelete) => {
         if (willDelete) {
-          location.href = `/admin/questions/delete/${id}`;
+          location.href = `/admin/users/user_delete/${user_id}/${role_id}`;
         } else {
           swal("İmtina Edildi!");
         }
       });
-
-
 }

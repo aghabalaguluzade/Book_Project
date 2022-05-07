@@ -10,7 +10,7 @@
           })
           .then((willDelete) => {
             if (willDelete) {
-              location.href = `/partners/delete/${id}`;
+              location.href = `/admin/partners/delete/${id}`;
             } else {
               swal("İmtina Edildi!");
             }

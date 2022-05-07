@@ -177,6 +177,9 @@ Route::prefix('books')->group(function() {
 Route::prefix('users')->group(function() {
 
     Route::get('/users-list',[UsersListController::class, "UsersListIndex"])->name("UsersListIndex");
+    Route::get('/user-edit/{id}',[UsersListController::class, "UsersEditIndex"])->name("UsersEditIndex");
+    Route::post('/user-edit/{id}',[UsersListController::class, "UsersEditPost"])->name("UsersEditPost");
+    Route::get('/user-delete/{user_id}/{role_id}',[UsersListController::class, "UsersDelete"])->name("UsersDelete");
 
 });
 

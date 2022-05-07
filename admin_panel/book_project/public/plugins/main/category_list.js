@@ -26,24 +26,6 @@ const status = (id) => {
     })
 }
 
-const blog_delete = (id) => {
-
-    swal({
-        title: "Diqqət!",
-        text: "Silinən informasiya geri qaytarılmır, yenidən əlavə olunmaldır!",
-        icon: "warning",
-        buttons: ["İmtina et", "Sil"],
-        dangerMode: true,
-      })
-      .then((willDelete) => {
-        if (willDelete) {
-          location.href = `/blogs/blog_delete/${id}`;
-        } else {
-          swal("İmtina Edildi!");
-        }
-      });
-}
-
 const categoryEdit = (id) => {
     $.ajax({
         type : "POST",

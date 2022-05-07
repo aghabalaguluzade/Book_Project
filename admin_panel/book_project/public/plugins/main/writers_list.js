@@ -48,7 +48,7 @@ const writers_delete = (id) => {
               })
               .then((willDelete) => {
                 if (willDelete) {
-                  location.href = `/writers/writers_delete/${id}`;
+                  location.href = `/admin/writers/writers_delete/${id}`;
                 } else {
                   swal("İmtina Edildi!");
                 }

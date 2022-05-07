@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\View;
 class generalController extends Controller
 {
     public function fragmented() {
-        $categories = Category::where('parent_id',0)->where('status','1')->get();
+        $categories = Category::where('parent_id',0)->active()->get();
         $partners = Partners::where('status','1')->inRandomOrder()->get();
         $settings = Settings::all();
         View::share([
@@ -31,7 +31,7 @@ class generalController extends Controller
     public function templates() {
         $this->fragmented();
         $banners = Banner::all();
-        $blogs = Blog::orderBy('created_at','desc')->get();
+        $blogs = Blog::createby()->get();
         $books = Books::orderBy('created_at','desc')->get();
         $reviews = Review::inRandomOrder()->orderBy('created_at','desc')->get();
         $sections = FeatureSection::all();

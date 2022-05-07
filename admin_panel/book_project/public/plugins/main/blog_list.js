@@ -31,7 +31,7 @@ const blog_delete = (id) => {
       })
       .then((willDelete) => {
         if (willDelete) {
-          location.href = `/blogs/blog_delete/${id}`;
+          location.href = `/admin/blogs/blog_delete/${id}`;
         } else {
           swal("İmtina Edildi!");
         }

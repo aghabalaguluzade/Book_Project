@@ -27,4 +27,8 @@ class Category extends Model
     public function children() {
         return $this->hasMany(Category::class,'parent_id')->where('status','1');
     }
+
+    public function scopeActive($query) {
+        $query->where("status",'1');
+    }
 }
