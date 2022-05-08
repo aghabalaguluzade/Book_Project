@@ -12,7 +12,9 @@ use App\Models\NewsletterSubscribe;
 use App\Models\Partners;
 use App\Models\Review;
 use App\Models\Settings;
+use App\Models\ShopCart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 
 class generalController extends Controller
@@ -21,10 +23,14 @@ class generalController extends Controller
         $categories = Category::where('parent_id',0)->active()->get();
         $partners = Partners::where('status','1')->inRandomOrder()->get();
         $settings = Settings::all();
+        $cards = ShopCart::where('user_id',Auth::id())->get();
+        $carts = ShopCart::find(Auth::id());
         View::share([
             'categories' => $categories,
             'partners' => $partners,
             'settings' => $settings,
+            'cards' => $cards,
+            'carts' => $carts,
         ]);
     }
 
@@ -42,7 +48,7 @@ class generalController extends Controller
             'books' => $books,
             'reviews' => $reviews,
             'sections' => $sections,
-            'fictions' => $fictions
+            'fictions' => $fictions,
         ]);
         return view('templates.index');
     }

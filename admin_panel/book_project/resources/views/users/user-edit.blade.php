@@ -45,7 +45,8 @@
                         <div class="form-group">
                           <label for="category_id">Rolu</label>
                             @foreach ($users->roles as $user)
-                              <p class="alert alert-info">{{ $user->name }} <a href="{{ route('UsersDelete',['user_id'=>$users->id,'role_id'=>$user->id]) }}"><i class="fas fa-times" style="float:right"></i></a></p>  
+                            {{-- <p class="alert alert-info">{{ $user->name }} <i class="fas fa-times" style="float:right" onclick="rolesDelete({{ $users->id  }}, '{{ $user->id }}')"></i></p>   --}}
+                            <p class="alert alert-info">{{ $user->name }} <a href="{{ route('UsersDelete',['user_id'=>$users->id, 'role_id'=>$user->id]) }}"><i class="fas fa-times" style="float:right"></i></a></p>   
                             @endforeach
                         </div>
                   </div>
@@ -67,5 +68,6 @@
     $( "#priceView" ).toggle();
   });
   </script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="{{ asset('plugins/main/user_delete.js') }}"></script>
 @endsection

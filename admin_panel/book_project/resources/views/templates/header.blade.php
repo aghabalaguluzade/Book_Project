@@ -687,13 +687,61 @@
 									
 															</ul>
 						</div>
+
+                        
+
 						<div id="cart" class="btn-group btn-block">
-  <button type="button" data-toggle="dropdown" data-loading-text="Loading..." class="btn dropdown-toggle"><span id="cart-total"><span class="txt_number">0</span><span class="txt_items">Shopping Cart</span><span class="total-price">$0.00 <i class="fas fa-chevron-down"></i></span></span></button>
-  <ul class="dropdown-menu pull-right">
-        <li>
-      <p class="text-center cart-empty">Your shopping cart is empty!</p>
-    </li>
-      </ul>
+  <button type="button" data-toggle="dropdown" data-loading-text="Loading..." class="btn dropdown-toggle">
+            
+
+            @if ($cards && $carts)
+                <span id="cart-total">
+                    <span class="txt_number">{{ $carts->count() }}</span>
+                    <span class="txt_items">Səbət</span>
+                    {{-- <span class="total-price">{{ $carts->books->price * $carts->quantity }} AZN <i class="fas fa-chevron-down"></i></span> --}}
+                  </span>
+              </button>
+    
+              <ul class="dropdown-menu pull-right">
+                <li class="has-scroll">
+              <table class="table">
+                        <tbody>
+
+                            @foreach ($cards as $card)
+
+                            <tr>
+                  <td class="text-center">
+                      <a href="">
+                        <img class="cart-image" src="{{ asset($card->books->books_img) }}" alt="{{ $card->books->books_name }}" title="{{ $card->books->books_name }}"></a> 
+                    </td>
+                  <td class="text-left info-item">
+                      <a class="cart-name" href="">{{ $card->books->books_name }}</a> 
+                  <p class="cart-quantity">{{ $card->quantity }}&nbsp;×&nbsp;</p>
+                    <p class="cart-price">{{ $card->books->price * $card->quantity }} AZN</p>
+                </td>          
+                  <td class="text-center cart-close"><button type="button" onclick="cart.remove('372');" title="Remove" class="btn btn-danger btn-xs"><i class="icon-delete"></i></button></td>
+                </tr>
+                @endforeach 
+                              </tbody>
+                            </table>
+            </li>
+            <li>
+                <p class="text-center cart-button"><a href="{{ route('ShopCartList') }}">View Cart</a><a href="http://smartbook4.demo.towerthemes.com/index.php?route=checkout/checkout">Checkout</a></p>      
+            </li>
+              </ul>                  
+            @else
+            <span id="cart-total">
+                <span class="txt_number">0</span>
+                <span class="txt_items">Səbət</span>
+                <span class="total-price">$0.00 <i class="fas fa-chevron-down"></i></span>
+              </span>
+          </button>
+            <ul class="dropdown-menu pull-right">
+                  <li>
+                <p class="text-center cart-empty">Your shopping cart is empty!</p>
+              </li>
+                </ul>
+            @endif
 </div>
 
 					</div>

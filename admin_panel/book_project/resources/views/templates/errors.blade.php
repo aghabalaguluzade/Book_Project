@@ -14,6 +14,12 @@
     </div>
 @endif
 
+@if (session('card'))
+    <div class="alert alert-success">
+        <p>Səbətə Əlavə Olundu</p>
+    </div>
+@endif
+
 @if(session("error"))
     <div class="alert alert-danger">
         <p>Əməliyyat Uğurla İcra Edilmədi!</p>

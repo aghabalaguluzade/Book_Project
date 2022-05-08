@@ -53,4 +53,8 @@ class User extends Authenticatable implements MustVerifyEmail
 
     protected $table = "users";
     protected $guarded =  [];
+
+    public function shopcard() {
+        return $this->hasMany(ShopCart::class);
+    }
 }

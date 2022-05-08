@@ -36,6 +36,9 @@ class UsersListController extends Controller
     }
 
     public function UsersDelete($user_id,$role_id) {
+        $referer = isset($_SERVER["HTTP_REFERER"]);
+        if(!$referer) return redirect()->back();
+        
         $users = User::find($user_id);
         if(!$users) return redirect()->back()->with('not_found', true);
 

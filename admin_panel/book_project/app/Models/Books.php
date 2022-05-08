@@ -20,7 +20,11 @@ class Books extends Model
     }
 
     public function child($id) {
-        return Category::where('parent_id',$id)->first() ?? null;
+        return Category::where('parent_id',$id)->select('category_name')->get() ?? null;
+    }
+
+    public function shopcard() {
+        return $this->hasMany(ShopCart::class);
     }
 
 }

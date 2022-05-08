@@ -2,9 +2,18 @@
 @section('content')
 @foreach ($slugs as $slug)
 @section('title',$slug->books_name)
+
+    <div class="container">
+        <div class="inner">
+            <ul class="breadcrumb">
+                <li><a href="{{ route('templates') }}">Ana Səhifə</a></li>
+                <li>{{ $slug->books_name }}</li>
+            </ul>
+        </div>
+	</div>
 <div id="product-product" class="container">
-    
-    <div class="row">
+    @include('templates.errors')
+    <div class="row mt-1">
                                     <div id="content" class="col-sm-12">
             
 			<div class="row">                                                     <div class="product-image-main col-sm-6">
@@ -51,6 +60,7 @@
 												                            <li>Yazıçı <a href="indexe69c.html?route=product/manufacturer/info&amp;manufacturer_id=7">{{ $slug->Writers($slug->writer_id)->writer_name }}</a></li>
                                                 <li>Məhsul Kodu: <span>{{ $slug->code }}</span></li>
                                                 <li>Səhifə: <span>{{ $slug->page }}</span></li>
+                                                <li>Məhsul Miqdarı: <span>{{ $slug->quantity }}</span></li>
 						
                     </ul>
                     
@@ -77,20 +87,15 @@
 					
 					<p class="short-des">{{ Str::limit($slug->books_description,200,'...') }}</p>
 
-                    <div id="product">                                                 <div class="form-group">
-						<div></div>
-						<label class="control-label" for="input-quantity">Qty</label>
-								<input type="text" name="quantity" value="1" size="2" id="quantity" class="form-control" />
-							<div class="counter js-variant-counter" data-quantity="" style="" data-max="9999999" data-quantity-change-init="true">
-								<button type="button" class="counter-button is-count-down" id="is-count-down" onclick="countdown()"></button>
-								<button type="button" class="counter-button is-count-up" id="is-count-up"></button>
-							  </div>
-							  
-                            <button type="button" id="button-cart" data-loading-text="Loading..." class="btn button button-cart" title="Add to Cart">Add to Cart</button>
-							
-							<button type="button" class="btn btn-default button btn-wishlist" title="Add to Wish List" onclick="wishlist.add('62');">Add to Wish List</button>
-							<button type="button" class="btn btn-default button btn-compare" title="Compare this Product" onclick="compare.add('62');">Compare this Product</button>
-					   </div>
+					<div id="product">                                                 
+						<form action="{{ route('ShopCartAdd',[$slug->id]) }}" method="POST">
+							<div class="form-group">
+								<label class="control-label" for="input-quantity">Say</label>
+								<input type="number" name="quantity" value="1" size="2" min="1" max="{{ $slug->quantity }}" id="input-quantity" class="form-control" />
+								<button type="submit" id="button-cart" data-loading-text="Yüklənir..." class="btn button button-cart" title="Səbətə Əlavə Et">Səbətə Əlavə Et</button>	
+								<button type="button" class="btn btn-default button btn-wishlist" title="Add to Wish List" onclick="wishlist.add('56');">Add to Wish List</button>
+								<button type="button" class="btn btn-default button btn-compare" title="Compare this Product" onclick="compare.add('56');">Compare this Product</button>
+						   </div>
                         </div>
 						
 						<!-- AddThis Button BEGIN -->
@@ -329,70 +334,6 @@ owl.owlCarousel({
   transform: scale(0.8);
   transition: 0.3s ease;
 }
-</style>
-
-
-<style>
-	.counter {
-  width: 72px;
-  background-color: white;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch; }
-  /* line 346, _components.scss */
-  .counter.hidden-counter .counter-button {
-    display: none; }
-  /* line 350, _components.scss */
-  .counter.hidden-counter .counter-input {
-    border: 1px solid #d8d8d8;
-    outline: none; }
-    /* line 354, _components.scss */
-    .counter.hidden-counter .counter-input:focus {
-      -webkit-box-shadow: 0px 0px 2px #dc0708;
-      box-shadow: 0px 0px 2px #dc0708; }
-
-/* line 363, _components.scss */
-.counter-button {
-  -webkit-transition: color 0.15s ease-out 0.15s;
-  transition: color 0.15s ease-out 0.15s;
-  padding: 0;
-  border: none;
-  display: inline-block;
-  vertical-align: middle;
-  height: 20px;
-  width: 20px;
-  font-size: 8px;
-  line-height: 10px;
-  color: black;
-  background-color: white;
-  border-radius: 50%; }
-  /* line 374, _components.scss */
-  .counter-button.is-count-down {
-    border: 1px solid #000;
-    color: #000; }
-    /* line 458, _mixins.scss */
-    .counter-button.is-count-down:before {
-      font-family: "FontAwesome";
-      content: "-"; 
-	font-size: 35px;
-	font-weight: bold
-	}
-  /* line 381, _components.scss */
-  .counter-button.is-count-up {
-    border: 1px solid #000;
-    color: #000; 
-	font-size: 25px;
-	font-weight: bold
-}
-    /* line 467, _mixins.scss */
-    .counter-button.is-count-up:before {
-      font-family: "Plus";
-      content: "+"; }
-  /* line 387, _components.scss */
-  .counter-button:hover, .counter-button:focus {
-    color: #000;
-    outline: none;
-    border: 1px solid #000; }
 </style>
 
 @endsection

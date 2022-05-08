@@ -1656,7 +1656,11 @@ if(count == 1) {
 							<p class="manufacture-product">
 							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=10">{{ $fiction->Writers($fiction->writer_id)->writer_name }}</a>
 							</p>
-							<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=189">{{ $fiction->child(26)->category_name }}</a></h4> 
+							<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=189">
+								@foreach ($fiction->child(26) as $a)
+									{{ $a->category_name }}
+								@endforeach
+							</a></h4> 
 							<div class="ratings">
 							<div class="rating-box">
 							<div class="rating0">rating</div>																																																																																																																																								</div>
