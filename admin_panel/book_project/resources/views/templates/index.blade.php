@@ -1419,10 +1419,14 @@ responsive:{
 							</a>
 							<div class="box-label">	
 							</div>											
-							<div class="action-links">
-							<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('52');"><span>Add to Cart</span></button>												
-							<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('52');"><span>Add to Wish List</span></button>																																	
-						</div>															
+							<form action="{{ route('ShopCartAdd',$book->id) }}" method="POST">
+								@csrf
+								<div class="action-links">
+								<input type="hidden" name="quantity" value="1" />
+								<button type="submit" class="button btn-cart" title="Səbətə Əlavə Et"><span>Səbətə Əlavə Et</span></button>												
+								<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('52');"><span>Add to Wish List</span></button>																																	
+							</div>	
+							</form>															
 						</div><!-- image -->
 						<div class="caption">
 							<div class="inner">
@@ -2617,6 +2621,11 @@ responsive:{
 </div>
 
 @endsection
+<style>
+	.url:hover {
+		background-color: #fff !important;
+	}
+</style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>

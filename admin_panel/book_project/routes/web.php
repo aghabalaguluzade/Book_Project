@@ -34,6 +34,7 @@ use App\Http\Controllers\SettingsController\SeoController;
 use App\Http\Controllers\SettingsController\SettingsTemplateController;
 use App\Http\Controllers\SettingsController\SocialController;
 use App\Http\Controllers\ShopCartsController\ShopCartsAddController;
+use App\Http\Controllers\ShopCartsController\ShopCartsEditController;
 use App\Http\Controllers\ShopCartsController\ShopCartsListController;
 use App\Http\Controllers\UsersController\UsersListController;
 use App\Http\Controllers\Writers\addWritersController;
@@ -60,6 +61,7 @@ Route::post('/giriş',[LoginUserController::class, "LoginUserController"])->name
 Route::get('/logout',[LogoutUserController::class, "LogoutUserController"])->name("LogoutUserController");
 Route::get('/səbət',[ShopCartsListController::class, "ShopCartList"])->name("ShopCartList");
 Route::post('/səbətə-əlavə-et/{id}',[ShopCartsAddController::class, "ShopCartAdd"])->name("ShopCartAdd");
+Route::get('/səbət-sil/{id}',[ShopCartsEditController::class, "ShopCartDelete"])->name("ShopCartDelete");
 
 Route::prefix('hesab')->group(function() {
 

@@ -14,9 +14,21 @@
     </div>
 @endif
 
-@if (session('card'))
+@if (session('card-add'))
     <div class="alert alert-success">
         <p>Səbətə Əlavə Olundu</p>
+    </div>
+@endif
+
+@if (session('card-delete'))
+    <div class="alert alert-success">
+        <p>Məhsul Səbətdən Silindi!</p>
+    </div>
+@endif
+
+@if (session('card-add-error'))
+    <div class="alert alert-error">
+        <p>Səbətə Əlavə Olunmadı</p>
     </div>
 @endif
 

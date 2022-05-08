@@ -7,11 +7,10 @@
   </ul></div></div>
 
   <div id="checkout-cart" class="container">
-  
+  @include('templates.errors')
     <div class="row">
             <div id="content" class="col-sm-12">
   <h1>Səbət</h1>
-  <form action="http://smartbook4.demo.towerthemes.com/index.php?route=checkout/cart/edit" method="post" enctype="multipart/form-data">
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead>
@@ -28,20 +27,22 @@
             @foreach ($cards as $card)
 
         <tr>
-          <td class="text-center">
-              <a href="">
-                  <img src="{{ asset($card->books->books_img) }}" style="width: 110px; height:110px;" alt="{{ $card->books->books_name }}" title="{{ $card->books->books_name }}" class="img-thumbnail">
-                </a>
-            </td>
-          <td class="text-left"><a href="">{{ $card->books->books_name }}</a></td>
-          <td class="text-left"><div class="input-group btn-block" style="max-width: 200px;">
-              <input type="text" name="quantity" value="{{ $card->quantity }}" size="1" class="form-control" />
-              <span class="input-group-btn">
-              <button type="submit" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Update"><i class="fa fa-refresh"></i></button>
-              <button type="button" data-toggle="tooltip" title="" class="btn btn-danger" onclick="cart.remove('371');" data-original-title="Remove"><i class="fa fa-times-circle"></i></button>
-              </span></div></td>
-          <td class="text-right">{{ $card->books->price }} AZN</td>
-          <td class="text-right">{{ $card->books->price * $card->quantity }} AZN</td>
+                <td class="text-center">
+                    <a href="{{ route('BooksProduct',$card->books->slug) }}">
+                        <img src="{{ asset($card->books->books_img) }}" style="width: 110px; height:110px;" alt="{{ $card->books->books_name }}" title="{{ $card->books->books_name }}" class="img-thumbnail">
+                      </a>
+                  </td>
+                <td class="text-left"><a href="{{ route('BooksProduct',$card->books->slug) }}">{{ $card->books->books_name }}</a></td>
+                <td class="text-left"><div class="input-group btn-block" style="max-width: 200px;">
+                    <input type="text" name="quantity" value="{{ $card->quantity }}" size="1" class="form-control" />
+                    <span class="input-group-btn">
+                    <button type="submit" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Update"><i class="fa fa-refresh"></i></button>
+                    <button type="submit" class="btn btn-danger" data-original-title="Sil" onclick="ShopCartDelete({{ $card->id }})"><i class="fa fa-times-circle"></i></button>
+                    </span>
+                  </div>
+              </td>
+                <td class="text-right">{{ $card->books->price }} AZN</td>
+                <td class="text-right">{{ $card->books->price * $card->quantity }} AZN</td>
         </tr>
 
         @endforeach
@@ -49,7 +50,6 @@
         
       </table>
     </div>
-  </form>
         <h2>What would you like to do next?</h2>
   <p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>
   <div class="panel-group" id="accordion">         <div class="panel panel-default">
@@ -508,50 +508,7 @@ $.ajax({
 });
 });
 //--></script>
-<script type="text/javascript"><!--
-$('select[name=\'country_id\']').on('change', function() {
-$.ajax({
-    url: 'index.php?route=extension/total/shipping/country&country_id=' + this.value,
-    dataType: 'json',
-    beforeSend: function() {
-        $('select[name=\'country_id\']').prop('disabled', true);
-    },
-    complete: function() {
-        $('select[name=\'country_id\']').prop('disabled', false);
-    },
-    success: function(json) {
-        if (json['postcode_required'] == '1') {
-            $('input[name=\'postcode\']').parent().parent().addClass('required');
-        } else {
-            $('input[name=\'postcode\']').parent().parent().removeClass('required');
-        }
 
-        html = '<option value=""> --- Please Select --- </option>';
-
-        if (json['zone'] && json['zone'] != '') {
-            for (i = 0; i < json['zone'].length; i++) {
-                html += '<option value="' + json['zone'][i]['zone_id'] + '"';
-
-                if (json['zone'][i]['zone_id'] == '216') {
-                    html += ' selected="selected"';
-                }
-
-                html += '>' + json['zone'][i]['name'] + '</option>';
-            }
-        } else {
-            html += '<option value="0" selected="selected"> --- None --- </option>';
-        }
-
-        $('select[name=\'zone_id\']').html(html);
-    },
-    error: function(xhr, ajaxOptions, thrownError) {
-        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-    }
-});
-});
-
-$('select[name=\'country_id\']').trigger('change');
-//--></script>
 </div>
 </div>
 </div>
@@ -609,13 +566,10 @@ $.ajax({
   <div class="row">
     <div class="col-sm-4 col-sm-offset-8">
       <table class="table table-bordered">
-                    <tbody><tr>
-          <td class="text-right"><strong>Sub-Total:</strong></td>
-          <td class="text-right">$95.00</td>
-        </tr>
+                    <tbody>
                     <tr>
-          <td class="text-right"><strong>Total:</strong></td>
-          <td class="text-right">$95.00</td>
+          <td class="text-right"><strong>Məbləğ:</strong></td>
+          <td class="text-right"></td>
         </tr>
                   </tbody></table>
     </div>
@@ -627,4 +581,28 @@ $.ajax({
   </div>
 </div>
 </div>
+@endsection
+@section('addcss')
+@endsection
+@section('addjs')
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    const ShopCartDelete = (id) => {
+
+        swal({
+            title: "Diqqət!",
+            text: "Silinən informasiya geri qaytarılmır, yenidən əlavə olunmaldır!",
+            icon: "warning",
+            buttons: ["İmtina et", "Sil"],
+            dangerMode: true,
+        })
+        .then((willDelete) => {
+            if (willDelete) {
+            location.href = `/səbət-sil/${id}`;
+            } else {
+            swal("İmtina Edildi!");
+            }
+        });
+}
+</script>
 @endsection

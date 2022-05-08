@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Partners;
 use App\Models\Settings;
+use App\Models\ShopCart;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,10 +21,14 @@ class RegisteredUserController extends Controller
         $categories = Category::where('parent_id',0)->where('status','1')->get();
         $partners = Partners::where('status','1')->inRandomOrder()->get();
         $settings = Settings::all();
+        $cards = ShopCart::where('user_id',Auth::id())->get();
+        $carts = ShopCart::find(Auth::id());
         View::share([
             'categories' => $categories,
             'partners' => $partners,
             'settings' => $settings,
+            'cards' => $cards,
+            'carts' => $carts
         ]);
         return view('templates.register');
     }

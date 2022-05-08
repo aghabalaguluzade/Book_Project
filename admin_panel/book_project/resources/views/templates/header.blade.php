@@ -711,15 +711,17 @@
 
                             <tr>
                   <td class="text-center">
-                      <a href="">
+                      <a href="{{ route('BooksProduct', $card->books->slug) }}">
                         <img class="cart-image" src="{{ asset($card->books->books_img) }}" alt="{{ $card->books->books_name }}" title="{{ $card->books->books_name }}"></a> 
                     </td>
                   <td class="text-left info-item">
-                      <a class="cart-name" href="">{{ $card->books->books_name }}</a> 
+                      <a class="cart-name" href="{{ route('BooksProduct', $card->books->slug) }}">{{ $card->books->books_name }}</a> 
                   <p class="cart-quantity">{{ $card->quantity }}&nbsp;×&nbsp;</p>
                     <p class="cart-price">{{ $card->books->price * $card->quantity }} AZN</p>
                 </td>          
-                  <td class="text-center cart-close"><button type="button" onclick="cart.remove('372');" title="Remove" class="btn btn-danger btn-xs"><i class="icon-delete"></i></button></td>
+                  <td class="text-center cart-close">
+                      <button type="submit" onclick="ShopCartDelete({{ $card->id }})" title="Remove" class="btn btn-danger btn-xs"><i class="icon-delete"></i>
+                    </button></td>
                 </tr>
                 @endforeach 
                               </tbody>
@@ -1259,3 +1261,23 @@
 	</div>
 	
 </header>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    const ShopCartDelete = (id) => {
+
+        swal({
+            title: "Diqqət!",
+            text: "Silinən informasiya geri qaytarılmır, yenidən əlavə olunmaldır!",
+            icon: "warning",
+            buttons: ["İmtina et", "Sil"],
+            dangerMode: true,
+        })
+        .then((willDelete) => {
+            if (willDelete) {
+            location.href = `/səbət-sil/${id}`;
+            } else {
+            swal("İmtina Edildi!");
+            }
+        });
+}
+</script>

@@ -89,6 +89,7 @@
 
 					<div id="product">                                                 
 						<form action="{{ route('ShopCartAdd',[$slug->id]) }}" method="POST">
+							@csrf
 							<div class="form-group">
 								<label class="control-label" for="input-quantity">Say</label>
 								<input type="number" name="quantity" value="1" size="2" min="1" max="{{ $slug->quantity }}" id="input-quantity" class="form-control" />
@@ -96,6 +97,7 @@
 								<button type="button" class="btn btn-default button btn-wishlist" title="Add to Wish List" onclick="wishlist.add('56');">Add to Wish List</button>
 								<button type="button" class="btn btn-default button btn-compare" title="Compare this Product" onclick="compare.add('56');">Compare this Product</button>
 						   </div>
+						</form>
                         </div>
 						
 						<!-- AddThis Button BEGIN -->
