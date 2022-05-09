@@ -18,7 +18,7 @@ class OrderListController extends Controller
         $partners = Partners::where('status','1')->inRandomOrder()->get();
         $settings = Settings::all();
         $cards = ShopCart::where('user_id',Auth::id())->get();
-        $carts = ShopCart::find(Auth::id());
+        $carts = ShopCart::where('user_id',Auth::id());
         View::share([
             'categories' => $categories,
             'partners' => $partners,

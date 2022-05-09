@@ -28,14 +28,6 @@
                                     </a><div class="mousetrap" style="background-image:url(&quot;.&quot;);z-index:999;position:absolute;width:570px;height:570px;left:0px;top:0px;"></div><div class="mousetrap" style="background-image:url(&quot;.&quot;);z-index:999;position:absolute;width:570px;height:570px;left:0px;top:0px;"></div><div class="mousetrap" style="background-image: url(&quot;.&quot;); z-index: 999; position: absolute; width: 570px; height: 570px; left: 0px; top: 0px; cursor: move;"></div><div class="mousetrap" style="background-image:url(&quot;.&quot;);z-index:999;position:absolute;width:570px;height:570px;left:0px;top:0px;"></div><div class="mousetrap" style="background-image:url(&quot;.&quot;);z-index:999;position:absolute;width:570px;height:570px;left:0px;top:0px;"></div><div class="mousetrap" style="background-image:url(&quot;.&quot;);z-index:999;position:absolute;width:570px;height:570px;left:0px;top:0px;"></div><div class="mousetrap" style="background-image:url(&quot;.&quot;);z-index:999;position:absolute;width:570px;height:570px;left:0px;top:0px;"></div><div class="mousetrap" style="background-image:url(&quot;.&quot;);z-index:999;position:absolute;width:570px;height:570px;left:0px;top:0px;"></div><div class="mousetrap" style="background-image:url(&quot;.&quot;);z-index:999;position:absolute;width:570px;height:570px;left:0px;top:0px;"></div><div class="mousetrap" style="background-image:url(&quot;.&quot;);z-index:999;position:absolute;width:570px;height:570px;left:0px;top:0px;"></div><div class="mousetrap" style="background-image:url(&quot;.&quot;);z-index:999;position:absolute;width:570px;height:570px;left:0px;top:0px;"></div></div>
                                                             </div>
                             <div class="additional-images owl-carousel owl-theme owl-loaded owl-drag">
-                                <!--  -->
-                                    <!-- <div class="item"> -->
-                                        <!-- <a class="cloud-zoom-gallery sub-image" id="product-image-default" href="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/5-700x700.jpg" title="Beats Solo Wireless On-Ear Headphone" -->
-                                           <!-- rel="useZoom: 'product-cloud-zoom', smallImage: 'http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/5-600x600.jpg'" data-pos="1"> -->
-                                            <!-- <img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/5-600x600.jpg" title="Beats Solo Wireless On-Ear Headphone" alt="Beats Solo Wireless On-Ear Headphone" /> -->
-                                        <!-- </a> -->
-                                    <!-- </div> -->
-                                <!--  -->
                                                                                                                                                 
                                                                                                                     
                                                                                                                     
@@ -52,8 +44,13 @@
                                                                     <div class="col-sm-6 product-info-main">
                     <div class="inner">
 										
-			 															 <a href="#"></a> 							 </p>
+			 	</p>
 										<h1 class="product-name">{{ $slug->books_name }}</h1>
+										@if ($slug->quantity == 0)
+											<div>
+												<p class="alert alert-danger display-5">Mövcüd deyil</p>
+											</div>
+										@endif
 					<ul class="list-unstyled">
                         							
 																												

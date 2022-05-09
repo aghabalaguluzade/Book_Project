@@ -16,8 +16,8 @@ class ShopCartsAddController extends Controller
         $card = ShopCart::where('books_id',$id)->where('user_id',Auth::id())->first();
         if ($card) {
             $card->quantity += $request->quantity;
-        } else {
-            $card = new ShopCart();
+        }else {
+            $card = new ShopCart;
             $card->user_id = Auth::id();
             $card->books_id = $request->id;
             $card->quantity = $request->quantity;   

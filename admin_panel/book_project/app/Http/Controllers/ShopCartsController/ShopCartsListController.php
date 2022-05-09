@@ -17,7 +17,7 @@ class ShopCartsListController extends Controller
         $categories = Category::where('parent_id',0)->where('status','1')->get();
         $partners = Partners::where('status','1')->inRandomOrder()->get();
         $settings = Settings::all();
-        $carts = ShopCart::find(Auth::id());
+        $carts = ShopCart::where('user_id',Auth::id());
         $cards = ShopCart::where('user_id',Auth::id())->get();
         View::share([
             'categories' => $categories,

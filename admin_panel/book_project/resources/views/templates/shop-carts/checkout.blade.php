@@ -10,10 +10,8 @@
       <li>Sifarişi Rəsmiləşdirmək</li>
     </ul>
   </div>
-
-
-  <h2>Sifariş (Məbləğ: {{ $total }})</h2>
   @include('templates.errors')
+  <h2>Sifariş (Məbləğ: {{ $total }})</h2>
   <p>İstifadə etmək istədiyiniz endirim kodunuz və ya çatdırılma ünvanınızı seçin.</p>
   <form action="{{ route('OrderPost') }}" method="POST">
     @csrf

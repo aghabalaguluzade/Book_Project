@@ -15,7 +15,7 @@ class OrderAddController extends Controller
     public function OrderPost(Request $request) {
 
         if($this->books_not()) {
-            return redirect()->back()->with("order-not-stock");
+            return redirect()->back()->with("order-not-stock",true);
         }
 
         $orders = new Order();
@@ -50,7 +50,7 @@ class OrderAddController extends Controller
         $delete_shopcards = ShopCart::where('user_id',Auth::id());
         $delete_shopcards->delete();
         
-        return redirect()->route('Orders')->with($order_items ? "order-success" : "order-error");
+        return redirect()->route('Orders')->with($order_items ? "order-success" : "order-error",true);
     }
 
     public function books_not() {
