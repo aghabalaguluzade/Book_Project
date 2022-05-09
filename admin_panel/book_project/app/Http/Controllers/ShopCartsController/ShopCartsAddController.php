@@ -11,6 +11,8 @@ class ShopCartsAddController extends Controller
 {
     public function ShopCartAdd(Request $request,$id) {
 
+        if(!Auth::id()) return redirect(route('LoginIndex'))->with("login","error",true);
+
         $card = ShopCart::where('books_id',$id)->where('user_id',Auth::id())->first();
         if ($card) {
             $card->quantity += $request->quantity;

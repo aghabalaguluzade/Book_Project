@@ -27,4 +27,7 @@ class Books extends Model
         return $this->hasMany(ShopCart::class);
     }
 
+    public function orderitem() {
+        return $this->hasMany(Orderitem::class);
+    }
 }

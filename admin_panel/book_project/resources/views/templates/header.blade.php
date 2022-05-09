@@ -693,12 +693,20 @@
 						<div id="cart" class="btn-group btn-block">
   <button type="button" data-toggle="dropdown" data-loading-text="Loading..." class="btn dropdown-toggle">
             
+            @php
+                $total = 0;
+            @endphp
 
             @if ($cards && $carts)
                 <span id="cart-total">
                     <span class="txt_number">{{ $carts->count() }}</span>
                     <span class="txt_items">Səbət</span>
-                    {{-- <span class="total-price">{{ $carts->books->price * $carts->quantity }} AZN <i class="fas fa-chevron-down"></i></span> --}}
+                    @foreach ($cards as $card)
+                    @php
+                        $total += $card->books->price * $card->quantity;    
+                    @endphp
+                    @endforeach
+                    <span class="total-price">{{ $total }} AZN <i class="fas fa-chevron-down"></i></span>
                   </span>
               </button>
     
@@ -708,7 +716,6 @@
                         <tbody>
 
                             @foreach ($cards as $card)
-
                             <tr>
                   <td class="text-center">
                       <a href="{{ route('BooksProduct', $card->books->slug) }}">
@@ -728,7 +735,10 @@
                             </table>
             </li>
             <li>
-                <p class="text-center cart-button"><a href="{{ route('ShopCartList') }}">View Cart</a><a href="http://smartbook4.demo.towerthemes.com/index.php?route=checkout/checkout">Checkout</a></p>      
+                <p class="text-center cart-button">
+                    <a href="{{ route('ShopCartList') }}">Səbətə Keç</a>
+                    <a href="{{ route('OrderIndex') }}">Sifariş</a>
+                </p>      
             </li>
               </ul>                  
             @else

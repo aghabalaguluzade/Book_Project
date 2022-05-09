@@ -27,8 +27,32 @@
 @endif
 
 @if (session('card-add-error'))
-    <div class="alert alert-error">
+    <div class="alert alert-danger">
         <p>Səbətə Əlavə Olunmadı</p>
+    </div>
+@endif
+
+@if (session('login'))
+    <div class="alert alert-danger">
+        <p>Qeydiyyatdan Keç!</p>
+    </div>
+@endif
+
+@if (session('order-success'))
+    <div class="alert alert-success">
+        <p>Məhsul Sifariş Edildi</p>
+    </div>
+@endif
+
+@if (session('order-error'))
+    <div class="alert alert-danger">
+        <p>Məhsul Sifariş Verilmədi!</p>
+    </div>
+@endif
+
+@if (session('order-not-stock'))
+    <div class="alert alert-danger">
+        <p>Bu Məhsuldan Yoxdur!</p>
     </div>
 @endif
 

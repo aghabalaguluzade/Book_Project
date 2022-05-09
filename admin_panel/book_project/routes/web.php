@@ -21,6 +21,8 @@ use App\Http\Controllers\FeatureSection\FeatureSectionAdd;
 use App\Http\Controllers\FeatureSection\FeatureSectionEdit;
 use App\Http\Controllers\FeatureSection\FeatureSectionIndex;
 use App\Http\Controllers\generalController\generalController;
+use App\Http\Controllers\OrderController\OrderAddController;
+use App\Http\Controllers\OrderController\OrderListController;
 use App\Http\Controllers\PartnersController\addPartnerController;
 use App\Http\Controllers\PartnersController\editPartnerController;
 use App\Http\Controllers\PartnersController\listPartnerController;
@@ -62,13 +64,16 @@ Route::get('/logout',[LogoutUserController::class, "LogoutUserController"])->nam
 Route::get('/səbət',[ShopCartsListController::class, "ShopCartList"])->name("ShopCartList");
 Route::post('/səbətə-əlavə-et/{id}',[ShopCartsAddController::class, "ShopCartAdd"])->name("ShopCartAdd");
 Route::get('/səbət-sil/{id}',[ShopCartsEditController::class, "ShopCartDelete"])->name("ShopCartDelete");
+Route::post('/sifariş',[OrderListController::class, "OrderIndex"])->name("OrderIndex");
+Route::get('/sifariş',[OrderListController::class, "OrderIndex"])->name("OrderIndex");
+Route::post('/sifariş-et',[OrderAddController::class, "OrderPost"])->name("OrderPost");
 
 Route::prefix('hesab')->group(function() {
 
     Route::get('/',[EditAcountController::class, "Acount"])->name("Acount");
     Route::get('/hesab-redaktəsi',[EditAcountController::class, "EditAcountIndex"])->name("EditAcountIndex");
     Route::post('/hesab-redaktəsi',[EditAcountController::class, "EditAcountPost"])->name("EditAcountPost");
-
+    Route::get('/sifarişlərim',[EditAcountController::class, "Orders"])->name("Orders");
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
