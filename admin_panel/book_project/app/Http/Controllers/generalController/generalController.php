@@ -40,15 +40,15 @@ class generalController extends Controller
         $blogs = Blog::createby()->get();
         $books = Books::orderBy('created_at','desc')->get();
         $reviews = Review::inRandomOrder()->orderBy('created_at','desc')->get();
-        $sections = FeatureSection::all();
         $fictions = Books::all();
+        $features = FeatureSection::all();
         View::share([
             'banners' => $banners,
             'blogs' => $blogs,
             'books' => $books,
             'reviews' => $reviews,
-            'sections' => $sections,
             'fictions' => $fictions,
+            'features' => $features
         ]);
         return view('templates.index');
     }

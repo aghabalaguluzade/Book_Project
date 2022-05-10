@@ -370,11 +370,24 @@ if ($('#form-upload input[name=\'file\']').val() != '') {
 <div class="col ">
 <div class="box">
 
-		
+
+@foreach ($features as $feature)
+
 
 <div class="text">
-<h4></h4>
-<p></p>
+	<h4>{{ $feature->feature_title1 }}</h4>
+	<p>{{ $feature->feature_content1 }}</p>
+</div>
+</div>
+</div>
+<div class="col ">
+<div class="box">
+
+
+
+<div class="text">
+	<h4>{{ $feature->feature_title2 }}</h4>
+	<p>{{ $feature->feature_content2 }}</p>
 </div>
 </div>
 </div>
@@ -382,8 +395,8 @@ if ($('#form-upload input[name=\'file\']').val() != '') {
 <div class="box">
 
 <div class="text">
-<h4></h4>
-<p>100% money back</p>
+	<h4>{{ $feature->feature_title3 }}</h4>
+	<p>{{ $feature->feature_content3 }}</p>
 </div>
 </div>
 </div>
@@ -391,22 +404,14 @@ if ($('#form-upload input[name=\'file\']').val() != '') {
 <div class="box">
 
 <div class="text">
-<h4>Cash on Delivery</h4>
-<p>Lorem ipsum dolor amet</p>
-</div>
-</div>
-</div>
-<div class="col ">
-<div class="box">
-
-<div class="text">
-<h4>Kömək &amp; Dəstək</h4>
-<p>Zəng edin bizə : + 0123.4567.89</p>
+	<h4>{{ $feature->feature_title4 }}</h4>
+	<p>{{ $feature->feature_content4 }}</p>
 </div>
 </div>
 </div>
 </div>
-</div>																																															  <div class="banner-static static-top-smartbooks3">
+</div>		
+@endforeach																																													  <div class="banner-static static-top-smartbooks3">
 <div class="container-inner">
 <div class="col col-top-1">
 <div class="image"><a href="index.php?route=product/category&amp;path=124"><img src="image/catalog/cmsblock/img1-top-smartbooks3.jpg" alt="image"></a></div>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Acount;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Order;
+use App\Models\Orderitem;
 use App\Models\Partners;
 use App\Models\Settings;
 use App\Models\ShopCart;
@@ -84,6 +86,14 @@ class EditAcountController extends Controller
 
     public function Orders() {
         $this->fragmented();
-        return view('templates.acount.acount-orders');
+        $orders = Order::where('user_id',Auth::id())->get();
+        return view('templates.acount.acount-orders', compact('orders',$orders));
+    }
+
+    public function Orderitems($id) {
+        $this->fragmented();
+        $orderitems = Orderitem::where('order_id',$id)->where('user_id',Auth::id())->get();
+        View::share('orderitems',$orderitems);
+        return view('templates.acount.acount-orderitems');
     }
 }

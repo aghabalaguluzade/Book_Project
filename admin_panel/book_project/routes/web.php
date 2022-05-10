@@ -74,6 +74,8 @@ Route::prefix('hesab')->group(function() {
     Route::get('/hesab-redaktəsi',[EditAcountController::class, "EditAcountIndex"])->name("EditAcountIndex");
     Route::post('/hesab-redaktəsi',[EditAcountController::class, "EditAcountPost"])->name("EditAcountPost");
     Route::get('/sifarişlərim',[EditAcountController::class, "Orders"])->name("Orders");
+    Route::get('/sifarişlər-siyahısı/{id}',[EditAcountController::class, "Orderitems"])->name("Orderitems");
+
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
@@ -100,11 +102,9 @@ Route::prefix('settings')->group(function() {
 
 Route::prefix('features')->group(function() {
 
-    Route::get('/features_list',[FeatureSectionIndex::class, "FeatureSectionIndex"])->name("FeatureSectionIndex");
+    // Route::get('/features_add',[FeatureSectionAdd::class, "FeatureSectionIndex"])->name("FeatureSectionIndex");
     Route::view('/features_add','feature_section.feature_add')->name("FeatureSectionAdd");
     Route::post('/features_add',[FeatureSectionAdd::class, "FeatureSectionAddPost"])->name("FeatureSectionAddPost");
-    Route::get('/features_edit/{id}',[FeatureSectionEdit::class, "FeatureSectionEdit"])->name("FeatureSectionEdit");
-    Route::post('/features_edit/{id}',[FeatureSectionEdit::class, "FeatureSectionEditPost"])->name("FeatureSectionEditPost");
 
 });
 

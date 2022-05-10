@@ -105,9 +105,6 @@
 @endsection
 @section('head')
 <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
-<style>
-
-</style>
 @endsection
 @section('footer')
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
