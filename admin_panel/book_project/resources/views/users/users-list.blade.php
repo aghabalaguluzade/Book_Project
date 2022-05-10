@@ -1,12 +1,12 @@
 @extends('layouts.master')
-@section('title','Kitablar Siyahısı')
+@section('title','istifadəçilərin Siyahısı')
 @section('content')
 @include('widget.breadcrumb')
 
 <div class="card">
   @include('settings.errors')
     <div class="card-header">
-      <h3 class="card-title">Kitablar Siyahısı</h3>
+      <h3 class="card-title">istifadəçilərin Siyahısı</h3>
     </div>
     <div class="card-body">
       <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">

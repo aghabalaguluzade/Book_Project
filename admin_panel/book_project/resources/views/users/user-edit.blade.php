@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','Kitab Redaktə Et')
+@section('title','istifadəçiləri Redaktə Et')
 @section('content')
 @include('widget.breadcrumb')
 
@@ -9,7 +9,7 @@
           <div class="col-md-10">
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Kitab Redaktə Et</h3>
+                <h3 class="card-title">istifadəçiləri Redaktə Et</h3>
               </div>
               @include('settings.errors')
               <form action="{{ route('UsersEditPost', $users->id) }}" method="POST" enctype="multipart/form-data">

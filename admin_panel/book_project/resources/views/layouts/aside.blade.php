@@ -305,15 +305,51 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('UsersListIndex') }}" class="nav-link @if(Request::segment(3) == "users-list") active @endif" href="{{ route('UsersListIndex') }}">
-                  <i class="fas fa-user"></i>
-                  <p>Siyahı</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="{{ route('RolesAddIndex') }}" class="nav-link @if(Request::segment(3) == "roles-add") active @endif" href="{{ route('RolesAddIndex') }}">
                   <i class="fas fa-user"></i>
                   <p>Əlavə Et</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item @if(Request::segment(2) == "orders") menu-open @endif">
+            <a href="" class="nav-link @if(Request::segment(2) == "orders") active @endif">
+              <i class="fas fa-user-friends"></i>
+              <p>
+                Sifarişlər
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('AllOrdersIndex') }}" class="nav-link @if(Request::segment(3) == "all-orders-list") active @endif" href="{{ route('AllOrdersIndex') }}">
+                  <i class="fas fa-user"></i>
+                  <p>Bütün Sifarişlər</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('AcceptOrdersIndex') }}" class="nav-link @if(Request::segment(3) == "accept-orders-list") active @endif" href="{{ route('AcceptOrdersIndex') }}">
+                  <i class="fas fa-user"></i>
+                  <p>Qəbul edilmiş Sifarişlər</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('CancelOrdersIndex') }}" class="nav-link @if(Request::segment(3) == "cancel-orders-list") active @endif" href="{{ route('CancelOrdersIndex') }}">
+                  <i class="fas fa-user"></i>
+                  <p>Rədd edilmiş Sifarişlər</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('ShippingOrdersIndex') }}" class="nav-link @if(Request::segment(3) == "shipping-orders-list") active @endif" href="{{ route('ShippingOrdersIndex') }}">
+                  <i class="fas fa-user"></i>
+                  <p>Göndərilmiş Sifarişlər</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('CompleteOrdersIndex') }}" class="nav-link @if(Request::segment(3) == "complete-orders-list") active @endif" href="{{ route('CompleteOrdersIndex') }}">
+                  <i class="fas fa-user"></i>
+                  <p>Tamamlanmış Sifarişlər</p>
                 </a>
               </li>
             </ul>

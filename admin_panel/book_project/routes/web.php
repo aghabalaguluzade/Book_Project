@@ -21,6 +21,7 @@ use App\Http\Controllers\FeatureSection\FeatureSectionAdd;
 use App\Http\Controllers\FeatureSection\FeatureSectionEdit;
 use App\Http\Controllers\FeatureSection\FeatureSectionIndex;
 use App\Http\Controllers\generalController\generalController;
+use App\Http\Controllers\OrderController\Adminpanel\ListOrderController;
 use App\Http\Controllers\OrderController\OrderAddController;
 use App\Http\Controllers\OrderController\OrderListController;
 use App\Http\Controllers\PartnersController\addPartnerController;
@@ -200,5 +201,22 @@ Route::prefix('roles')->group(function() {
     Route::post('/roles-add',[RolesAddController::class, "RolesAddPost"])->name("RolesAddPost");
 
 });
+
+Route::prefix('orders')->group(function() {
+
+    Route::get('/all-orders-list',[ListOrderController::class, "AllOrdersIndex"])->name("AllOrdersIndex");
+    Route::get('/all-orders-edit/{id}',[ListOrderController::class, "AllOrdersEdit"])->name("AllOrdersEdit");
+    Route::post('/all-orders-edit/{id}',[ListOrderController::class, "AllOrdersEditPost"])->name("AllOrdersEditPost");
+
+    Route::get('/accept-orders-list',[ListOrderController::class, "AcceptOrdersIndex"])->name("AcceptOrdersIndex");
+
+    Route::get('/cancel-orders-list',[ListOrderController::class, "CancelOrdersIndex"])->name("CancelOrdersIndex");
+
+    Route::get('/shipping-orders-list',[ListOrderController::class, "ShippingOrdersIndex"])->name("ShippingOrdersIndex");
+
+    Route::get('/complete-orders-list',[ListOrderController::class, "CompleteOrdersIndex"])->name("CompleteOrdersIndex");
+
+});
+
 });
 });
