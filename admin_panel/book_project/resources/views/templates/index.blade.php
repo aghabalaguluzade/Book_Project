@@ -1307,7 +1307,7 @@ responsive:{
 									<div class="item-inner">
 						<div class="testimonial-caption">
 															<div class="testimonial-box">																							
-								<a href="">{{ $review->review }}</a>
+								<a href="{{ route('BooksProduct',$review->ReviewBooks($review->books_id)->slug) }}">{{ $review->review }}</a>
 							</div>
 							<p class="testimonial-author">{{ $review->name }}</p>
 						</div>

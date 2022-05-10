@@ -10,4 +10,8 @@ class Review extends Model
     use HasFactory;
     protected $table = "review";
     protected $guarded = [];
+
+    public function ReviewBooks($id) {
+        return Books::find($id) ?? null;
+    }
 }
