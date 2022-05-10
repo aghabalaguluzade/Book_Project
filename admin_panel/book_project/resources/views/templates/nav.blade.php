@@ -15,7 +15,7 @@
                       </div>
                   </div>
               </div>
-              <div class="mt-2" style="width: 30px height: 35px !important; color:#fff;"><img src="{{ Auth::user()->img }}" alt="{{ Auth::user()->name }}" style="width:24px; height:24px;  border-radius: 50%;"> {{ Auth::user()->name }}</div>	
+              <div class="mt-2" style="width: 30px height: 35px !important; color:#fff;"><img src="{{ asset(Auth::user()->img) }}" alt="{{ Auth::user()->name }}" style="width:24px; height:24px;  border-radius: 50%;"> {{ Auth::user()->name }}</div>	
           </div>
           
       </div>

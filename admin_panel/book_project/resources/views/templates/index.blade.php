@@ -1377,7 +1377,7 @@ responsive:{
 		</li>
 											  <li>
 			<a data-toggle="pill" href="#tab-6101">
-				<span>New products</span>
+				<span>Ən Çox Satılan Məhsullar</span>
 			</a>
 		</li>
 											  <li>
@@ -1460,9 +1460,12 @@ responsive:{
 	
 			{{-- İkinci təbəqə --}}
 
-		{{-- <div class="tab-container-610  owl-carousel owl-theme  tab-pane tab-product-container  fade " id="tab-6101">		
+		<div class="tab-container-610  owl-carousel owl-theme  tab-pane tab-product-container  fade " id="tab-6101">		
 	
 							<!-- Grid -->
+						
+			@foreach ($best_sellings as $item)
+				
 	
 			<div class="row_items ">
 								
@@ -1472,15 +1475,15 @@ responsive:{
 				<div class="item-inner">
 					<div class="caption-top">
 															<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=10">Sony</a>
+							<a href="">{{ $item->Writers($item->writer_id)->writer_name }}</a>
 						</p>
-															<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=189">Beats Solo3 Wireless  On-Ear Headphones 2</a></h4>
+															<h4 class="product-name"><a href="{{ route('BooksProduct',$item->slug) }}">{{ $item->books_name }}</a></h4>
 						
 					</div>
 					<div class="box-border">
 						<div class="image images-container">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=189" class="product-image">
-																			<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/16-600x600.jpg" alt="Beats Solo3 Wireless  On-Ear Headphones 2" title="Beats Solo3 Wireless  On-Ear Headphones 2" class="img-responsive " />
+							<a href="{{ route('BooksProduct',$item->slug) }}" class="product-image">
+																			<img src="{{ asset($item->books_img) }}" alt="{{ $item->books_name }}" title="{{ $item->books_name }}" class="img-responsive " />
 							</a>
 							<div class="box-label">	
 																			
@@ -1488,12 +1491,15 @@ responsive:{
 							</div>
 																		
 								<div class="action-links">
-																																				<button class="button btn-cart" type="button"  title="Add to Cart" onclick="cart.add('189');"><span>Add to Cart</span></button>
-																																		
-																						<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('189');"><span>Add to Wish List</span></button>
-																					
-																						<button class="button btn-compare" type="button"  title="Compare this Product" onclick="compare.add('189');"><span>Compare this Product</span></button>
-																																																<button class="button btn-quickview" type="button"  title="Quick View" onclick="ocquickview.ajaxView('http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=189')"><span>Quick View</span></button>
+									<form action="{{ route('ShopCartAdd',$item->id) }}" method="POST">
+										@csrf
+										<div class="action-links">
+										<input type="hidden" name="quantity" value="1" />
+										<button type="submit" class="button btn-cart" title="Səbətə Əlavə Et"><span>Səbətə Əlavə Et</span></button>												
+										<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('52');"><span>Add to Wish List</span></button>																																	
+									</div>	
+									</form>	
+																																																
 																																	</div>
 																	
 						</div><!-- image -->
@@ -1506,7 +1512,7 @@ responsive:{
 								</div>	
 																															<div class="price-box">
 									<label>Price:</label>
-																						<p class="regular-price"><span class="price">$1,000.00</span></p>
+																						<p class="regular-price"><span class="price">{{ $item->price }} AZN</span></p>
 																																	</div>
 																																																																											
 							</div>
@@ -1517,7 +1523,8 @@ responsive:{
 		</div><!-- product-thumb -->
 							</div><!-- product-layout -->
 					</div>
-			</div> --}}
+					@endforeach
+			</div>
 	
 	
 </div>
@@ -1665,7 +1672,7 @@ if(count == 1) {
 							<p class="manufacture-product">
 							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=10">{{ $fiction->Writers($fiction->writer_id)->writer_name }}</a>
 							</p>
-							<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=189">
+							<h4 class="product-name"><a href="">
 								@foreach ($fiction->child(26) as $a)
 									{{ $a->category_name }}
 								@endforeach

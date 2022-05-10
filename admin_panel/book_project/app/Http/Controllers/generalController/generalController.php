@@ -9,12 +9,15 @@ use App\Models\Books;
 use App\Models\Category;
 use App\Models\FeatureSection;
 use App\Models\NewsletterSubscribe;
+use App\Models\Order;
+use App\Models\Orderitem;
 use App\Models\Partners;
 use App\Models\Review;
 use App\Models\Settings;
 use App\Models\ShopCart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 
 class generalController extends Controller
@@ -42,13 +45,21 @@ class generalController extends Controller
         $reviews = Review::inRandomOrder()->orderBy('created_at','desc')->get();
         $fictions = Books::all();
         $features = FeatureSection::all();
+        // $best_selling = Order::with('products')->get();
+        $items = DB::table('orderitem')->select('books_id', DB::raw('COUNT(books_id) as count'))->groupBy('books_id')->orderBy("count","desc")->get();
+        $product_ids = [];
+        foreach($items as $item) {
+            array_push($product_ids, $item->books_id);
+        }
+        $best_sellings = Books::whereIn('id',$product_ids)->get();
         View::share([
             'banners' => $banners,
             'blogs' => $blogs,
             'books' => $books,
             'reviews' => $reviews,
             'fictions' => $fictions,
-            'features' => $features
+            'features' => $features,
+            'best_sellings' => $best_sellings
         ]);
         return view('templates.index');
     }
