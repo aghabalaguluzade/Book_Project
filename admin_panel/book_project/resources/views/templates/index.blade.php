@@ -1532,7 +1532,7 @@ responsive:{
 	
 				<!-- Grid -->
 			
-@foreach ($best_sellings as $item)
+@foreach ($best_rated as $rated)
 	
 
 <div class="row_items ">
@@ -1543,15 +1543,15 @@ responsive:{
 	<div class="item-inner">
 		<div class="caption-top">
 												<p class="manufacture-product">
-				<a href="">{{ $item->Writers($item->writer_id)->writer_name }}</a>
+				<a href="">{{ $rated->Writers($item->writer_id)->writer_name }}</a>
 			</p>
-												<h4 class="product-name"><a href="{{ route('BooksProduct',$item->slug) }}">{{ $item->books_name }}</a></h4>
+												<h4 class="product-name"><a href="{{ route('BooksProduct',$rated->slug) }}">{{ $rated->books_name }}</a></h4>
 			
 		</div>
 		<div class="box-border">
 			<div class="image images-container">
-				<a href="{{ route('BooksProduct',$item->slug) }}" class="product-image">
-																<img src="{{ asset($item->books_img) }}" alt="{{ $item->books_name }}" title="{{ $item->books_name }}" class="img-responsive " />
+				<a href="{{ route('BooksProduct',$rated->slug) }}" class="product-image">
+																<img src="{{ asset($rated->books_img) }}" alt="{{ $rated->books_name }}" title="{{ $rated->books_name }}" class="img-responsive " />
 				</a>
 				<div class="box-label">	
 																
@@ -1559,7 +1559,7 @@ responsive:{
 				</div>
 															
 					<div class="action-links">
-						<form action="{{ route('ShopCartAdd',$item->id) }}" method="POST">
+						<form action="{{ route('ShopCartAdd',$rated->id) }}" method="POST">
 							@csrf
 							<div class="action-links">
 							<input type="hidden" name="quantity" value="1" />
@@ -1580,7 +1580,7 @@ responsive:{
 					</div>	
 																												<div class="price-box">
 						<label>Price:</label>
-																			<p class="regular-price"><span class="price">{{ $item->price }} AZN</span></p>
+																			<p class="regular-price"><span class="price">{{ $rated->price }} AZN</span></p>
 																														</div>
 																																																																								
 				</div>

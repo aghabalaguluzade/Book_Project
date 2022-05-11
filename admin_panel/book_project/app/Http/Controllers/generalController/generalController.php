@@ -57,7 +57,6 @@ class generalController extends Controller
         $idsImplodedSellings = implode(',',array_fill(0,count($product_ids), '?'));
         
         $best_sellings = Books::whereIn('id',$product_ids)->orderByRaw("field(id,{$idsImplodedSellings})",$product_ids)->get();
-        return $best_sellings;
         // Best Rating 
         
         $items_rated = DB::table('review')->select('books_id', DB::raw('AVG(rating) as count'))->groupBy('books_id')->orderBy("count","desc")->get();
@@ -69,6 +68,7 @@ class generalController extends Controller
         $idsImploded = implode(',',array_fill(0,count($product_ids), '?'));
         
         $best_rated = Books::whereIn('id',$product_ids)->orderByRaw("field(id,{$idsImploded})",$product_ids)->get();
+        
         View::share([
             'banners' => $banners,
             'blogs' => $blogs,
