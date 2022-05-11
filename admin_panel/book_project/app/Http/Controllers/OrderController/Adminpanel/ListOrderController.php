@@ -29,6 +29,11 @@ class ListOrderController extends Controller
 
     }
 
+    public function NewOrdersIndex() {
+        $orders = Order::where('status','Yeni')->get();
+        return view('orders.new-orders-list', compact('orders',$orders));
+    }
+
     public function AcceptOrdersIndex() {
         $orders = Order::where('status','Qəbul edildi')->get();
         return view('orders.accept-orders-list', compact('orders',$orders));

@@ -5,14 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Blog extends Model
+class BlogViewCount extends Model
 {
     use HasFactory;
-    protected $table = "blog";
+    
+    protected $table = "view_count";
     protected $guarded = [];
-
-    public function scopeCreateBy($query) {
-        $query->orderBy('created_at','desc');
-    }
-
 }

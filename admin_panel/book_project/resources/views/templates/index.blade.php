@@ -440,7 +440,6 @@ if ($('#form-upload input[name=\'file\']').val() != '') {
 <div class="tt_product_module multi-rows list-module2" id="product_module703">
 <div class="module-title">
 
-	  <h2>Best Sellers</h2>
 		  
 </div>
 <div class="box-style">
@@ -453,34 +452,7 @@ if ($('#form-upload input[name=\'file\']').val() != '') {
 
 <div class="product-layout list-style">
 		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=56" class="product-image">
-							<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/11-600x600.jpg" alt="Koss KPH7 Lightweight  Portable Headphone" title="Koss KPH7 Lightweight  Portable Headphone" class="img-responsive" />
-						</a>				  
-						<div class="box-label">
-						</div>	
-					</div>
-					<div class="caption">
-						<div class="inner">
-							<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-							</p>
-								<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=56">Koss KPH7 Lightweight  Portable Headphone</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-								<div class="rating2">rating</div>																																																																																						</div>
-							</div>												
-								<div class="price-box">
-								<label>Price:</label>
-									<p class="special-price"><span class="price">$70.00</span></p>
-									<p class="old-price"><span class="price">$75.00</span></p>						  
-							</div>
-						</div>	
-					</div>
-				</div>
-			</div>
+			
 		</div>
 	</div>
 
@@ -1543,7 +1515,7 @@ responsive:{
 	<div class="item-inner">
 		<div class="caption-top">
 												<p class="manufacture-product">
-				<a href="">{{ $rated->Writers($item->writer_id)->writer_name }}</a>
+				<a href="">{{ $rated->Writers($rated->writer_id)->writer_name }}</a>
 			</p>
 												<h4 class="product-name"><a href="{{ route('BooksProduct',$rated->slug) }}">{{ $rated->books_name }}</a></h4>
 			
@@ -1716,12 +1688,16 @@ if(count == 1) {
 <div class="owl-container">
 <div class="tt-product ">
 <div class="tab-content">
-  
-						{{--agabala  --}}
 	<div class="tab-container-811  owl-carousel owl-theme  tab-pane tab-product-container  fade " id="tab-8110">		
 	
 							<!-- Grid -->
-							@foreach ($fictions as $fiction)
+							{{-- @foreach ($categories as $category)
+							@foreach ($category->children as $children)
+								
+									{{ $children->categoryitems($children->id)->books_name }}
+								
+							@endforeach
+							@endforeach --}}
 			<!-- List -->
 			<div class="row_items ">
 		<div class="product-layout list-style ">
@@ -1738,12 +1714,10 @@ if(count == 1) {
 					<div class="caption">
 						<div class="inner">
 							<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=10">{{ $fiction->Writers($fiction->writer_id)->writer_name }}</a>
+							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=10"></a>
 							</p>
 							<h4 class="product-name"><a href="">
-								@foreach ($fiction->child(26) as $a)
-									{{ $a->category_name }}
-								@endforeach
+								
 							</a></h4> 
 							<div class="ratings">
 							<div class="rating-box">
@@ -1760,7 +1734,7 @@ if(count == 1) {
 		</div><!-- product-thumb -->
 							</div><!-- product-layout -->
 					</div>	 
-					@endforeach 
+					{{-- @endforeach  --}}
 			</div>
 	
 		<div class="tab-container-811  owl-carousel owl-theme  tab-pane tab-product-container  fade " id="tab-8111">		

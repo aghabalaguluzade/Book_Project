@@ -14,4 +14,8 @@ class Review extends Model
     public function ReviewBooks($id) {
         return Books::find($id) ?? null;
     }
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }

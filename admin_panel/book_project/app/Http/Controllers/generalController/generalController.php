@@ -10,11 +10,11 @@ use App\Models\Category;
 use App\Models\FeatureSection;
 use App\Models\NewsletterSubscribe;
 use App\Models\Order;
-use App\Models\Orderitem;
 use App\Models\Partners;
 use App\Models\Review;
 use App\Models\Settings;
 use App\Models\ShopCart;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -37,6 +37,22 @@ class generalController extends Controller
         ]);
     }
 
+    public function index() {
+        $orders = Order::where('status','Yeni')->get();
+        $users = User::all();
+        $books = Books::all();
+        $reviews = Review::all();
+        $blogs = Blog::all();
+        View::share([
+            'orders' => $orders,
+            'users' => $users,
+            'books' => $books,
+            'reviews' => $reviews,
+            'blogs' => $blogs
+        ]);
+        return view('index');
+    }
+
     public function templates() {
         $this->fragmented();
         $banners = Banner::all();
@@ -57,6 +73,8 @@ class generalController extends Controller
         $idsImplodedSellings = implode(',',array_fill(0,count($product_ids), '?'));
         
         $best_sellings = Books::whereIn('id',$product_ids)->orderByRaw("field(id,{$idsImplodedSellings})",$product_ids)->get();
+
+        
         // Best Rating 
         
         $items_rated = DB::table('review')->select('books_id', DB::raw('AVG(rating) as count'))->groupBy('books_id')->orderBy("count","desc")->get();
@@ -68,7 +86,7 @@ class generalController extends Controller
         $idsImploded = implode(',',array_fill(0,count($product_ids), '?'));
         
         $best_rated = Books::whereIn('id',$product_ids)->orderByRaw("field(id,{$idsImploded})",$product_ids)->get();
-        
+
         View::share([
             'banners' => $banners,
             'blogs' => $blogs,

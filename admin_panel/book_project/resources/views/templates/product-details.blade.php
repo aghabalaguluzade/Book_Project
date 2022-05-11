@@ -127,7 +127,9 @@
 							<div class="comment-block-wrapper mb--50" style="margin-bottom:20px"  id="posts">
 								<div class="single-comment" style="border: 0.5px solid silver">	
 									<div class="comment-text" style="margin-left: 20px">
-										<h4 class="author"><a href="#">{{ $review->name }}</a></h4>
+										{{-- <img src="{{ asset($review->User($review->user_id)->img) }}" alt="{{ $review->User($review->user_id)->name }}"> --}}
+										<img src="{{ asset($review->user->img) }}" alt="{{ $review->user->name }}" style="width:24px; height:24px;  border-radius: 50%;" />
+										<h4 class="author">{{ $review->name }}</h4>
 										<span class="time">{{ $review->created_at->format('d M Y H:m:s') }}</span>
 										<p>{{ $review->review }}</p>
 									</div>
@@ -135,10 +137,7 @@
 							</div>
 
 							@endforeach
-							<button type="submit" class="clickMe">Show More</button>
-
-							
-
+						
 								<div class="form-group required">
 									<div class="col-sm-12">
 										<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -153,11 +152,17 @@
 												<div class="modal-body">
 												  <form action="{{ route('BooksReviewPost') }}" method="POST">
 													<input type="hidden" name="books_id" id="books_id" value="{{ $slug->id }}" />
+													<input type="hidden" name="user_id" id="user_id" value="{{ Auth::id() }}" />
 													@csrf
 													<div class="form-group required">
 														<div class="col-sm-12">
 															<label class="control-label" for="input-name">Ad</label>
-															<input type="text" name="name" id="name" class="form-control">
+															@auth
+																<input type="text" name="name" id="name" class="form-control" value="{{ Auth::user()->name }}" />	
+															@endauth
+															@guest
+																<input type="text" name="name" id="name" class="form-control" />
+															@endguest
 														</div>
 													</div>
 													<div class="form-group required">

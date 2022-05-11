@@ -57,14 +57,15 @@ class BooksTemplateController extends Controller
         $request->validate([
             'name' => 'required|max:30',
             'review' => 'required',
-            'rating' => 'required'    
+            'rating' => 'required'
         ]);
 
         $review = Review::create([
             'books_id' =>  $request->books_id,
             'name' => $request->name,
             'review' => $request->review,
-            'rating' => $request->rating
+            'rating' => $request->rating,
+            'user_id' => $request->user_id
         ]);
 
         return redirect()->back();

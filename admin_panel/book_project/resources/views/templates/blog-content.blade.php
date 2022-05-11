@@ -22,7 +22,7 @@
             <div class="col-lg-9 order-lg-2 mb--40 mb-lg--0">
 
                 @foreach($blogs as $blog)
-
+                
                 <div class="blog-post post-details mb--50">
                     <div class="blog-image">
                         <img src="{{ asset($blog->img) }}" alt="{{ $blog->title }}">
@@ -42,6 +42,8 @@
                                     <span class="text-gray">Yayımlanıb : </span>
                                     {{ $blog->created_at->format('d M Y') }}
                                 </span>
+                                <span class="post-separator">|</span>
+                                <span class="text-gray">Baxılıb: {{ $blog->view_count }}</span>
                             </div>
                         </header>
                         <article>

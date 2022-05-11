@@ -329,6 +329,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="{{ route('NewOrdersIndex') }}" class="nav-link @if(Request::segment(3) == "new-orders-list") active @endif" href="{{ route('NewOrdersIndex') }}">
+                  <i class="fas fa-user"></i>
+                  <p>Yeni Sifarişlər</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="{{ route('AcceptOrdersIndex') }}" class="nav-link @if(Request::segment(3) == "accept-orders-list") active @endif" href="{{ route('AcceptOrdersIndex') }}">
                   <i class="fas fa-user"></i>
                   <p>Qəbul edilmiş Sifarişlər</p>

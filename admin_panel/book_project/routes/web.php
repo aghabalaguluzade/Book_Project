@@ -18,8 +18,6 @@ use App\Http\Controllers\BooksController\BooksTemplateController;
 use App\Http\Controllers\CategoryController\CategoryAddController;
 use App\Http\Controllers\CategoryController\CategoryListController;
 use App\Http\Controllers\FeatureSection\FeatureSectionAdd;
-use App\Http\Controllers\FeatureSection\FeatureSectionEdit;
-use App\Http\Controllers\FeatureSection\FeatureSectionIndex;
 use App\Http\Controllers\generalController\generalController;
 use App\Http\Controllers\OrderController\Adminpanel\ListOrderController;
 use App\Http\Controllers\OrderController\OrderAddController;
@@ -83,7 +81,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 Route::prefix('admin')->group(function() {
 
-    Route::view('/','index')->name('index');
+    // Route::view('/','index')->name('index');
+    Route::get('/',[generalController::class, "index"])->name("index");
 
 Route::prefix('settings')->group(function() {
 
@@ -207,6 +206,8 @@ Route::prefix('orders')->group(function() {
     Route::get('/all-orders-list',[ListOrderController::class, "AllOrdersIndex"])->name("AllOrdersIndex");
     Route::get('/all-orders-edit/{id}',[ListOrderController::class, "AllOrdersEdit"])->name("AllOrdersEdit");
     Route::post('/all-orders-edit/{id}',[ListOrderController::class, "AllOrdersEditPost"])->name("AllOrdersEditPost");
+
+    Route::get('/new-orders-list',[ListOrderController::class, "NewOrdersIndex"])->name("NewOrdersIndex");
 
     Route::get('/accept-orders-list',[ListOrderController::class, "AcceptOrdersIndex"])->name("AcceptOrdersIndex");
 
