@@ -45,13 +45,30 @@ class generalController extends Controller
         $reviews = Review::inRandomOrder()->orderBy('created_at','desc')->get();
         $fictions = Books::all();
         $features = FeatureSection::all();
-        // $best_selling = Order::with('products')->get();
+        
+        //Best Selling
+
         $items = DB::table('orderitem')->select('books_id', DB::raw('COUNT(books_id) as count'))->groupBy('books_id')->orderBy("count","desc")->get();
         $product_ids = [];
         foreach($items as $item) {
             array_push($product_ids, $item->books_id);
         }
-        $best_sellings = Books::whereIn('id',$product_ids)->get();
+
+        $idsImplodedSellings = implode(',',array_fill(0,count($product_ids), '?'));
+        
+        $best_sellings = Books::whereIn('id',$product_ids)->orderByRaw("field(id,{$idsImplodedSellings})",$product_ids)->get();
+        return $best_sellings;
+        // Best Rating 
+        
+        $items_rated = DB::table('review')->select('books_id', DB::raw('AVG(rating) as count'))->groupBy('books_id')->orderBy("count","desc")->get();
+        $product_ids = [];
+        foreach($items_rated as $item) {
+            array_push($product_ids, $item->books_id);
+        }
+
+        $idsImploded = implode(',',array_fill(0,count($product_ids), '?'));
+        
+        $best_rated = Books::whereIn('id',$product_ids)->orderByRaw("field(id,{$idsImploded})",$product_ids)->get();
         View::share([
             'banners' => $banners,
             'blogs' => $blogs,
@@ -59,7 +76,8 @@ class generalController extends Controller
             'reviews' => $reviews,
             'fictions' => $fictions,
             'features' => $features,
-            'best_sellings' => $best_sellings
+            'best_sellings' => $best_sellings,
+            'best_rated' => $best_rated
         ]);
         return view('templates.index');
     }

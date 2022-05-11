@@ -1377,12 +1377,12 @@ responsive:{
 		</li>
 											  <li>
 			<a data-toggle="pill" href="#tab-6101">
-				<span>Ən Çox Satılan Məhsullar</span>
+				<span>Çox Satılan Məhsullar</span>
 			</a>
 		</li>
 											  <li>
 			<a data-toggle="pill" href="#tab-6102">
-				<span>Most view products</span>
+				<span>Yüksək Qiymətləndirilən Məhsullar</span>
 			</a>
 		</li>
 										  </ul>
@@ -1457,7 +1457,6 @@ responsive:{
 @endforeach
 
 </div>
-	
 			{{-- İkinci təbəqə --}}
 
 		<div class="tab-container-610  owl-carousel owl-theme  tab-pane tab-product-container  fade " id="tab-6101">		
@@ -1487,7 +1486,7 @@ responsive:{
 							</a>
 							<div class="box-label">	
 																			
-								
+							
 							</div>
 																		
 								<div class="action-links">
@@ -1525,6 +1524,75 @@ responsive:{
 					</div>
 					@endforeach
 			</div>
+
+
+			{{-- Üçüncü təbəqə --}}
+
+			<div class="tab-container-610  owl-carousel owl-theme  tab-pane tab-product-container  fade " id="tab-6102">		
+	
+				<!-- Grid -->
+			
+@foreach ($best_sellings as $item)
+	
+
+<div class="row_items ">
+					
+<div class="product-layout grid-style ">
+<div class="product-thumb transition">
+<div class="item">
+	<div class="item-inner">
+		<div class="caption-top">
+												<p class="manufacture-product">
+				<a href="">{{ $item->Writers($item->writer_id)->writer_name }}</a>
+			</p>
+												<h4 class="product-name"><a href="{{ route('BooksProduct',$item->slug) }}">{{ $item->books_name }}</a></h4>
+			
+		</div>
+		<div class="box-border">
+			<div class="image images-container">
+				<a href="{{ route('BooksProduct',$item->slug) }}" class="product-image">
+																<img src="{{ asset($item->books_img) }}" alt="{{ $item->books_name }}" title="{{ $item->books_name }}" class="img-responsive " />
+				</a>
+				<div class="box-label">	
+																
+				
+				</div>
+															
+					<div class="action-links">
+						<form action="{{ route('ShopCartAdd',$item->id) }}" method="POST">
+							@csrf
+							<div class="action-links">
+							<input type="hidden" name="quantity" value="1" />
+							<button type="submit" class="button btn-cart" title="Səbətə Əlavə Et"><span>Səbətə Əlavə Et</span></button>												
+							<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('52');"><span>Add to Wish List</span></button>																																	
+						</div>	
+						</form>	
+																																													
+																														</div>
+														
+			</div><!-- image -->
+			<div class="caption">
+				<div class="inner">
+					<div class="ratings">
+						<div class="rating-box">
+																																													<div class="rating0">rating</div>
+																																																																																																																																																												</div>
+					</div>	
+																												<div class="price-box">
+						<label>Price:</label>
+																			<p class="regular-price"><span class="price">{{ $item->price }} AZN</span></p>
+																														</div>
+																																																																								
+				</div>
+			</div><!-- caption -->
+		</div>
+	</div>
+</div>
+</div><!-- product-thumb -->
+				</div><!-- product-layout -->
+		</div>
+		@endforeach
+</div>
 	
 	
 </div>
