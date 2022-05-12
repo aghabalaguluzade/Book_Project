@@ -87,6 +87,8 @@ class generalController extends Controller
         
         $best_rated = Books::whereIn('id',$product_ids)->orderByRaw("field(id,{$idsImploded})",$product_ids)->get();
 
+        $most_reads = Blog::get()->sortByDesc('view_count')->take(5);
+
         View::share([
             'banners' => $banners,
             'blogs' => $blogs,
@@ -95,7 +97,8 @@ class generalController extends Controller
             'fictions' => $fictions,
             'features' => $features,
             'best_sellings' => $best_sellings,
-            'best_rated' => $best_rated
+            'best_rated' => $best_rated,
+            'most_reads' => $most_reads
         ]);
         return view('templates.index');
     }

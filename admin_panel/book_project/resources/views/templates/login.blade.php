@@ -11,6 +11,18 @@
       </div>
   </div>
 
+  @php
+    if(isset($_COOKIE['login_email']) && isset($_COOKIE['login_password'])) {
+      $login_email = $_COOKIE['login_email'];
+      $login_password = $_COOKIE['login_password'];
+      $remember = "checked='checked'";
+    }else {
+      $login_email = "";
+      $login_password = "";
+      $remember = "";
+    }
+  @endphp
+
 <div id="account-login" class="container">
     <div class="row">
     <div id="content" class="col-sm-12">
@@ -31,18 +43,17 @@
             @csrf
             <div class="form-group">
               <label class="control-label" for="input-email">E-poçt</label>
-              <input type="email" name="email" placeholder="E-poçtunuzu daxil edin..." id="input-email" class="form-control" required="required" />
+              <input type="email" name="email" placeholder="E-poçtunuzu daxil edin..." id="input-email" class="form-control" required="required" value="{{ $login_email }}" />
             </div>
             <div class="form-group">
               <label class="control-label" for="input-password">Şifrəniz</label>
-              <input type="password" name="password" placeholder="Şifrənizi daxil edin..." id="input-password" class="form-control" required="required" />
-              <a href="">Şifrəmi unutdum...</a>
+              <input type="password" name="password" placeholder="Şifrənizi daxil edin..." id="input-password" class="form-control" required="required" value="{{ $login_password }}" />
             </div>
             <div class="form-group">
-              <input type="checkbox" id="remember_token" name="remember_token" class="mr-2"  />
+              <input type="checkbox" id="remember_token" name="remember_token" class="mr-2" {{ $remember }} />
               <label for="remember_token">Məni xatırla</label>
             </div>
-              <button class="btn btn-primary">Giriş et</button>
+              <button class="btn btn-success">Giriş et</button>
             </form>
         </div>
       </div>

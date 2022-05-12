@@ -36,7 +36,15 @@ class LoginUserController extends Controller
             'password' => 'required'
         ]);
 
-        if(Auth::attempt($request->only(['email', 'password']),$request->remember_token)) {
+        if(Auth::attempt($request->only(['email', 'password'],$request->remember_token))) {
+            if($request->remember_token) {
+                setcookie('login_email',$request->email,time()+60*60*24*100);
+                setcookie('login_password',$request->password,time()+60*60*24*100);
+            }else {
+                setcookie('login_email',$request->email,100);
+                setcookie('login_password',$request->password,100);
+            }
+
             $request->session()->regenerate();
             return redirect()->intended('/ana-səhifə');   
         }

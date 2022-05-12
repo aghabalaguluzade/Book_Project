@@ -2606,7 +2606,42 @@ if(count == 1) {
 
 </div>
 </div>
-</div>
+<div class="blog-title module-title">
+	<h2>Ən Çox Oxunan Bloqlar</h2>
+	</div>
+			<div class="owl-container">
+	<div class="articles-container owl-carousel owl-theme">
+	
+		{{-- Bloq yeri --}}
+	
+		@foreach ($most_reads as $most_read)
+			<div class="row_items">
+				<div class="articles-inner ">
+				<div class="articles-image">
+					<a href="{{ route('BloqContent',$most_read->slug) }}"><img src="{{ asset($most_read->img) }}" alt="{{ $most_read->title }}"/><span class="icon-view"></span></a>
+				</div>	
+				<div class="aritcles-content">
+					<div class="content-inner">
+						<div class="box-name">	
+							<p class="date-time-post">
+								<span class="date-post">{{ $most_read->created_at->format('d') }}</span>
+								<span class="month-post">{{ $most_read->created_at->format('M') }}</span>
+							</p>
+							<a class="articles-name" href="{{ route('BloqContent',$most_read->slug) }}">{{ $most_read->title }}</a>
+						</div>
+						<p class="author-name">Yayımlayan <span>{{ $most_read->author }}</span></p>
+						<div class="articles-intro"><p>{!! Str::limit($most_read->contents, 80, '...') !!}</p></div>								
+						<a href="{{ route('BloqContent',$most_read->slug) }}" class="read-more">Davamını oxu</a>	
+					</div>
+				</div>
+			</div>
+			</div>
+	
+			@endforeach
+	
+	</div>
+	</div>
+	</div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
