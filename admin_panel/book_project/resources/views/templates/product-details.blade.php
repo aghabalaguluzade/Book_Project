@@ -128,7 +128,8 @@
 								<div class="single-comment" style="border: 0.5px solid silver">	
 									<div class="comment-text" style="margin-left: 20px">
 										{{-- <img src="{{ asset($review->User($review->user_id)->img) }}" alt="{{ $review->User($review->user_id)->name }}"> --}}
-										<img src="{{ asset($review->user->img) }}" alt="{{ $review->user->name }}" style="width:24px; height:24px;  border-radius: 50%;" />
+										{{-- <img src="{{ asset($review->user->img) }}" alt="{{ $review->user->name }}" style="width:24px; height:24px;  border-radius: 50%;" /> --}}
+										{{-- <img src="{{ $review->user->img !== null ? asset($review->user->img) : asset('/') }}" alt="" /> --}}
 										<h4 class="author">{{ $review->name }}</h4>
 										<span class="time">{{ $review->created_at->format('d M Y H:m:s') }}</span>
 										<p>{{ $review->review }}</p>

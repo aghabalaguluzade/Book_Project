@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 05, 2022 at 12:26 AM
+-- Generation Time: May 13, 2022 at 12:18 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -34,6 +34,7 @@ CREATE TABLE `blog` (
   `img` varchar(255) NOT NULL,
   `author` varchar(255) NOT NULL,
   `slug` varchar(255) NOT NULL,
+  `view_count` int(11) NOT NULL,
   `status` enum('0','1') NOT NULL DEFAULT '0',
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
@@ -43,9 +44,9 @@ CREATE TABLE `blog` (
 -- Dumping data for table `blog`
 --
 
-INSERT INTO `blog` (`id`, `title`, `contents`, `img`, `author`, `slug`, `status`, `created_at`, `updated_at`) VALUES
-(6, 'BLOĞUN BAŞLIĞI Məni necə daha yaxşı bir satıcı etdi', '<p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue condimentum rhoncus. Praesent ornare tortor ac ante egestas hendrerit. Aliquam et metus pharetra, bibendum massa nec, fermentum odio. Nunc id leo ultrices, mollis ligula in, finibus tortor. Mauris eu dui ut lectus fermentum eleifend. Pellentesque faucibus sem ante, non malesuada odio varius nec. Suspendisse potenti.</p>', 'uploads/blog/blogun-basligi-meni-nece-daha-yaxsi-bir-satici-etdi.jpg', 'Quluzadə Ağabala', 'blogun-basligi-meni-nece-daha-yaxsi-bir-satici-etdi', '0', '2022-04-22 23:38:38', '2022-04-22 23:38:38'),
-(7, 'İnkişaf edən bir iş istəyirsiniz? BLOQ BAŞINA diqqət yetirin!', '<p>Aenean et tempor eros, vitae sollicitudin velit. Etiam varius enim nec quam tempor, sed efficitur ex ultrices. Phasellus pretium est vel dui vestibulum condimentum. Aenean nec suscipit nibh. Phasellus nec lacus id arcu facilisis elementum. Curabitur lobortis, elit ut elementum congue, erat ex bibendum odio, nec iaculis lacus sem non lorem. Duis suscipit metus ante, sed convallis quam posuere quis. Ut tincidunt eleifend odio, ac fringilla mi vehicula nec. Nunc vitae lacus eget lectus imperdiet tempus sed in dui. Nam molestie magna at risus consectetur, placerat suscipit justo dignissim. Sed vitae fringilla enim, nec ullamcorper arcu.</p>', 'uploads/blog/inkisaf-eden-bir-is-isteyirsiniz-bloq-basina-diqqet-yetirin.jpg', 'Quluzadə Ağabala', 'inkisaf-eden-bir-is-isteyirsiniz-bloq-basina-diqqet-yetirin', '0', '2022-04-22 23:41:17', '2022-04-22 23:41:17');
+INSERT INTO `blog` (`id`, `title`, `contents`, `img`, `author`, `slug`, `view_count`, `status`, `created_at`, `updated_at`) VALUES
+(6, 'BLOĞUN BAŞLIĞI Məni necə daha yaxşı bir satıcı etdi', '<p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue condimentum rhoncus. Praesent ornare tortor ac ante egestas hendrerit. Aliquam et metus pharetra, bibendum massa nec, fermentum odio. Nunc id leo ultrices, mollis ligula in, finibus tortor. Mauris eu dui ut lectus fermentum eleifend. Pellentesque faucibus sem ante, non malesuada odio varius nec. Suspendisse potenti.</p>', 'uploads/blog/blogun-basligi-meni-nece-daha-yaxsi-bir-satici-etdi.jpg', 'Quluzadə Ağabala', 'blogun-basligi-meni-nece-daha-yaxsi-bir-satici-etdi', 0, '0', '2022-04-22 23:38:38', '2022-04-22 23:38:38'),
+(7, 'İnkişaf edən bir iş istəyirsiniz? BLOQ BAŞINA diqqət yetirin!', '<p>Aenean et tempor eros, vitae sollicitudin velit. Etiam varius enim nec quam tempor, sed efficitur ex ultrices. Phasellus pretium est vel dui vestibulum condimentum. Aenean nec suscipit nibh. Phasellus nec lacus id arcu facilisis elementum. Curabitur lobortis, elit ut elementum congue, erat ex bibendum odio, nec iaculis lacus sem non lorem. Duis suscipit metus ante, sed convallis quam posuere quis. Ut tincidunt eleifend odio, ac fringilla mi vehicula nec. Nunc vitae lacus eget lectus imperdiet tempus sed in dui. Nam molestie magna at risus consectetur, placerat suscipit justo dignissim. Sed vitae fringilla enim, nec ullamcorper arcu.</p>', 'uploads/blog/inkisaf-eden-bir-is-isteyirsiniz-bloq-basina-diqqet-yetirin.jpg', 'Quluzadə Ağabala', 'inkisaf-eden-bir-is-isteyirsiniz-bloq-basina-diqqet-yetirin', 3, '0', '2022-04-22 23:41:17', '2022-05-13 01:57:56');
 
 -- --------------------------------------------------------
 
@@ -84,8 +85,8 @@ INSERT INTO `books` (`id`, `writer_id`, `category_id`, `books_name`, `books_desc
 (5, 9, 32, 'Birinci addım', 'Salam! Dost, bilmirəm bu oxuduğun ilk kitabımdır, ya artıq dəfələrlə həmsöhbət olmuşuq. Bil­mi­rəm məni nə dərəcədə yaxşı tanıyırsan. Sənin gö­zündə özün­­dənrazı və şöhrətpərəst bir ulduz, yox­sa sevdiyin, özü­­nə yaxın saydığın bir insanam? Bilmirəm, bu kitabı al­mısan, ya kimdənsə təsadüfən götürmüsən, ya da kitab dükanında açıb ilk cümlələri oxuyursan. Bilmirəm, ümumiyyətlə, kitab oxumaq həvəskarısan, yoxsa sənin gözündə bu boş bir şeydir. Bilmirəm... Amma sənə bir şeyi danışmaq istəyirəm. Bu aralar mənim həyatımda qəribə bir şey baş verdi. Bir anlıq geriyə çevrilib baxdım və qazandığım uğurları gördüm. Cəmi beşcə ilin içində o qədər irəliləyə bilmişdim ki, bu çox adam üçün təəccüblü də görünə bilərdi. 18 yaşımda olarkən arzu etdiyim yerə gəlib çatdığımı gördüm.', 'uploads/books/birinci-addim.png', 'birinci-addim', '8.40', NULL, NULL, 500, '625CA339E90FC', 256, '0', '2022-04-18 03:31:06', '2022-04-18 03:31:06'),
 (6, 9, 32, 'İkinci addım. Həqiqətin beş adı', 'Amma burada əsas məsələ var. “Gedəcəyiniz ünvan” – siz onu bilirsiniz, ona görə də oraya çata bilirsiniz. Yaxşı, bəs əgər eyni şərait olsa və siz hara gedəcəyinizi də bilmirsiniz. Kağızı itiribsiniz və ge­də­­cəyiniz stansiya haqda heç nə bilmirsiniz. Sizdə olan məlumat təkcə bu ünvan idi. Siz illərlə qatardan qatara tullanaraq, heç vaxt sizə lazım olan yerə çata bilməzsiniz. Belə ki, sizə nə lazımdır, hara lazımdır bilmirsiniz.', 'uploads/books/ikinci-addim-heqiqetin-bes-adi.jpg', 'ikinci-addim-heqiqetin-bes-adi', '9.99', NULL, NULL, 650, '625CA3BF2027B', 336, '0', '2022-04-18 03:33:19', '2022-04-18 03:33:19'),
 (7, 9, 32, 'Üçüncü Addım. Rəqəmsal meşə', 'Üçüncü Addım”ı bu gün oxuyub bitirdim. Yazdıqlarıma baxdım və başa düşdüm ki, bu qarışıq, ağır və inanılmaz kitabdan heç nə anlamaq olmur. Kvant fizikasını, Kemantika, Rasionalizm fəlsəfəsi, Astrofizika, Etologiya və Neyrofiziologiyanı, Dzen məktəbini bir araya sıxışdırmaq, 200 səhifədə tam anlatmaq mümkün olmadı. Bu kitab Üçüncü Addım deyil, Üçüncü Addıma doğru bir işarədir. Onu atmaq üçün isə siz özünüz daha dərindən və hər bir mövzunu ayrılıqda incələməlisiniz. Ümid edirəm ki, Rəqəmsal meşəyə bu alleqorik səyahət sizin yadınızda xoş bir xatirə olaraq qalacaq.\r\n\r\nP.S Kitabı bitirdikdən sonra “Üç Addım” trilogiyasını ye­nidən oxuyun. Yalnız belə dolğun bir nəticəyə gələ biləcəksiniz.', 'uploads/books/ucuncu-addim-reqemsal-mese.png', 'ucuncu-addim-reqemsal-mese', '9.99', NULL, NULL, 700, '625CA412D293E', 208, '0', '2022-04-18 03:34:42', '2022-04-18 03:34:42'),
-(8, 9, 32, 'A - roman', 'Bəziləri deyirdi ki, o heç vaxt yatmır. Bəziləri deyirdi ki, anası uşaq vaxtı onu zibil yeşiyinə atıb. Bəziləri deyirdi ki, o, bütün ölkələri gəzib və bütün sirlərdən xəbəri var. Kimsə düşünürdü ki, o bir adam deyil – bir neçə yerə bölünə bilir. Kimlərsə deyirdi ki, o peyğəmbərdi. Bəziləri isə sakitcə pıçıltı ilə deyirdilər: “O şeytandır” .', 'uploads/books/a-roman.png', 'a-roman', '5.49', NULL, NULL, 800, '625CA4586FCA0', 192, '0', '2022-04-18 03:35:52', '2022-04-18 03:35:52'),
-(9, 9, 32, 'Art və xaos', 'Mentalitet Nazirliyi xəbərdarlıq edir :\r\n\r\nEydenlə Xloe arasında olan hisslər \"Nə deyərlər?\"inizin sağlamlığına ziyandır.\r\n\r\n4 ilə yaxın susqunluqdan sonra Qaraqan (Elxan Zeynallı) yaşadığı və qarşılaşdığı həyatı \"Art və xaos\" kitabı ilə oxucularına çatdıracaq.', 'uploads/books/art-ve-xaos.jpg', 'art-ve-xaos', '13.00', NULL, NULL, 1000, '625CA4D9AEA66', 376, '0', '2022-04-18 03:38:01', '2022-04-18 03:38:01');
+(8, 9, 32, 'A - roman', 'Bəziləri deyirdi ki, o heç vaxt yatmır. Bəziləri deyirdi ki, anası uşaq vaxtı onu zibil yeşiyinə atıb. Bəziləri deyirdi ki, o, bütün ölkələri gəzib və bütün sirlərdən xəbəri var. Kimsə düşünürdü ki, o bir adam deyil – bir neçə yerə bölünə bilir. Kimlərsə deyirdi ki, o peyğəmbərdi. Bəziləri isə sakitcə pıçıltı ilə deyirdilər: “O şeytandır” .', 'uploads/books/a-roman.png', 'a-roman', '5.49', NULL, NULL, 798, '625CA4586FCA0', 192, '0', '2022-04-18 03:35:52', '2022-05-10 01:03:31'),
+(9, 9, 32, 'Art və xaos', 'Mentalitet Nazirliyi xəbərdarlıq edir :\r\n\r\nEydenlə Xloe arasında olan hisslər \"Nə deyərlər?\"inizin sağlamlığına ziyandır.\r\n\r\n4 ilə yaxın susqunluqdan sonra Qaraqan (Elxan Zeynallı) yaşadığı və qarşılaşdığı həyatı \"Art və xaos\" kitabı ilə oxucularına çatdıracaq.', 'uploads/books/art-ve-xaos.jpg', 'art-ve-xaos', '13.00', NULL, NULL, 0, '625CA4D9AEA66', 376, '0', '2022-04-18 03:38:01', '2022-05-10 01:03:30');
 
 -- --------------------------------------------------------
 
@@ -185,8 +186,14 @@ CREATE TABLE `failed_jobs` (
 
 CREATE TABLE `feature_section` (
   `id` int(11) UNSIGNED NOT NULL,
-  `feature_title` varchar(255) NOT NULL,
-  `feature_content` varchar(255) NOT NULL,
+  `feature_title1` varchar(255) NOT NULL,
+  `feature_content1` varchar(255) NOT NULL,
+  `feature_title2` varchar(255) NOT NULL,
+  `feature_content2` varchar(255) NOT NULL,
+  `feature_title3` varchar(255) NOT NULL,
+  `feature_content3` varchar(255) NOT NULL,
+  `feature_title4` varchar(255) NOT NULL,
+  `feature_content4` varchar(255) NOT NULL,
   `icon` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -194,11 +201,8 @@ CREATE TABLE `feature_section` (
 -- Dumping data for table `feature_section`
 --
 
-INSERT INTO `feature_section` (`id`, `feature_title`, `feature_content`, `icon`) VALUES
-(1, 'Pulsuz Çatdırılma', '500 manatdan yuxarı sifarişlər', ''),
-(2, 'Pulun Geri Qayıtması Zəmanəti', '100% Pulun geri qaytarılması', ''),
-(3, 'Nəğd Çatdırılma', 'Qapıda Ödəmə', NULL),
-(4, 'Kömək & Dəstək', 'Zəng edin bizə :', NULL);
+INSERT INTO `feature_section` (`id`, `feature_title1`, `feature_content1`, `feature_title2`, `feature_content2`, `feature_title3`, `feature_content3`, `feature_title4`, `feature_content4`, `icon`) VALUES
+(5, 'Pulun Geri Qayıtması Zəmanəti', '100% Pulun geri qaytarılması', 'Pulsuz Çatdırılma', '500 manatdan yuxarı sifarişlər', 'Nəğd Çatdırılma', 'Qapıda Ödəmə', 'Kömək & Dəstək', 'Zəng edin bizə :', NULL);
 
 -- --------------------------------------------------------
 
@@ -258,6 +262,63 @@ CREATE TABLE `newsletter_subscribe` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orderitem`
+--
+
+CREATE TABLE `orderitem` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `books_id` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `amount` float NOT NULL,
+  `note` varchar(150) DEFAULT NULL,
+  `status` varchar(30) NOT NULL DEFAULT 'Yeni',
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `orderitem`
+--
+
+INSERT INTO `orderitem` (`id`, `user_id`, `order_id`, `books_id`, `price`, `quantity`, `amount`, `note`, `status`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 9, 13, 3, 39, NULL, 'Yeni', '2022-05-10 01:03:30', '2022-05-10 01:03:30'),
+(2, 1, 1, 8, 5, 2, 10.98, NULL, 'Yeni', '2022-05-10 01:03:31', '2022-05-10 01:03:31');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `phone` int(20) NOT NULL,
+  `total` float NOT NULL,
+  `note` varchar(150) DEFAULT NULL,
+  `postcode` varchar(255) NOT NULL,
+  `IP` varchar(20) NOT NULL,
+  `status` varchar(30) NOT NULL DEFAULT 'Yeni',
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `user_id`, `name`, `email`, `address`, `phone`, `total`, `note`, `postcode`, `IP`, `status`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Ağabala Quluzadə', 'agabala.oyunda@gmail.com', 'Buzovna', 504946684, 49.98, 'Sifarişiniz qəbul edildi.', 'AZ1090', '127.0.0.1', 'Yeni', '2022-05-10 01:03:30', '2022-05-11 02:45:28');
 
 -- --------------------------------------------------------
 
@@ -322,6 +383,7 @@ CREATE TABLE `personal_access_tokens` (
 CREATE TABLE `review` (
   `id` int(11) UNSIGNED NOT NULL,
   `books_id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
   `name` varchar(30) NOT NULL,
   `review` longtext NOT NULL,
   `rating` int(11) NOT NULL,
@@ -333,9 +395,11 @@ CREATE TABLE `review` (
 -- Dumping data for table `review`
 --
 
-INSERT INTO `review` (`id`, `books_id`, `name`, `review`, `rating`, `created_at`, `updated_at`) VALUES
-(4, 7, 'Ağabala Quluzadə', 'Çox bəyəndim məlumatlandırıcı kitabdı.', 5, '2022-04-25 22:48:11', '2022-04-25 22:48:11'),
-(5, 7, 'Ağabala', 'Gözəl kitabdı', 5, '2022-04-25 21:48:19', '2022-04-25 21:48:19');
+INSERT INTO `review` (`id`, `books_id`, `user_id`, `name`, `review`, `rating`, `created_at`, `updated_at`) VALUES
+(4, 7, NULL, 'Ağabala Quluzadə', 'Çox bəyəndim məlumatlandırıcı kitabdı.', 5, '2022-04-25 22:48:11', '2022-04-25 22:48:11'),
+(5, 7, NULL, 'Ağabala', 'Gözəl kitabdı', 5, '2022-04-25 21:48:19', '2022-04-25 21:48:19'),
+(6, 9, NULL, 'Durdanə', 'Oxudum bəyəndim.', 5, '2022-05-11 03:05:43', '2022-05-11 03:05:43'),
+(7, 8, 1, 'Ağabala Quluzadə', 'Fight Klup sevənlərə tövsiyə edirəm.', 5, '2022-05-11 23:00:20', '2022-05-11 23:00:20');
 
 -- --------------------------------------------------------
 
@@ -357,7 +421,8 @@ CREATE TABLE `roles` (
 
 INSERT INTO `roles` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES
 (1, 'admin', 'bu saytın adminidir', '2022-05-03 23:36:09', '2022-05-03 23:36:09'),
-(2, 'user', 'bu istifadəçidir', '2022-05-03 22:28:56', '2022-05-03 22:28:56');
+(2, 'user', 'bu istifadəçidir', '2022-05-03 22:28:56', '2022-05-03 22:28:56'),
+(3, 'author', 'bu yazıcıdır', '2022-05-07 21:27:11', '2022-05-07 21:27:11');
 
 -- --------------------------------------------------------
 
@@ -377,8 +442,8 @@ CREATE TABLE `role_user` (
 
 INSERT INTO `role_user` (`id`, `user_id`, `role_id`) VALUES
 (1, 1, 1),
-(2, 2, 2),
-(5, 8, 2);
+(16, 8, 2),
+(20, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -413,6 +478,28 @@ INSERT INTO `settings` (`id`, `seo_title`, `seo_description`, `seo_keywords`, `l
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `shop_carts`
+--
+
+CREATE TABLE `shop_carts` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `books_id` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `shop_carts`
+--
+
+INSERT INTO `shop_carts` (`id`, `user_id`, `books_id`, `quantity`, `created_at`, `updated_at`) VALUES
+(5, 1, 9, 4, '2022-05-10 01:08:53', '2022-05-10 01:13:50');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -424,6 +511,9 @@ CREATE TABLE `users` (
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` int(11) NOT NULL,
+  `post_code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -432,10 +522,10 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `img`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'uploads/users/agabala-quluzade.jpg', 'Ağabala Quluzadə', 'agabala.oyunda@gmail.com', NULL, '$2y$10$cPGszbMKJW.pmeaMh82NLuv99aiiLayGWwS/zKBirMkLEntLuE7pq', NULL, '2022-05-03 10:47:46', '2022-05-03 20:32:27'),
-(2, 'https://register.pravasikerala.org/public/images/avatar5.png', 'Aysun', 'aysun@gmail.com', NULL, '$2y$10$lQMNiFg.UtULbLIynzmYoudYPuTeb3P6FV1a.o1I1qQqYOvWGc3Ou', NULL, '2022-05-03 20:27:13', '2022-05-03 20:27:13'),
-(8, 'https://register.pravasikerala.org/public/images/avatar5.png', 'Aysel', 'aysel@gmail.com', NULL, '$2y$10$9slm2qk6Y7KU/iMNtFs97unO0OFtyKBHH8mFmO5kBhFXmrtHOflqG', NULL, '2022-05-04 08:23:24', '2022-05-04 08:23:24');
+INSERT INTO `users` (`id`, `img`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `address`, `phone`, `post_code`, `created_at`, `updated_at`) VALUES
+(1, 'uploads/users/agabala-quluzade.jpg', 'Ağabala Quluzadə', 'agabala.oyunda@gmail.com', NULL, '$2y$10$cPGszbMKJW.pmeaMh82NLuv99aiiLayGWwS/zKBirMkLEntLuE7pq', 'tTrs2rMF3Y8Bca1Mn8IfOmpTImkNPPMB25zrIczE1GyJ8jjYXMXTVUGozyeZ', 'Buzovna', 504946684, 'AZ1090', '2022-05-03 10:47:46', '2022-05-03 20:32:27'),
+(2, 'https://register.pravasikerala.org/public/images/avatar5.png', 'Aysun', 'aysun@gmail.com', NULL, '$2y$10$rBznQz.h6Aio5vNxc55ps.0d50DtKYcJLyom3C3SKTjZYFU7To2ry', NULL, '', 0, '0', '2022-05-03 20:27:13', '2022-05-05 09:45:08'),
+(8, 'https://register.pravasikerala.org/public/images/avatar5.png', 'Aysel', 'aysel@gmail.com', NULL, '$2y$10$9slm2qk6Y7KU/iMNtFs97unO0OFtyKBHH8mFmO5kBhFXmrtHOflqG', NULL, '', 0, '0', '2022-05-04 08:23:24', '2022-05-04 08:23:24');
 
 -- --------------------------------------------------------
 
@@ -525,6 +615,18 @@ ALTER TABLE `newsletter_subscribe`
   ADD UNIQUE KEY `subscribe_email` (`subscribe_email`);
 
 --
+-- Indexes for table `orderitem`
+--
+ALTER TABLE `orderitem`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `partners`
 --
 ALTER TABLE `partners`
@@ -569,6 +671,12 @@ ALTER TABLE `settings`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `shop_carts`
+--
+ALTER TABLE `shop_carts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -589,7 +697,7 @@ ALTER TABLE `writers`
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `books`
@@ -619,7 +727,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `feature_section`
 --
 ALTER TABLE `feature_section`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `general_question`
@@ -640,6 +748,18 @@ ALTER TABLE `newsletter_subscribe`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `orderitem`
+--
+ALTER TABLE `orderitem`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `partners`
 --
 ALTER TABLE `partners`
@@ -655,19 +775,19 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `role_user`
 --
 ALTER TABLE `role_user`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `settings`
@@ -676,10 +796,16 @@ ALTER TABLE `settings`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `shop_carts`
+--
+ALTER TABLE `shop_carts`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `writers`
