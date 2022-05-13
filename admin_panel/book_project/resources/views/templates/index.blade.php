@@ -1691,13 +1691,9 @@ if(count == 1) {
 	<div class="tab-container-811  owl-carousel owl-theme  tab-pane tab-product-container  fade " id="tab-8110">		
 	
 							<!-- Grid -->
-							{{-- @foreach ($categories as $category)
-							@foreach ($category->children as $children)
-								
-									{{ $children->categoryitems($children->id)->books_name }}
-								
-							@endforeach
-							@endforeach --}}
+							
+						@foreach ($fictions as $fiction)	
+
 			<!-- List -->
 			<div class="row_items ">
 		<div class="product-layout list-style ">
@@ -1705,8 +1701,8 @@ if(count == 1) {
 			<div class="item">
 				<div class="item-inner">
 					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=189" class="product-image">
-						<img src="" alt="" title="" class="img-responsive" />
+						<a href="{{ route('BooksProduct',$fiction->slug) }}" class="product-image">
+						<img src="{{ asset($fiction->books_img) }}" alt="{{ $fiction->books_name }}" title="{{ $fiction->books_img }}" class="img-responsive" />
 						</a>
 						<div class="box-label">			
 						</div>
@@ -1714,10 +1710,10 @@ if(count == 1) {
 					<div class="caption">
 						<div class="inner">
 							<p class="manufacture-product">
-							<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=10"></a>
+							<a href="">{{ $fiction->Writers($fiction->writer_id)->writer_name }}</a>
 							</p>
-							<h4 class="product-name"><a href="">
-								
+							<h4 class="product-name"><a href="{{ route('BooksProduct',$fiction->slug) }}">
+								{{ $fiction->books_name }}	
 							</a></h4> 
 							<div class="ratings">
 							<div class="rating-box">
@@ -1725,7 +1721,7 @@ if(count == 1) {
 							</div>	
 								<div class="price-box">
 								<label>Price:</label>
-								<p class="regular-price"><span class="price">$1,000.00</span></p>
+								<p class="regular-price"><span class="price">{{ $fiction->price }} AZN</span></p>
 							</div>	
 						</div>
 					</div><!-- caption -->
@@ -1734,12 +1730,15 @@ if(count == 1) {
 		</div><!-- product-thumb -->
 							</div><!-- product-layout -->
 					</div>	 
-					{{-- @endforeach  --}}
+					@endforeach 
 			</div>
 	
 		<div class="tab-container-811  owl-carousel owl-theme  tab-pane tab-product-container  fade " id="tab-8111">		
 	
 							<!-- Grid -->
+
+							@foreach ($nonfictions as $nonfiction)
+
 			<!-- List -->
 			<div class="row_items ">
 							<div class="product-layout list-style ">
@@ -1747,8 +1746,8 @@ if(count == 1) {
 			<div class="item">
 				<div class="item-inner">
 					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=143" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/14-600x600.jpg" alt="Nokia Steel HR Hybrid  Smartwatch" title="Nokia Steel HR Hybrid  Smartwatch" class="img-responsive" />
+						<a href="{{ route('BooksProduct',$nonfiction->slug) }}" class="product-image">
+							<img src="{{ asset($nonfiction->books_img) }}" alt="{{ $nonfiction->books_name }}" title="{{ $nonfiction->books_name }}" class="img-responsive" />
 						</a>
 						<div class="box-label">			
 																	
@@ -1759,9 +1758,9 @@ if(count == 1) {
 					<div class="caption">
 						<div class="inner">
 																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
+								<a href="">{{ $nonfiction->Writers($nonfiction->writer_id)->writer_name }}</a>
 							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=143">Nokia Steel HR Hybrid  Smartwatch</a></h4> 
+								<h4 class="product-name"><a href="{{ route('BooksProduct',$nonfiction->slug) }}">{{ $nonfiction->books_name }}</a></h4> 
 							<div class="ratings">
 								<div class="rating-box">
 																																																																																																																																																															<div class="rating5">rating</div>
@@ -1769,7 +1768,7 @@ if(count == 1) {
 							</div>	
 																												<div class="price-box">
 								<label>Price:</label>
-																				<p class="regular-price"><span class="price">$95.00</span></p>
+																				<p class="regular-price"><span class="price">{{ $nonfiction->price }} AZN</span></p>
 																														</div>
 																																									
 							
@@ -1783,347 +1782,20 @@ if(count == 1) {
 								
 					  <!-- Grid -->
 			<!-- List -->
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=140" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/13-600x600.jpg" alt="Marshall Portable  Bluetooth Speaker" title="Marshall Portable  Bluetooth Speaker" class="img-responsive" />
-						</a>
-						<div class="box-label">			
-																	
 							
-						</div>
-						
-					</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=140">Marshall Portable  Bluetooth Speaker</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																																								<div class="rating4">rating</div>
-																																																						</div>
-							</div>	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="special-price"><span class="price">$65.00</span></p>
-									<p class="old-price"><span class="price">$70.00</span></p>						  
-																														</div>
-																																									
-							
-																																				</div>
-					</div><!-- caption -->
-					
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
 								
-					  <!-- Grid -->
-			<!-- List -->
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=139" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/9-600x600.jpg" alt="JBL Flip 3 Splashproof  Portable Bluetooth" title="JBL Flip 3 Splashproof  Portable Bluetooth" class="img-responsive" />
-						</a>
-						<div class="box-label">			
-																	
-							
-						</div>
-						
-					</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=139">JBL Flip 3 Splashproof  Portable Bluetooth</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																	<div class="rating3">rating</div>
-																																																																													</div>
-							</div>	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="regular-price"><span class="price">$500.00</span></p>
-																														</div>
-																																									
-							
-																																				</div>
-					</div><!-- caption -->
 					
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
 					</div>
-								
-					  <!-- Grid -->
-			<!-- List -->
-			<div class="row_items ">
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=53" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/15-600x600.jpg" alt="Sony KD55X72 55-Inch  4k Ultra HD" title="Sony KD55X72 55-Inch  4k Ultra HD" class="img-responsive" />
-						</a>
-						<div class="box-label">			
-																	
-							
-						</div>
-						
-					</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=5">HTC</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=53">Sony KD55X72 55-Inch  4k Ultra HD</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																	<div class="rating3">rating</div>
-																																																																													</div>
-							</div>	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="special-price"><span class="price">$64.00</span></p>
-									<p class="old-price"><span class="price">$65.00</span></p>						  
-																														</div>
-																																									
-							
-																																				</div>
-					</div><!-- caption -->
-					
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-			<!-- List -->
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=54" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/12-600x600.jpg" alt="Koss Porta Pro On Ear  Headphones " title="Koss Porta Pro On Ear  Headphones " class="img-responsive" />
-						</a>
-						<div class="box-label">			
-																	
-							
-						</div>
-						
-					</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=54">Koss Porta Pro On Ear  Headphones </a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																																																															<div class="rating5">rating</div>
-																															</div>
-							</div>	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="special-price"><span class="price">$65.00</span></p>
-									<p class="old-price"><span class="price">$70.00</span></p>						  
-																														</div>
-																																									
-							
-																																				</div>
-					</div><!-- caption -->
-					
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-			<!-- List -->
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=56" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/11-600x600.jpg" alt="Koss KPH7 Lightweight  Portable Headphone" title="Koss KPH7 Lightweight  Portable Headphone" class="img-responsive" />
-						</a>
-						<div class="box-label">			
-																	
-							
-						</div>
-						
-					</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=56">Koss KPH7 Lightweight  Portable Headphone</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																										<div class="rating2">rating</div>
-																																																																																																				</div>
-							</div>	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="special-price"><span class="price">$70.00</span></p>
-									<p class="old-price"><span class="price">$75.00</span></p>						  
-																														</div>
-																																									
-							
-																																				</div>
-					</div><!-- caption -->
-					
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-					</div>
-								
-					  <!-- Grid -->
-			<!-- List -->
-			<div class="row_items ">
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=60" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/10-600x600.jpg" alt="Kodak PIXPRO Astro Zoom AZ421 16 MP" title="Kodak PIXPRO Astro Zoom AZ421 16 MP" class="img-responsive" />
-						</a>
-						<div class="box-label">			
-																	
-							
-						</div>
-						
-					</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=60">Kodak PIXPRO Astro Zoom AZ421 16 MP</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																																								<div class="rating4">rating</div>
-																																																						</div>
-							</div>	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="regular-price"><span class="price">$95.00</span></p>
-																														</div>
-																																									
-							
-																																				</div>
-					</div><!-- caption -->
-					
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-			<!-- List -->
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=51" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/8-600x600.jpg" alt="Bose SoundLink Micro  Bluetooth Speaker" title="Bose SoundLink Micro  Bluetooth Speaker" class="img-responsive" />
-						</a>
-						<div class="box-label">			
-																	
-							
-						</div>
-						
-					</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=9">Canon</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=51">Bose SoundLink Micro  Bluetooth Speaker</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																	<div class="rating3">rating</div>
-																																																																													</div>
-							</div>	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="regular-price"><span class="price">$100.00</span></p>
-																														</div>
-																																									
-							
-																																				</div>
-					</div><!-- caption -->
-					
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-								
-					  <!-- Grid -->
-			<!-- List -->
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=55" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/7-600x600.jpg" alt="Beats Solo3 Wireless  On-Ear Headphones" title="Beats Solo3 Wireless  On-Ear Headphones" class="img-responsive" />
-						</a>
-						<div class="box-label">			
-																	
-							
-						</div>
-						
-					</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=10">Sony</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=55">Beats Solo3 Wireless  On-Ear Headphones</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																																								<div class="rating4">rating</div>
-																																																						</div>
-							</div>	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="regular-price"><span class="price">$1,000.00</span></p>
-																														</div>
-																																									
-							
-																																				</div>
-					</div><!-- caption -->
-					
-				</div>
-			</div>
-		</div><!-- product-thumb -->
-							</div><!-- product-layout -->
-					</div>
-								
-				  
+		  
+					@endforeach
+
 			</div>
 	
 		<div class="tab-container-811  owl-carousel owl-theme  tab-pane tab-product-container  fade " id="tab-8112">		
 	
 							<!-- Grid -->
+							@foreach ($childrenliteratures as $childrenliterature)
+								
 			<!-- List -->
 			<div class="row_items ">
 							<div class="product-layout list-style ">
@@ -2131,21 +1803,16 @@ if(count == 1) {
 			<div class="item">
 				<div class="item-inner">
 					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=140" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/13-600x600.jpg" alt="Marshall Portable  Bluetooth Speaker" title="Marshall Portable  Bluetooth Speaker" class="img-responsive" />
+						<a href="{{ route('BooksProduct',$childrenliterature->slug) }}" class="product-image">
+								<img src="{{ asset($childrenliterature->books_img) }}" alt="{{ $childrenliterature->books_name }}" title="{{ $childrenliterature->books_name }}" class="img-responsive" />
 						</a>
-						<div class="box-label">			
-																	
-							
-						</div>
-						
 					</div><!-- image -->
 					<div class="caption">
 						<div class="inner">
 																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
+								<a href="">{{ $childrenliterature->Writers($childrenliterature->writer_id)->writer_name }}</a>
 							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=140">Marshall Portable  Bluetooth Speaker</a></h4> 
+								<h4 class="product-name"><a href="{{ route('BooksProduct',$childrenliterature->slug) }}">{{ $childrenliterature->books_name }}</a></h4> 
 							<div class="ratings">
 								<div class="rating-box">
 																																																																																																																																								<div class="rating4">rating</div>
@@ -2153,8 +1820,8 @@ if(count == 1) {
 							</div>	
 																												<div class="price-box">
 								<label>Price:</label>
-																				<p class="special-price"><span class="price">$65.00</span></p>
-									<p class="old-price"><span class="price">$70.00</span></p>						  
+																				<p class="special-price"><span class="price">{{ $childrenliterature->price }} AZN</span></p>
+									<p class="old-price"><span class="price">{{ $childrenliterature->old_price }}</span></p>						  
 																														</div>
 																																									
 							
@@ -2168,334 +1835,9 @@ if(count == 1) {
 								
 					  <!-- Grid -->
 			<!-- List -->
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=139" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/9-600x600.jpg" alt="JBL Flip 3 Splashproof  Portable Bluetooth" title="JBL Flip 3 Splashproof  Portable Bluetooth" class="img-responsive" />
-						</a>
-						<div class="box-label">			
-																	
-							
-						</div>
-						
-					</div><!-- image -->
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=139">JBL Flip 3 Splashproof  Portable Bluetooth</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																	<div class="rating3">rating</div>
-																																																																													</div>
-							</div>	
-																												<div class="price-box">
-								<label>Price:</label>
-																				<p class="regular-price"><span class="price">$500.00</span></p>
-																														</div>
-																																									
-							
-																																				</div>
-					</div><!-- caption -->
-					
-				</div>
-			</div>
-		</div>
-							</div>
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=138" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/4-600x600.jpg" alt="Beats EP Wired On-Ear  Headphone-Black" title="Beats EP Wired On-Ear  Headphone-Black" class="img-responsive" />
-						</a>
-						<div class="box-label">			
-						</div>
-					</div>
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=9">Canon</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=138">Beats EP Wired On-Ear  Headphone-Black</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																																								<div class="rating4">rating</div>
-																																																						</div>
-							</div>	
-																												<div class="price-box">
-								<label>Price:</label>
-																<p class="regular-price"><span class="price">$100.00</span></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-					</div>
-					</div>
-			<div class="row_items ">
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=54" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/12-600x600.jpg" alt="Koss Porta Pro On Ear  Headphones " title="Koss Porta Pro On Ear  Headphones " class="img-responsive" />
-						</a>
-						<div class="box-label">
-						</div>
-					</div>
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=54">Koss Porta Pro On Ear  Headphones </a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-																																																																																																																																																															<div class="rating5">rating</div>
-																															</div>
-							</div>	
-									<div class="price-box">
-								<label>Price:</label>
-																				<p class="special-price"><span class="price">$65.00</span></p>
-						<p class="old-price"><span class="price">$70.00</span></p>						  
-								</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-							</div>
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=56" class="product-image">
-						<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/11-600x600.jpg" alt="Koss KPH7 Lightweight  Portable Headphone" title="Koss KPH7 Lightweight  Portable Headphone" class="img-responsive" />
-						</a>
-						<div class="box-label">			
-						</div>
-					</div>
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-							</p>
-													<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=56">Koss KPH7 Lightweight  Portable Headphone</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-								<div class="rating2">rating</div>																																																																																												</div>
-							</div>	
-								<div class="price-box">
-								<label>Price:</label>
-								<p class="special-price"><span class="price">$70.00</span></p>
-								<p class="old-price"><span class="price">$75.00</span></p>						  
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-							</div>
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=60" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/10-600x600.jpg" alt="Kodak PIXPRO Astro Zoom AZ421 16 MP" title="Kodak PIXPRO Astro Zoom AZ421 16 MP" class="img-responsive" />
-						</a>
-						<div class="box-label">
-						</div>
-					</div>
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-							</p>
-					<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=60">Kodak PIXPRO Astro Zoom AZ421 16 MP</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">																																						</div>
-						</div>	
-					<div class="price-box">
-					<label>Price:</label>
-						<p class="regular-price"><span class="price">$95.00</span></p>
-					</div>
-					</div>
-					</div>
-				</div>
-			</div>
-		</div>
-							</div>
-					</div>
-			<div class="row_items ">
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=55" class="product-image">
-						<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/7-600x600.jpg" alt="Beats Solo3 Wireless  On-Ear Headphones" title="Beats Solo3 Wireless  On-Ear Headphones" class="img-responsive" />
-						</a>
-						<div class="box-label">			
-						</div>
-					</div>
-					<div class="caption">
-						<div class="inner">
-								<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=10">Sony</a>
-							</p>
-							<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=55">Beats Solo3 Wireless  On-Ear Headphones</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">																																																																																																																																<div class="rating4">rating</div>
-					</div>
+
 					</div>	
-					<div class="price-box">
-					<label>Price:</label>
-					<p class="regular-price"><span class="price">$1,000.00</span></p>
-					</div>
-					</div>
-					</div>		
-				</div>
-			</div>
-		</div>
-							</div>
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=61" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/6-600x600.jpg" alt="Beats Solo2 Solo 2  Wired On-Ear Headphone" title="Beats Solo2 Solo 2  Wired On-Ear Headphone" class="img-responsive" />
-						</a>
-						<div class="box-label">
-						</div>	
-					</div>
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=61">Beats Solo2 Solo 2  Wired On-Ear Headphone</a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-						<div class="rating3">rating</div>																																																																			</div>
-					</div>	
-					<div class="price-box">
-					<label>Price:</label>
-					<p class="regular-price"><span class="price">$500.00</span></p>
-					</div>					
-					</div>
-					</div>
-				</div>
-			</div>
-		</div>
-							</div>
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=59" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/3-600x600.jpg" alt="Apple iPhone SE 16GB  Factory Unlocked" title="Apple iPhone SE 16GB  Factory Unlocked" class="img-responsive" />
-						</a>
-						<div class="box-label">			
-						</div>
-					</div>
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-							</p>
-																	<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=59">Apple iPhone SE 16GB  Factory Unlocked</a></h4> 
-					<div class="ratings">
-					<div class="rating-box">
-					<div class="rating3">rating</div>																																																																					</div>
-					</div>	
-					<div class="price-box">
-					<label>Price:</label>
-					<p class="regular-price"><span class="price">$85.00</span></p>
-					</div>
-					</div>
-					</div>
-				</div>
-			</div>
-		</div>
-					</div>
-					</div>
-			<div class="row_items ">
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52" class="product-image">
-																	<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/2-600x600.jpg" alt="Apple iPad with Retina  Display MD510LL/A " title="Apple iPad with Retina  Display MD510LL/A " class="img-responsive" />
-						</a>
-						<div class="box-label">			
-						</div>
-					</div>
-					<div class="caption">
-						<div class="inner">
-																	<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=7">Hewlett-Packard</a>
-							</p>
-							<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=52">Apple iPad with Retina  Display MD510LL/A </a></h4> 
-							<div class="ratings">
-								<div class="rating-box">
-			<div class="rating0">rating</div>																																																																																																																																													</div>
-			</div>	
-			<div class="price-box">
-						<label>Price:</label>
-					<p class="special-price"><span class="price">$55.00</span></p>
-					<p class="old-price"><span class="price">$60.00</span></p>						  
-					</div>
-					</div>
-					</div>
-				</div>
-			</div>
-		</div>
-							</div>
-							<div class="product-layout list-style ">
-		<div class="product-thumb transition">
-			<div class="item">
-				<div class="item-inner">
-					<div class="image images-container">
-						<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=57" class="product-image">
-								<img src="http://smartbook4.demo.towerthemes.com/image/cache/catalog/product/1-600x600.jpg" alt="Amazon Cloud Cam  Security Camera" title="Amazon Cloud Cam  Security Camera" class="img-responsive" />
-						</a>
-						<div class="box-label">			
-						</div>
-					</div>
-					<div class="caption">
-						<div class="inner">
-					<p class="manufacture-product">
-								<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=8">Apple</a>
-							</p>
-						<h4 class="product-name"><a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/product&amp;product_id=57">Amazon Cloud Cam  Security Camera</a></h4> 
-							<div class="ratings">
-		<div class="rating-box">
-	<div class="rating4">rating</div>																																														</div>
-							</div>	
-				<div class="price-box">
-		<label>Price:</label>
-		<p class="regular-price"><span class="price">$80.00</span></p>
-</div>
-</div>
-</div>	
-</div>
-</div>
-</div>
-</div>
-</div>				 
+					@endforeach			 
 </div>
 </div>
 </div>

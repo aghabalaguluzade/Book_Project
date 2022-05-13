@@ -32,7 +32,4 @@ class Category extends Model
         $query->where("status",'1');
     }
 
-    public function categoryitems($id) {
-        return Books::find($id) ?? null;
-    }
 }

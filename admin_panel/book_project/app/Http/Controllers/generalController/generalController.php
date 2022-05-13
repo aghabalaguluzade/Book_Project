@@ -28,12 +28,24 @@ class generalController extends Controller
         $settings = Settings::all();
         $cards = ShopCart::where('user_id',Auth::id())->get();
         $carts = ShopCart::where('user_id',Auth::id());
+
+
+        if($categories) {
+            $subCategories = Category::where('parent_id',26)->get();
+            foreach($subCategories as $subcat) {
+                $cat_ids[] = $subcat->id;
+            }
+            $productsAll = Books::whereIn('category_id',$cat_ids)->get();
+        }else {
+            $productsAll = Books::where('category_id',26)->get();
+        }
+
         View::share([
             'categories' => $categories,
             'partners' => $partners,
             'settings' => $settings,
             'cards' => $cards,
-            'carts' => $carts,
+            'carts' => $carts
         ]);
     }
 
@@ -56,12 +68,38 @@ class generalController extends Controller
     public function templates() {
         $this->fragmented();
         $banners = Banner::all();
-        $blogs = Blog::createby()->get();
+        $blogs = Blog::createby()->get()->take(5);
         $books = Books::orderBy('created_at','desc')->get();
         $reviews = Review::inRandomOrder()->orderBy('created_at','desc')->get();
-        $fictions = Books::all();
         $features = FeatureSection::all();
-        
+        $categories = Category::where('parent_id',0)->active()->get();
+
+        if($categories) {
+            $subCategories1 = Category::where('parent_id',26)->get();
+            foreach($subCategories1 as $subcat1) {
+                $cat_ids1[] = $subcat1->id;
+            }
+            $fictions = Books::whereIn('category_id',$cat_ids1)->get();
+        }
+
+        if($categories) {
+            $subCategories2 = Category::where('parent_id',16)->get();
+            foreach($subCategories2 as $subcat2) {
+                $cat_ids2[] = $subcat2->id;
+            }
+            $nonfictions = Books::whereIn('category_id',$cat_ids2)->get();
+        }
+
+        if($categories) {
+            $subCategories3 = Category::where('parent_id',10)->get();
+            foreach($subCategories3 as $subcat3) {
+                $cat_ids3[] = $subcat3->id;
+            }
+            $childrenliteratures = Books::whereIn('category_id',$cat_ids3)->get();
+        }
+
+
+
         //Best Selling
 
         $items = DB::table('orderitem')->select('books_id', DB::raw('COUNT(books_id) as count'))->groupBy('books_id')->orderBy("count","desc")->get();
@@ -98,7 +136,9 @@ class generalController extends Controller
             'features' => $features,
             'best_sellings' => $best_sellings,
             'best_rated' => $best_rated,
-            'most_reads' => $most_reads
+            'most_reads' => $most_reads,
+            'nonfictions' => $nonfictions,
+            'childrenliteratures' => $childrenliteratures
         ]);
         return view('templates.index');
     }
@@ -114,6 +154,7 @@ class generalController extends Controller
         $this->fragmented();
             $products = Books::where('category_id',$id)->get();
             $title = Category::find($id); 
+
         View::share([
             'products' => $products,
             'title' => $title,
