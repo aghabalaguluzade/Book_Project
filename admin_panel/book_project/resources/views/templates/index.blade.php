@@ -1401,7 +1401,7 @@ responsive:{
 								<div class="action-links">
 								<input type="hidden" name="quantity" value="1" />
 								<button type="submit" class="button btn-cart" title="Səbətə Əlavə Et"><span>Səbətə Əlavə Et</span></button>												
-								<button class="button btn-wishlist" type="button"  title="Add to Wish List" onclick="wishlist.add('52');"><span>Add to Wish List</span></button>																																	
+								<button class="button btn-wishlist" type="button"  title="İstək Siyahısına əlavə edin"><span>İstək Siyahısına əlavə edin</span></button>																																	
 							</div>	
 							</form>															
 						</div><!-- image -->
@@ -1722,6 +1722,7 @@ if(count == 1) {
 								<div class="price-box">
 								<label>Price:</label>
 								<p class="regular-price"><span class="price">{{ $fiction->price }} AZN</span></p>
+								<p class="old-price"><span class="price">{{ $fiction->old_price }} %</span></p>	
 							</div>	
 						</div>
 					</div><!-- caption -->
@@ -1769,6 +1770,7 @@ if(count == 1) {
 																												<div class="price-box">
 								<label>Price:</label>
 																				<p class="regular-price"><span class="price">{{ $nonfiction->price }} AZN</span></p>
+																				<p class="old-price"><span class="price">{{ $nonfiction->old_price }} %</span></p>	
 																														</div>
 																																									
 							
@@ -1821,7 +1823,7 @@ if(count == 1) {
 																												<div class="price-box">
 								<label>Price:</label>
 																				<p class="special-price"><span class="price">{{ $childrenliterature->price }} AZN</span></p>
-									<p class="old-price"><span class="price">{{ $childrenliterature->old_price }}</span></p>						  
+									<p class="old-price"><span class="price">{{ $childrenliterature->old_price }} %</span></p>						  
 																														</div>
 																																									
 							

@@ -227,7 +227,7 @@
 								<div class="item-inner">
 									<div class="caption-top">
 																				<p class="manufacture-product">
-											<a href="http://smartbook4.demo.towerthemes.com/index.php?route=product/manufacturer/info&amp;manufacturer_id=7">{{ $relate->Writers($relate->writer_id)->writer_name }}</a>
+											<a href="">{{ $relate->Writers($relate->writer_id)->writer_name }}</a>
 										</p>
 											
 										<h4 class="product-name"><a href="{{ route('BooksProduct',$relate->slug) }}">{{ $relate->books_name }}</a></h4>
@@ -238,16 +238,17 @@
 										<a href="{{ route('BooksProduct',$relate->slug) }}" class="product-image">
 																						<img src="{{ asset($relate->books_img) }}" alt="{{ $relate->books_name }}" title="{{ $relate->books_name }}" class="img-responsive">
 										</a>
-										<div class="box-label">	
-										
-																				
+										<div class="box-label">										
 										</div>
+
+										<form action="{{ route('ShopCartAdd',$relate->id) }}" method="POST">
+											@csrf
 										<div class="action-links">
-											<button class="button btn-cart" type="button" title="Add to Cart" onclick="cart.add('52');"><span>Add to Cart</span></button>
-											<button class="button btn-wishlist" type="button" title="Add to Wish List" onclick="wishlist.add('52');"><span>Add to Wish List</span></button>
-											<button class="button btn-compare" type="button" title="Compare this Product" onclick="compare.add('52');"><span>Compare this Product</span></button>
-											
+											<input type="hidden" name="quantity" value="1" />
+											<button type="submit" class="button btn-cart" title="Səbətə Əlavə Et"><span>Səbətə Əlavə Et</span></button>												
+											<button class="button btn-wishlist" type="button"  title="İstək Siyahısına əlavə edin"><span>İstək Siyahısına əlavə edin</span></button>											
 										</div>
+									</form>	
 										</div>
 									</div><!-- image -->
 									<div class="caption">
