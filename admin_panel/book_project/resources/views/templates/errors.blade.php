@@ -56,6 +56,24 @@
     </div>
 @endif
 
+@if (session('wishlist-add'))
+    <div class="alert alert-success">
+        <p>İstək Siyahısına Əlavə Olundu</p>
+    </div>
+@endif
+
+@if (session('wishlist-delete'))
+    <div class="alert alert-success">
+        <p>Məhsul İstək Siyahısından Silindi!</p>
+    </div>
+@endif
+
+@if (session('wishlist-add-error'))
+    <div class="alert alert-danger">
+        <p>İstək Siyahısına Əlavə Olunmadı</p>
+    </div>
+@endif
+
 @if(session("error"))
     <div class="alert alert-danger">
         <p>Əməliyyat Uğurla İcra Edilmədi!</p>

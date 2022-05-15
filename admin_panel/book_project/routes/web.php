@@ -38,6 +38,8 @@ use App\Http\Controllers\ShopCartsController\ShopCartsAddController;
 use App\Http\Controllers\ShopCartsController\ShopCartsEditController;
 use App\Http\Controllers\ShopCartsController\ShopCartsListController;
 use App\Http\Controllers\UsersController\UsersListController;
+use App\Http\Controllers\WishListController\WishListAddController;
+use App\Http\Controllers\WishListController\WishListListController;
 use App\Http\Controllers\Writers\addWritersController;
 use App\Http\Controllers\Writers\editWritersController;
 use App\Http\Controllers\Writers\listWritersController;
@@ -66,6 +68,9 @@ Route::get('/səbət-sil/{id}',[ShopCartsEditController::class, "ShopCartDelete"
 Route::post('/sifariş',[OrderListController::class, "OrderIndex"])->name("OrderIndex");
 Route::get('/sifariş',[OrderListController::class, "OrderIndex"])->name("OrderIndex");
 Route::post('/sifariş-et',[OrderAddController::class, "OrderPost"])->name("OrderPost");
+Route::get("/istək-siyahısı",[WishListListController::class, "WishListList"])->name("WishListList");
+Route::post('/istək-əlavə-et/{id}',[WishListAddController::class, "WishListAdd"])->name("WishListAdd");
+Route::get('/istək-sil/{id}',[WishListListController::class, "WishListDelete"])->name("WishListDelete");
 
 Route::prefix('hesab')->group(function() {
 

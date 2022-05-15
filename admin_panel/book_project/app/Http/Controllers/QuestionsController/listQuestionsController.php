@@ -11,7 +11,6 @@ class listQuestionsController extends Controller
 {
     
     public function listQuestions() {
-
         $questions = General_Questions::all();
         View::share('questions', $questions);
         return view('questions.questions_list');

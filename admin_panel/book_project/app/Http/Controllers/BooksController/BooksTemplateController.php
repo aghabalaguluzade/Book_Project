@@ -9,6 +9,7 @@ use App\Models\Partners;
 use App\Models\Review;
 use App\Models\Settings;
 use App\Models\ShopCart;
+use App\Models\Wishlist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
@@ -21,12 +22,14 @@ class BooksTemplateController extends Controller
         $settings = Settings::all();
         $carts = ShopCart::where('user_id',Auth::id());
         $cards = ShopCart::where('user_id',Auth::id())->get();
+        $wishlists = Wishlist::latest('created_at')->get();
         View::share([
             'categories' => $categories,
             'partners' => $partners,
             'settings' => $settings,
             'cards' => $cards,
-            'carts' => $carts
+            'carts' => $carts,
+            'wishlists' => $wishlists
         ]);
     }
 

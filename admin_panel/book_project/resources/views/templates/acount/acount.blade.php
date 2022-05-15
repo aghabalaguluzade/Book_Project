@@ -7,7 +7,7 @@
       <h2>Hesabım</h2>
       <ul class="list-unstyled">
         <li><a href="{{ route('EditAcountIndex') }}">Hesab məlumatlarınızı redaktə edin</a></li>
-        <li><a href="">İstək Siyahısı ()</a></li>
+        <li><a href="{{ route('WishListList') }}">İstək Siyahısı ({{ $wishlists->count() }})</a></li>
       </ul>
             <h2>Sifarişlərim</h2>
       <ul class="list-unstyled">

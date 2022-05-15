@@ -15,6 +15,7 @@ use App\Models\Review;
 use App\Models\Settings;
 use App\Models\ShopCart;
 use App\Models\User;
+use App\Models\Wishlist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -28,24 +29,15 @@ class generalController extends Controller
         $settings = Settings::all();
         $cards = ShopCart::where('user_id',Auth::id())->get();
         $carts = ShopCart::where('user_id',Auth::id());
-
-
-        if($categories) {
-            $subCategories = Category::where('parent_id',26)->get();
-            foreach($subCategories as $subcat) {
-                $cat_ids[] = $subcat->id;
-            }
-            $productsAll = Books::whereIn('category_id',$cat_ids)->get();
-        }else {
-            $productsAll = Books::where('category_id',26)->get();
-        }
+        $wishlists = Wishlist::latest('created_at')->get();
 
         View::share([
             'categories' => $categories,
             'partners' => $partners,
             'settings' => $settings,
             'cards' => $cards,
-            'carts' => $carts
+            'carts' => $carts,
+            'wishlists' => $wishlists
         ]);
     }
 

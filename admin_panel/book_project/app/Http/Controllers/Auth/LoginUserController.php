@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Partners;
 use App\Models\Settings;
 use App\Models\ShopCart;
+use App\Models\Wishlist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
@@ -19,12 +20,14 @@ class LoginUserController extends Controller
         $settings = Settings::all();
         $cards = ShopCart::where('user_id',Auth::id())->get();
         $carts = ShopCart::where('user_id',Auth::id());
+        $wishlists = Wishlist::latest('created_at')->get();
         View::share([
             'categories' => $categories,
             'partners' => $partners,
             'settings' => $settings,
             'cards' => $cards,
-            'carts' => $carts
+            'carts' => $carts,
+            'wishlists' => $wishlists,
         ]);
         return view('templates.login');
     }

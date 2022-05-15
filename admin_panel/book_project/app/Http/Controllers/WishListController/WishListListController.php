@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\ShopCartsController;
+namespace App\Http\Controllers\WishListController;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
@@ -8,18 +8,17 @@ use App\Models\Partners;
 use App\Models\Settings;
 use App\Models\ShopCart;
 use App\Models\Wishlist;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 
-class ShopCartsListController extends Controller
+class WishListListController extends Controller
 {
     public function fragmented() {
-        $categories = Category::where('parent_id',0)->where('status','1')->get();
+        $categories = Category::where('parent_id',0)->active()->get();
         $partners = Partners::where('status','1')->inRandomOrder()->get();
         $settings = Settings::all();
+        $cards = ShopCart::where('user_id',Auth::id())->get();
         $carts = ShopCart::where('user_id',Auth::id());
-        $cards = ShopCart::orderBy('created_at', 'desc')->where('user_id',Auth::id())->get();
         $wishlists = Wishlist::latest('created_at')->get();
         View::share([
             'categories' => $categories,
@@ -27,13 +26,21 @@ class ShopCartsListController extends Controller
             'settings' => $settings,
             'cards' => $cards,
             'carts' => $carts,
-            'wishlists' => $wishlists,
+            'wishlists' => $wishlists
         ]);
     }
 
-    public function ShopCartList() {
+    public function WishListList() {
         $this->fragmented();
-        $cards = ShopCart::where('user_id',Auth::id())->get();
-        return view('templates.shop-carts.shop-carts-list', compact('cards',$cards));
+        $wishlists = Wishlist::latest('created_at')->get();
+        return view('templates.wishlist.wishlist-list', compact('wishlists',$wishlists)); 
+    }
+
+    public function WishListDelete($id) {
+        $referer = isset($_SERVER["HTTP_REFERER"]);
+        if(!$referer) return redirect()->back();
+
+        $wishlists = Wishlist::find($id);
+        return redirect()->back()->with($wishlists->delete() ? "wishlist-delete" : "error", true);
     }
 }

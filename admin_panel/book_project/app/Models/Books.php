@@ -31,4 +31,7 @@ class Books extends Model
         return $this->hasMany(Orderitem::class);
     }
 
+    public function wishlist() {
+        return $this->hasMany(Wishlist::class);
+    }
 }

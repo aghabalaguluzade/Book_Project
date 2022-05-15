@@ -1396,14 +1396,16 @@ responsive:{
 							</a>
 							<div class="box-label">	
 							</div>											
+
 							<form action="{{ route('ShopCartAdd',$book->id) }}" method="POST">
-								@csrf
-								<div class="action-links">
-								<input type="hidden" name="quantity" value="1" />
-								<button type="submit" class="button btn-cart" title="Səbətə Əlavə Et"><span>Səbətə Əlavə Et</span></button>												
-								<button class="button btn-wishlist" type="button"  title="İstək Siyahısına əlavə edin"><span>İstək Siyahısına əlavə edin</span></button>																																	
-							</div>	
-							</form>															
+							<div class="action-links">
+									@csrf
+									<input type="hidden" name="quantity" value="1" />
+									<button type="submit" class="button btn-cart" title="Səbətə Əlavə Et"><span>Səbətə Əlavə Et</span></button>										
+							</div>
+							</form>
+						
+								
 						</div><!-- image -->
 						<div class="caption">
 							<div class="inner">

@@ -420,7 +420,7 @@
 
                                             <ul class="ul-second-items">                                                                                                                                                                                                                                                     <li class="li-second-items">
                                                 <a href="{{ route('CategoryProduct',[$child->id,$child->slug]) }}" class="a-second-link a-item">
-                                                <span class="a-second-title">{{ $child->category_name }} ()</span></a>
+                                                <span class="a-second-title">{{ $child->category_name }}</span></a>
                         </li>
                                             </ul>
 
