@@ -100,11 +100,28 @@
 							</div>
 						</form>
                         </div>
+	
+						<div>
+							<ul style="display: flex; flex-direction: row;">
+								<li style="margin-right: 10px;"><a id="gmail" onclick="window.open(this.href,'popUpWindow','height=400,width=600,left=10,top=10,,scrollbars=yes,menubar=no'); return false;"><i class="fa fa-envelope" style="font-size: 30px; color: #cf3e39;" aria-hidden="true"></i></a></li>
+								<li style="margin-right: 10px;"><a href="" id="twitter"><i class="fa fa-twitter" style="font-size: 30px; color: #1da1f2;" aria-hidden="true"></i></a></li>
+								<li style="margin-right: 10px;"><a href="" id="facebook"><i class="fa fa-facebook" style="font-size: 30px; color: #1877f2;" aria-hidden="true"></i></a></li>
+								<li style="margin-right: 10px;"><a href="" id="whatsapp"><i class="fa fa-whatsapp" style="font-size: 30px; color: #25d366;" aria-hidden="true"></i></a></li>
+								<li style="margin-right: 10px;"><a href="" id="linkedin"><i class="fa fa-linkedin" style="font-size: 30px; color: #0a66c2;" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
 						
-						<!-- AddThis Button BEGIN -->
-						<div class="addthis_toolbox addthis_default_style" data-url="index2963.html?route=product/product&amp;product_id=62"><a class="addthis_button_facebook_like at300b" fb:like:layout="button_count"><div class="fb-like" data-layout="button_count" data-show_faces="false" data-share="false" data-action="like" data-width="90" data-height="25" data-font="arial" data-href="file:///C:/Users/HP/Desktop/Son/smartbook4.demo.towerthemes.com/file:///C:/Users/HP/Desktop/Son/smartbook4.demo.towerthemes.com/index2963.html?route=product/product&amp;product_id=62" data-send="false" style="height: 25px;"></div></a> <a class="addthis_button_tweet at300b"><div class="tweet_iframe_widget" style="width: 62px; height: 25px;"><span><a href="http://twitter.com/share" class="twitter-share-button" data-url="file:///C:/Users/HP/Desktop/Son/smartbook4.demo.towerthemes.com/file:///C:/Users/HP/Desktop/Son/smartbook4.demo.towerthemes.com/index2963.html?route=product/product&amp;product_id=62#.YlsHOqfJ8U0.twitter" data-counturl="file:///C:/Users/HP/Desktop/Son/smartbook4.demo.towerthemes.com/file:///C:/Users/HP/Desktop/Son/smartbook4.demo.towerthemes.com/index2963.html?route=product/product&amp;product_id=62" data-count="horizontal" data-text="Beats Solo Wireless On-Ear Headphone:" data-related="" data-hashtags="" data-width="62">Tweet</a></span></div></a> <a class="addthis_button_pinterest_pinit at300b"></a> <a class="addthis_counter addthis_pill_style" href="#" style="display: inline-block;"><a class="atc_s addthis_button_compact">Share<span></span></a><a class="addthis_button_expanded" target="_blank" title="More" href="#"></a></a><div class="atclear"></div></div>
-						<script type="text/javascript" src="../s7.addthis.com/js/300/addthis_widget.js#pubid=ra-515eeaf54693130e"></script>
-						<!-- AddThis Button END --> 
+						<script>
+
+							let twitter = document.getElementById('gmail');
+							
+							let postUrl = encodeURI(document.location.href);
+							let postTitle = encodeURI('{{ $slug->books_name }}');
+
+							twitter.setAttribute('href', `https://mail.google.com/mail/?view=cm&su=${postTitle}&body=${postUrl}`);
+							
+
+						</script>
 						
 				</div>		
 			</div>
