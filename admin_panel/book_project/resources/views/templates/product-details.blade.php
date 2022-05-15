@@ -104,21 +104,35 @@
 						<div>
 							<ul style="display: flex; flex-direction: row;">
 								<li style="margin-right: 10px;"><a id="gmail" onclick="window.open(this.href,'popUpWindow','height=400,width=600,left=10,top=10,,scrollbars=yes,menubar=no'); return false;"><i class="fa fa-envelope" style="font-size: 30px; color: #cf3e39;" aria-hidden="true"></i></a></li>
-								<li style="margin-right: 10px;"><a href="" id="twitter"><i class="fa fa-twitter" style="font-size: 30px; color: #1da1f2;" aria-hidden="true"></i></a></li>
-								<li style="margin-right: 10px;"><a href="" id="facebook"><i class="fa fa-facebook" style="font-size: 30px; color: #1877f2;" aria-hidden="true"></i></a></li>
-								<li style="margin-right: 10px;"><a href="" id="whatsapp"><i class="fa fa-whatsapp" style="font-size: 30px; color: #25d366;" aria-hidden="true"></i></a></li>
-								<li style="margin-right: 10px;"><a href="" id="linkedin"><i class="fa fa-linkedin" style="font-size: 30px; color: #0a66c2;" aria-hidden="true"></i></a></li>
+								<li style="margin-right: 10px;"><a id="twitter" onclick="window.open(this.href,'popUpWindow','height=400,width=600,left=10,top=10,scrollbars=yes,menubar=no'); return false;"><i class="fa fa-twitter" style="font-size: 30px; color: #1da1f2;" aria-hidden="true"></i></a></li>
+								<li style="margin-right: 10px;"><a id="facebook" onclick="window.open(this.href,'popUpWindow','height=400,width=600,left=10,top=10,scrollbars=yes,menubar=no'); return false;"><i class="fa fa-facebook" style="font-size: 30px; color: #1877f2;" aria-hidden="true"></i></a></li>
+								<li style="margin-right: 10px;"><a id="whatsapp" onclick="window.open(this.href,'popUpWindow','height=400,width=600,left=10,top=10,,scrollbars=yes,menubar=no'); return false;"><i class="fa fa-whatsapp" style="font-size: 30px; color: #25d366;" aria-hidden="true"></i></a></li>
+								<li style="margin-right: 10px;"><a id="linkedin" onclick="window.open(this.href,'popUpWindow','height=400,width=600,left=10,top=10,,scrollbars=yes,menubar=no'); return false;"><i class="fa fa-linkedin" style="font-size: 30px; color: #0a66c2;" aria-hidden="true"></i></a></li>
+								<li style="margin-right: 10px;"><a id="googleplus" onclick="window.open(this.href,'popUpWindow','height=400,width=600,left=10,top=10,,scrollbars=yes,menubar=no'); return false;"><i class="fa fa-google-plus" style="font-size: 30px; color: #db4437;" aria-hidden="true"></i></a></li>
+								<li style="margin-right: 10px;"><a id="telegram" onclick="window.open(this.href,'popUpWindow','height=400,width=600,left=10,top=10,,scrollbars=yes,menubar=no'); return false;"><i class="fa fa-telegram" style="font-size: 30px; color: #0088cc;" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
-						
+
 						<script>
 
-							let twitter = document.getElementById('gmail');
+							let gmail = document.getElementById('gmail');
+							let twitter = document.getElementById('twitter');
+							let facebook = document.getElementById("facebook");
+							let whatsapp = document.getElementById("whatsapp");
+							let linkedin = document.getElementById("linkedin");
+							let googleplus = document.getElementById('googleplus');			
+							let telegram = document.getElementById('telegram');
 							
-							let postUrl = encodeURI(document.location.href);
-							let postTitle = encodeURI('{{ $slug->books_name }}');
+							let url = encodeURI(document.location.href);
+							let title = encodeURI('{{ $slug->books_name }}');
 
-							twitter.setAttribute('href', `https://mail.google.com/mail/?view=cm&su=${postTitle}&body=${postUrl}`);
+							gmail.setAttribute('href', `https://mail.google.com/mail/?view=cm&su=${title}&body=${url}`);
+							twitter.setAttribute('href',`https://twitter.com/share?url=${url}&text=${title}`);
+							facebook.setAttribute('href',`https://www.facebook.com/sharer.php?u=${url}`);
+							whatsapp.setAttribute('href',`https://api.whatsapp.com/send?text=${title} ${url}`);
+							linkedin.setAttribute('href',`https://www.linkedin.com/shareArticle?url=${url}&title=${title}`);
+							googleplus.setAttribute('href',`https://plus.google.com/share?url=${url}`);
+							telegram.setAttribute('href',`https://telegram.me/share/url?url=${url}`);
 							
 
 						</script>
