@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules;
+use Egulias\EmailValidator\EmailValidator;
+use Egulias\EmailValidator\Validation\DNSCheckValidation;
+use Egulias\EmailValidator\Validation\RFCValidation;
 
 class RegisteredUserController extends Controller
 {
@@ -41,8 +44,12 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'password' => ['required', 'confirmed', Rules\Password::defaults()]
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'address' => 'required|max:255',
+            'phone' => 'required|min:10|numeric',
+            'post_code' => 'required'
         ]);
+
 
         if($request->hasFile('img')) {
 
@@ -64,6 +71,9 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'email_verified_at' => now(),
             'password' => Hash::make($request->password),
+            'address' => $request->address,
+            'phone' => $request->phone,
+            'post_code' => $request->post_code,
             'img' => $img_name ?? null
         ]);
 

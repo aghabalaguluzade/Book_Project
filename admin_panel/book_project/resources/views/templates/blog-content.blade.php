@@ -38,12 +38,19 @@
                                 </span>
                                 <span class="post-separator">|</span>
                                 <span class="post-date">
-                                    <i class="far fa-calendar-alt"></i>
+                                    <i class="fa fa-upload"></i>
                                     <span class="text-gray">Yayımlanıb : </span>
                                     {{ $blog->created_at->format('d M Y') }}
                                 </span>
                                 <span class="post-separator">|</span>
+                                <i class="fas fa-eye"></i>
                                 <span class="text-gray">Baxılıb: {{ $blog->view_count }}</span>
+                                <span class="post-separator">|</span>
+                                <span class="post-date">
+                                    <i class="fas fa-clock"></i>
+                                    <span class="text-gray">Oxuma Vaxtı : </span>
+                                     {{ $times }}
+                                </span>
                             </div>
                         </header>
                         <article>

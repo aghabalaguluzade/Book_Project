@@ -10,6 +10,7 @@ use App\Models\Partners;
 use App\Models\Settings;
 use App\Models\ShopCart;
 use App\Models\Wishlist;
+use Bookworm\Bookworm;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -42,13 +43,16 @@ class BlogsTemplateController extends Controller
             $blogs = Blog::where('title','LIKE','%'.$search.'%')->paginate(1);
         }else {
             $blogs = Blog::orderBy('created_at','desc')->paginate(1);
+            $read = Blog::select('contents')->get();
+            $times = Bookworm::estimate($read,$units = ' dəqiqə' );
         }
         $blogs_archive = Blog::whereDate('created_at', Carbon::today())->get();
         $blogs_count = Blog::all();
         View::share([
             'blogs' => $blogs,
             'blogs_archive' => $blogs_archive,
-            'blogs_count' => $blogs_count
+            'blogs_count' => $blogs_count,
+            'times' => $times
         ]);
         return view('templates.blog');
     }
@@ -57,8 +61,11 @@ class BlogsTemplateController extends Controller
         $this->fragmented();
         $blogs = Blog::where('slug',$slug)->get();
         Blog::where('slug',$slug)->increment('view_count');
+        $read = Blog::select('contents')->get();
+        $times = Bookworm::estimate($read,$units = ' dəqiqə' );
         View::share([
             'blogs' => $blogs,
+            'times' => $times
         ]);
         return view('templates.blog-content');
     }

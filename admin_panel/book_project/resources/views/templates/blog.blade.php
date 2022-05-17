@@ -27,7 +27,7 @@
                                                 <div class="col-md-6">
                                                     <div class="card-content">
                                                         <h3 class="title"><a href="{{ url('bloq/'.$blog->slug) }}">{{ $blog->title }}</a></h3>
-                                                        <p class="post-meta"><span>{{ $blog->created_at->format('d M Y') }} </span> | <a href="#">{{ $blog->author }}</a></p>
+                                                        <p class="post-meta"><i class="fa fa-upload"></i> <span>{{ $blog->created_at->format('d M Y') }} </span> | <i class="fa fa-user"></i> <a href="#">{{ $blog->author }}</a> | <i class="fas fa-clock"></i> <span>{{ $times }}</span></p>
                                                         <article>
                                                             <p>{!! Str::limit($blog->contents, '80', '...') !!}</p>
                                                             <a href="{{ url('bloq/'.$blog->slug) }}" class="blog-link">Devamını oxu</a>

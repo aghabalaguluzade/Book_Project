@@ -53,6 +53,30 @@
                     </div>
                 </div>
                 <div class="form-group required">
+                    <label class="col-sm-2 control-label" for="address">Ünvan</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="address" placeholder="Ünvanınızı daxil edin..." id="address" class="form-control" />
+                        <!-- Error Confirm Password -->
+                        <div class="for-error error-confirm"></div>
+                    </div>
+                </div>
+                <div class="form-group required">
+                    <label class="col-sm-2 control-label" for="phone">Telefon Nömrəniz</label>
+                    <div class="col-sm-10">
+                        <input type="number" name="phone" placeholder="Telefon nömrənizi daxil edin..." id="phone" class="form-control" />
+                        <!-- Error Confirm Password -->
+                        <div class="for-error error-confirm"></div>
+                    </div>
+                </div>
+                <div class="form-group required">
+                    <label class="col-sm-2 control-label" for="post_code">Telefon Nömrəniz</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="post_code" placeholder="Poçt kodunuzu daxil edin..." id="post_code" class="form-control" />
+                        <!-- Error Confirm Password -->
+                        <div class="for-error error-confirm"></div>
+                    </div>
+                </div>
+                <div class="form-group required">
                     <label class="col-sm-2 control-label" for="img">Şəkil</label>
                   <div class="input-group col-sm-10">
                     <div class="custom-file" style="width: 100% !important">

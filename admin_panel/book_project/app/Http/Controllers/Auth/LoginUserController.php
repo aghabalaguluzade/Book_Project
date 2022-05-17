@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 
+
 class LoginUserController extends Controller
 {
     public function LoginIndex() {
@@ -35,7 +36,7 @@ class LoginUserController extends Controller
     public function LoginUserController(Request $request) {
 
         $request->validate([
-            'email' => 'required|email',
+            'email' => 'required|max:255|email:rfc,dns',
             'password' => 'required'
         ]);
 
