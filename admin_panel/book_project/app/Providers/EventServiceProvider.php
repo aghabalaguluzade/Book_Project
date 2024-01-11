@@ -19,8 +19,8 @@ class EventServiceProvider extends ServiceProvider
             SendEmailVerificationNotification::class,
         ],
         'App\Events\UserCreatedEvent' => [
-            'App\Listeners\SetDefaultRoleListener'
-        ]      
+            'App\Listeners\SetDefaultRoleListener',
+        ],
     ];
 
     /**

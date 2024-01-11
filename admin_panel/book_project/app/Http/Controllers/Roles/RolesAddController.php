@@ -8,18 +8,19 @@ use Illuminate\Http\Request;
 
 class RolesAddController extends Controller
 {
-    public function RolesAddPost(Request $request) {
+    public function RolesAddPost(Request $request)
+    {
 
         $request->validate([
-            'name' => 'required|max:255'
+            'name' => 'required|max:255',
         ]);
 
         $roles = Role::create([
             'name' => $request->name,
-            'description' => $request->description
+            'description' => $request->description,
         ]);
 
-        return redirect()->back()->with($roles ? "success" : "error", true);
+        return redirect()->back()->with($roles ? 'success' : 'error', true);
 
     }
 }

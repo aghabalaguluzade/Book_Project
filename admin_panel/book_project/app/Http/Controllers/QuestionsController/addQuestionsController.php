@@ -8,20 +8,20 @@ use Illuminate\Http\Request;
 
 class addQuestionsController extends Controller
 {
-    public function addQuestionsPost(Request $request) {
+    public function addQuestionsPost(Request $request)
+    {
 
         $request->validate([
             'question_title' => 'required|max:255',
-            'question_answer' => 'required'
+            'question_answer' => 'required',
         ]);
 
         $data = General_Questions::create([
             'question_title' => $request->question_title,
-            'question_answer' => $request->question_answer
+            'question_answer' => $request->question_answer,
         ]);
 
-        return redirect()->back()->with($data ? "success" : "error", true);
+        return redirect()->back()->with($data ? 'success' : 'error', true);
 
     }
-
 }

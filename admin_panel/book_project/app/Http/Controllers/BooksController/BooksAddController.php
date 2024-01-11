@@ -12,30 +12,33 @@ use Illuminate\Support\Str;
 
 class BooksAddController extends Controller
 {
-    public function BooksAdd() {
+    public function BooksAdd()
+    {
         $writers = Writers::all();
-        $main_category = Category::where("parent_id",0)->get();
+        $main_category = Category::where('parent_id', 0)->get();
         View::share([
-            'writers'=>$writers,
-            'main_category'=>$main_category
+            'writers' => $writers,
+            'main_category' => $main_category,
         ]);
-        return view("books.books-add");
+
+        return view('books.books-add');
     }
 
-    public function BooksAddPost(Request $request) {
+    public function BooksAddPost(Request $request)
+    {
         $request->validate([
             'books_name' => 'required|max:500',
             'books_description' => 'required',
             'books_img' => 'required|image|mimes:png,jpg,jpeg,gif,jfif,webp|max:2048',
             'price' => 'required|regex:/^\d+(\.\d{1,2})?$/|numeric|between:0,99.99',
             'quantity' => 'required|numeric',
-            'page' => 'numeric'
+            'page' => 'numeric',
         ]);
 
         $image = $request->file('books_img');
         $directory = 'uploads/books/';
-        $img_name = Str::slug($request->books_name)."." . $image->getClientOriginalExtension();
-        $image->move($directory,$img_name);
+        $img_name = Str::slug($request->books_name).'.'.$image->getClientOriginalExtension();
+        $image->move($directory, $img_name);
         $img_name = $directory.$img_name;
 
         $books = Books::create([
@@ -48,10 +51,10 @@ class BooksAddController extends Controller
             'price' => $request->price,
             'quantity' => $request->quantity,
             'code' => Str::upper(uniqid($request->code)),
-            'page' => $request->page
+            'page' => $request->page,
         ]);
 
-        return redirect()->back()->with($books ? "success" : "error", true);
+        return redirect()->back()->with($books ? 'success' : 'error', true);
 
     }
 }

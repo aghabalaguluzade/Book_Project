@@ -10,24 +10,27 @@ use Illuminate\Support\Str;
 
 class CategoryAddController extends Controller
 {
-    public function CategoryAddIndex() {
-        $categories = Category::where('parent_id',0)->get();
+    public function CategoryAddIndex()
+    {
+        $categories = Category::where('parent_id', 0)->get();
         View::share('categories', $categories);
-        return view("category.category_add");
+
+        return view('category.category_add');
     }
 
-    public function CategoryAddPost(Request $request) {
+    public function CategoryAddPost(Request $request)
+    {
         $request->validate([
-            'category_name' => 'required|max:250'
+            'category_name' => 'required|max:250',
         ]);
 
         $data = Category::create([
-            'category_name'=>$request->category_name,
+            'category_name' => $request->category_name,
             'parent_id' => $request->parent_id ?? 0,
-            'slug' => Str::slug($request->category_name)
+            'slug' => Str::slug($request->category_name),
         ]);
 
-        return redirect()->back()->with($data ? "success" : "error", true);
+        return redirect()->back()->with($data ? 'success' : 'error', true);
 
     }
 }

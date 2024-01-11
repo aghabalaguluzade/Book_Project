@@ -8,30 +8,38 @@ use Illuminate\Database\Eloquent\Model;
 class Books extends Model
 {
     use HasFactory;
-    protected $table = "books";
+
+    protected $table = 'books';
+
     protected $guarded = [];
 
-    public function Category($id) {
+    public function Category($id)
+    {
         return Category::find($id) ?? null;
     }
 
-    public function Writers($id) {
+    public function Writers($id)
+    {
         return Writers::find($id) ?? null;
     }
 
-    public function child($id) {
-        return Category::where('parent_id',$id)->select('category_name')->get() ?? null;
+    public function child($id)
+    {
+        return Category::where('parent_id', $id)->select('category_name')->get() ?? null;
     }
 
-    public function shopcard() {
+    public function shopcard()
+    {
         return $this->hasMany(ShopCart::class);
     }
 
-    public function orderitem() {
+    public function orderitem()
+    {
         return $this->hasMany(Orderitem::class);
     }
 
-    public function wishlist() {
+    public function wishlist()
+    {
         return $this->hasMany(Wishlist::class);
     }
 }

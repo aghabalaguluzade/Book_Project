@@ -8,11 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class FeatureSection extends Model
 {
     use HasFactory;
-    protected $table = "feature_section";
+
+    protected $table = 'feature_section';
+
     protected $guarded = [];
+
     public $timestamps = false;
 
-    public function GetID($id) {
+    public function GetID($id)
+    {
         return FeatureSection::find($id) ?? null;
     }
 }
