@@ -9,14 +9,17 @@ class Wishlist extends Model
 {
     use HasFactory;
 
-    protected $table = "wishlist";
+    protected $table = 'wishlist';
+
     protected $guarded = [];
 
-    public function users() {
+    public function users()
+    {
         return $this->belongsTo(User::class);
     }
 
-    public function books() {
+    public function books()
+    {
         return $this->belongsTo(Books::class);
     }
 }

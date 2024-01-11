@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class NewsletterSubscribe extends Model
 {
     use HasFactory;
-    
-    protected $table = "newsletter_subscribe";
+
+    protected $table = 'newsletter_subscribe';
+
     protected $guarded = [];
 }

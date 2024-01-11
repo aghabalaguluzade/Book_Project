@@ -22,7 +22,6 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-
     public function isLocal()
     {
         return $this['env'] === 'local';

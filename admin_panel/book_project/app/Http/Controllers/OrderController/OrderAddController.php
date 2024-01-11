@@ -12,10 +12,11 @@ use Illuminate\Support\Facades\Auth;
 
 class OrderAddController extends Controller
 {
-    public function OrderPost(Request $request) {
+    public function OrderPost(Request $request)
+    {
 
-        if($this->books_not()) {
-            return redirect()->back()->with("order-not-stock",true);
+        if ($this->books_not()) {
+            return redirect()->back()->with('order-not-stock', true);
         }
 
         $orders = new Order();
@@ -30,9 +31,9 @@ class OrderAddController extends Controller
         $orders->IP = $request->ip();
         $orders->save();
 
-        $cards = ShopCart::where('user_id',Auth::id())->get();
-        
-        foreach($cards as $card) {
+        $cards = ShopCart::where('user_id', Auth::id())->get();
+
+        foreach ($cards as $card) {
 
             $order_items = new Orderitem();
             $order_items->user_id = Auth::id();
@@ -42,31 +43,33 @@ class OrderAddController extends Controller
             $order_items->quantity = $card->quantity;
             $order_items->amount = $card->quantity * $card->books->price;
             $book = Books::find($card->books->id);
-            $book->update(['quantity'=>$book->quantity - $card->quantity]);
+            $book->update(['quantity' => $book->quantity - $card->quantity]);
             $order_items->save();
 
         }
 
-        $delete_shopcards = ShopCart::where('user_id',Auth::id());
+        $delete_shopcards = ShopCart::where('user_id', Auth::id());
         $delete_shopcards->delete();
-        
-        return redirect()->route('Orders')->with($order_items ? "order-success" : "order-error",true);
+
+        return redirect()->route('Orders')->with($order_items ? 'order-success' : 'order-error', true);
     }
 
-    public function books_not() {
-        
-        $carts = ShopCart::where('user_id',Auth::id())->get();
+    public function books_not()
+    {
 
-        foreach($carts as $cart) {
+        $carts = ShopCart::where('user_id', Auth::id())->get();
+
+        foreach ($carts as $cart) {
 
             $product = Books::find($cart->books->id);
-            
-            if($product->quantity < $cart->quantity) {
+
+            if ($product->quantity < $cart->quantity) {
                 return true;
             }
+
             return false;
 
-        } 
+        }
 
     }
 }

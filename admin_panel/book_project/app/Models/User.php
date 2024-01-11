@@ -11,9 +11,11 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    public function roles() {
+    public function roles()
+    {
         return $this->belongsToMany(Role::class);
     }
+
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -28,11 +30,11 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at',
         'address',
         'phone',
-        'post_code'
+        'post_code',
     ];
 
     protected $dispatchesEvents = [
-        'created' => UserCreatedEvent::class
+        'created' => UserCreatedEvent::class,
     ];
 
     /**
@@ -54,22 +56,25 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    protected $table = "users";
+    protected $table = 'users';
 
-    public function shopcard() {
+    public function shopcard()
+    {
         return $this->hasMany(ShopCart::class);
     }
 
-    public function order() {
+    public function order()
+    {
         return $this->hasMany(Order::class);
     }
 
-    public function orderitem() {
+    public function orderitem()
+    {
         return $this->hasMany(Orderitem::class);
     }
 
-    public function wishist() {
+    public function wishist()
+    {
         return $this->hasMany(Wishlist::class);
     }
-
 }

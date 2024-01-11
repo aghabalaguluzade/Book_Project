@@ -9,18 +9,22 @@ class Order extends Model
 {
     use HasFactory;
 
-    protected $table = "orders";
+    protected $table = 'orders';
+
     protected $guarded = [];
 
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 
-    public function orderitem() {
+    public function orderitem()
+    {
         return $this->hasMany(Orderitem::class);
     }
 
-    public function products() {
-        return $this->belongsToMany(Books::class,'orderitem')->withPivot('quantity');
+    public function products()
+    {
+        return $this->belongsToMany(Books::class, 'orderitem')->withPivot('quantity');
     }
 }

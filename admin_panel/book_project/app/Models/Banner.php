@@ -8,8 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Banner extends Model
 {
     use HasFactory;
-    
-    protected $table = "carousel_banner";
+
+    protected $table = 'carousel_banner';
+
     protected $guarded = [];
+
     public $timestamps = false;
 }

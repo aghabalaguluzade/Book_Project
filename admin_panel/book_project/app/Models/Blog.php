@@ -8,11 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Blog extends Model
 {
     use HasFactory;
-    protected $table = "blog";
+
+    protected $table = 'blog';
+
     protected $guarded = [];
 
-    public function scopeCreateBy($query) {
-        $query->orderBy('created_at','desc');
+    public function scopeCreateBy($query)
+    {
+        $query->orderBy('created_at', 'desc');
     }
-
 }

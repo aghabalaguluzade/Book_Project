@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Auth;
 
 class LogoutUserController extends Controller
 {
-    public function LogoutUserController(Request $request) {
+    public function LogoutUserController(Request $request)
+    {
 
         Auth::guard('web')->logout();
         // Auth::logout();

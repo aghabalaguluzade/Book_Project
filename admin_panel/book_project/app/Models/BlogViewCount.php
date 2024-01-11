@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class BlogViewCount extends Model
 {
     use HasFactory;
-    
-    protected $table = "view_count";
+
+    protected $table = 'view_count';
+
     protected $guarded = [];
 }

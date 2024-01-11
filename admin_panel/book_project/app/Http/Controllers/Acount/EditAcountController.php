@@ -20,12 +20,13 @@ use Illuminate\Validation\Rules;
 
 class EditAcountController extends Controller
 {
-    public function fragmented() {
-        $categories = Category::where('parent_id',0)->where('status','1')->get();
-        $partners = Partners::where('status','1')->inRandomOrder()->get();
+    public function fragmented()
+    {
+        $categories = Category::where('parent_id', 0)->where('status', '1')->get();
+        $partners = Partners::where('status', '1')->inRandomOrder()->get();
         $settings = Settings::all();
-        $cards = ShopCart::where('user_id',Auth::id())->get();
-        $carts = ShopCart::where('user_id',Auth::id());
+        $cards = ShopCart::where('user_id', Auth::id())->get();
+        $carts = ShopCart::where('user_id', Auth::id());
         $wishlists = Wishlist::latest('created_at')->get();
         View::share([
             'categories' => $categories,
@@ -37,30 +38,34 @@ class EditAcountController extends Controller
         ]);
     }
 
-    public function Acount() {
+    public function Acount()
+    {
         $this->fragmented();
+
         return view('templates.acount.acount');
     }
 
-    public function EditAcountIndex() {
+    public function EditAcountIndex()
+    {
         $this->fragmented();
         $id = Auth::user()->id;
         $users = User::find($id);
-        return view('templates.acount.edit_acount', compact('users',$users));
+
+        return view('templates.acount.edit_acount', compact('users', $users));
     }
 
-    public function EditAcountPost(Request $request) {
+    public function EditAcountPost(Request $request)
+    {
 
         $request->validate([
             'name' => 'string|max:255',
             'email' => 'email|max:255',
-            'password' => [Rules\Password::defaults()]
+            'password' => [Rules\Password::defaults()],
         ]);
 
-        
         $users = User::find(Auth::id());
 
-        if($request->hasFile('img')) {
+        if ($request->hasFile('img')) {
 
             $request->validate([
                 'img' => 'image|mimes:png,jpg,jpeg,gif,jfif,webp|max:1024',
@@ -68,13 +73,13 @@ class EditAcountController extends Controller
 
             $image = $request->file('img');
             $directory = 'uploads/users/';
-            $img_name = Str::slug($request->name). '.' . $image->getClientOriginalExtension();
+            $img_name = Str::slug($request->name).'.'.$image->getClientOriginalExtension();
 
-            if(file_exists($users->img)) {
+            if (file_exists($users->img)) {
                 unlink($users->img);
             }
 
-            $image->move($directory,$img_name);
+            $image->move($directory, $img_name);
             $img_name = $directory.$img_name;
             $users->img = $img_name;
         }
@@ -83,20 +88,24 @@ class EditAcountController extends Controller
         $users->email = $request->email;
         $users->password = Hash::make($request->password);
 
-        return redirect()->back()->with($users->save() ? "success" : "error",true);
+        return redirect()->back()->with($users->save() ? 'success' : 'error', true);
 
     }
 
-    public function Orders() {
+    public function Orders()
+    {
         $this->fragmented();
-        $orders = Order::where('user_id',Auth::id())->get();
-        return view('templates.acount.acount-orders', compact('orders',$orders));
+        $orders = Order::where('user_id', Auth::id())->get();
+
+        return view('templates.acount.acount-orders', compact('orders', $orders));
     }
 
-    public function Orderitems($id) {
+    public function Orderitems($id)
+    {
         $this->fragmented();
-        $orderitems = Orderitem::orderBy('created_at', 'desc')->where('order_id',$id)->where('user_id',Auth::id())->get();
-        View::share('orderitems',$orderitems);
+        $orderitems = Orderitem::orderBy('created_at', 'desc')->where('order_id', $id)->where('user_id', Auth::id())->get();
+        View::share('orderitems', $orderitems);
+
         return view('templates.acount.acount-orderitems');
     }
 }

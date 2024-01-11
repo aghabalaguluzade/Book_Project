@@ -14,12 +14,13 @@ use Illuminate\Support\Facades\View;
 
 class OrderListController extends Controller
 {
-    public function fragmented() {
-        $categories = Category::where('parent_id',0)->active()->get();
-        $partners = Partners::where('status','1')->inRandomOrder()->get();
+    public function fragmented()
+    {
+        $categories = Category::where('parent_id', 0)->active()->get();
+        $partners = Partners::where('status', '1')->inRandomOrder()->get();
         $settings = Settings::all();
-        $cards = ShopCart::where('user_id',Auth::id())->get();
-        $carts = ShopCart::where('user_id',Auth::id());
+        $cards = ShopCart::where('user_id', Auth::id())->get();
+        $carts = ShopCart::where('user_id', Auth::id());
         $wishlists = Wishlist::latest('created_at')->get();
         View::share([
             'categories' => $categories,
@@ -27,13 +28,15 @@ class OrderListController extends Controller
             'settings' => $settings,
             'cards' => $cards,
             'carts' => $carts,
-            'wishlists' => $wishlists
+            'wishlists' => $wishlists,
         ]);
     }
 
-    public function OrderIndex(Request $request) {
+    public function OrderIndex(Request $request)
+    {
         $this->fragmented();
         $total = $request->input('total');
-        return view('templates.shop-carts.checkout',['total'=>$total]);
+
+        return view('templates.shop-carts.checkout', ['total' => $total]);
     }
 }

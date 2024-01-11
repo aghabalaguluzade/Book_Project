@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Writers extends Model
 {
     use HasFactory;
-    
-    protected $table = "writers";
+
+    protected $table = 'writers';
+
     protected $guarded = [];
 }
